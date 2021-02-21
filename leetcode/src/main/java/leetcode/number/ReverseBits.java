@@ -1,4 +1,4 @@
-package leetcode.incomplete;
+package leetcode.number;
 
 import org.junit.Test;
 
@@ -7,12 +7,12 @@ public class ReverseBits {
 
 	// you need treat n as an unsigned value
 	public int reverseBits(int n) {
-		return 0;
+		return Integer.reverse(n);
 	}
-	
+
 	@Test
 	public void test() {
-		
+
 	}
 
 }
