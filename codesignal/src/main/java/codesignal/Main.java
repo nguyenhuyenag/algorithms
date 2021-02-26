@@ -1,4 +1,4 @@
-package leetcode;
+package codesignal;
 
 public class Main {
 
