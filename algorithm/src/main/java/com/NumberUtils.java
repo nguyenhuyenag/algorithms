@@ -2,6 +2,9 @@ package com;
 
 public class NumberUtils {
 
+	/**
+	 * Thập phân => nhị phân
+	 */
 	public static String toBinary(int n) {
 		String s = "";
 		while (n != 0) {
@@ -11,6 +14,9 @@ public class NumberUtils {
 		return s; // return Integer.toBinaryString(n);
 	}
 	
+	/**
+	 * Nhị phân => thập phân
+	 */
 	public static int binaryToDecimal(String binary) {
 		return Integer.parseInt(binary, 2);
 	}
