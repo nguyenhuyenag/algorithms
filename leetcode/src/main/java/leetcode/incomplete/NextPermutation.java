@@ -6,35 +6,36 @@ import org.junit.Test;
 public class NextPermutation {
 
 	public void nextPermutation(int[] A) {
-		if (A == null || A.length <= 1) {
+		int n = A.length;
+		if (A == null || n <= 1) {
 			return;
 		}
-		int i = A.length - 2;
+		int i = n - 2;
 		while (i >= 0 && A[i] >= A[i + 1]) {
-			i--; 							// Find 1st id i that breaks descending order
+			i--; 							// Tìm vị trí không giảm
 		}
-		if (i >= 0) { 						// If not entirely descending
-			int j = A.length - 1; 			// Start from the end
-			while (A[j] <= A[i]) {
+		if (i >= 0) { 						// có
+			int j = n - 1; 					// chạy từ cuối lên
+			while (A[i] >= A[j]) {
 				j--; 						// Find rightmost first larger id j
 			}
 			swap(A, i, j); 					// Switch i and j
 		}
-		reverse(A, i + 1, A.length - 1); 	// Reverse the descending sequence
+		reverse(A, i + 1, n - 1); 			// Reverse the descending sequence
 	}
-
-	public void swap(int[] A, int i, int j) {
-		int tmp = A[i];
-		A[i] = A[j];
-		A[j] = tmp;
-	}
-
+	
 	public void reverse(int[] A, int i, int j) {
 		while (i < j) {
 			swap(A, i++, j--);
 		}
 	}
-	
+
+	public void swap(int[] A, int i, int j) {
+		int t = A[i];
+		A[i] = A[j];
+		A[j] = t;
+	}
+
 	@Test
 	public void test() {
 		// assertArrayEquals(expecteds, actuals);
