@@ -26,15 +26,15 @@ public class CongSoLon {
 			}
 		}
 		// thuc hien phep cong
-		int soGhiNho = 0;
+		int ghinho = 0;
 		for (int i = 0; i < max; i++) {
 			int tong = 0;
 			// charAt ky tu tai vi tri thu i trong xau
-			tong = s1.charAt(i) - '0' + s2.charAt(i) - '0' + soGhiNho;
+			tong = s1.charAt(i) - '0' + s2.charAt(i) - '0' + ghinho;
 			str.append(tong % 10);
-			soGhiNho = tong / 10;
+			ghinho = tong / 10;
 		}
-		if (soGhiNho == 1) {
+		if (ghinho == 1) {
 			str.append("1");
 		}
 		return str.reverse().toString(); // dao xau truoc khi xuat

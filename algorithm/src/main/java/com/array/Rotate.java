@@ -1,25 +1,28 @@
-package com;
+package com.array;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Chuyển k phần tử đầu tiên về cuối mảng
+ */
 public class Rotate {
+
+	static void move(int[] arr) {
+		int i;
+		int tmp = arr[0];
+		for (i = 0; i < arr.length - 1; i++) {
+			arr[i] = arr[i + 1];
+		}
+		arr[i] = tmp;
+	}
 
 	// Chuyển k lần
 	static void rotate(int[] arr, int k) {
 		for (int i = 1; i <= k; i++) {
 			move(arr);
 		}
-	}
-
-	static void move(int[] arr) {
-		int i, n = arr.length;
-		int tmp = arr[0];
-		for (i = 0; i < n - 1; i++) {
-			arr[i] = arr[i + 1];
-		}
-		arr[i] = tmp;
 	}
 
 	static <T> void moveByCollection(T[] arr, int k) {
@@ -29,9 +32,6 @@ public class Rotate {
 		System.out.println("After: " + Arrays.toString(list.toArray()));
 	}
 
-	/**
-	 * Chuyển k phần tử đầu tiên về cuối mảng
-	 */
 	public static void main(String[] args) {
 		int k = 3; // chuyển k phần tử
 		int[] arr = { 1, 2, 3, 4, 5 };

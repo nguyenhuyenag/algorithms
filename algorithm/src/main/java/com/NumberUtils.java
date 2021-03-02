@@ -76,7 +76,7 @@ public class NumberUtils {
 	}
 
 	/**
-	 * Ước chung lớn nhất
+	 * Ước chung lớn nhất: Euclid
 	 */
 	public static int gcd(int a, int b) {
 		while (a != b) {
