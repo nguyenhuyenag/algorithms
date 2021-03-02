@@ -26,10 +26,10 @@ public class TwoSum {
 		return arr;
 	}
 
-	public static void doTest(int[] arr1, int[] arr2) {
-		Arrays.sort(arr1);
-		Arrays.sort(arr2);
-		assertArrayEquals(arr1, arr2);
+	public static void doTest(int[] A1, int[] A2) {
+		Arrays.sort(A1);
+		Arrays.sort(A2);
+		assertArrayEquals(A1, A2);
 	}
 
 	@Test

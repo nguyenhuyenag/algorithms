@@ -2,8 +2,6 @@ package leetcode.incomplete;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.Arrays;
-
 import org.junit.Test;
 
 // https://leetcode.com/problems/unique-paths/
@@ -17,7 +15,6 @@ public class UniquePaths {
 				M[j] = M[j - 1] + M[j];
 			}
 		}
-		System.out.println(Arrays.toString(M));
 		return M[m - 1];
 	}
 
