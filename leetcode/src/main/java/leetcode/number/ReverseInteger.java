@@ -4,7 +4,9 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-// https://leetcode.com/problems/reverse-integer/
+/**
+ * https://leetcode.com/problems/reverse-integer/
+ */
 public class ReverseInteger {
 
 	public static long handleReverse(long n) {

@@ -8,24 +8,24 @@ import org.junit.Test;
 public class BinaryAlternatingBit {
 
 	public static boolean hasAlternatingBits(int n) {
-		String binary = Integer.toBinaryString(n);
-		if (binary.charAt(0) == '0') { // a0 = 0
+		char[] A = Integer.toBinaryString(n).toCharArray();
+		if (A[0] == '0') { // a0 = 0
 			// a_chẵn = 0, a_lẻ = 1
-			for (int i = 1; i < binary.length(); i++) {
-				if (i % 2 == 0 && binary.charAt(i) != '0') {
+			for (int i = 1; i < A.length; i++) {
+				if (i % 2 == 0 && A[i] != '0') {
 					return false;
 				}
-				if (i % 2 != 0 && binary.charAt(i) != '1') {
+				if (i % 2 != 0 && A[i] != '1') {
 					return false;
 				}
 			}
 		} else { // a0 = 1
 			// a_chẵn = 1, a_lẻ = 0
-			for (int i = 1; i < binary.length(); i++) {
-				if (i % 2 == 0 && binary.charAt(i) != '1') {
+			for (int i = 1; i < A.length; i++) {
+				if (i % 2 == 0 && A[i] != '1') {
 					return false;
 				}
-				if (i % 2 != 0 && binary.charAt(i) != '0') {
+				if (i % 2 != 0 && A[i] != '0') {
 					return false;
 				}
 			}

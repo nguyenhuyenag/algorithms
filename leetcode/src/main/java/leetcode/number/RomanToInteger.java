@@ -5,16 +5,15 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 /*-
- * - Các số: `I, X, C, M` sẽ không được phép lặp lại quá 3
- * 
- * - Các số: `V, L, D` chỉ được xuất hiện một lần duy nhất
- * 
  * - Quy tắc viết số La Mã là phải cộng, trái trừ
  * 	
- * 	AB	:	A < B	=>	A - B
- * 			A >= B	=>	A + B
+ *	  	AB	:	A < B	=>	A - B
+ *	  			A >= B	=>	A + B
+ * 
+ * - Các số: `I, X, C, M` không được phép lặp lại quá 3, các số: `V, L, D` chỉ được xuất hiện 1 lần duy nhất
+ * 
+ * https://leetcode.com/problems/roman-to-integer/
  */
-// https://leetcode.com/problems/roman-to-integer/
 public class RomanToInteger {
 	
 	static int of(char roman) {
@@ -31,15 +30,15 @@ public class RomanToInteger {
     }
 	
 	public static int romanToInt(String str) {
+		int n = str.length();
 		char[] A = str.toCharArray();
-		int n = A.length;
 		int s = of(A[n - 1]); 				// Gán s = giá trị số cuối cùng
 		for (int i = n - 1; i > 0; i--) {
 			int prev = of(A[i - 1]); 		// Số đứng trước
-			if (of(A[i]) > prev) {			// nhỏ trừ, lớn cộng
-				s -= prev;
+			if (of(A[i]) > prev) { 			
+				s -= prev;					// nhỏ trừ
 			} else {
-				s += prev;
+				s += prev;					// lớn cộng
 			}
 		}
 		return s;
