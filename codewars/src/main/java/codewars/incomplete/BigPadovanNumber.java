@@ -79,10 +79,4 @@ public class BigPadovanNumber {
 		assertEquals(new BigInteger("1177482265857"), BigPadovanNumber.Get(100));
 	}
 
-	public static void main(String[] args) {
-		System.out.println(BigPadovanNumber.Get(9));
-		System.out.println(BigPadovanNumber.Get(14));
-		System.out.println(BigPadovanNumber.Get(4));
-	}
-
 }

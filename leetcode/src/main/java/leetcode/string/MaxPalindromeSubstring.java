@@ -4,11 +4,13 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-// Chuỗi đối xứng dài nhất
-// https://leetcode.com/problems/longest-palindromic-substring/
-public class LongestPalindromicSubstring {
+/**
+ * Given a string s, return the longest palindromic substring in s.
+ * 
+ * https://leetcode.com/problems/longest-palindromic-substring/
+ */
+public class MaxPalindromeSubstring {
 
-	// Kiểm tra chuỗi đối xứng
 	public static boolean isPalindromic(String str) {
 		int i = 0, j = str.length() - 1;
 		while (i < j) {
@@ -27,13 +29,13 @@ public class LongestPalindromicSubstring {
 		}
 		String max = "";
 		int n = str.length();
-		for (int i = 0; i < n; i++) {
+		for (int i = 0; i < n; i++) { // với mỗi i -> n
 			StringBuilder sb = new StringBuilder();
 			for (int j = i; j < n; j++) {
-				sb.append(str.charAt(j));
+				sb.append(str.charAt(j)); // ta cộng vào các chuỗi ở phía sau nó
 				String s = sb.toString();
-				if (isPalindromic(s)) {
-					max = (s.length() > max.length() ? s : max);
+				if (isPalindromic(s)) { // nếu chuỗi con này đối xứng
+					max = (s.length() > max.length() ? s : max); // và > max thì gán nó là max
 				}
 			}
 		}
@@ -49,8 +51,6 @@ public class LongestPalindromicSubstring {
 		assertEquals("bb", longestPalindrome("bb"));
 		assertEquals("bb", longestPalindrome("abb"));
 		assertEquals("aca", longestPalindrome("aacabdkacaa"));
-		// assertThat(longestPalindrome("ac"), anyOf(is("a"), is("c")));
-		// assertEquals(longestPalindrome("babad"), anyOf(is("bab"), is("aba")));
 	}
 
 }
