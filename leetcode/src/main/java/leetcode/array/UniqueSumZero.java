@@ -1,7 +1,7 @@
 package leetcode.array;
 
 /*-
- * - Tao 1 mang n so nguyen khong giong nhau co tong = 0
+ * Tao 1 mang n so nguyen khong giong nhau co tong = 0
  * 
  * https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero/
  */

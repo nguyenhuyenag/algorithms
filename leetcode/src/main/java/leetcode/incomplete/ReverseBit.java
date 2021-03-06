@@ -6,6 +6,10 @@ import org.junit.Test;
 
 // https://leetcode.com/problems/reverse-bits/
 public class ReverseBit {
+	
+	public int reverseBits2(int n) {
+		return Integer.reverse(n);
+	}
 
 	// you need treat n as an unsigned value
 	public int reverseBits(int n) {

@@ -7,7 +7,7 @@ import java.util.Arrays;
 import org.junit.Test;
 
 /*-
- * - Tim vi tri cua 2 phan tu trong mang, sao cho tong cua chung = n
+ * Tim vi tri cua 2 phan tu trong mang, sao cho tong cua chung = n
  *
  * https://leetcode.com/problems/two-sum/
  */
