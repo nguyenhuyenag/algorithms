@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class ReverseArray {
 
+	// Dùng mảng phụ
 	public static int[] reverse(int[] A) {
 		int n = A.length;
 		int[] arr = new int[n];
@@ -13,6 +14,7 @@ public class ReverseArray {
 		return arr;
 	}
 
+	// Không dùng mảng phụ
 	public static void reverseInPlace(int[] A) {
 		int n = A.length;
 		for (int i = 0; i < n / 2; i++) {

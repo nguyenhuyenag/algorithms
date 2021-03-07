@@ -2,13 +2,11 @@ package com.datetime;
 
 public class CenturyFromYear {
 
-	static int centuryFromYear(int year) {
+	public static int centuryFromYear(int year) {
 		if (year % 100 == 0) {
-			year = year / 100;
-		} else {
-			year = (year / 100) + 1;
+			return year / 100;
 		}
-		return year;
+		return (year / 100) + 1;
 	}
 
 	public static void main(String[] args) {

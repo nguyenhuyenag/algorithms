@@ -9,23 +9,23 @@ import java.util.List;
  */
 public class Rotate {
 
-	static void move(int[] arr) {
+	public static void move(int[] A) {
 		int i;
-		int tmp = arr[0];
-		for (i = 0; i < arr.length - 1; i++) {
-			arr[i] = arr[i + 1];
+		int tmp = A[0]; // Lưu A[0]
+		for (i = 0; i < A.length - 1; i++) {
+			A[i] = A[i + 1]; // Dời từng phần tử lên phía trước
 		}
-		arr[i] = tmp;
+		A[i] = tmp; // Gán phần tử cuối cùng là A[0]
 	}
 
 	// Chuyển k lần
-	static void rotate(int[] arr, int k) {
+	public static void rotate(int[] arr, int k) {
 		for (int i = 1; i <= k; i++) {
 			move(arr);
 		}
 	}
 
-	static <T> void moveByCollection(T[] arr, int k) {
+	public static <T> void moveByCollection(T[] arr, int k) {
 		List<T> list = Arrays.asList(arr);
 		System.out.println("Before: " + Arrays.toString(arr));
 		Collections.rotate(list, k);

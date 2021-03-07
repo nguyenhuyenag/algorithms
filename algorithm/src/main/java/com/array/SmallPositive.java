@@ -1,5 +1,14 @@
 package com.array;
 
+/*-
+ * Tìm số nguyên dương nhỏ nhất bị thiếu trong mảng
+ * Input:	{2, 3, 7, 6, 8, -1, -10, 15}
+ * Output: 	1
+ * Input: 	{ 2, 3, -7, 6, 8, 1, -10, 15 }
+ * Output: 	4
+ * Input: 	{1, 1, 0, -1, -2}
+ * Output: 	2
+ */
 public class SmallPositive {
 
 	// Mảng đánh dấu
@@ -20,15 +29,6 @@ public class SmallPositive {
 		return 0;
 	}
 
-	/*-
-	 * Tìm số nguyên dương nhỏ nhất bị thiếu trong mảng
-	 * Input:	{2, 3, 7, 6, 8, -1, -10, 15}
-	 * Output: 	1
-	 * Input: 	{ 2, 3, -7, 6, 8, 1, -10, 15 }
-	 * Output: 	4
-	 * Input: 	{1, 1, 0, -1, -2}
-	 * Output: 	2
-	 */
 	public static void main(String[] args) {
 		// int arr[] = { 2, 3, 7, 6, 8, -1, -10, 15 }; // => 1
 		// int arr[] = { 2, 3, -7, 6, 8, 1, -10, 15 }; // => 4
