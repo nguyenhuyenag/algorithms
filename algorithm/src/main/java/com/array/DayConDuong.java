@@ -1,8 +1,8 @@
-package problem.number;
+package com.array;
 
 import java.util.Scanner;
 
-/**
+/*-
  * - Tìm dãy con toàn dương dài nhất trong mảng
  * 
  * - Gọi res là chiều dài dãy con dương dài nhất,

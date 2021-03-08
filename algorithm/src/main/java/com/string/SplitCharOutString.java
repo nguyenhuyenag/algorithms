@@ -1,4 +1,4 @@
-package problem.string;
+package com.string;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;

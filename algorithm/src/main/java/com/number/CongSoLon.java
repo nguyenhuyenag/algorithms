@@ -1,4 +1,4 @@
-package com.string;
+package com.number;
 
 import static org.junit.Assert.assertEquals;
 

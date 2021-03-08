@@ -1,4 +1,4 @@
-package problem.number;
+package com.string;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -9,11 +9,9 @@ public class SplitNumberInString {
 		String s = "string-1234more567string890";
 		int i = 0, j = 0, length = s.length();
 		while (i < length) {
-			// Nếu vị trí i là số
-			if (Character.isDigit(s.charAt(i))) {
+			if (Character.isDigit(s.charAt(i))) { 			// Nếu vị trí i là số
 				for (j = i + 1; j < length; j++) {
-					// Vị trí kế tiếp không phải là số là số
-					if (!Character.isDigit(s.charAt(j))) {
+					if (!Character.isDigit(s.charAt(j))) { 	// Vị trí kế tiếp không phải là số là số
 						break; // dừng
 					}
 					// tiếp tục

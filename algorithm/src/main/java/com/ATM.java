@@ -32,7 +32,7 @@ public class ATM {
 		}
 	}
 
-	static LinkedHashMap<Integer, Integer> map = new LinkedHashMap<>();
+	public static LinkedHashMap<Integer, Integer> map = new LinkedHashMap<>();
 
 	public static void main(String[] args) {
 		int n = 500;

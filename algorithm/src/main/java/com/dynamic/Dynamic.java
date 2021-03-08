@@ -3,6 +3,18 @@ package com.dynamic;
 import java.math.BigInteger;
 
 public class Dynamic {
+	
+	public static int fib(int n) {
+		if (n <= 1) {
+			return n;
+		}
+		int[] A = new int[n + 1];
+		A[0] = 0; A[1] = 1;
+		for (int i = 2; i < A.length; i++) {
+			A[i] = A[i - 1] + A[i - 2];
+		}
+		return A[n];
+	}
 
 	static void factorial(int n) {
 		int length = n + 1;
@@ -25,5 +37,5 @@ public class Dynamic {
 		}
 		return f[n];
 	}
-
+	
 }

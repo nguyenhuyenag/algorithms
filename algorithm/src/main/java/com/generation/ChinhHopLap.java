@@ -9,7 +9,7 @@ import java.util.Arrays;
  */
 public class ChinhHopLap {
 
-	static void output(int[] arr) {
+	public static void output(int[] arr) {
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i]);
 		}
@@ -21,10 +21,10 @@ public class ChinhHopLap {
 		int[] arr = new int[n];
 		Arrays.fill(arr, 1);
 		output(arr);
-		for (int i = n - 1; i >= 0; i--) { // Xét từ cuối dãy về đầu
-			if (arr[i] < n) { // chữ số có giá trị chưa bằng n
-				arr[i] += 1; // tăng lên 1
-				Arrays.fill(arr, i + 1, n, 1); // Gán tất cả phần tử sau vị trí đó = 1
+		for (int i = n - 1; i >= 0; i--) { 		// Xét từ cuối dãy về đầu
+			if (arr[i] < n) {					// chữ số có giá trị chưa bằng n
+				arr[i] += 1; 					// tăng lên 1
+				Arrays.fill(arr, i + 1, n, 1); 	// Gán tất cả phần tử sau vị trí đó = 1
 				output(arr);
 				i = n;
 			}

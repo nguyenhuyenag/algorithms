@@ -12,7 +12,6 @@ public class CenturyFromYear {
 	public static void main(String[] args) {
 		int test = centuryFromYear(2021);
 		System.out.println(test);
-
 	}
 
 }

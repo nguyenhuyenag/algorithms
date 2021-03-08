@@ -1,8 +1,7 @@
-package problem.string;
+package com.string;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 // Đếm số lần xuất hiện của ký tự trong chuỗi
 public class CountChar {
@@ -21,10 +20,8 @@ public class CountChar {
 	}
 
 	public static void main(String[] args) {
-		try (Scanner io = new Scanner(System.in);) {
-			String str = io.nextLine();
-			countCharacter(str).forEach((k, v) -> System.out.println(k + ": " + v));
-		}
+		String str = "asdadasdsdqweqwewqfwqf";
+		countCharacter(str).forEach((k, v) -> System.out.println(k + ": " + v));
 	}
 
 }

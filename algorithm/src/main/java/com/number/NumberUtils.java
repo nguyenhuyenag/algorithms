@@ -1,4 +1,4 @@
-package com;
+package com.number;
 
 public class NumberUtils {
 

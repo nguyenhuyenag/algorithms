@@ -1,14 +1,14 @@
-package com;
+package com.generation;
 
 public class NextBinary {
 
-	static String next(String str) {
+	public static String next(String str) {
 		StringBuilder sb = new StringBuilder(str);
 		for (int i = sb.length() - 1; i >= 0; i--) {
 			if (sb.charAt(i) == '0') {
 				sb.setCharAt(i, '1');
 				for (int j = i + 1; j < sb.length(); j++) {
-					sb.setCharAt(j, '0');
+					sb.setCharAt(j, '0'); // Arrays.fill()
 				}
 				break;
 			}
