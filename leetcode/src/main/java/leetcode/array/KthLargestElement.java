@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 import org.junit.Test;
 
@@ -26,8 +27,9 @@ public class KthLargestElement {
 		return A[k - 1]; // 0 la vi tri thu 1
 	}
 	
+	// Sử dụng hàng đợi ưu tiên
 	public int findKthLargest(int[] nums, int k) {
-		PriorityQueue<Integer> queue = new PriorityQueue<>(k + 1);
+		Queue<Integer> queue = new PriorityQueue<>();
 		for (int el : nums) {
 			queue.add(el);
 			if (queue.size() > k) {
