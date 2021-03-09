@@ -12,7 +12,8 @@ import org.junit.Test;
 public class MaxPalindromeSubstring {
 
 	public static boolean isPalindromic(String str) {
-		int i = 0, j = str.length() - 1;
+		int i = 0;
+		int j = str.length() - 1;
 		while (i < j) {
 			if (str.charAt(i) != str.charAt(j)) {
 				return false;
