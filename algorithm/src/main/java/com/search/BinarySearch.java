@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class BinarySearch {
 
+	// array in ascending order
 	public static int binarySearch(int[] A, int key) {
 		int l = 0;
 		int r = A.length - 1;
