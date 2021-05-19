@@ -10,8 +10,7 @@ public class RandomUtils {
 		}
 		return ThreadLocalRandom.current().nextInt(min, max + 1);
 	}
-	
-	
+		
 	public static int[] randomArrays(int n) {
 		int[] array = new int[n];
 		for (int i = 0; i < n; i++) {
