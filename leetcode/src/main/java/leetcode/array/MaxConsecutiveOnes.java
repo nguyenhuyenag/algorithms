@@ -1,7 +1,7 @@
 package leetcode.array;
 
 /**
- * https://leetcode.com/problems/max-consecutive-ones/submissions/
+ * https://leetcode.com/problems/max-consecutive-ones/
  */
 public class MaxConsecutiveOnes {
 	
@@ -17,9 +17,5 @@ public class MaxConsecutiveOnes {
 		}
 		return max;
     }
-
-	public static void main(String[] args) {
-
-	}
 
 }
