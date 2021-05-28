@@ -1,6 +1,11 @@
-package leetcode;
+package leetcode.array;
 
-public class Main {
+/**
+ * https://leetcode.com/problems/longer-contiguous-segments-of-ones-than-zeros
+ * 
+ * Xem thêm MaxConsecutiveOnes.java
+ */
+public class LongerContiguous {
 	
 	public int findMaxConsecutiveOnes(char[] nums, char bit) {
 		int max = 0, count = 0;
