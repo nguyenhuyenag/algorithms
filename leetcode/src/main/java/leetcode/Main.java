@@ -1,23 +1,28 @@
 package leetcode;
 
 public class Main {
-	
-	public int findMaxConsecutiveOnes(char[] nums, char bit) {
-		int max = 0, count = 0;
-		for (char c : nums) {
-			if (c == bit) {
-				count++;
-				max = Math.max(count, max);
-			} else {
-				count = 0;
-			}
-		}
-		return max;
-    }
 
-	 public boolean checkZeroOnes(String s) {
-		char[] arr = s.toCharArray();
-		return findMaxConsecutiveOnes(arr, '1') > findMaxConsecutiveOnes(arr, '0');
+	public static String longestCommonPrefix(String[] strs) {
+		StringBuilder sb = new StringBuilder();
+		int i = 0;
+		String t = strs[0];
+		while (i < t.length()) {
+			sb.append(t.charAt(i));
+			for (int j = 1; j < strs.length; j++) {
+				if (!strs[j].startsWith(sb.toString())) {
+					sb.deleteCharAt(i);
+					return sb.toString();
+				}
+			}
+			i++;
+		}
+		return sb.toString();
+	}
+
+	public static void main(String[] args) {
+		// String[] strs = {"flower","flow","flight"};
+		String[] strs = { "dog", "racecar", "car" };
+		System.out.println(longestCommonPrefix(strs));
 	}
 
 }
