@@ -5,19 +5,15 @@ package com.recursion.backtracking;
  */
 public class HoanViChuoi {
 
-	static void show(char[] arr) {
-		System.out.print(new String(arr) + " ");
-	}
-
-	static void swap(char[] arr, int i, int j) {
+	public static void swap(char[] arr, int i, int j) {
 		char c = arr[i];
 		arr[i] = arr[j];
 		arr[j] = c;
 	}
 
-	static void permute(char[] arr, int start, int n) {
+	public static void permute(char[] arr, int start, int n) {
 		if (start == n) {
-			show(arr);
+			System.out.println(new String(arr));
 		} else {
 			for (int i = start; i <= n; i++) {
 				swap(arr, start, i);
@@ -28,9 +24,8 @@ public class HoanViChuoi {
 	}
 
 	public static void main(String[] args) {
-		String str = "abcd";
+		String str = "123";
 		char[] arr = str.toCharArray();
-		int n = arr.length;
-		permute(arr, 0, n - 1);
+		permute(arr, 0, str.length() - 1);
 	}
 }

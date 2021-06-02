@@ -6,6 +6,11 @@ package com.recursion.backtracking;
  * Với n = 3 => 123 132 213 231 312 321
  */
 public class LietKeHoanVi {
+	
+	static int n;
+	static int[] arr = new int[n];
+	static int[] res = new int[10];
+	static boolean[] dd = new boolean[10];
 
 	static void output() {
 		StringBuilder builder = new StringBuilder();
@@ -18,11 +23,11 @@ public class LietKeHoanVi {
 	}
 
 	public static void quaylui(int i) {
-		if (i > n) {
+		if (n < i) {
 			output();
 		} else {
 			for (int j = 1; j <= n; j++) {
-				if (dd[j] == false) {
+				if (!dd[j]) {
 					dd[j] = true;
 					res[i] = j;
 					quaylui(i + 1);
@@ -31,11 +36,6 @@ public class LietKeHoanVi {
 			}
 		}
 	}
-
-	static int n;
-	static int[] arr = new int[n];
-	static boolean[] dd = new boolean[10];
-	static int[] res = new int[10];
 
 	public static void main(String[] args) {
 		n = 3;
