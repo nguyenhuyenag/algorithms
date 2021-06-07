@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.array;
 
 import java.util.HashMap;
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 // https://leetcode.com/problems/sort-array-by-increasing-frequency/
-public class Main {
+public class SortByIncreasingFrequency {
 
 	public static int[] frequencySort(int[] nums) {
 		Map<Integer, Integer> map = new HashMap<>();
