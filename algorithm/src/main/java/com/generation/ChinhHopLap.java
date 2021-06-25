@@ -17,7 +17,7 @@ public class ChinhHopLap {
 	}
 
 	public static void main(String[] args) {
-		int n = 2;
+		int n = 5;
 		int[] arr = new int[n];
 		Arrays.fill(arr, 1);
 		output(arr);

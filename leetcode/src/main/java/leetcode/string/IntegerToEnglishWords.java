@@ -1,10 +1,11 @@
-package leetcode;
+package leetcode.string;
 
 // https://leetcode.com/problems/integer-to-english-words
 public class IntegerToEnglishWords {
 
 	static String[] tens = { "", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety" };
-	static String[] ones = { "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", //
+	static String[] ones = { "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
+			"Eleven", //
 			"Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" };
 
 	private static String helper(int num) {
@@ -24,14 +25,14 @@ public class IntegerToEnglishWords {
 		}
 		return sb.toString().trim();
 	}
-	
+
 	public static String numberToWords(int num) {
 		if (num == 0) {
 			return "Zero";
 		}
 		return helper(num).trim();
 	}
-	
+
 	public static void main(String[] args) {
 		int n = 123;
 		System.out.println(numberToWords(n));
