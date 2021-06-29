@@ -1,9 +1,9 @@
-package leetcode;
+package leetcode.number;
 
 // https://leetcode.com/problems/powx-n
-public class Main {
+public class PowXN {
 
-	public static double cal(double x, long n) {
+	public static double myPow(double x, long n) {
 		if (n == 0) {
 			return 1;
 		}
@@ -11,11 +11,11 @@ public class Main {
 			n = -n;
 			x = 1 / x;
 		}
-		return n % 2 == 0 ? cal(x * x, n / 2) : x * cal(x * x, n / 2);
+		return n % 2 == 0 ? myPow(x * x, n / 2) : x * myPow(x * x, n / 2);
 	}
 
 	public static double myPow(double x, int n) {
-		return cal(x, n + 0l);
+		return myPow(x, n + 0l);
 	}
 
 	public static void main(String[] args) {
