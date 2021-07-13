@@ -12,14 +12,14 @@ import org.junit.Test;
 public class MaxPalindromeSubstring {
 
 	public static boolean isPalindromic(String str) {
-		int i = 0;
-		int j = str.length() - 1;
-		while (i < j) {
-			if (str.charAt(i) != str.charAt(j)) {
+		int l = 0;
+		int r = str.length() - 1;
+		while (l < r) {
+			if (str.charAt(l) != str.charAt(r)) {
 				return false;
 			}
-			i++;
-			j--;
+			l++;
+			r--;
 		}
 		return true;
 	}
