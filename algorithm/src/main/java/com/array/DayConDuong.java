@@ -30,7 +30,6 @@ public class DayConDuong {
 				if (x > 0) {
 					cmax++;
 				} else {
-					// if (cmax > max) { max = cmax; }
 					max = Math.max(max, cmax);
 					cmax = 0;
 				}

@@ -1,6 +1,7 @@
 package com.array;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public class ReverseArray {
 
@@ -24,9 +25,24 @@ public class ReverseArray {
 		}
 	}
 
+	// Dùng IntStream
+	public static int[] reverse2(int[] A) {
+		int n = A.length;
+		return IntStream.range(0, n).map(i -> A[n - 1 - i]).toArray();
+	}
+
+	// Chọn vị tri cần xoay
+	public static int[] reverse3(int[] A) {
+		int from = 0, to = A.length;
+		return IntStream.range(from, to).map(i -> from - 1 + to - i).map(t -> A[t]).toArray();
+	}
+
 	public static void main(String[] args) {
-		int[] A = { 1, 2, 3, 4, 5 };
+		int[] A = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+		// reverse(A);
+		// A = reverse2(A);
 		reverseInPlace(A);
+		// A = reverse3(A);
 		System.out.println(Arrays.toString(A));
 	}
 
