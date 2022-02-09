@@ -5,22 +5,26 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomUtils {
 
-	private static int getIntFrom(int min, int max) {
+	public static int getIntFrom(int min, int max) {
 		if (max <= min) {
 			throw new IllegalArgumentException("Max must be greater than min");
 		}
 		return ThreadLocalRandom.current().nextInt(min, max + 1);
 	}
+	
+	public static int getInt() {
+		return getIntFrom(-99, 99);
+	}
 
 	public static int[] randomArrays(int n) {
 		int[] array = new int[n];
 		for (int i = 0; i < n; i++) {
-			array[i] = getIntFrom(-10, 20);
+			array[i] = getIntFrom(-20, 20);
 		}
-		System.out.println(Arrays.toString(array));
+		System.out.println("Array: " + Arrays.toString(array));
 		return array;
 	}
-	
+
 	public static void main(String[] args) {
 		randomArrays(5);
 	}

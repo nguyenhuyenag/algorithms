@@ -1,5 +1,7 @@
 package com.array;
 
+import com.util.RandomUtils;
+
 public class FindMaxWithoutLoop {
 
 	public static int findMax(int[] A, int len) {
@@ -11,7 +13,7 @@ public class FindMaxWithoutLoop {
 	}
 
 	public static void main(String[] args) {
-		int[] arr = { -9, 0, 12, 8, -22, 0, 0 };
+		int[] arr = RandomUtils.randomArrays(10);
 		System.out.println(findMax(arr, arr.length));
 	}
 

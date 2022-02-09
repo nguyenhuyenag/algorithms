@@ -31,7 +31,7 @@ public class ReverseArray {
 		return IntStream.range(0, n).map(i -> A[n - 1 - i]).toArray();
 	}
 
-	// Chọn vị tri cần xoay
+	// Chỉ định vị tri cần xoay
 	public static int[] reverse3(int[] A) {
 		int from = 0, to = A.length;
 		return IntStream.range(from, to).map(i -> from - 1 + to - i).map(t -> A[t]).toArray();

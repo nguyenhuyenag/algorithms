@@ -1,7 +1,5 @@
 package com.array;
 
-import java.util.Scanner;
-
 import com.util.RandomUtils;
 
 /*-
@@ -18,24 +16,17 @@ import com.util.RandomUtils;
 public class DayConDuong {
 
 	public static void main(String[] args) {
-		try (Scanner io = new Scanner(System.in);) {
-			// int n = io.nextInt();
-			// int[] arr = new int[n];
-//			for (int i = 0; i < n; i++) {
-//				// arr[i] = io.nextInt();
-//			}
-			int[] arr = RandomUtils.randomArrays(15);
-			int max = 0, cmax = 0;
-			for (int x : arr) {
-				if (x > 0) {
-					cmax++;
-				} else {
-					max = Math.max(max, cmax);
-					cmax = 0;
-				}
+		int[] arr = RandomUtils.randomArrays(10);
+		int max = 0, cmax = 0;
+		for (int x : arr) {
+			if (x > 0) {
+				cmax++;
+			} else {
+				max = Math.max(max, cmax);
+				cmax = 0;
 			}
-			System.out.println(Math.max(max, cmax));
 		}
+		System.out.println(Math.max(max, cmax));
 	}
 
 }
