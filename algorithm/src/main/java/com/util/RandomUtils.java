@@ -24,6 +24,16 @@ public class RandomUtils {
 		System.out.println("Array: " + Arrays.toString(array));
 		return array;
 	}
+	
+	public static int[] randomArrays() {
+		int n = getIntFrom(5, 10);
+		int[] array = new int[n];
+		for (int i = 0; i < n; i++) {
+			array[i] = getIntFrom(-20, 20);
+		}
+		System.out.println("Array: " + Arrays.toString(array));
+		return array;
+	}
 
 	public static void main(String[] args) {
 		randomArrays(5);

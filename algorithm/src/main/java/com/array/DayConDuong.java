@@ -16,7 +16,7 @@ import com.util.RandomUtils;
 public class DayConDuong {
 
 	public static void main(String[] args) {
-		int[] arr = RandomUtils.randomArrays(10);
+		int[] arr = RandomUtils.randomArrays();
 		int max = 0, cmax = 0;
 		for (int x : arr) {
 			if (x > 0) {
