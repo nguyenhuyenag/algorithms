@@ -7,21 +7,31 @@ import java.util.List;
 // https://leetcode.com/problems/group-anagrams/
 public class AnagramsGroup {
 
+//	public static boolean isAnagram(String s, String t) {
+//		int n = s.length();
+//		if (n != t.length())
+//			return false;
+//		char[] arrs = s.toCharArray();
+//		char[] arrt = t.toCharArray();
+//		Arrays.sort(arrs);
+//		Arrays.sort(arrt);
+//		for (int i = 0; i < n; i++) {
+//			if (arrs[i] != arrt[i]) {
+//				return false;
+//			}
+//		}
+//		return true;
+//	}
+	
 	public static boolean isAnagram(String s, String t) {
-		int n = s.length();
-		if (n != t.length())
+		if(s.length()!=t.length())
 			return false;
-		char[] arrs = s.toCharArray();
-		char[] arrt = t.toCharArray();
-		Arrays.sort(arrs);
-		Arrays.sort(arrt);
-		for (int i = 0; i < n; i++) {
-			if (arrs[i] != arrt[i]) {
-				return false;
-			}
-		}
-		return true;
-	}
+        int[] alphabet = new int[26];
+        for (int i = 0; i < s.length(); i++) alphabet[s.charAt(i) - 'a']++;
+        for (int i = 0; i < t.length(); i++) alphabet[t.charAt(i) - 'a']--;
+        for (int i : alphabet) if (i != 0) return false;
+        return true;
+    }
 
 	public static List<List<String>> groupAnagrams(String[] A) {
 		int n = A.length;
