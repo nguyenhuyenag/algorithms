@@ -1,14 +1,14 @@
 package leetcode.array;
 
-import static org.junit.Assert.assertArrayEquals;
-
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
-
-import org.junit.Test;
 
 /*-
  * - Given a non-empty array of integers, return the k most frequent elements
@@ -37,7 +37,7 @@ class KFrequent {
 
 public class TopKFrequentElement {
 
-	public static int[] topKFrequent(int[] A, int k) {
+	public static int[] topKFrequent2(int[] A, int k) {
 		List<KFrequent> list = new ArrayList<>();
 		Set<Integer> set = new HashSet<>();
 		int n = A.length;
@@ -60,10 +60,38 @@ public class TopKFrequentElement {
 		return res;
 	}
 
-	@Test
-	public void test() {
-		assertArrayEquals(new int[] { 1 }, topKFrequent(new int[] { 1 }, 1));
-		assertArrayEquals(new int[] { 1, 2 }, topKFrequent(new int[] { 1, 1, 1, 2, 2, 3 }, 2));
+	public static int[] topKFrequent(int[] A, int k) {
+		int n = A.length;
+		int[] mark = new int[n];
+		Arrays.fill(mark, 0);
+		Map<Integer, Integer> map = new HashMap<>();
+		for (int i = 0; i < n; i++) {
+			int count = 1;
+			if (mark[i] == 0) {
+				for (int j = i + 1; j < n; j++) {
+					if (A[i] == A[j]) {
+						count++;
+						mark[j] = 1;
+					}
+				}
+				map.put(A[i], count);
+			}
+			mark[i] = 1;
+		}
+		map.entrySet().stream().sorted(Map.Entry.comparingByValue()).limit(k).forEach(t->System.out.println(t)); // 
+		System.out.println(map);
+		int[] res = new int[k];
+		return res;
+	}
+
+//	@Test
+//	public void test() {
+//		assertArrayEquals(new int[] { 1 }, topKFrequent(new int[] { 1 }, 1));
+//		assertArrayEquals(new int[] { 1, 2 }, topKFrequent(new int[] { 1, 1, 1, 2, 2, 3 }, 2));
+//	}
+
+	public static void main(String[] args) {
+		topKFrequent(new int[] { 1, 1, 1, 2, 2, 3, 4, 4 }, 2);
 	}
 
 }
