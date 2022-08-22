@@ -29,14 +29,11 @@ public class AnagramsRemoving {
 		int n = A.length;
 		int[] mark = new int[n];
 		Arrays.fill(mark, 0);
-		for (int i = 0; i < n; i++) {
-			for (int j = i + 1; j < n; j++) {
-				if (isAnagram(A[i], A[j])) {
-					mark[j] = 1;
-				}
+		for (int i = 1; i < n; i++) {
+			if (isAnagram(A[i], A[i - 1])) {
+				mark[i] = 1;
 			}
 		}
-		// System.out.println(Arrays.toString(mark));
 		List<String> result = new ArrayList<>();
 		for (int i = 0; i < n; i++) {
 			if (mark[i] == 0) {
@@ -48,10 +45,9 @@ public class AnagramsRemoving {
 
 	public static void main(String[] args) {
 		// String[] arr = { "a", "b", "a" };
-		String[] arr = { "a", "b", "c", "d", "e" };
-		// String[] arr = { "abba", "baba", "bbaa", "cd", "cd" };
+		// String[] arr = { "a", "b", "c", "d", "e" };
+		String[] arr = { "abba", "baba", "bbaa", "cd", "cd" };
 		System.out.println(removeAnagrams(arr).toString());
-		// System.out.println(isAnagram("a","a"));
 	}
 
 }
