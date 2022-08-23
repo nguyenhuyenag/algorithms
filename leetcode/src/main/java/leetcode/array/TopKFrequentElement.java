@@ -10,9 +10,9 @@ import java.util.Map;
 import java.util.Set;
 
 /*-
- * - Given a non-empty array of integers, return the k most frequent elements
- * 
  * https://leetcode.com/problems/top-k-frequent-elements/
+ *
+ * - Given a non-empty array of integers, return the k most frequent elements
  */
 class KFrequent {
 
@@ -77,7 +77,7 @@ public class TopKFrequentElement {
 			}
 			mark[i] = 1;
 		}
-		map.entrySet().stream().sorted(Map.Entry.comparingByValue()).limit(k).forEach(t->System.out.println(t)); // 
+		// map.entrySet().stream().sorted(Map.Entry.comparingByValue()).limit(k).forEach(t -> System.out.println(t)); //
 		System.out.println(map);
 		int[] res = new int[k];
 		return res;

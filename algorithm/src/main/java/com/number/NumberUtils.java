@@ -88,5 +88,20 @@ public class NumberUtils {
 		}
 		return a; // hay b cũng được vì lúc này a = b
 	}
+	
+	// n là lũy thừa của k: k^i = n
+	public static boolean isPowerOfAny(int n, int k) {
+		if (n <= 0) {
+			return false;
+		}
+		while (n > 1) {
+			if (n % k == 0) {
+				n /= k;
+			} else {
+				return false;
+			}
+		}
+		return true;
+	}
 
 }
