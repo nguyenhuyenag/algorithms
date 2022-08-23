@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * https://leetcode.com/problems/product-of-array-except-self
  * 
- * Cho mảng số nguyên A[n] -> tạo mảng mới thỏa mãn giá trị tại vị trí i bằng tích của các vị trị khác i
+ * Cho mảng số nguyên A[n] -> tạo mảng mới thỏa mãn giá trị tại vị trí i bằng tích của các vị trị khác i.
  *
  */
 public class ProductOfArrayExceptSelf {
