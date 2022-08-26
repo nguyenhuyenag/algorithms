@@ -1,4 +1,4 @@
-package leetcode.incomplete;
+package leetcode.array;
 
 import java.util.Arrays;
 
