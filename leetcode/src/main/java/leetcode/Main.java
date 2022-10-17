@@ -1,5 +1,7 @@
 package leetcode;
 
+import java.util.BitSet;
+
 // https://leetcode.com/problems/powx-n
 public class Main {
 
@@ -18,11 +20,26 @@ public class Main {
 		return cal(x, n + 0l);
 	}
 
+	public static boolean checkIfPangram(String str) {
+		int[] marks = new int[25];
+		for (int i = 0; i < str.length(); i++) {
+
+		}
+		return true;
+	}
+
+	// a - z: 26 ký tự
 	public static void main(String[] args) {
-		System.out.println(myPow(2, 10));
-		System.out.println(myPow(2.1, 3));
-		System.out.println(myPow(2, -2));
-		System.out.println(myPow(2, -2147483648));
+		// int[] marks = new int[25];
+		String str = "leetcode";
+		BitSet[] alphabet = new BitSet[26];
+		for (char c : str.toCharArray()) {
+			System.out.println(c - 'a');
+			// alphabet.set(alphabet[c - 'a']);
+			// alphabet[c - 'a'].get(bitIndex)
+		}
+		// BitSet bs = new BitSet(1);
+		// System.out.println(bs.get(0));
 	}
 
 }
