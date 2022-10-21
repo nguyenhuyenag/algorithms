@@ -1,6 +1,11 @@
 package leetcode;
 
-import java.util.BitSet;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 // https://leetcode.com/problems/powx-n
 public class Main {
@@ -30,44 +35,14 @@ public class Main {
 
 	// a - z: 26 ký tự
 	public static void main(String[] args) {
-		// int[] marks = new int[25];
-		String str = "leetcode";
-		BitSet[] alphabet = new BitSet[26];
-		for (char c : str.toCharArray()) {
-			// System.out.println(c - 'a');
-			// alphabet.set(alphabet[c - 'a']);
-			// alphabet[c - 'a']
-		}
-		//
-		BitSet bits1 = new BitSet(16);
-		BitSet bits2 = new BitSet(16);
-
-		// thiet la mot so bit
-		for (int i = 0; i < 16; i++) {
-			if (i % 2 == 0)
-				bits1.set(i);
-			if (i % 5 != 0)
-				bits2.set(i);
-		}
-		// System.out.println("Pattern ban dau trong bits1: ");
-		System.out.println("bits1: " + bits1);
-		// System.out.println("\nPattern ban dau trong bits2: ");
-		System.out.println("bits2: " + bits2);
-
-		// AND bits
-		bits2.and(bits1);
-		System.out.println("\nbits2 AND bits1: ");
-		System.out.println(bits2);
-
-		// OR bits
-		bits2.or(bits1);
-		System.out.println("\nbits2 OR bits1: ");
-		System.out.println(bits2);
-
-		// XOR bits
-		bits2.xor(bits1);
-		System.out.println("\nbits2 XOR bits1: ");
-		System.out.println(bits2);
+		String[] arr = {"the","day","is","sunny","the","the","the","sunny","is","is"};
+		Map<String, Long> group = Arrays.stream(arr)
+				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+		System.out.println(group);
+		group.entrySet().stream() //
+				// .sorted(Map.Entry.comparingByValue()) //
+				.sorted(Comparator.comparing(Map.Entry::getValue)) //
+				.forEach(t -> System.out.println(t));
 	}
 
 }
