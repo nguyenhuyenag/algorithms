@@ -3,6 +3,8 @@ package leetcode.array;
 import static org.junit.Assert.assertArrayEquals;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.junit.Test;
 
@@ -10,6 +12,11 @@ import org.junit.Test;
  * Tim vi tri cua 2 phan tu trong mang, sao cho tong cua chung = n
  *
  * https://leetcode.com/problems/two-sum/
+ * 
+ * B1: Khởi tạo một HashSet s
+ * B2: Loop i từ 0 -> n - 1
+ * 		- Nếu (sum - arr[i]) có trong s thì in ra cặp giá trị thoả(arr[i], sum - arr[i])
+ * 		- Thêm arr[i] vào s
  */
 public class TwoSum {
 
@@ -24,6 +31,16 @@ public class TwoSum {
 			}
 		}
 		return arr;
+	}
+
+	public static void checkPairSumWayThree(int[] arr, int size_arr, int sum) {
+		Set<Integer> s = new HashSet<>();
+		for (int i = 0; i < size_arr; i++) {
+			int tmp = sum - arr[i];
+			if (s.contains(tmp) && tmp > 0)
+				System.out.println("Cap gia tri thoa: (" + arr[i] + ", " + tmp + ")");
+			s.add(arr[i]);
+		}
 	}
 
 	public static void doTest(int[] A1, int[] A2) {
