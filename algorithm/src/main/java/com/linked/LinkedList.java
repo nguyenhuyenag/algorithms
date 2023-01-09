@@ -4,37 +4,64 @@ public class LinkedList {
 
 	Node head; // head of the list
 
-	/* Linked list Node */
-	static class Node {
-
+	private static class Node {
 		int data;
 		Node next;
 
-		// Constructor to create a new node
-		// Next is by default initialized as null
+		// Constructor to create a new node. Next is by default initialized as null
 		public Node(int d) {
 			this.data = d;
 			next = null;
 		}
+	}
 
+	public void add(int data) {
+		Node new_node = new Node(data);
+		new_node.next = head;
+		head = new_node;
 	}
 
 	/* This function prints contents of linked list starting from head */
 	public void printList() {
-		Node node = head;
-		while (node != null) {
-			System.out.print(node.data + " ");
-			node = node.next;
+		Node temp = head;
+		while (temp != null) {
+			System.out.print(temp.data + " -> ");
+			temp = temp.next;
 		}
+		System.out.print("Null" + "\n");
+	}
+
+	public int length() {
+		int length = 0;
+		Node temp = head;
+		while (temp != null) {
+			length++;
+			temp = temp.next;
+		}
+		return length;
+	}
+
+	public boolean contains(int data) {
+		Node temp = head;
+		while (temp != null) {
+			if (temp.data == data) {
+				return true;
+			}
+			temp = temp.next;
+		}
+		return false;
 	}
 
 	public static void main(String[] args) {
-		/* Start with the empty list. */
-		LinkedList llist = new LinkedList();
+		LinkedList list = new LinkedList(); // Create an empty list
 
-		llist.head = new Node(1);
-		Node second = new Node(2);
-		Node third = new Node(3);
+		list.add(1);
+		list.add(2);
+		list.add(3);
+
+		list.printList();
+		System.out.println("Size: " + list.length());
+		System.out.println("Contain: " + list.contains(5));
 
 		/*- Three nodes have been allocated dynamically. 
 		We have references to these three blocks as head,   
@@ -47,8 +74,6 @@ public class LinkedList {
 		| 1  | null |     | 2  | null |     |  3 | null | 
 		+----+------+     +----+------+     +----+------+ */
 
-		llist.head.next = second; // Link first node with the second node
-
 		/*-  Now next of the first Node refers to the second.  So they 
 		both are linked. 
 		
@@ -58,8 +83,6 @@ public class LinkedList {
 		+----+------+     +----+------+     +----+------+ 
 		| 1  |  o-------->| 2  | null |     |  3 | null | 
 		+----+------+     +----+------+     +----+------+ */
-
-		second.next = third; // Link second node with the third node
 
 		/*- Now next of the second Node refers to third.  So all three 
 		nodes are linked. 
@@ -71,7 +94,6 @@ public class LinkedList {
 		| 1  |  o-------->| 2  |  o-------->|  3 | null | 
 		+----+------+     +----+------+     +----+------+ */
 
-		llist.printList();
 	}
 
 }
