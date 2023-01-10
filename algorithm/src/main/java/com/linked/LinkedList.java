@@ -8,7 +8,7 @@ public class LinkedList {
 		int data;
 		Node next;
 
-		// Constructor to create a new node. Next is by default initialized as null
+		// Next is by default initialized as null
 		public Node(int d) {
 			this.data = d;
 			next = null;
