@@ -19,3 +19,7 @@
 *.properties
 *.MF
 *.prefs
+algorithm/.factorypath
+codewars/.factorypath
+leetcode/.factorypath
+algorithm/.factorypath
