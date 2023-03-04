@@ -4,15 +4,18 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
+/**
+ * https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/
+ */
 public class FindFirstIndexOfString {
 
 	public int strStr1(String haystack, String needle) {
 		int l1 = haystack.length();
 		int l2 = needle.length();
-		System.out.println("l1 = " + l1 + ", l2 = " + l2);
+		// System.out.println("l1 = " + l1 + ", l2 = " + l2);
 		for (int i = 0; i <= l1 - l2; i++) {
 			String sub = haystack.substring(i, i + l2);
-			System.out.println("i = " + i + ", sub = " + sub);
+			// System.out.println("i = " + i + ", sub = " + sub);
 			if (needle.equals(sub)) {
 				return i;
 			}
