@@ -1,14 +1,13 @@
-package leetcode;
+package leetcode.array;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Stack;
 
 import org.junit.jupiter.api.Test;
 
-public class Main {
+// https://leetcode.com/problems/valid-parentheses/description/
+public class ValiParentheses {
 
 	// '(', ')', '{', '}', '[', ']'
 	public static boolean isValid(String s) {
@@ -35,9 +34,21 @@ public class Main {
 	}
 
 	@Test
-	public void test() {
+	public void test1() {
 		String s = "()";
 		assertEquals(true, isValid(s));
+	}
+
+	@Test
+	public void test2() {
+		String s = "()[]{}";
+		assertEquals(true, isValid(s));
+	}
+
+	@Test
+	public void test3() {
+		String s = "(]";
+		assertEquals(false, isValid(s));
 	}
 
 }
