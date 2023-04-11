@@ -1,10 +1,11 @@
-package leetcode;
+package leetcode.string;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-public class Main {
+// https://leetcode.com/problems/removing-stars-from-a-string/
+public class RemovingStarsFromString {
 
 	public String removeStars(String s) {
 		StringBuilder sb = new StringBuilder();
