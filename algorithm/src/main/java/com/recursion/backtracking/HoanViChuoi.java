@@ -11,20 +11,20 @@ public class HoanViChuoi {
 		arr[j] = c;
 	}
 
-	public static void permute(char[] arr, int start, int n) {
-		if (start == n) {
+	public static void permute(char[] arr, int left, int right) {
+		if (left == right) {
 			System.out.println(new String(arr));
 		} else {
-			for (int i = start; i <= n; i++) {
-				swap(arr, start, i);
-				permute(arr, start + 1, n);
-				swap(arr, start, i);
+			for (int i = left; i <= right; i++) {
+				swap(arr, left, i);
+				permute(arr, left + 1, right);
+				swap(arr, left, i);
 			}
 		}
 	}
 
 	public static void main(String[] args) {
-		String str = "123";
+		String str = "ABCD";
 		char[] arr = str.toCharArray();
 		permute(arr, 0, str.length() - 1);
 	}

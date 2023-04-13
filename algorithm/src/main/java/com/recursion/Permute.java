@@ -17,12 +17,12 @@ public class Permute {
 	private static void permute(List<?> list, int left, int right) {
 		if (left == right) {
 			System.out.println(Arrays.toString(list.toArray()));
-			return;
-		}
-		for (int j = left; j <= right; j++) {
-			Collections.swap(list, left, j);
-			permute(list, left + 1, right);
-			Collections.swap(list, left, j); // backtrack
+		} else {
+			for (int i = left; i <= right; i++) {
+				Collections.swap(list, left, i);
+				permute(list, left + 1, right);
+				Collections.swap(list, left, i); // backtrack
+			}
 		}
 	}
 
@@ -33,7 +33,8 @@ public class Permute {
 	}
 
 	public static void main(String[] args) {
-		showAllPermute(Arrays.asList(2, 0, 1, 7));
+		List<Integer> list = Arrays.asList(1, 2, 3, 4);
+		showAllPermute(list);
 	}
 
 }
