@@ -1,7 +1,7 @@
 # Folder
 */target/
 */.settings/
-**/.idea/
+*/.idea/
 
 # Package Files
 *.jar
