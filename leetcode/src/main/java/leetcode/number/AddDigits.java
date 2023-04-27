@@ -48,8 +48,8 @@ public class AddDigits {
 	}
 
 	/**
-	 * ABCD = 1000A+100B+10*C+D = (A + B + C + D) + 9 * (111 * A + 11 * B + C) this
-	 * equals (mod 9) to A + B + C + D
+	 * ABCD = 1000A + 100B + 10*C + D = (A + B + C + D) + 9 * (111 * A + 11 * B + C)
+	 * this equals (mod 9) to A + B + C + D
 	 */
 	public int addDigits4(int n) {
 		if (n == 0) {
