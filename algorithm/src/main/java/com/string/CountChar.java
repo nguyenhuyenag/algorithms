@@ -9,7 +9,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 // Đếm số lần xuất hiện của ký tự trong chuỗi
-// @SuppressWarnings("unused")
 public class CountChar {
 
 	public static Map<Character, Long> findTheMostFrequentByMap(String input) {
@@ -40,7 +39,7 @@ public class CountChar {
 	}
 
 	public static void main(String[] args) {
-		// findMostCharacter();
+		findMostCharacter();
 	}
 
 }
