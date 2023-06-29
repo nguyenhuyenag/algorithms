@@ -1,38 +1,46 @@
 package com.string;
 
-import java.util.Arrays;
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.groupingBy;
+
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
+import java.util.Map.Entry;
 
 // Đếm số lần xuất hiện của ký tự trong chuỗi
+// @SuppressWarnings("unused")
 public class CountChar {
 
-	public static Map<Character, Integer> countCharacter(String str) {
-		char[] arr = str.toCharArray();
-		Map<Character, Integer> map = new HashMap<>();
-		for (char key : arr) {
-			if (!map.containsKey(key)) {
-				map.put(key, 1);
-			} else {
-				map.put(key, map.get(key) + 1);
-			}
+	public static Map<Character, Long> findTheMostFrequentByMap(String input) {
+		Map<Character, Long> map = new HashMap<>();
+		for (char key : input.toCharArray()) {
+			map.compute(key, (character, count) -> count == null ? 1 : ++count);
 		}
 		return map;
 	}
-	
-	public static void groupingBy() {
-		List<String> wordsList = Arrays.asList("hello", "bye", "ciao", "bye", "ciao");
-		Map<String, Long> collect = wordsList.stream()
-				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-		System.out.println(collect.toString());
+
+	public static Map<Character, Long> findTheMostFrequentBygroupingBy(String input) {
+		return input.chars() //
+				.filter(c -> !Character.isWhitespace(c)) // Ignore whitespace
+				.mapToObj(c -> (char) c) //
+				// .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+				.collect(groupingBy(c -> c, counting()));
+	}
+
+	public static void findMostCharacter() {
+		String input = "aaaaaaaaaabbbbbbbcccccddddeeeff";
+		Map<Character, Long> map = findTheMostFrequentByMap(input);
+		// Map<Character, Long> map = findTheMostFrequentBygroupingBy(input);
+		Entry<Character, Long> maxEntry = Collections.max(map.entrySet(), Entry.comparingByValue());
+		Entry<Character, Long> minEntry = Collections.min(map.entrySet(), Entry.comparingByValue());
+		System.out.println(map);
+		System.out.println("Min: " + minEntry);
+		System.out.println("Max: " + maxEntry);
 	}
 
 	public static void main(String[] args) {
-		String str = "asdadasdsdqweqwewqfwqf";
-		countCharacter(str).forEach((k, v) -> System.out.println(k + ": " + v));
+		// findMostCharacter();
 	}
 
 }
