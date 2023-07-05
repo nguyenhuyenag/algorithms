@@ -3,14 +3,18 @@ package com.string;
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 // Đếm số lần xuất hiện của ký tự trong chuỗi
 public class CountChar {
-
+	
 	public static Map<Character, Long> findTheMostFrequentByMap(String input) {
 		Map<Character, Long> map = new HashMap<>();
 		for (char key : input.toCharArray()) {
@@ -36,6 +40,16 @@ public class CountChar {
 		System.out.println(map);
 		System.out.println("Min: " + minEntry);
 		System.out.println("Max: " + maxEntry);
+	}
+	
+	public static void useSet(String text) {
+		String[] arr = text.trim().split("\\s+");
+		List<String> list = Arrays.asList(arr);
+		Set<String> set = new HashSet<>(list);
+		for (String word : set) {
+			// StringUtils.countMatches(text, word);
+			System.out.println(word + " => " + Collections.frequency(list, word));
+		}
 	}
 
 	public static void main(String[] args) {
