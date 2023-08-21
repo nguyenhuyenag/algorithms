@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.string;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
  * 
  * VD: "ababab" -> ab{3}
  */
-public class Main {
+public class RepeatedSubstringPattern {
 
 	// Time Limit Exceeded
 	public boolean repeatedSubstringPattern0(String input) {
