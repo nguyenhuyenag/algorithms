@@ -6,10 +6,22 @@ import java.util.Stack;
 
 import org.junit.jupiter.api.Test;
 
-/**
+/*-
  * - https://leetcode.com/problems/monotonic-array/description/
  * 
  * - Kiểm tra mảng đơn điệu (tăng dần hoặc, giảm dần)
+ * 
+	 	def isMonotonic(self, nums: List[int]) -> bool:       
+	        is_increase = nums[-1] >= nums[0]
+	        for i in range(1, len(nums)):
+	            if nums[i] == nums[i - 1]:
+	                continue
+	            if nums[i] > nums[i - 1] and not is_increase:
+	                return False
+	            if nums[i] < nums[i - 1] and is_increase:
+	                return False
+	        
+	        return True
  */
 public class MonotonicArray {
 
