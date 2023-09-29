@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.array;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -6,15 +6,19 @@ import java.util.Stack;
 
 import org.junit.jupiter.api.Test;
 
-public class Main {
+/**
+ * - https://leetcode.com/problems/monotonic-array/description/
+ * 
+ * - Kiểm tra mảng đơn điệu (tăng dần hoặc, giảm dần)
+ */
+public class MonotonicArray {
 
 	public boolean isMonotonic2(int[] nums) {
 		return isMonotonicHelper(nums, true) || isMonotonicHelper(nums, false);
 	}
 
 	private boolean isMonotonicHelper(int[] nums, boolean increasing) {
-		int n = nums.length;
-		for (int i = 1; i < n; i++) {
+		for (int i = 1; i < nums.length; i++) {
 			int comparison = Integer.compare(nums[i - 1], nums[i]);
 			if (comparison == 0) {
 				continue; // Skip equal elements
