@@ -2,76 +2,29 @@ package leetcode;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.Stack;
-
 import org.junit.jupiter.api.Test;
 
 public class Main {
 
-	public boolean isMonotonic2(int[] nums) {
-		return isMonotonicHelper(nums, true) || isMonotonicHelper(nums, false);
-	}
-
-	private boolean isMonotonicHelper(int[] nums, boolean increasing) {
-		int n = nums.length;
-		for (int i = 1; i < n; i++) {
-			int comparison = Integer.compare(nums[i - 1], nums[i]);
-			if (comparison == 0) {
-				continue; // Skip equal elements
-			}
-			if (increasing && comparison > 0) {
-				return false;
-			}
-			if (!increasing && comparison < 0) {
-				return false;
+	public int numIdenticalPairs(int[] nums) {
+		int count = 0;
+		int len = nums.length;
+		for (int i = 0; i < len; i++) {
+			for (int j = i + 1; j < len; j++) {
+				if (i < j && nums[i] == nums[j]) {
+					count++;
+					System.out.println(i + ", " + j);
+				}
 			}
 		}
-		return true;
-	}
-
-	// Check tang dan
-	public boolean checkIMonotonic(int[] nums) {
-		Stack<Integer> stack = new Stack<>();
-		for (int v : nums) {
-			stack.add(v);
-		}
-		int pre = stack.pop();
-		while (!stack.isEmpty()) {
-			int cur = stack.pop();
-			if (pre > cur) {
-				return false;
-			}
-			pre = cur;
-		}
-		return true;
-	}
-
-	// Check giam dan
-	public boolean checkDMonotonic(int[] nums) {
-		Stack<Integer> stack = new Stack<>();
-		for (int v : nums) {
-			stack.add(v);
-		}
-		int pre = stack.pop();
-		while (!stack.isEmpty()) {
-			int cur = stack.pop();
-			if (pre < cur) {
-				return false;
-			}
-			pre = cur;
-		}
-		return true;
-	}
-
-	public boolean isMonotonic(int[] nums) {
-		return checkIMonotonic(nums) | checkDMonotonic(nums);
+		return count;
 	}
 
 	@Test
 	public void test() {
-		// assertEquals(true, isMonotonic(new int[] { 1, 2, 2, 3 }));
-		// assertEquals(true, isMonotonic(new int[] { 6, 5, 4, 4 }));
-		assertEquals(false, isMonotonic(new int[] { 1, 3, 2 }));
+		assertEquals(4, numIdenticalPairs(new int[] { 1, 2, 3, 1, 1, 3 }));
+		// assertEquals(6, numIdenticalPairs(new int[] { 1,1,1,1 }));
+		// assertEquals(0, numIdenticalPairs(new int[] { 1, 2, 3 }));
 	}
 
 }
