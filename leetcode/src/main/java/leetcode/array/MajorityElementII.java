@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.array;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
  * 
  * Đếm số phần tử xuất hiện nhiều hơn [n/3] trong mảng
  */
-public class Main {
+public class MajorityElementII {
 
 	public List<Integer> majorityElement(int[] nums) {
 		List<Integer> ans = new ArrayList<>();

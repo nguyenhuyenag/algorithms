@@ -14,11 +14,19 @@ import java.util.Set;
 
 // Đếm số lần xuất hiện của ký tự trong chuỗi
 public class CountChar {
-	
+
 	public static Map<Character, Long> findTheMostFrequentByMap(String input) {
 		Map<Character, Long> map = new HashMap<>();
 		for (char key : input.toCharArray()) {
 			map.compute(key, (character, count) -> count == null ? 1 : ++count);
+		}
+		return map;
+	}
+
+	public static Map<Character, Long> findTheMostFrequentByMap2(String input) {
+		Map<Character, Long> map = new HashMap<>();
+		for (char val : input.toCharArray()) {
+			map.put(val, map.getOrDefault(val, 0l) + 1);
 		}
 		return map;
 	}
@@ -41,7 +49,7 @@ public class CountChar {
 		System.out.println("Min: " + minEntry);
 		System.out.println("Max: " + maxEntry);
 	}
-	
+
 	public static void useSet(String text) {
 		String[] arr = text.trim().split("\\s+");
 		List<String> list = Arrays.asList(arr);
