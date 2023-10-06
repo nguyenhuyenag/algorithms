@@ -1,15 +1,15 @@
-package leetcode;
+package leetcode.number;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
 /**
- * https://leetcode.com/problems/majority-element-ii/
+ * https://leetcode.com/problems/integer-break/
  * 
- * Đếm số phần tử xuất hiện nhiều hơn [n/3] trong mảng
+ * Tìm số lớn nhất bằng tích những số nguyên dương, có tổng là n
  */
-public class Main {
+public class IntegerBreak {
 
 	public int integerBreak(int n) {
 		if (n < 4) {
