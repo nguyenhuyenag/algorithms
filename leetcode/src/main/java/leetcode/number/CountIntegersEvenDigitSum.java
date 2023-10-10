@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.number;
 
 import static org.junit.Assert.assertEquals;
 
@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
  * 
  * Đếm số phần tử < num và tổng các chữ số là số chẵn
  */
-public class Main {
+public class CountIntegersEvenDigitSum {
 
 	public int sumDigit(int n) {
 		int sum = 0;
@@ -25,6 +25,7 @@ public class Main {
 		for (int i = 2; i <= n; i++) {
 			if (sumDigit(i) % 2 == 0) {
 				count++;
+				// System.out.println(i);
 			}
 		}
 		return count;
