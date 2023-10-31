@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.array;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
  * 
  * Tính: pref[i] = arr[0] ^ arr[1] ^ ... ^ arr[i]
  */
-public class Main {
+public class FindTheOriginalArrayPrefixXor {
 
 	public static int[] findArray0(int[] pref) {
 		int[] ans = new int[pref.length];
