@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.string;
 
 /*-
  * def largestGoodInteger(self, num: str) -> str:
@@ -12,7 +12,7 @@ package leetcode;
 /**
  * https://leetcode.com/problems/largest-3-same-digit-number-in-string/description/
  */
-public class Main {
+public class Largest3SameDigit {
 
 	public boolean isSameDigit(String numberStr) {
 		char firstDigit = numberStr.charAt(0);
