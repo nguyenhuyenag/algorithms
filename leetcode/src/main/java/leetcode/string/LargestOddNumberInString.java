@@ -1,7 +1,5 @@
 package leetcode.string;
 
-import leetcode.Main;
-
 /**
  * Tìm số lẽ lớn nhất là chuỗi con của 1 chuỗi
  * 
@@ -17,13 +15,6 @@ public class LargestOddNumberInString {
 			}
 		}
 		return "";
-	}
-
-	public static void main(String[] args) {
-		Main m = new Main();
-		System.out.println(m.largestOddNumber("35427")); // 35427
-		System.out.println(m.largestOddNumber("52")); // 5
-		System.out.println(m.largestOddNumber("4206")); // ""
 	}
 
 }

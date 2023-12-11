@@ -1,14 +1,12 @@
-package leetcode;
+package leetcode.array;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array/
+ * https://leetcode.com/problems/largest-3-same-digit-number-in-string/description/
  */
-public class Main {
-
-	int val = -1;
+public class ElementAppearingMoreThan25Percent {
 
 	public Integer findSpecialInteger(int[] nums) {
 		int threshold = nums.length / 4;
@@ -25,7 +23,7 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		Main m = new Main();
+		ElementAppearingMoreThan25Percent m = new ElementAppearingMoreThan25Percent();
 		// m.findSpecialInteger(new int[] { 1, 2, 2, 6, 6, 6, 6, 7, 10 });
 		m.findSpecialInteger(new int[] { 1, 1 });
 	}
