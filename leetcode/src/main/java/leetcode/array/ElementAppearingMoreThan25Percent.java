@@ -9,7 +9,7 @@ import java.util.Map;
 public class ElementAppearingMoreThan25Percent {
 
 	public Integer findSpecialInteger(int[] nums) {
-		int threshold = nums.length / 4;
+		int threshold = nums.length / 4; // 25% của nums
 		Map<Integer, Integer> countMap = new HashMap<>();
 		for (int num : nums) {
 			countMap.put(num, countMap.getOrDefault(num, 0) + 1);
