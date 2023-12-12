@@ -1,33 +1,25 @@
 package leetcode;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
- * https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array/
  */
 public class Main {
 
-	int val = -1;
-
-	public Integer findSpecialInteger(int[] nums) {
-		int threshold = nums.length / 4;
-		Map<Integer, Integer> countMap = new HashMap<>();
-		for (int num : nums) {
-			countMap.put(num, countMap.getOrDefault(num, 0) + 1);
-		}
-		for (Map.Entry<Integer, Integer> entry : countMap.entrySet()) {
-			if (entry.getValue() > threshold) {
-				return entry.getKey();
+	public int maxProduct(int[] nums) {
+		int length = nums.length;
+		int max = Integer.MIN_VALUE;
+		for (int i = 0; i < length; i++) {
+			for (int j = i + 1; j < length; j++) {
+				max = Math.max(max, (nums[i] - 1) * (nums[j] - 1));
 			}
 		}
-		return -1;
+		return max;
 	}
 
 	public static void main(String[] args) {
 		Main m = new Main();
-		// m.findSpecialInteger(new int[] { 1, 2, 2, 6, 6, 6, 6, 7, 10 });
-		m.findSpecialInteger(new int[] { 1, 1 });
+		// m.maxProduct(new int[] { 3, 4, 5, 2 });
+		// m.maxProduct(new int[] { 1,5,4,5 });
+		m.maxProduct(new int[] { 3, 7 });
 	}
 
 //	@org.junit.jupiter.api.Test
