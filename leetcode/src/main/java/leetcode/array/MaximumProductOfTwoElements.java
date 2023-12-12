@@ -50,8 +50,8 @@ public class MaximumProductOfTwoElements {
 	}
 
 	public int maxProduct(int[] nums) {
-		int max = Integer.MIN_VALUE;
-		int secondMax = Integer.MIN_VALUE;
+		int max 		= Integer.MIN_VALUE;
+		int secondMax	= Integer.MIN_VALUE;
 		for (int x : nums) {
 			if (x > max) {
 				secondMax = max;
