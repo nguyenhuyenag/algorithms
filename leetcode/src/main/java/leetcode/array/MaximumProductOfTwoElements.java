@@ -1,5 +1,7 @@
 package leetcode.array;
 
+import java.util.PriorityQueue;
+
 /**
  * https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/
  * 
@@ -7,16 +9,30 @@ package leetcode.array;
  */
 public class MaximumProductOfTwoElements {
 
-//	public int maxProduct0(int[] nums) {
-//		int length = nums.length;
-//		int max = Integer.MIN_VALUE;
-//		for (int i = 0; i < length; i++) {
-//			for (int j = i + 1; j < length; j++) {
-//				max = Math.max(max, (nums[i] - 1) * (nums[j] - 1));
-//			}
-//		}
-//		return max;
-//	}
+	/**
+	 * Sử dụng hàng đợi ưu tiên để thêm -x phần tử, khi đó phần tử đầu tiên là phần
+	 * tử lớn nhất
+	 */
+	public int[] getTwoMaximumValue(int[] nums) {
+		int twoMaximumValue[] = { 0, 0 };
+		PriorityQueue<Integer> maxHeap = new PriorityQueue<>();
+		for (int x : nums) {
+			maxHeap.add(-x);
+		}
+
+		/**
+		 * Lấy ra phần từ lớn nhất và lớn nhì
+		 */
+		for (int i = 0; i < 2; i++) {
+			twoMaximumValue[i] = -maxHeap.remove();
+		}
+		return twoMaximumValue;
+	}
+
+	public int maxProduct0(int[] nums) {
+		int[] twoMaximumValue = getTwoMaximumValue(nums);
+		return (twoMaximumValue[0] - 1) * (twoMaximumValue[1] - 1);
+	}
 
 	public int maxProduct(int[] nums) {
 		int max = Integer.MIN_VALUE;
@@ -38,10 +54,5 @@ public class MaximumProductOfTwoElements {
 		// m.maxProduct(new int[] { 1,5,4,5 });
 		m.maxProduct(new int[] { 3, 7 });
 	}
-
-//	@org.junit.jupiter.api.Test
-//	public void test() {
-//		// assertEquals("", largestGoodInteger("101010"));
-//	}
 
 }
