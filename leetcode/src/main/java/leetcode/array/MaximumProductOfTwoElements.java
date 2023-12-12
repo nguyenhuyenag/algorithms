@@ -1,6 +1,8 @@
 package leetcode.array;
 
+import java.util.Comparator;
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 /**
  * https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/
@@ -28,11 +30,19 @@ public class MaximumProductOfTwoElements {
 		}
 		return twoMaximumValue;
 	}
-
+	
 	public int maxProduct0(int[] nums) {
 		int[] twoMaximumValue = getTwoMaximumValue(nums);
 		return (twoMaximumValue[0] - 1) * (twoMaximumValue[1] - 1);
 	}
+	
+	public int maxProduct1(int[] nums) {
+        Queue<Integer> queue = new PriorityQueue<>(Comparator.naturalOrder());
+        for (int num : nums) {
+            queue.add(num);
+        }
+        return (queue.poll() - 1) * (queue.poll() - 1);
+    }
 
 	public int maxProduct(int[] nums) {
 		int max = Integer.MIN_VALUE;
