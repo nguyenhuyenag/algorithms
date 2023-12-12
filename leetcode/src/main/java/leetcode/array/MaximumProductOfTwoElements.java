@@ -50,9 +50,9 @@ public class MaximumProductOfTwoElements {
 
 	public static void main(String[] args) {
 		MaximumProductOfTwoElements m = new MaximumProductOfTwoElements();
-		// m.maxProduct(new int[] { 3, 4, 5, 2 });
-		// m.maxProduct(new int[] { 1,5,4,5 });
 		m.maxProduct(new int[] { 3, 7 });
+		// m.maxProduct(new int[] { 1,5,4,5 });
+		// m.maxProduct(new int[] { 3, 4, 5, 2 });
 	}
 
 }
