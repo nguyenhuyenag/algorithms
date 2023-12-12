@@ -12,6 +12,8 @@ import java.util.Queue;
 public class MaximumProductOfTwoElements {
 
 	/**
+	 * CÁCH 1:
+	 * 
 	 * Sử dụng hàng đợi ưu tiên để thêm -x phần tử, khi đó phần tử đầu tiên là phần
 	 * tử lớn nhất
 	 */
@@ -30,19 +32,22 @@ public class MaximumProductOfTwoElements {
 		}
 		return twoMaximumValue;
 	}
-	
+
 	public int maxProduct0(int[] nums) {
 		int[] twoMaximumValue = getTwoMaximumValue(nums);
 		return (twoMaximumValue[0] - 1) * (twoMaximumValue[1] - 1);
 	}
-	
+
+	/**
+	 * CÁCH 2
+	 */
 	public int maxProduct1(int[] nums) {
-        Queue<Integer> queue = new PriorityQueue<>(Comparator.naturalOrder());
-        for (int num : nums) {
-            queue.add(num);
-        }
-        return (queue.poll() - 1) * (queue.poll() - 1);
-    }
+		Queue<Integer> queue = new PriorityQueue<>(Comparator.naturalOrder());
+		for (int num : nums) {
+			queue.add(num);
+		}
+		return (queue.poll() - 1) * (queue.poll() - 1);
+	}
 
 	public int maxProduct(int[] nums) {
 		int max = Integer.MIN_VALUE;
@@ -51,8 +56,8 @@ public class MaximumProductOfTwoElements {
 			if (x > max) {
 				secondMax = max;
 				max = x;
-			} else if (x > secondMax) {
-				secondMax = x;
+			} else {
+				secondMax = Math.max(secondMax, x);
 			}
 		}
 		return (max - 1) * (secondMax - 1);
