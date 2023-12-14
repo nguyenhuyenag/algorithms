@@ -1,8 +1,7 @@
 package leetcode.datetime;
 
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*-
  * You are given a string time in the form of hh:mm, where some of the digits in

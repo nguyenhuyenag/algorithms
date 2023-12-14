@@ -1,8 +1,7 @@
 package leetcode.number;
 
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*-
  * Ta sẽ tạo 1 mảng gồm n số ugly từ số ugly đầu tiên là 1, bằng cách nhân lần lượt cho 2, 3, 5

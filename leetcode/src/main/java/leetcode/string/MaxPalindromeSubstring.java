@@ -1,8 +1,7 @@
 package leetcode.string;
 
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Given a string s, return the longest palindromic substring in s.

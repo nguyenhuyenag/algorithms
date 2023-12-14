@@ -1,8 +1,7 @@
 package leetcode.number;
 
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*-
  * - Quy tắc viết số La Mã là phải cộng, trái trừ

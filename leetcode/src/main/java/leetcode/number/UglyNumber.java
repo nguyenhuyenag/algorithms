@@ -1,8 +1,7 @@
 package leetcode.number;
 
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*-
  * Write a program to check whether a given number is an ugly number.

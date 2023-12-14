@@ -1,8 +1,7 @@
 package leetcode.array;
 
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 // https://leetcode.com/problems/minimum-value-to-get-positive-step-by-step-sum/
 public class MinStartValue {

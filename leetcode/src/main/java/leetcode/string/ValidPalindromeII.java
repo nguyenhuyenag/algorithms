@@ -1,8 +1,7 @@
 package leetcode.string;
 
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*-
  * Given a non-empty string s, you may delete at most one character. Judge

@@ -1,12 +1,12 @@
 package leetcode.array;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.Queue;
-
-import org.junit.Test;
 
 /*-
  * Find the k-th largest element in an unsorted array. Note that it is the k-th

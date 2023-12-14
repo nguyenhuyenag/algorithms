@@ -1,8 +1,8 @@
 package leetcode.number;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * https://leetcode.com/problems/count-integers-with-even-digit-sum/

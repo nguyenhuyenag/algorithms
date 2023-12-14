@@ -1,12 +1,12 @@
 package leetcode.array;
 
-import static org.junit.Assert.assertArrayEquals;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.junit.Test;
 
 /*-
  * Tim vi tri cua 2 phan tu trong mang, sao cho tong cua chung = n

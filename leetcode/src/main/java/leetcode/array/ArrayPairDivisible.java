@@ -2,13 +2,11 @@
 
 package leetcode.array;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import org.junit.Test;
 
 /**
  * https://leetcode.com/problems/check-if-array-pairs-are-divisible-by-k/
@@ -53,7 +51,7 @@ public class ArrayPairDivisible {
 		return false;
 	}
 
-	@Test
+	@org.junit.jupiter.api.Test
 	public void test() {
 		assertEquals(true, canArrange(new int[] { -10, 10 }, 2));
 		assertEquals(true, canArrange(new int[] { 1, 2, 3, 4, 5, 10, 6, 7, 8, 9 }, 5));
