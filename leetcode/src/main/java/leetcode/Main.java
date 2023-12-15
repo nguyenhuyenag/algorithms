@@ -31,17 +31,15 @@ public class Main {
 				ans = repeatedString(ans, Character.getNumericValue(c));
 			}
 		}
-		// System.out.println(Character.toString(ans.charAt(k - 1)));
+		System.out.println(ans);
 		return Character.toString(ans.charAt(k + 1));
 	}
 
 	public static void main(String[] args) {
 		Main m = new Main();
-		m.decodeAtIndex("ha22", 5); // h
-		// m.decodeAtIndex("leet2code3", 10); // o
+		// m.decodeAtIndex("ha22", 5); // h
+		m.decodeAtIndex("leet2code3", 10); // o
 		// m.decodeAtIndex("a2345678999999999999999", 1); // a
-		// char t = '9';
-		// System.out.println(t - '2');
 	}
 
 }
