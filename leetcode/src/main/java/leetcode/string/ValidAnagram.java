@@ -2,7 +2,8 @@ package leetcode.string;
 
 import org.junit.jupiter.api.Assertions;
 
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -14,21 +15,20 @@ import java.util.Queue;
 public class ValidAnagram {
 
     public boolean isAnagram(String s1, String s2) {
-        // Check if the lengths of both strings are equal
         if (s1.length() != s2.length()) {
             return false;
         }
-
-        // Convert strings to char arrays
-        char[] charArray1 = s1.toCharArray();
-        char[] charArray2 = s2.toCharArray();
-
-        // Sort char arrays
-        Arrays.sort(charArray1);
-        Arrays.sort(charArray2);
-
-        // Compare sorted char arrays
-        return Arrays.equals(charArray1, charArray2);
+        Map<Character, Integer> charCount = new HashMap<>();
+        for (char c : s1.toCharArray()) {
+            charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+        }
+        for (char c : s2.toCharArray()) {
+            if (!charCount.containsKey(c) || charCount.get(c) == 0) {
+                return false; // Ký tự không xuất hiện trong chuỗi s1 hoặc đã hết lượt sử dụng
+            }
+            charCount.put(c, charCount.get(c) - 1);
+        }
+        return true;
     }
 
     public boolean isAnagram2(String s1, String s2) {
