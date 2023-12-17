@@ -1,15 +1,15 @@
 package leetcode.string;
 
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.HashMap;
 import java.util.Map;
-import java.util.PriorityQueue;
 import java.util.Queue;
+import java.util.HashMap;
+import java.util.PriorityQueue;
 
 /**
  * https://leetcode.com/problems/valid-anagram/
- * <p>
+ *
  * Nếu hai chuỗi có các phần tử bằng nhau thì bằng nhau (không tính thứ tự)
  */
 public class ValidAnagram {
@@ -23,8 +23,9 @@ public class ValidAnagram {
             charCount.put(c, charCount.getOrDefault(c, 0) + 1);
         }
         for (char c : s2.toCharArray()) {
+            // Ký tự không xuất hiện trong chuỗi s1 hoặc đã trừ hết lần xuất hiện
             if (!charCount.containsKey(c) || charCount.get(c) == 0) {
-                return false; // Ký tự không xuất hiện trong chuỗi s1 hoặc đã hết lượt sử dụng
+                return false;
             }
             charCount.put(c, charCount.get(c) - 1);
         }
@@ -51,8 +52,8 @@ public class ValidAnagram {
 
     @org.junit.jupiter.api.Test
     public void doTest() {
-        Assertions.assertEquals(false, isAnagram("cat", "rat"));
-        Assertions.assertEquals(true, isAnagram("anagram", "nagaram"));
+        assertEquals(false, isAnagram("cat", "rat"));
+        assertEquals(true, isAnagram("anagram", "nagaram"));
     }
 
 }

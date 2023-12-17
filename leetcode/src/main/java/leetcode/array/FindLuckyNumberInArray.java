@@ -1,18 +1,18 @@
-package leetcode;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+package leetcode.array;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * https://leetcode.com/problems/find-lucky-integer-in-an-array/
  *
  * Số may mắn (lucky number) là số mà số lần xuất hiện của nó bằng chính nó
  */
-public class Main {
+public class FindLuckyNumberInArray {
 
     public int findLucky(int[] arr) {
         int maxFrequency = -1;
