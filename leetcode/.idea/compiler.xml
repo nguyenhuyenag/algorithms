@@ -7,8 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="intellij-ide" />
         <module name="leetcode" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="intellij-project" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

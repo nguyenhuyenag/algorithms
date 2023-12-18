@@ -32,8 +32,8 @@ public class FindLuckyNumberInArray {
     @Test
     public void doTest() {
         assertEquals(2, findLucky(new int[]{2, 2, 3, 4}));
-        // assertEquals(-1, findLucky(new int[]{2, 2, 2, 3, 3}));
-        // assertEquals(3, findLucky(new int[]{1, 2, 2, 3, 3, 3}));
+        assertEquals(-1, findLucky(new int[]{2, 2, 2, 3, 3}));
+        assertEquals(3, findLucky(new int[]{1, 2, 2, 3, 3, 3}));
     }
 
 }
