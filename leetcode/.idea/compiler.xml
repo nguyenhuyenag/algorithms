@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="intellij-ide" />
         <module name="leetcode" />
+        <module name="algorithm" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

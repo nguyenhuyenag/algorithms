@@ -1,10 +1,9 @@
 package com.number;
 
-import static org.junit.Assert.assertEquals;
-
 import java.math.BigInteger;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class CongSoLon {
 
@@ -48,7 +47,7 @@ public class CongSoLon {
 	public void testMethod() {
 		String n1 = "555555555555959595959526147812314787946914";
 		String n2 = "121212121564644847947916161616136131313165464";
-		assertEquals(test(n1, n2), add(n1, n2));
+		Assertions.assertEquals(test(n1, n2), add(n1, n2));
 	}
 
 }
