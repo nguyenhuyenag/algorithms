@@ -2,22 +2,27 @@ package leetcode;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * https://leetcode.com/problems/count-number-of-homogenous-substrings/
+ */
 public class Main {
 
     @Test
     public void doTest() {
-        Queue min =  new PriorityQueue<>();
-        int[] nums = new int[]{5, 6, 2, 7, 4};
-        for (int v : nums) {
-            // min.add(v);
-            min.add(v);
+        // assertEquals(13, countHomogenous("abbcccaa"));
+        String input = "aaazaaaaaaabbbbbbbcccccddddeeeff";
+        int[] charCount = new int[26];
+        for (char currentChar : input.toCharArray()) {
+            charCount[currentChar - 'a'] += 1;
         }
-        System.out.println(min.poll());
+        for (int i = 0; i < charCount.length; i++) {
+            if (charCount[i] > 0) {
+                System.out.println((char) (i + 'a') + "->" + charCount[i]);
+            }
+        }
+        System.out.println(Arrays.toString(charCount));
     }
 
 }
