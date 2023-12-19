@@ -1,12 +1,13 @@
 package codewars.incomplete;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.junit.Test;
+
 
 // https://www.codewars.com/kata/5819f1c3c6ab1b2b28000624
 public class BigPadovanNumber {

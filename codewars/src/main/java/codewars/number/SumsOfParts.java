@@ -1,10 +1,11 @@
 package codewars.number;
 
-import static org.junit.Assert.assertArrayEquals;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.Arrays;
-
-import org.junit.Test;
 
 // https://www.codewars.com/kata/5ce399e0047a45001c853c2b
 public class SumsOfParts {

@@ -1,8 +1,7 @@
 package codewars.string;
 
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 // https://www.codewars.com/kata/55c45be3b2079eccff00010f
 public class YourOrderPlease {

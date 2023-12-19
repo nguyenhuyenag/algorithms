@@ -1,10 +1,9 @@
 package codewars.number;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
-
-import org.junit.Test;
 
 // https://www.codewars.com/kata/550498447451fbbd7600041c
 public class AreTheyTheSame {

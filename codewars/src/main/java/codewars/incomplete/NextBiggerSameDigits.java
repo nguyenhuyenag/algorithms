@@ -1,10 +1,8 @@
 package codewars.incomplete;
 
-import static org.junit.Assert.assertEquals;
-
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.Arrays;
-
-import org.junit.Test;
 
 // https://www.codewars.com/kata/55983863da40caa2c900004e
 public class NextBiggerSameDigits {

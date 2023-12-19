@@ -1,8 +1,7 @@
 package codewars.string;
 
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 // https://www.codewars.com/kata/5b728f801db5cec7320000c7
 public class SimpleLetterRemoval {
