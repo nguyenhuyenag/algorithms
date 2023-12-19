@@ -1,7 +1,7 @@
 # Folder
 */target/
-*/.settings/
 */.idea/
+*/.settings/
 
 # Package Files
 *.jar
@@ -9,18 +9,18 @@
 *.nar
 *.ear
 *.zip
-*.tar.gz
 *.rar
+*.tar.gz
 
 # File
-*.class
-*.log
-*.classpath
-*.project
-*.properties
 *.MF
+*.log
+*.class
 *.prefs
-algorithm/.factorypath
+*.project
+*.classpath
+*.properties
 codewars/.factorypath
 leetcode/.factorypath
+algorithm/.factorypath
 algorithm/.factorypath

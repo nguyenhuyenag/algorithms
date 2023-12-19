@@ -2,18 +2,15 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="leetcode" />
+        <module name="codewars" />
+        <module name="intellij-ide" />
+        <module name="algorithm" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="algorithm" target="17" />
-      <module name="intellij-ide" target="1.5" />
-      <module name="intellij-project" target="1.5" />
-      <module name="leetcode" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
