@@ -9,9 +9,7 @@ import java.util.Queue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * https://leetcode.com/problems/buy-two-chocolates/
- *
- * Chọn 2 số a, b trong mảng sao cho tổng <= x cho trước
+ * https://leetcode.com/problems/valid-triangle-number/
  */
 public class LeetMain {
 
