@@ -1,21 +1,19 @@
-package codewars;
+package codewars.string;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
+ * Chủ đề: Mảng đánh dấu
+ *
  * https://www.codewars.com/kata/54bf1c2cd5b56cc47f0007a1/
+ *
+ * Có bao nhiêu ký tự (không phân biệt hoa thường) xuất hiện nhiều hơn 1 lần trong chuỗi?
  */
-public class WarMain {
+public class CoutingDuplicates {
 
-    public static int duplicateCount(String text) {
-        int count = 0;
 //        int[] visited = new int[26 * 2]; // 26 chữ thường + 26 chữ hoa
 //        for (char c : text.toCharArray()) {
 //            if (Character.isLetter(c)) {
@@ -36,7 +34,7 @@ public class WarMain {
 //        }
 //        System.out.println(Arrays.toString(visited));
 
-        // Cach 2
+    // Cach 2
 //        Map<Character, Integer> charCount = new HashMap<>();
 //        for (char c : text.toCharArray()) {
 //            if (Character.isLetter(c)) {
@@ -51,31 +49,32 @@ public class WarMain {
 //        System.out.println(charCount);
 //        System.out.println(count);
 
-        // Cach 3
-        // input = input.toLowerCase(); // Chuyển đổi chuỗi thành chữ thường để không phân biệt chữ hoa và chữ thường
+    /**
+     * Nếu currentChar là ký tự 'a', giá trị ASCII của 'a' là 97. Do đó, charCount[97] sẽ được tăng lên 1.
+     *
+     * Nếu currentChar là ký tự 'A', giá trị ASCII của 'A' là 65. Do đó, charCount[65] sẽ được tăng lên 1.
+     */
+    public static int duplicateCount(String text) {
+        int count = 0;
         int[] charCount = new int[256]; // Sử dụng mảng để đếm tần suất xuất hiện của các ký tự ASCII
-
-        for (char c : text.toLowerCase().toCharArray()) {
-            charCount[c]++;
+        text = text.toLowerCase();
+        for (char currentChar : text.toCharArray()) {
+            charCount[currentChar]++;
         }
-
-        // int duplicateCount = 0;
-        for (int c : charCount) {
-            if (c > 1) {
+        for (int val : charCount) {
+            if (val > 1) {
                 count++;
             }
         }
-
         return count;
     }
 
     @Test
     public void abcdeReturnsZero() {
-//         assertEquals(0, duplicateCount("abcde"));
-//         assertEquals(1, duplicateCount("abcdea"));
-//         assertEquals(1, duplicateCount("indivisibility"));
-//        assertEquals(26, duplicateCount("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZReturnsTwentySix"));
-        duplicateCount("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZReturnsTwentySix");
+        assertEquals(0, duplicateCount("abcde"));
+        assertEquals(1, duplicateCount("abcdea"));
+        assertEquals(1, duplicateCount("indivisibility"));
+        assertEquals(26, duplicateCount("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZReturnsTwentySix"));
     }
 
 }

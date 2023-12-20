@@ -13,43 +13,27 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class LeetMain {
 
-    public int buyChoco0(int[] nums, int target) {
-        Arrays.sort(nums);
-        int l = 0;
-        int r = nums.length - 1;
-        while (l < r) {
-            int sum = nums[l] + nums[r];
-            if (sum <= target) {
-                // Tìm thấy cặp số có tổng không vượt quá target
-                return target - sum;
-            } else {
-                // Giảm tổng lên bằng cách di chuyển chỉ số right sang trái
-                r--;
-            }
-        }
-        // Trường hợp không tìm thấy cặp số nào
-        return target;
-    }
+    public static String solution(String str) {
+        char[] arr = str.toCharArray();
+        int n = arr.length;
 
-    public int buyChoco1(int[] prices, int money) {
-        Arrays.sort(prices);
-        return prices[0] + prices[1] <= money ? money - (prices[0] + prices[1]) : money;
-    }
+        int left = 0;
+        int right = n - 1;
 
-    public int buyChoco(int[] prices, int money) {
-        Queue<Integer> queue = new PriorityQueue<>();
-        for (int p : prices) {
-            queue.add(p);
+        while (left < right) {
+            char tmp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = tmp;
+            left++;
+            right--;
         }
-        int total = queue.poll() + queue.poll();
-        return total <= money ? money - total : money;
+
+        return new String(arr);
     }
 
     @Test
     public void doTest() {
-        // assertEquals(0, buyChoco(new int[]{1, 2, 2}, 3));
-        // assertEquals(3, buyChoco(new int[]{3, 2, 3}, 3));
-        assertEquals(3, buyChoco(new int[]{98, 54, 6, 34, 66, 63, 52, 39}, 62)); // 3
+        assertEquals("dlrow", solution("world"));
     }
 
 }
