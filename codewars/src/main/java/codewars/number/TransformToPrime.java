@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 // https://www.codewars.com/kata/5a946d9fba1bb5135100007c
+
 public class TransformToPrime {
 
 	public static boolean isPrime(int n) {
