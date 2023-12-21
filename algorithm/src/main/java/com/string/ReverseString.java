@@ -2,6 +2,10 @@ package com.string;
 
 public class ReverseString {
 
+	public static String reverseString0(String str) {
+		return new StringBuilder(str).reverse().toString();
+	}
+
 	public static String reverseString1(String str) {
 		if (str.isEmpty()) {
 			return str;
@@ -14,9 +18,9 @@ public class ReverseString {
 		int left = 0;
 		int right = chars.length - 1;
 		while (left < right) {
-			char temp = chars[left];
+			char tmp = chars[left];
 			chars[left] = chars[right];
-			chars[right] = temp;
+			chars[right] = tmp;
 			left++;
 			right--;
 		}

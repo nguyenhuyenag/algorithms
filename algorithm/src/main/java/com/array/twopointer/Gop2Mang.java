@@ -3,6 +3,8 @@ package com.array.twopointer;
 import java.util.Arrays;
 
 /**
+ * Chủ đề: Two pointer
+ *
  * Gộp 2 mảng tăng dần
  */
 public class Gop2Mang {

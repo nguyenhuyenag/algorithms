@@ -1,4 +1,4 @@
-package codewars.number;
+package com.bit;
 
 // Đếm số bit 1 trong chuỗi nhị phân được tạo bởi số nguyên n
 public class BitCounting {

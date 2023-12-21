@@ -1,4 +1,4 @@
-package codewars.number;
+package codewars.array;
 
 import java.util.Arrays;
 
