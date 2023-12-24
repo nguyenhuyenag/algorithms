@@ -2,10 +2,10 @@ package codewars;
 
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.StringJoiner;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -16,7 +16,15 @@ public class WarMain {
 
     @Test
     public void toTest() {
-        System.out.println(2 == 2.0);
+        String s = "This is an example!";
+        int poiter = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (Character.isWhitespace(s.charAt(i))) {
+                System.out.println(s.substring(poiter, i));
+                poiter = i + 1;
+            }
+        }
+        System.out.println(s.substring(poiter));
     }
 
 }

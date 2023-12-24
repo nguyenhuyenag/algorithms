@@ -1,7 +1,5 @@
 package leetcode.array;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -49,9 +47,9 @@ public class BuyTwoChocolates {
 
     @org.junit.jupiter.api.Test
     public void doTest() {
-        // assertEquals(0, buyChoco(new int[]{1, 2, 2}, 3));
+        assertEquals(0, buyChoco(new int[]{1, 2, 2}, 3));
         // assertEquals(3, buyChoco(new int[]{3, 2, 3}, 3));
-        assertEquals(3, buyChoco(new int[]{98, 54, 6, 34, 66, 63, 52, 39}, 62)); // 3
+        // assertEquals(3, buyChoco(new int[]{98, 54, 6, 34, 66, 63, 52, 39}, 62)); // 3
     }
 
 }
