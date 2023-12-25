@@ -2,38 +2,44 @@ package leetcode;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.PriorityQueue;
-import java.util.Queue;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * https://leetcode.com/problems/valid-triangle-number/
+ * https://leetcode.com/problems/water-bottles/
+ *
+ * Cho n chai nước mà số m. Sau khi uống hết, thì m chai rỗng sẽ đổi được 1 chai mới.
+ * Tìm số chai nước có thể uống
  */
 public class LeetMain {
 
-    public static String solution(String str) {
-        char[] arr = str.toCharArray();
-        int n = arr.length;
+    public static int numWaterBottles(int soChai, int soChaiDoi) {
+        int totalDrinks = 0;
 
-        int left = 0;
-        int right = n - 1;
+        // Initial drinks from full bottles
+        totalDrinks += soChai;
 
-        while (left < right) {
-            char tmp = arr[left];
-            arr[left] = arr[right];
-            arr[right] = tmp;
-            left++;
-            right--;
+        while (soChai >= soChaiDoi) {
+            int soChaiMoi = soChai / soChaiDoi;         // Đổi chai mới
+            totalDrinks += soChaiMoi;                   // Uống hết
+            soChai = soChaiMoi + soChai % soChaiDoi;    // Remaining bottles after exchange
         }
 
-        return new String(arr);
+        return totalDrinks;
     }
 
     @Test
     public void doTest() {
-        assertEquals("dlrow", solution("world"));
+        // assertEquals(true, backspaceCompare("ab#c", "ad#c"));
+        int n = 15;
+        int m = 4;
+        int drink = n;
+        System.out.println("Đổi = " + n / m);
+        System.out.println("Dư = " + n % m);
+        int count = 0;
+        while (count < m) {
+            count++;
+            System.out.println("count = " + count);
+        }
     }
 
 }
