@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*-
+ * Chủ đề: Mảng đánh dấu, indexOf()
+ *
  * https://www.codewars.com/kata/54b42f9314d9229fd6000d9c/
  *
  * Mã hóa chuỗi, nếu xuất hiện 1 lần là '(', từ 2 lần thì là ')'
@@ -41,7 +43,8 @@ public class DuplicateEncoder {
         word = word.toLowerCase();
         StringBuilder ans = new StringBuilder();
         for (char c : word.toCharArray()) {
-            ans.append(word.indexOf(c) == word.lastIndexOf(c) ? "(" : ")");
+            boolean single = word.indexOf(c) == word.lastIndexOf(c);
+            ans.append(single ? "(" : ")");
         }
         return ans.toString();
     }
