@@ -1,4 +1,4 @@
-package codewars;
+package codewars.string;
 
 import org.junit.jupiter.api.Test;
 
@@ -14,15 +14,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *      "Success"  =>  ")())())"
  *      "(( @"     =>  "))(("
  */
-public class WarMain {
+public class DuplicateEncoder {
 
-    public static String encode(String word) {
+    public static String encode0(String word) {
         word = word.toLowerCase();
         int[] charCount = new int[256];
+        // Đanh dấu
         for (char c : word.toCharArray()) {
             charCount[c]++;
         }
         StringBuilder ans = new StringBuilder();
+        // Ghép chuỗi kết quả
         for (char c : word.toCharArray()) {
             if (charCount[c] > 0) {
                 if (charCount[c] == 1) {
@@ -35,13 +37,21 @@ public class WarMain {
         return ans.toString();
     }
 
+    public static String encode(String word) {
+        word = word.toLowerCase();
+        StringBuilder ans = new StringBuilder();
+        for (char c : word.toCharArray()) {
+            ans.append(word.indexOf(c) == word.lastIndexOf(c) ? "(" : ")");
+        }
+        return ans.toString();
+    }
+
     @Test
     public void doTest() {
-        // assertEquals("(((", encode("din"));
-        // assertEquals("()()()", encode("recede"));
-        // assertEquals(")())())", encode("Success"));
-
-        // assertEquals(")()())()(()()(", encode("Prespecialized"));
+        assertEquals("(((", encode("din"));
+        assertEquals("()()()", encode("recede"));
+        assertEquals(")())())", encode("Success"));
+        assertEquals(")()())()(()()(", encode("Prespecialized"));
         assertEquals("))))())))", encode("   ()(   "));
     }
 
