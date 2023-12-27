@@ -4,11 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * https://leetcode.com/problems/largest-3-same-digit-number-in-string/description/
+ * https://leetcode.com/problems/largest-3-same-digit-number-in-string/
  */
 public class ElementAppearingMoreThan25Percent {
 
-	public Integer findSpecialInteger(int[] nums) {
+	public static int findSpecialInteger(int[] nums) {
 		int threshold = nums.length / 4; // 25% của nums
 		Map<Integer, Integer> countMap = new HashMap<>();
 		for (int num : nums) {
@@ -23,9 +23,8 @@ public class ElementAppearingMoreThan25Percent {
 	}
 
 	public static void main(String[] args) {
-		ElementAppearingMoreThan25Percent m = new ElementAppearingMoreThan25Percent();
-		// m.findSpecialInteger(new int[] { 1, 2, 2, 6, 6, 6, 6, 7, 10 });
-		m.findSpecialInteger(new int[] { 1, 1 });
+		findSpecialInteger(new int[] { 1, 1 });
+		// findSpecialInteger(new int[] { 1, 2, 2, 6, 6, 6, 6, 7, 10 });
 	}
 
 //	@org.junit.jupiter.api.Test

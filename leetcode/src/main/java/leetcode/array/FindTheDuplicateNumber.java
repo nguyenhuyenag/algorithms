@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.array;
 
 import org.junit.jupiter.api.Test;
 
@@ -7,9 +7,19 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
+ * Mảng đánh dấu
+ *
  * https://leetcode.com/problems/find-the-duplicate-number/
  */
-public class LeetMain {
+public class FindTheDuplicateNumber {
+
+    public int findDuplicate0(int[] nums) {
+        int x = 0;
+        for (int a : nums) {
+            x ^= a;
+        }
+        return x;
+    }
 
     public int findDuplicate(int[] nums) {
         int max = Arrays.stream(nums).max().getAsInt();
