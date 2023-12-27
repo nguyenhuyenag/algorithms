@@ -13,6 +13,19 @@ public class NumberUtils {
 		}
 		return s; // return Integer.toBinaryString(n);
 	}
+
+	public static String toBinary0(int sum) {
+		StringBuilder binary = new StringBuilder();
+		if (sum == 0) {
+			return "0";
+		}
+		while (sum > 0) {
+			int remainder = sum % 2;
+			binary.insert(0, remainder);
+			sum /= 2;
+		}
+		return binary.toString();
+	}
 	
 	/**
 	 * Nhị phân => thập phân
