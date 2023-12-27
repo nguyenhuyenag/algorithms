@@ -36,6 +36,8 @@ public class FindTheDuplicateNumber {
         return 0;
     }
 
+
+
     @Test
     public void doTest() {
         assertEquals(2, findDuplicate(new int[]{1, 3, 4, 2, 2}));
