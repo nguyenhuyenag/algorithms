@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.array;
 
 import org.junit.jupiter.api.Test;
 
@@ -6,8 +6,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * https://leetcode.com/problems/count-and-say/
+ *
+ * 3322251  ->  23 32 15 11   ->   23321511
  */
-public class LeetMain {
+public class CountAndSay {
 
     public String countAndSay(int n) {
         if (n <= 0) {
