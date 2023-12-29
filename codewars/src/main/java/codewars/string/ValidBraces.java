@@ -31,6 +31,22 @@ public class ValidBraces {
         return input.isEmpty();
     }
 
+//    public boolean isValid1(String braces) {
+//        Stack<Character> stack = new Stack<>();
+//        for (char c : braces.toCharArray()) {
+//            switch(c) {
+//                case '(': stack.push(')'); break;
+//                case '[': stack.push(']'); break;
+//                case '{': stack.push('}'); break;
+//                default:
+//                    if (stack.isEmpty() || !stack.pop().equals(c)) {
+//                        return false;
+//                    }
+//            }
+//        }
+//        return stack.isEmpty();
+//    }
+
     public boolean isClosing(char open, char close) {
         return (open == '{' && close == '}') //
                 || (open == '(' && close == ')') //

@@ -1,14 +1,21 @@
-package codewars;
+package codewars.array;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/**
- * https://www.codewars.com/kata/57675f3dedc6f728ee000256/
+/*-
+ - https://www.codewars.com/kata/576757b1df89ecf5bd00073b/
+
+ - In hình tháp
+        "     *     ",
+        "    ***    ",
+        "   *****   ",
+        "  *******  ",
+        " ********* ",
+        "***********"
  */
-public class WarMain {
+public class BuildTower {
 
     public static String[] towerBuilder(int n) {
         String[] ans = new String[n];
