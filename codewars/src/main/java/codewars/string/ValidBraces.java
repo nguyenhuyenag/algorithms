@@ -1,4 +1,4 @@
-package codewars;
+package codewars.string;
 
 import org.junit.jupiter.api.Test;
 
@@ -8,8 +8,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * https://www.codewars.com/kata/5277c8a221e209d3f6000b56/
+ *
+ * Validate dấu ngoặc
+ *
+ *      "(){}[]"   =>  True
+ *      "([{}])"   =>  True
+ *      "(}"       =>  False
+ *      "[(])"     =>  False
+ *      "[({})](]" =>  False
+ *
+ * Xem thêm 'ValidParentheses.java'
  */
-public class WarMain {
+public class ValidBraces {
 
     public boolean isValid0(String input) {
         int len = input.length();
