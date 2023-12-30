@@ -1,15 +1,19 @@
-package leetcode;
+package leetcode.array;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/**
+/*-
  * https://leetcode.com/problems/redistribute-characters-to-make-all-strings-equal/
+ *
+ * Input: words = ["abc","aabc","bc"]
+ * Output: true
+ * Explanation: Move the first 'a' in words[1] to the front of words[2],
+ * to make words[1] = "abc" and words[2] = "abc".
+ * All the strings are now equal to "abc", so return true.
  */
-public class LeetMain {
+public class RedistributeCharactersToMakeAllStringsEqual {
 
     public boolean makeEqual(String[] words) {
         String join = String.join("", words);

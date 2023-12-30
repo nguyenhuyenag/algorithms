@@ -10,15 +10,14 @@ public class TowerHaNoi {
     public static void main(String[] args) {
         List<List<Integer>> towers = new ArrayList<>();
 
-        int n = 3; // Number of discs
-
         // Initialize the towers
         for (int i = 0; i < 3; i++) {
             towers.add(new ArrayList<>());
         }
 
+        int nDisc = 3; // Number of discs
         // Add discs to the first tower
-        for (int i = n; i > 0; i--) {
+        for (int i = nDisc; i > 0; i--) {
             towers.get(0).add(i);
         }
 
@@ -26,23 +25,20 @@ public class TowerHaNoi {
         printTowers(towers);
 
         // Move discs from tower 1 to tower 3 using tower 2 as auxiliary
-        moveTower(n, towers, 0, 2, 1);
+        moveTower(nDisc, towers, 0, 1, 2);
     }
 
-    private static void moveTower(int n, List<List<Integer>> towers, int A, int C, int B) {
+    private static void moveTower(int n, List<List<Integer>> towers, int A, int B, int C) {
         if (n > 0) {
-            // Move n-1 discs from source to auxiliary tower using destination tower as auxiliary
-            moveTower(n - 1, towers, A, B, C);
-
-            // Move the nth disc from source to destination
+            // Dời n-1 đĩa từ A qua B (dùng C là trung gian)
+            moveTower(n - 1, towers, A, C, B);
+            // Dời n đĩa từ A qua C
             int disc = towers.get(A).remove(towers.get(A).size() - 1);
             towers.get(C).add(disc);
-
             // Print the current state of towers
             printTowers(towers);
-
-            // Move the n-1 discs from auxiliary tower to destination using source tower as auxiliary
-            moveTower(n - 1, towers, B, C, A);
+            // Dời n-1 đĩa từ B qua C (dùng A làm trung gian)
+            moveTower(n - 1, towers, B, A, C);
         }
     }
 
