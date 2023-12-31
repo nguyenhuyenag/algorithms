@@ -1,8 +1,5 @@
-package leetcode;
+package leetcode.array;
 
-
-import java.util.HashMap;
-import java.util.Map;
 
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *      aa      ->      ""      ->      0
  *      abca    ->      bc      ->      2
  */
-public class LeetMain {
+public class LargestSubstringBetweenTwoEqualCharacters {
 
     public int maxLengthBetweenEqualCharacters(String s) {
         int maxLength = -1;
