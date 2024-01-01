@@ -22,7 +22,7 @@ public class CountAndSay {
         return result;
     }
 
-    private static String say0(String str) {
+    public static String say0(String str) {
         StringBuilder result = new StringBuilder();
         int count = 1;
         for (int i = 0; i < str.length(); i++) {
