@@ -2,10 +2,8 @@ package codewars.string;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
-
 // https://www.codewars.com/kata/58f5c63f1e26ecda7e000029
+@SuppressWarnings("unused")
 public class MexicanWave {
 
 	public String[] wave(String s) {
@@ -29,32 +27,37 @@ public class MexicanWave {
 	public void basicTest4() {
 		String[] result = new String[] { "Two words", "tWo words", "twO words", "two Words", "two wOrds", "two woRds",
 				"two worDs", "two wordS" };
-		// assertArrayEquals("it should return '" + Arrays.toString(result) + "'", result, wave("two words"));
+		// assertArrayEquals("it should return '" + Arrays.toString(result) + "'",
+		// result, wave("two words"));
 	}
 
 	@Test
 	public void basicTest1() {
 		String[] result = new String[] { "Hello", "hEllo", "heLlo", "helLo", "hellO" };
-		// assertArrayEquals("it should return '" + Arrays.toString(result) + "'", result, wave("hello"));
+		// assertArrayEquals("it should return '" + Arrays.toString(result) + "'",
+		// result, wave("hello"));
 	}
 
 	@Test
 	public void basicTest2() {
 		String[] result = new String[] { "Codewars", "cOdewars", "coDewars", "codEwars", "codeWars", "codewArs",
 				"codewaRs", "codewarS" };
-		// assertArrayEquals("it should return '" + Arrays.toString(result) + "'", result, wave("codewars"));
+		// assertArrayEquals("it should return '" + Arrays.toString(result) + "'",
+		// result, wave("codewars"));
 	}
 
 	@Test
 	public void basicTest3() {
 		String[] result = new String[] {};
-		// assertArrayEquals("it should return '" + Arrays.toString(result) + "'", result, MexicanWave.wave(""));
+		// assertArrayEquals("it should return '" + Arrays.toString(result) + "'",
+		// result, MexicanWave.wave(""));
 	}
 
 	@Test
 	public void basicTest5() {
 		String[] result = new String[] { " Gap ", " gAp ", " gaP " };
-		// assertArrayEquals("it should return '" + Arrays.toString(result) + "'", result, wave(" gap "));
+		// assertArrayEquals("it should return '" + Arrays.toString(result) + "'",
+		// result, wave(" gap "));
 	}
 
 }

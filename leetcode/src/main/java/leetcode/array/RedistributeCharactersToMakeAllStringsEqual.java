@@ -1,8 +1,8 @@
 package leetcode.array;
 
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 /*-
  * https://leetcode.com/problems/redistribute-characters-to-make-all-strings-equal/
@@ -16,8 +16,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class RedistributeCharactersToMakeAllStringsEqual {
 
     public boolean makeEqual(String[] words) {
-        String join = String.join("", words);
-        char[] arr = join.toCharArray();
+        // String join = String.join("", words);
+        // char[] arr = join.toCharArray();
         // Arrays.sort(arr);
         // String s = new String(arr);
         return true;

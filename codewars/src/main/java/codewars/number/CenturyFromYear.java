@@ -14,16 +14,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *      1900 --> 19
  *      1601 --> 17
  *      2000 --> 20
+ *      
+ * Xem thêm: WhatCenturyIsIt.java
  */
 public class CenturyFromYear {
 
-    public static int century(int year) {
-        int div = year / 100;
-        if (year % 100 == 0) {
-            return div;
-        }
-        return div + 1;
-    }
+	public static int century(int year) {
+	    return (year % 100 == 0) ? year / 100 : year / 100 + 1;
+	}
 
     @Test
     public void doTest() {

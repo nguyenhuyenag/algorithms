@@ -1,4 +1,4 @@
-package codewars;
+package codewars.number;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -7,12 +7,19 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 /**
  * https://www.codewars.com/kata/52fb87703c1351ebd200081f/
+ * 
+ * Xem thêm: CenturyFromYear.java
  */
-public class WarMain {
+public class WhatCenturyIsIt {
+	
+	public static int getCentury(int year) {
+		return (year % 100 == 0) ? year / 100 : year / 100 + 1;
+	}
 
 	public static String whatCentury(int year) {
 		String suffix;
-		int century = (year - 1) / 100 + 1;
+		// int century = (year - 1) / 100 + 1;
+		int century = getCentury(year);
 		if (11 <= century % 100 && century % 100 <= 13) {
 			suffix = "th";
 		} else {
@@ -23,7 +30,6 @@ public class WarMain {
 				default -> "th";
 			};
 		}
-
 		return century + suffix;
 	}
 	
