@@ -10,10 +10,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *
  * https://leetcode.com/problems/largest-substring-between-two-equal-characters/
  *
- * Tìm chuỗi dài nhất ở giữa 2 ký tự giống nhau (chỉ xuất hiện đúng 2 ký tự giống nhau)
+ * Tìm chuỗi dài nhất ở giữa 2 ký tự giống nhau (khoảng cách giữa lần đầu tiên và lần cuối cùng lớn nhất)
  *
- *      aa      ->      ""      ->      0
- *      abca    ->      bc      ->      2
+ *      aa          ->      ""          ->      0
+ *      abca        ->      bc          ->      2
+ *      abcawertya  ->      bcawerty    ->      8
  */
 public class LargestSubstringBetweenTwoEqualCharacters {
 
@@ -42,7 +43,7 @@ public class LargestSubstringBetweenTwoEqualCharacters {
         assertEquals(-1, maxLengthBetweenEqualCharacters("cbzxy"));
         assertEquals(0, maxLengthBetweenEqualCharacters("aa"));
         assertEquals(18, maxLengthBetweenEqualCharacters("mgntdygtxrvxjnwksqhxuxtrv"));
-        // assertEquals(5, maxLengthBetweenEqualCharacters("abcawertya"));
+        assertEquals(8, maxLengthBetweenEqualCharacters("abcawertya"));
     }
 
 }
