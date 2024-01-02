@@ -2,30 +2,32 @@ package codewars;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- *
+ * https://www.codewars.com/kata/56a5d994ac971f1ac500003e/
  */
 public class WarMain {
 
-    public static int findShort(String s) {
-        String[] words = s.split(" ");
-        int min = Integer.MAX_VALUE;
-        for (String word : words) {
-            min = Math.min(min, word.length());
-        }
-        return min;
+    public static String longestConsec(String[] strarr, int k) {
+        return "";
     }
 
     @Test
     public void doTest() {
-        assertEquals(2, findShort("Let's travel abroad shall we"));
-        assertEquals(3, findShort("bitcoin take over the world maybe who knows perhaps"));
-        assertEquals(3, findShort("turns out random test cases are easier than writing out basic ones"));
+        test("", longestConsec(new String[]{}, 3));
+        test("", longestConsec(new String[]{"it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"}, 15));
+        test("", longestConsec(new String[]{"it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"}, 0));
+        test("", longestConsec(new String[]{"zone", "abigail", "theta", "form", "libe", "zas"}, -2));
+        test("ixoyx3452zzzzzzzzzzzz", longestConsec(new String[]{"it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"}, 3));
+        test("abigailtheta", longestConsec(new String[]{"zone", "abigail", "theta", "form", "libe", "zas", "theta", "abigail"}, 2));
+        test("wlwsasphmxxowiaxujylentrklctozmymu", longestConsec(new String[]{"wlwsasphmxx", "owiaxujylentrklctozmymu", "wpgozvxxiu"}, 2));
+        test("oocccffuucccjjjkkkjyyyeehh", longestConsec(new String[]{"ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh"}, 1));
+        test("wkppqsztdkmvcuwvereiupccauycnjutlvvweqilsfytihvrzlaodfixoyxvyuyvgpck", longestConsec(new String[]{"itvayloxrp", "wkppqsztdkmvcuwvereiupccauycnjutlv", "vweqilsfytihvrzlaodfixoyxvyuyvgpck"}, 2));
+    }
+
+    private static void test(String actual, String expected) {
+        assertEquals(expected, actual);
     }
 
 }
