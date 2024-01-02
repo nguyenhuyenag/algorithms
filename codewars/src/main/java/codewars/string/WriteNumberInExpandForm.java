@@ -1,4 +1,4 @@
-package codewars;
+package codewars.string;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *      42     ->  "40 + 2"
  *      70304  ->  "70000 + 300 + 4"
  */
-public class WarMain {
+public class WriteNumberInExpandForm {
 
     public static String expandedForm(int n) {
         LinkedList<String> expandedList = new LinkedList<>();
