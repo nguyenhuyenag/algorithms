@@ -2,6 +2,7 @@ package codewars;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,23 +12,20 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class WarMain {
 
-    public static boolean isPrime(int n) {
-        for (int i = 0; i < Math.sqrt(n); i++) {
-            if (n%i==0){
-                return false;
-            }
+    public static int findShort(String s) {
+        String[] words = s.split(" ");
+        int min = Integer.MAX_VALUE;
+        for (String word : words) {
+            min = Math.min(min, word.length());
         }
-        return true;
+        return min;
     }
 
     @Test
-    public void test() {
-        assertEquals(false, isPrime(0));
-        assertEquals(false, isPrime(1));
-        assertEquals(true, isPrime(2));
-        assertEquals(true, isPrime(73));
-        assertEquals(false, isPrime(75));
-        assertEquals(false, isPrime(-1));
+    public void doTest() {
+        assertEquals(2, findShort("Let's travel abroad shall we"));
+        assertEquals(3, findShort("bitcoin take over the world maybe who knows perhaps"));
+        assertEquals(3, findShort("turns out random test cases are easier than writing out basic ones"));
     }
 
 }
