@@ -1,9 +1,9 @@
 package codewars.number;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * https://www.codewars.com/kata/52fb87703c1351ebd200081f/
