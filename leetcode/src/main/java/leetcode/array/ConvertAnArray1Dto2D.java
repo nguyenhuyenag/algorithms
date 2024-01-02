@@ -17,7 +17,7 @@ import org.junit.jupiter.api.Test;
  * 
  * Note: Số lượng mảng con tối đa = số lần xuất hiện tối đa của phần từ nào đó
  */
-public class ConvertAnArray1DInto2D {
+public class ConvertAnArray1Dto2D {
 
 	public List<List<Integer>> findMatrix(int[] nums) {
 

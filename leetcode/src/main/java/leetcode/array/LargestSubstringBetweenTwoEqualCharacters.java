@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/*-
+/**
  * Chủ đề: Mảng đánh đấu
  *
  * https://leetcode.com/problems/largest-substring-between-two-equal-characters/
@@ -39,11 +39,11 @@ public class LargestSubstringBetweenTwoEqualCharacters {
 
     @Test
     public void doTest() {
+        assertEquals(0, maxLengthBetweenEqualCharacters("aa"));
         assertEquals(2, maxLengthBetweenEqualCharacters("abca"));
         assertEquals(-1, maxLengthBetweenEqualCharacters("cbzxy"));
-        assertEquals(0, maxLengthBetweenEqualCharacters("aa"));
-        assertEquals(18, maxLengthBetweenEqualCharacters("mgntdygtxrvxjnwksqhxuxtrv"));
         assertEquals(8, maxLengthBetweenEqualCharacters("abcawertya"));
+        assertEquals(18, maxLengthBetweenEqualCharacters("mgntdygtxrvxjnwksqhxuxtrv"));
     }
 
 }
