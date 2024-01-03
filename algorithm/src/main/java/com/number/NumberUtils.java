@@ -117,4 +117,12 @@ public class NumberUtils {
 		return true;
 	}
 
+	public void numberToArrayDigits() {
+		int number = 123; // -> [1, 2, 3]
+		int[] digits = Integer.toString(number)
+				.chars()
+				.map(Character::getNumericValue)
+				.toArray();
+	}
+
 }
