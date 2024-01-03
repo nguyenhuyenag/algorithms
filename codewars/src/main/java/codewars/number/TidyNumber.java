@@ -1,10 +1,15 @@
-package codewars;
+package codewars.number;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class WarMain {
+/**
+ * https://www.codewars.com/kata/5a87449ab1710171300000fd/
+ *
+ * Kiểm tra số có chữ số tăng dần
+ */
+public class TidyNumber {
 
     public static boolean tidyNumber0(int n) {
         String strNum = String.valueOf(n);
