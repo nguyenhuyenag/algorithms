@@ -2,23 +2,31 @@ package com.number;
 
 /**
  * Kiểm tra các chữ số tăng dần
+ *
+ * Xem thêm TidyNumber.java
  */
 public class ChuSoTangDan {
 
-	public static void main(String[] args) {
-		int n = 112356;
-		int prev, end = n % 10;
+	public static boolean isMonotonic(int n) {
+		int prevDigit = n % 10;
 		n /= 10;
 		while (n > 0) {
-			prev = n % 10;
+			int currentDigit = n % 10;
 			n /= 10;
-			if (prev >= end) {
-				System.out.println("NO");
-				return;
+			if (currentDigit >= prevDigit) {
+				// System.out.println("NO");
+				return false;
 			}
-			end = prev;
+			prevDigit = currentDigit;
 		}
-		System.out.println("YES");
+		// System.out.println("YES");
+		return true;
 	}
+
+	public static void main(String[] args) {
+		int n = 123450;
+		System.out.println("Check: " + isMonotonic(n));
+	}
+
 
 }

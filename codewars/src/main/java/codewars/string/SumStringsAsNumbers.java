@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * https://www.codewars.com/kata/5324945e2ece5e1f32000370/
  *
- * Cộng 2 số lớn
+ * Cộng 2 số as string
  */
 public class SumStringsAsNumbers {
 
@@ -23,18 +23,17 @@ public class SumStringsAsNumbers {
 
     public static String sumStrings0(String a, String b) {
         int len = Math.max(a.length(), b.length());
-        // Pad the strings with leading zeros to make their lengths equal
         a = leftPad(a, len);
         b = leftPad(b, len);
-        int carry = 0; // Số nhớ
+        int ghiNho = 0; // Số nhớ
         StringBuilder ans = new StringBuilder();
         for (int i = len - 1; i >= 0; i--) {
-            int sum = Character.getNumericValue(a.charAt(i)) + Character.getNumericValue(b.charAt(i)) + carry;
+            int sum = Character.getNumericValue(a.charAt(i)) + Character.getNumericValue(b.charAt(i)) + ghiNho;
             ans.insert(0, sum % 10);
-            carry = sum / 10;
+            ghiNho = sum / 10;
         }
-        if (carry > 0) {
-            ans.insert(0, carry);
+        if (ghiNho > 0) {
+            ans.insert(0, ghiNho);
         }
         return ans.toString().replaceFirst("^0+", "");
     }
