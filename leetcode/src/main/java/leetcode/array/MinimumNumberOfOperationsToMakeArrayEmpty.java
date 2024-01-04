@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.array;
 
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *
  * Trả về số lần thực hiện nhỏ nhất để mảng rỗng hoặc -1 nếu không thể
  */
-public class MainLeet {
+public class MinimumNumberOfOperationsToMakeArrayEmpty {
 
     public static int[] splitNumberInto3x2y(int number) {
         int x = 0, y = 0;
