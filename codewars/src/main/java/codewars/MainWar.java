@@ -1,9 +1,5 @@
 package codewars;
 
-import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -13,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *
  * Xem thêm: SumStringsAsNumbers.java
  */
-public class WarMain {
+public class MainWar {
 
 //    public static int add(int x, int y) {
 //        int signX = (int) Math.signum(x);

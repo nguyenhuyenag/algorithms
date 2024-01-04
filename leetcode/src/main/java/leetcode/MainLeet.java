@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * https://leetcode.com/problems/divide-array-in-sets-of-k-consecutive-numbers/
  */
-public class LeetMain {
+public class MainLeet {
 
     public boolean isPossibleDivide(int[] nums, int k) {
         List<List<Integer>> lists = splitArray(nums, k);

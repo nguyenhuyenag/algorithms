@@ -2,6 +2,8 @@ package codewars.number;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -11,10 +13,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class TidyNumber {
 
+    /**
+     * Sắp xếp các chữ số lại, nếu nó vẫn như ban đầu thì nó là số tăng dần
+     */
     public static boolean tidyNumber0(int n) {
         String strNum = String.valueOf(n);
         final String[] digits = strNum.split("");
-        java.util.Arrays.sort(digits);
+        Arrays.sort(digits);
         return String.join("", digits).equals(strNum);
     }
 
