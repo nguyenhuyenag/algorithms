@@ -8,6 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * https://www.codewars.com/kata/5324945e2ece5e1f32000370/
  *
  * Cộng 2 số as string
+ *
+ * Xem thêm: SumOfTwoIntegers.java
  */
 public class SumStringsAsNumbers {
 

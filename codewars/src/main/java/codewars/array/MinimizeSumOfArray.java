@@ -1,13 +1,25 @@
-package codewars;
+package codewars.array;
 
 import org.junit.jupiter.api.Test;
 
-import java.math.BigInteger;
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class MainWar {
+/**
+ * https://www.codewars.com/kata/5a523566b3bfa84c2e00010b/
+ *
+ * Cho mảng arr. Tìm giá trị của nhỏ nhất
+ *
+ *  S = arr[i] * arr[j] + ....
+ *
+ *  sao cho S nhỏ nhất
+ *
+ *  Giải: Sắp xếp mảng [a1, a2, ..., an]
+ *
+ *  -> an là số lớn nhất, nên muốn S nhỏ nhất thì phải nhân an * a1 để tích này nhỏ nhất,...
+ */
+public class MinimizeSumOfArray {
 
     public static int minSum(int[] arr) {
         int sum = 0;
