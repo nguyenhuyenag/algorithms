@@ -3,9 +3,12 @@ package com.array;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Chuyển k phần tử đầu tiên về cuối mảng
+ *
+ * Xem thêm: Leetcode > RotateArray.java
  */
 public class Rotate {
 
@@ -25,10 +28,18 @@ public class Rotate {
 		}
 	}
 
+	public static int[] moveByCollection(int[] arr, int k) {
+		List<Integer> list = Arrays.stream(arr).boxed().collect(Collectors.toList());
+		// System.out.println("Before: " + Arrays.toString(arr));
+		Collections.rotate(list, k);
+		// System.out.println("After: " + Arrays.toString(list.toArray()));
+		return list.stream().mapToInt(Integer::intValue).toArray();
+	}
+
 	public static <T> void moveByCollection(T[] arr, int k) {
 		List<T> list = Arrays.asList(arr);
 		System.out.println("Before: " + Arrays.toString(arr));
-		Collections.rotate(list, k);
+		Collections.rotate(list, k); // k > 0 dời cuối lên đầu, k < 0 dời đầu xuống cuối
 		System.out.println("After: " + Arrays.toString(list.toArray()));
 	}
 

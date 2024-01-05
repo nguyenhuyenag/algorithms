@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.array;
 
 import org.junit.jupiter.api.Test;
 
@@ -9,19 +9,18 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * https://leetcode.com/problems/rotate-array/
  *
  * Chúng ta phải giữ cho k luôn nằm trong khoảng từ [0, len - 1] để đảm bảo rằng việc xoay sẽ có ý nghĩa.
  *
- * Ví dụ, nếu len = 5, k = 7, thì việc rotate 7 phần tử sẽ giống như rotate 2 phần tử (vì 7 % 5 = 2). Do đó, chúng ta sử dụng k = k % len; để chắc chắn rằng giá trị của k không lớn hơn độ dài của mảng nums.
+ * Ví dụ, nếu len = 5, k = 7 thì việc xoay 7 phần tử sẽ giống như xoay 2 phần tử (vì 7 % 5 = 2). Do đó, chúng ta sử dụng k = k % len; để chắc chắn rằng giá trị của k không lớn hơn độ dài của mảng nums.
  */
-public class MainLeet {
+public class RotateArray {
 
     // [1, 2, 3, 4, 5, 6, 7] -> [7, 1, 2, 3, 4, 5, 6]
-    public int[] rotate(int[] nums, int k) {
+    public int[] rotate0(int[] nums, int k) {
         int len = nums.length;
         k = k % len; // Đảm bảo k không lớn hơn độ dài của mảng
 
@@ -43,6 +42,31 @@ public class MainLeet {
         }
 
         return nums;
+    }
+
+    public int[] rotate(int[] nums, int k) {
+        int len = nums.length;
+        k = k % len; // Đảm bảo k không lớn hơn độ dài của mảng
+
+        reverse(nums, 0, len - 1); // Đảo ngược toàn bộ mảng
+        reverse(nums, 0, k - 1); // Đảo ngược k phần tử đầu tiên
+        reverse(nums, k, len - 1); // Đảo ngược phần còn lại
+
+        return nums;
+    }
+
+    // Phương thức để đảo ngược một phần của mảng từ start đến end
+    private void reverse(int[] nums, int start, int end) {
+        while (start < end) {
+            // Swap giá trị của nums[start] và nums[end]
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+
+            // Di chuyển về phía giữa mảng
+            start++;
+            end--;
+        }
     }
 
     public static int[] getResult(int[] arr, int k) {
