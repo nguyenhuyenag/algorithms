@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
  *
  * Xem thêm: Leetcode > RotateArray.java
  */
-public class Rotate {
+public class RotateArray {
 
 	public static void move(int[] A) {
 		int i;
@@ -28,13 +28,13 @@ public class Rotate {
 		}
 	}
 
-	public static int[] moveByCollection(int[] arr, int k) {
-		List<Integer> list = Arrays.stream(arr).boxed().collect(Collectors.toList());
-		// System.out.println("Before: " + Arrays.toString(arr));
-		Collections.rotate(list, k);
-		// System.out.println("After: " + Arrays.toString(list.toArray()));
-		return list.stream().mapToInt(Integer::intValue).toArray();
-	}
+//	public static int[] moveByCollection(int[] arr, int k) {
+//		List<Integer> list = Arrays.stream(arr).boxed().collect(Collectors.toList());
+//		// System.out.println("Before: " + Arrays.toString(arr));
+//		Collections.rotate(list, k);
+//		// System.out.println("After: " + Arrays.toString(list.toArray()));
+//		return list.stream().mapToInt(Integer::intValue).toArray();
+//	}
 
 	public static <T> void moveByCollection(T[] arr, int k) {
 		List<T> list = Arrays.asList(arr);

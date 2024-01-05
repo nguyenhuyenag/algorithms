@@ -66,9 +66,9 @@ public class ReverseArray {
 //    }
 
     public static void main(String[] args) {
-        int[] arr = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int[] arr = {1, 2, 3, 4, 5};
         System.out.println(Arrays.toString(arr));
-        reverse0(arr, 7, arr.length - 1);
+        reverse0(arr, 2, arr.length - 1);
         System.out.println(Arrays.toString(arr));
     }
 
