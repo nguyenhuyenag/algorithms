@@ -1,18 +1,15 @@
-package leetcode;
+package leetcode.array;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
  * https://leetcode.com/problems/maximum-product-subarray/
  *
  * Tìm mảng con có tích lớn nhất
  */
-public class MainLeet {
+public class MaximumProductSubArray {
 
     // [2, 3, -2, 4] -> [2, 3] -> 6
     public int maxProduct(int[] nums) {

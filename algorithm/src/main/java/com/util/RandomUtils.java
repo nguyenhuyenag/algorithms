@@ -29,9 +29,9 @@ public class RandomUtils {
 		int n = getIntFrom(5, 10);
 		int[] array = new int[n];
 		for (int i = 0; i < n; i++) {
-			array[i] = getIntFrom(-20, 20);
+			array[i] = getIntFrom(-5, 20);
 		}
-		System.out.println("Array: " + Arrays.toString(array));
+		// System.out.println("Array: " + Arrays.toString(array));
 		return array;
 	}
 
