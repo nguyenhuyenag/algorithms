@@ -1,4 +1,4 @@
-package com.array;
+package com.array.mangdanhdau;
 
 /**
  * Xem thêm 'SmallPositive.java'

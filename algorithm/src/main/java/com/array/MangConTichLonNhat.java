@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *
  * Tìm mảng con có tích lớn nhất
  */
-public class SubArrayTichLonNhat {
+public class MangConTichLonNhat {
 
     // [2, 3, -2, 4] -> [2, 3] -> 6
     public int maxProduct(int[] nums) {

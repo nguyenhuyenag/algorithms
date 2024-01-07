@@ -35,8 +35,12 @@ public class VoteAlgorithm {
 	}
 
 	public static void main(String[] args) {
-		int[] nums = { 2, 2, 3, 4, 5, 4, 4, 4 };
-		System.out.println(majorityElement(nums));
+		// Tạo một mảng số nguyên
+		int[] nums = {3, 3, 4, 2, 4, 4, 2, 4, 4};
+
+		// Gọi hàm majorityElement và in ra kết quả
+		int result = majorityElement(nums);
+		System.out.println("Majority Element: " + result);
 	}
 
 }
