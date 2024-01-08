@@ -35,25 +35,25 @@ public class ThreeSum {
 //            }
 //        }
 //        Set<List<Integer>> sortedList = new HashSet<>();
-//
 //        for (List<Integer> innerList : result) {
 //            List<Integer> sortedInnerList = new ArrayList<>(innerList);
 //            Collections.sort(sortedInnerList);
 //            sortedList.add(sortedInnerList);
 //        }
-//
 //        return new ArrayList<>(sortedList);
 
         Set<List<Integer>> result = new HashSet<>();
 
-        Set<Integer> duplicatedSet = new HashSet<>();
+        Set<Integer> visited = new HashSet<>();
         Map<Integer, Integer> map = new HashMap<>();
 
         int len = nums.length;
         for (int i = 0; i < len - 2; i++) {
-            if (!duplicatedSet.add(nums[i])) continue;
+            if (!visited.add(nums[i])) continue;
+
             for (int j = i + 1; j < len; j++) {
                 int num3 = -(nums[i] + nums[j]);
+                // num3 có trong mảng và
                 if (map.containsKey(num3) && map.get(num3) == i) {
                     List<Integer> ans = Arrays.asList(nums[i], nums[j], num3);
                     Collections.sort(ans);
@@ -67,8 +67,8 @@ public class ThreeSum {
 
     @Test
     public void test_array_pass() {
-        // int[] arr = {-1, 0, 1, 2, -1, -4};
         // int[] arr = {0, 1, 1};
+        // int[] arr = {-1, 0, 1, 2, -1, -4};
         int[] arr = {1, 2, -2, -1};
         List<List<Integer>> lists = threeSum(arr);
         System.out.println(Arrays.toString(lists.toArray()));
