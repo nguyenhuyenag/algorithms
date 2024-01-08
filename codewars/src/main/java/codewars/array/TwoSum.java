@@ -1,10 +1,9 @@
-package codewars;
+package codewars.array;
 
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
@@ -13,10 +12,10 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
  *
  * Tìm 2 số trong mảng có tổng bằng n. Trả về index của 2 số đó
  */
-public class MainWar {
+public class TwoSum {
 
     public int[] twoSum(int[] arr, int target) {
-        // map lưu <số, chỉ số>
+        // lưu <số, chỉ số>
         HashMap<Integer, Integer> map = new HashMap<>();
 
         for (int i = 0; i < arr.length; i++) { // nums[i] là số thứ nhất
@@ -24,7 +23,7 @@ public class MainWar {
 
             // Nếu num2 trong map, trả về mảng chứa 2 index
             if (map.containsKey(num2)) {
-                return new int[]{map.get(num2), i};
+                return new int[]{i, map.get(num2)};
             }
 
             // Thêm phần tử hiện tại vào map nếu chưa có
