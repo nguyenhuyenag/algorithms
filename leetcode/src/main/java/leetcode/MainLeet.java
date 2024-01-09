@@ -6,38 +6,58 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 /**
- * https://leetcode.com/problems/container-with-most-water/
+ *
  */
 public class MainLeet {
 
-//    public int[] twoSum(int[] nums, int target) {
-//        Map<Integer, Integer> map = new HashMap<>();
-//        for (int i = 0; i < nums.length; i++) {
-//            int n2 = target - nums[i];
-//            // Nếu n2 có trong map -> lấy ra chỉ số
-//            if (map.containsKey(n2)) {
-//                int j = map.get(n2);
-//                return nums[i] >= nums[j] ? new int[]{j + 1, i + 1} : new int[]{i + 1, j + 1};
+//    public int[] productExceptSelf(int[] nums) {
+//        int len = nums.length;
+//        int[] ans = new int[len];
+//        for (int i = 0; i < len; i++) {
+//            int l = 0, r = len - 1;
+//            int prod = 1;
+//            while (l < i) {
+//                prod *= nums[l];
+//                l++;
 //            }
-//            if (!map.containsKey(nums[i])) {
-//                map.put(nums[i], i);
+//            while (i < r) {
+//                prod *= nums[r];
+//                r--;
 //            }
+//            ans[i] = prod;
 //        }
-//        return new int[]{0, 0};
+//        return ans;
 //    }
+
+    public int[] productExceptSelf(int[] nums) {
+        int len = nums.length;
+        int[] ans = new int[len];
+
+        // Tính tích bên trái
+        int leftProd = 1;
+        for (int i = 0; i < len; i++) {
+            ans[i] = leftProd;
+            leftProd *= nums[i];
+        }
+
+        // Tính tích bên phải và nhân với tích bên trái
+        int rightProd = 1;
+        for (int i = len - 1; i >= 0; i--) {
+            ans[i] *= rightProd;
+            rightProd *= nums[i];
+        }
+
+        return ans;
+    }
 
     @Test
     public void test() {
-        StringBuilder str = new StringBuilder("OP");
-        int l = 0, r = str.length() - 1;
-        while (l < r) {
-            System.out.println(str.charAt(l) + ", " +  str.charAt(r));
-            l++;
-            r--;
-        }
+        assertArrayEquals(new int[]{24, 12, 8, 6}, productExceptSelf(new int[]{1, 2, 3, 4}));
+        assertArrayEquals(new int[]{0, 0, 9, 0, 0}, productExceptSelf(new int[]{-1, 1, 0, -3, 3}));
     }
 
 }
