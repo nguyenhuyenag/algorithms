@@ -1,17 +1,18 @@
-package leetcode;
+package leetcode.array;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 /**
+ * Chủ đề: Two pointer
+ *
  * https://leetcode.com/problems/container-with-most-water/
+ *
+ * Cho mảng chiều cao, tìm 2 điểm mà diện tích nước trong đó là nhiều nhất
  */
-public class MainLeet {
+public class ContainerWithMostWater {
 
 //    public int maxArea(int[] arr) {
 //        int maxArea = 0;
