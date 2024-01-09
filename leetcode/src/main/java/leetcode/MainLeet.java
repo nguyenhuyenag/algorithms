@@ -1,11 +1,11 @@
 package leetcode;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 
 /**
@@ -13,53 +13,31 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class MainLeet {
 
-//    public int maxArea(int[] arr) {
-//        int maxArea = 0;
-//        int l = 0, r = arr.length - 1;
-//        while (l < r) {
-//            int width = r - l;
-//            int height = Math.min(arr[l], arr[r]);
-//            int area = height * width;
-//            maxArea = Math.max(area, maxArea);
-//            // Cột trái đỏ < phải đỏ thì dời trái
-//            if (arr[l] < arr[r]) {
-//                l++;
-//            } else if (arr[l] > arr[r]) {
-//                r--;
-//            } else {
-//                l++;
-//                r--;
+//    public int[] twoSum(int[] nums, int target) {
+//        Map<Integer, Integer> map = new HashMap<>();
+//        for (int i = 0; i < nums.length; i++) {
+//            int n2 = target - nums[i];
+//            // Nếu n2 có trong map -> lấy ra chỉ số
+//            if (map.containsKey(n2)) {
+//                int j = map.get(n2);
+//                return nums[i] >= nums[j] ? new int[]{j + 1, i + 1} : new int[]{i + 1, j + 1};
+//            }
+//            if (!map.containsKey(nums[i])) {
+//                map.put(nums[i], i);
 //            }
 //        }
-//        return maxArea;
+//        return new int[]{0, 0};
 //    }
-
-    public int maxArea(int[] arr) {
-        int maxArea = 0;
-        int left = 0, right = arr.length - 1;
-        while (left < right) {
-            int width = right - left;
-            int height = Math.min(arr[left], arr[right]);
-            int area = width * height;
-            maxArea = Math.max(maxArea, area);
-            if (arr[left] < arr[right]) {
-                left++;
-            } else if (arr[left] > arr[right]) {
-                right--;
-            } else {
-                left++;
-                right--;
-            }
-        }
-        return maxArea;
-    }
 
     @Test
     public void test() {
-        assertEquals(1, maxArea(new int[]{1, 1}));
-        assertEquals(49, maxArea(new int[]{1, 8, 6, 2, 5, 4, 8, 3, 7}));
-        assertEquals(24, maxArea(new int[]{1, 3, 2, 5, 25, 24, 5}));
-        assertEquals(17, maxArea(new int[]{2, 3, 4, 5, 18, 17, 6}));
+        StringBuilder str = new StringBuilder("OP");
+        int l = 0, r = str.length() - 1;
+        while (l < r) {
+            System.out.println(str.charAt(l) + ", " +  str.charAt(r));
+            l++;
+            r--;
+        }
     }
 
 }

@@ -18,6 +18,8 @@ import java.util.Set;
  * B2: Loop i từ 0 -> n - 1
  *      - Nếu (sum - arr[i]) có trong s thì in ra cặp giá trị thoả(arr[i], sum - arr[i])
  *      - Thêm arr[i] vào s
+ *
+ * Xem thêm TwoSum trong codewars
  */
 public class TwoSum {
 
