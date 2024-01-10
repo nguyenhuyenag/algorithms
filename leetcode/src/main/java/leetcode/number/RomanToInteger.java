@@ -15,32 +15,32 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class RomanToInteger {
 	
-	static int of(char roman) {
-		switch (roman) {
-            case 'I' : return 1;
-            case 'V' : return 5;
-            case 'X' : return 10;
-            case 'L' : return 50;
-            case 'C' : return 100;
-            case 'D' : return 500;
-            case 'M' : return 1000;
-            default : return 0;
-        }
+	public int of(char roman) {
+		return switch (roman) {
+			case 'I' -> 1;
+			case 'V' -> 5;
+			case 'X' -> 10;
+			case 'L' -> 50;
+			case 'C' -> 100;
+			case 'D' -> 500;
+			case 'M' -> 1000;
+			default -> 0;
+		};
     }
 	
-	public static int romanToInt(String str) {
-		int n = str.length();
-		char[] A = str.toCharArray();
-		int s = of(A[n - 1]); 				// Gán s = giá trị số cuối cùng
-		for (int i = n - 1; i > 0; i--) {
-			int prev = of(A[i - 1]); 		// Số đứng trước
-			if (of(A[i]) > prev) { 			
-				s -= prev;					// nhỏ trừ
+	public int romanToInt(String str) {
+		int len = str.length();
+		char[] arr = str.toCharArray();
+		int ans = of(arr[len - 1]); 			// Gán s = giá trị số cuối cùng
+		for (int i = len - 1; i > 0; i--) {
+			int prev = of(arr[i - 1]); 			// Số đứng trước
+			if (of(arr[i]) > prev) {
+				ans -= prev;					// nhỏ trừ
 			} else {
-				s += prev;					// lớn cộng
+				ans += prev;					// lớn cộng
 			}
 		}
-		return s;
+		return ans;
 	}
 
 	@Test
