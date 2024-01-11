@@ -7,25 +7,25 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.HashMap;
 import java.util.Map;
 
-
+/**
+ * https://www.codewars.com/kata/517abf86da9663f1d2000003/
+ *
+ * Chuyển chuỗi về dạng camel
+ */
 public class ConvertStringToCamelCase {
 
-    public static String toCamelCase(String str) {
-        String res = "";
-        boolean flag = false;
-        for (String s : str.split("")) {
-            if ("-".equals(s) || "_".equals(s)) {
-                flag = true;
-                continue;
-            }
-            if (!flag) {
-                res += s;
+    public static String toCamelCase(String input) {
+        boolean capitalize = false;
+        StringBuilder builder = new StringBuilder();
+        for (char c : input.toCharArray()) {
+            if (c == '-' || c == '_') {
+                capitalize = true;
             } else {
-                flag = false;
-                res += s.toUpperCase();
+                builder.append(capitalize ? Character.toUpperCase(c) : c);
+                capitalize = false;
             }
         }
-        return res;
+        return builder.toString();
     }
 
     @Test
