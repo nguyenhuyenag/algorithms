@@ -7,7 +7,7 @@ import java.util.Arrays;
  *
  * Gộp 2 mảng tăng dần
  */
-public class Gop2Mang {
+public class Gop2MangTangDan {
 
     public static void main(String[] args) {
         int[] a = {1, 3, 6, 8, 10};

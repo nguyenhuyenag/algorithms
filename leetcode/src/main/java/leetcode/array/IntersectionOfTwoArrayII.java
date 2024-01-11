@@ -1,26 +1,17 @@
-package leetcode;
+package leetcode.array;
 
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Array;
-import java.util.*;
-
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
+ * https://leetcode.com/problems/intersection-of-two-arrays-ii/
  *
+ * Tìm phần tử chung của 2 mảng
  */
-public class MainLeet {
-
-//    public int[] merge(int[] arrayA, int[] arrayB) {
-//        int lenA = arrayA.length, lenB = arrayB.length;
-//        int[] ans = new int[lenA + lenB];
-//        System.arraycopy(arrayA, 0, ans, 0, lenA);
-//        System.arraycopy(arrayB, 0, ans, lenA, lenB);
-//        return ans;
-//    }
+public class IntersectionOfTwoArrayII {
 
     public int[] intersect(int[] A, int[] B) {
         Arrays.sort(A);
@@ -44,7 +35,7 @@ public class MainLeet {
     @Test
     public void test() {
         // int[] arr = intersect(new int[]{1, 2, 2, 1}, new int[]{2, 2});
-        int[] arr = intersect(new int[]{4,9,5}, new int[]{9,4,9,8,4});
+        int[] arr = intersect(new int[]{4, 9, 5}, new int[]{9, 4, 9, 8, 4});
         System.out.println("arr = " + Arrays.toString(arr));
     }
 

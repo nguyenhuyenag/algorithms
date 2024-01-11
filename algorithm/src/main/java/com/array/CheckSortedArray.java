@@ -28,9 +28,9 @@ public class CheckSortedArray {
         }
 
         /**
-         * Duyệt hết mảng
-         *  Nếu ascending như cũ    -> tăng dần
-         *  Nếu descending như cũ   -> giảm dần
+         * Sau khi duyệt hết mảng
+         *  Nếu ascending không đổi    -> tăng dần
+         *  Nếu descending không đổi   -> giảm dần
          */
         return ascending || descending;
     }
