@@ -5,7 +5,7 @@ import java.math.BigInteger;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class CongSoLon {
+public class SumOfString {
 
 	public static String add(String n1, String n2) {
 		StringBuilder str = new StringBuilder();

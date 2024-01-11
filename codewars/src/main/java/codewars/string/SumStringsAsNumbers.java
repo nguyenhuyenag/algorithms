@@ -48,6 +48,7 @@ public class SumStringsAsNumbers {
         final StringBuilder result = new StringBuilder(len + 1);
         for (int i = len; i >= 0; i--) {
             int sum = Integer.parseInt("" + x.charAt(i)) + Integer.parseInt("" + y.charAt(i)) + rem;
+            // 19 -> sum / 10 = 1, sum % 10 = 9
             result.insert(0, sum % 10);
             rem = sum / 10;
         }

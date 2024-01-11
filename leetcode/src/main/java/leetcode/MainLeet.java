@@ -10,42 +10,32 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 /**
- *
+ * Tìm i != j trong mảng sao cho nums[i] == nums[j] và abs(i - j) <= k
  */
 public class MainLeet {
 
-//    public int[] merge(int[] arrayA, int[] arrayB) {
-//        int lenA = arrayA.length, lenB = arrayB.length;
-//        int[] ans = new int[lenA + lenB];
-//        System.arraycopy(arrayA, 0, ans, 0, lenA);
-//        System.arraycopy(arrayB, 0, ans, lenA, lenB);
-//        return ans;
-//    }
-
-    public int[] intersect(int[] A, int[] B) {
-        Arrays.sort(A);
-        Arrays.sort(B);
-        List<Integer> result = new ArrayList<>();
-        int i = 0, j = 0;
-        while (i < A.length && j < B.length) {
-            if (A[i] == B[j]) {
-                result.add(A[i]);
-                i++;
-                j++;
-            } else if (A[i] < B[j]) {
-                i++;
-            } else {
-                j++;
+    public int[] plusOne(int[] arr) {
+        LinkedList<Integer> ans = new LinkedList<>();
+        int rem = 0;
+        for (int i = arr.length - 1; i >= 0; i--) {
+            int sum = arr[i] + rem;
+            if (i == arr.length - 1) {
+                sum += 1;
             }
+            ans.addFirst(sum % 10);
+            rem = sum / 10;
         }
-        return result.stream().mapToInt(Integer::intValue).toArray();
+        if (rem > 0) {
+            ans.addFirst(rem);
+        }
+        return ans.stream().mapToInt(Integer::intValue).toArray();
     }
 
     @Test
     public void test() {
-        // int[] arr = intersect(new int[]{1, 2, 2, 1}, new int[]{2, 2});
-        int[] arr = intersect(new int[]{4,9,5}, new int[]{9,4,9,8,4});
-        System.out.println("arr = " + Arrays.toString(arr));
+        assertArrayEquals(new int[]{1, 2, 4}, plusOne(new int[]{1, 2, 3}));
+        assertArrayEquals(new int[]{4, 3, 2, 2}, plusOne(new int[]{4, 3, 2, 1}));
+        assertArrayEquals(new int[]{1, 0}, plusOne(new int[]{9}));
     }
 
 }
