@@ -53,12 +53,12 @@ public class CoutingDuplicates {
      *
      * Nếu currentChar là ký tự 'A', giá trị ASCII của 'A' là 65. Do đó, charCount[65] sẽ được tăng lên 1.
      */
-    public static int duplicateCount(String text) {
+    public int duplicateCount(String text) {
         int count = 0;
         int[] charCount = new int[256]; // Sử dụng mảng để đếm tần suất xuất hiện của các ký tự ASCII
         text = text.toLowerCase();
-        for (char currentChar : text.toCharArray()) {
-            charCount[currentChar]++;
+        for (char c : text.toCharArray()) {
+            charCount[c]++;
         }
         for (int val : charCount) {
             if (val > 1) {
@@ -69,7 +69,7 @@ public class CoutingDuplicates {
     }
 
     @Test
-    public void abcdeReturnsZero() {
+    public void test() {
         assertEquals(0, duplicateCount("abcde"));
         assertEquals(1, duplicateCount("abcdea"));
         assertEquals(1, duplicateCount("indivisibility"));

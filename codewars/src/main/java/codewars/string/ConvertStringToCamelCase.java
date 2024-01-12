@@ -31,11 +31,11 @@ public class ConvertStringToCamelCase {
     @Test
     public void testSomeDashLowerStart() {
         Map<String, String> map = new HashMap<>();
-        map.put("theStealthWarrior", "the-Stealth-Warrior");
-        map.put("theStealthWarrior", "the_Stealth_Warrior");
-        map.put("theStealthWarrior", "the_stealth_warrior");
+        map.put("the-Stealth-Warrior", "theStealthWarrior");
+        map.put("the_Stealth_Warrior", "theStealthWarrior");
+        map.put("the_stealth_warrior", "theStealthWarrior");
         map.forEach((k, v) -> {
-            assertEquals(k, ConvertStringToCamelCase.toCamelCase(v));
+            assertEquals(v, ConvertStringToCamelCase.toCamelCase(k));
         });
     }
 

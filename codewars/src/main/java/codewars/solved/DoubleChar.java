@@ -1,4 +1,4 @@
-package codewars.string;
+package codewars.solved;
 
 import org.junit.jupiter.api.Test;
 
@@ -6,6 +6,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * https://www.codewars.com/kata/56b1f01c247c01db92000076/
+ *
+ * Nhân đôi mỗi ký tự hiện tại trong chuỗi
+ *
+ *      abc     ->      aabbcc
+ *
+ * Xem thêm: Mumbling.java
  */
 public class DoubleChar {
 
@@ -23,10 +29,9 @@ public class DoubleChar {
     }
 
     public static String doubleChar(String input) {
-        String[] words = input.split("");
         StringBuilder ans = new StringBuilder();
-        for (String s : words) {
-            ans.append(s.repeat(2));
+        for (char c : input.toCharArray()) {
+            ans.append(String.valueOf(c).repeat(2));
         }
         return ans.toString();
     }

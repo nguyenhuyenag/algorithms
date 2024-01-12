@@ -31,7 +31,7 @@ public class CountIpAddresses {
     }
 
     @Test
-    public void ipsBetween() throws Exception {
+    public void test() {
         assertEquals(50, ipsBetween("10.0.0.0", "10.0.0.50"));
         assertEquals(246, ipsBetween("20.0.0.10", "20.0.1.0"));
     }

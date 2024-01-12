@@ -1,4 +1,4 @@
-package codewars.other;
+package codewars.solved;
 
 // getName		=> get Name
 // camelCasing 	=> camel Casing
