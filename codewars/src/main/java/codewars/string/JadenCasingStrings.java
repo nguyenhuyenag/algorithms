@@ -10,14 +10,18 @@ import static org.junit.jupiter.api.Assertions.assertNull;
  *
  * Viết hoa chữ cái đầu tiên:
  *
- *      Not Jaden-Cased: "How can mirrors be real if our eyes aren't real"
+ * Not Jaden-Cased: "How can mirrors be real if our eyes aren't real"
  *
- *      Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
+ * Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
+ *
+ * Xem thêm: ConvertStringToCamelCase
  */
 public class JadenCasingStrings {
 
     public String toJadenCase(String str) {
-        if (str == null || str.equals("")) return null;
+        if (str == null || str.isEmpty()) {
+            return "";  // Return empty string for null or empty input
+        }
         char[] arr = str.toCharArray();
         for (int i = 0; i < arr.length; i++) {
             if (i == 0 || arr[i - 1] == ' ') {

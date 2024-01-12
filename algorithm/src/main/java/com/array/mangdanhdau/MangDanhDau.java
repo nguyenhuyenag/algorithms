@@ -2,6 +2,10 @@ package com.array.mangdanhdau;
 
 /**
  * Xem thêm 'SmallPositive.java'
+ *
+ *      [A, B,..., Z]   =   [65, 66,..., 90]
+ *
+ *      [a, b,..., z]   =   [97, 98,..., 122]
  */
 public class MangDanhDau {
 

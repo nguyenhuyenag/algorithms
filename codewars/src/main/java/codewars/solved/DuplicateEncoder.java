@@ -1,4 +1,4 @@
-package codewars.string;
+package codewars.solved;
 
 import org.junit.jupiter.api.Test;
 
