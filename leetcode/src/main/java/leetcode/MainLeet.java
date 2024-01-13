@@ -8,29 +8,33 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 /**
+ *
  */
 public class MainLeet {
 
-//    public void moveZeroes(int[] nums) {
-//        int pointer = 0;
-//        int len = nums.length;
-//        // Dời các phần tử khác không về đầu mảng
-//        for (int i = 0; i < len; i++) {
-//            if (nums[i] != 0) {
-//                nums[pointer++] = nums[i];
+//    public boolean halvesAreAlike(String s) {
+//        int count = 0;
+//        String vowels = "aeiouAEIOU";
+//
+//        for (char ch : s.toCharArray()) {
+//            if (vowels.contains(String.valueOf(ch))) {
+//                System.out.print(ch + " ");
+//                count++;
 //            }
 //        }
-//        // Đánh dấu các phần tử còn lại là 0
-//        for (int i = pointer; i < len; i++) {
-//            nums[i] = 0;
-//        }
+//
+//        System.out.println();
+//        System.out.println("s_length = " + s.length());
+//        System.out.println("count = " + count);
+//
+//        return count % 2 == 0;
 //    }
 
     @Test
     public void test() {
-        String input = "1234";
-        int len = input.length();
-        System.out.println("input = " + input.substring(len-4));
+        StringBuilder builder = new StringBuilder("");
+        System.out.println("builder.isEmpty() = " + builder.isEmpty());
+        System.out.println(builder.charAt(0));
     }
 
 }
