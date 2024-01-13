@@ -1,28 +1,26 @@
-package leetcode;
+package leetcode.array;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 /**
  * https://leetcode.com/problems/minimum-number-of-steps-to-make-two-strings-anagram/
+ *
+ * Chủ đề: Mảng đánh dấu
+ *
+ * Hai chuỗi gọi là anagram nếu chúng có tất cả các phần tử bằng nhau (không tính thứ tự)
+ *
+ * Cho 2 chuỗi s, t. Thay thế lần lượt các ký tự trong t sao cho nó thành một anagram của s
+ *
+ * Trả về số bước nhỏ nhất cần thực hiện
  */
-public class MainLeet {
-
-    public int countCommonElements(char[] array1, char[] array2) {
-        Set<Character> set1 = new HashSet<>();
-        Set<Character> set2 = new HashSet<>();
-        for (int i = 0; i < array1.length; i++) {
-            set1.add(array1[i]);
-            set2.add(array2[i]);
-        }
-        set1.retainAll(set2);
-        return set1.size();
-    }
+public class MinimumNumberOfStepsToMake2StringsAnagram {
 
     public int minSteps(String s, String t) {
         int[] mark = new int[26];
