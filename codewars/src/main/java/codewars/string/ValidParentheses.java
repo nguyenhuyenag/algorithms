@@ -14,6 +14,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *      ")(()))"          =>  false
  *      "("               =>  false
  *      "(())((()())())"  =>  true
+ *
+ * Xem thêm: ValidParentheses.java
  */
 public class ValidParentheses {
 

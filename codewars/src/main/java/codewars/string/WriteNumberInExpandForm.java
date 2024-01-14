@@ -16,32 +16,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class WriteNumberInExpandForm {
 
-//    public static String expandedForm(int n) {
-//        LinkedList<String> expandedList = new LinkedList<>();
-//        int multiplier = 1;
-//        while (n > 0) {
-//            int lastDigit = n % 10;
-//            if (lastDigit > 0) {
-//                expandedList.push(String.valueOf(lastDigit * multiplier));
-//            }
-//            n /= 10;
-//            multiplier *= 10;
-//        }
-//        return String.join(" + ", expandedList);
-//    }
-
-    public static String expandedForm(int num) {
-        String result = "";
-        for (int i = 10; i < num; i *= 10) {
-            int rem = num % i;
-            result = (rem > 0) ? " + " + rem + result : result;
-            num -= rem;
+    public static String expandedForm0(int n) {
+        LinkedList<String> result = new LinkedList<>();
+        for (int multiplier = 1; n > 0; n /= 10, multiplier *= 10) {
+            int lastDigit = n % 10;
+            if (lastDigit > 0) result.addFirst(lastDigit * multiplier + "");
         }
-        result = num + result;
-        return result;
+        return String.join(" + ", result);
     }
 
-    public static String expandedForm0(int number) {
+    public static String expandedForm1(int number) {
         StringJoiner result = new StringJoiner(" + ");
         String numberStr = Integer.toString(number);
         for (int i = 0; i < numberStr.length(); i++) {
@@ -51,6 +35,20 @@ public class WriteNumberInExpandForm {
             }
         }
         return result.toString();
+    }
+
+    public static String expandedForm(int n) {
+        int multiplier = 1;
+        LinkedList<String> result = new LinkedList<>();
+        while (n > 0) {
+            int lastDigit = n % 10;
+            if (lastDigit > 0) {
+                result.addFirst(String.valueOf(lastDigit * multiplier));
+            }
+            n /= 10;
+            multiplier *= 10;
+        }
+        return String.join(" + ", result);
     }
 
     @Test
