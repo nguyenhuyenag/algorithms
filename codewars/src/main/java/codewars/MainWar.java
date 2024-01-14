@@ -5,50 +5,30 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.StringJoiner;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
- * https://www.codewars.com/kata/52c31f8e6605bcc646000082/
  *
- * Tìm 2 số trong mảng có tổng bằng n. Trả về index của 2 số đó
  */
 public class MainWar {
 
-    public int[] twoSum(int[] arr, int target) {
-        // map lưu <số, chỉ số>
-        HashMap<Integer, Integer> map = new HashMap<>();
-
-        for (int i = 0; i < arr.length; i++) { // nums[i] là số thứ nhất
-            int num2 = target - arr[i]; // số thứ 2
-
-            // Nếu num2 trong map, trả về mảng chứa 2 index
-            if (map.containsKey(num2)) {
-                return new int[]{map.get(num2), i};
-            }
-
-            // Thêm phần tử hiện tại vào map nếu chưa có
-            if (!map.containsKey(arr[i])) {
-                map.put(arr[i], i);
-            }
-        }
-
-        // Nếu không tìm thấy cặp phần tử, trả về mảng chứa -1
-        return new int[]{-1, -1};
-    }
-
-    public static void compareArray(int[] A, int[] B) {
-        Arrays.sort(A);
-        Arrays.sort(B);
-        assertArrayEquals(A, B);
-    }
-
+    // 70304  ->  "70000 + 300 + 4"
     @Test
     public void test() {
-        compareArray(new int[]{1, 2}, twoSum(new int[]{2, 3, 1}, 4));
-        compareArray(new int[]{0, 2}, twoSum(new int[]{1, 2, 3}, 4));
-        compareArray(new int[]{0, 1}, twoSum(new int[]{2, 2, 3}, 4));
-        compareArray(new int[]{1, 2}, twoSum(new int[]{1234, 5678, 9012}, 14690));
+//        int n = 70304;
+//        StringJoiner result = new StringJoiner("+");
+//        String numStr = Integer.toString(n);
+//        int len = numStr.length();
+//        for (int i = 0; i < len; i++) {
+//            int digit = Character.getNumericValue(numStr.charAt(i));
+//            if (digit > 0) {
+//                String v = String.valueOf(digit * (int) Math.pow(10, (len - 1) - i));
+//                result.add(v);
+//            }
+//        }
+//        System.out.println("ans = " + result.toString());
     }
 
 }
