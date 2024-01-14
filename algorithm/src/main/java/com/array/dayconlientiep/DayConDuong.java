@@ -1,4 +1,4 @@
-package com.array;
+package com.array.dayconlientiep;
 
 import com.util.RandomUtils;
 
@@ -18,17 +18,20 @@ import java.util.Arrays;
  */
 public class DayConDuong {
 
+    /**
+     * Tìm dãy con dương dài nhất trong mảng
+     */
     public static void findDayConDuong(int[] arr) {
-        int cmax = 0, max = 0;
+        int curentMax = 0, maxLength = 0;
         for (int x : arr) {
             if (x > 0) {
-                cmax++;
+                curentMax++;
             } else {
-                max = Math.max(max, cmax);
-                cmax = 0;
+                maxLength = Math.max(maxLength, curentMax);
+                curentMax = 0;
             }
         }
-        System.out.println(Math.max(max, cmax));
+        System.out.println(Math.max(maxLength, curentMax));
     }
 
     public static void main(String[] args) {
