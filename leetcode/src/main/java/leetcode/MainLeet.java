@@ -1,6 +1,9 @@
 package leetcode;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 
 /**
@@ -8,98 +11,48 @@ import org.junit.jupiter.api.Test;
  */
 public class MainLeet {
 
-//    // Đảo vị trí qua đường chéo chính (i,j) <-> (j,i)
-//    public void transpose(int[][] matrix) {
-//        for (int i = 0; i < matrix.length; i++) {
-//            for (int j = i; j < matrix[0].length; j++) {
-//                int temp = matrix[i][j];
-//                matrix[i][j] = matrix[j][i];
-//                matrix[j][i] = temp;
-//            }
-//        }
-//    }
-//
-//    // Đào mảng (dòng)
-//    public void reverseRows(int[][] matrix) {
-//        int len = matrix.length;
-//        for (int i = 0; i < len; i++) {
-//            int l = 0, r = len - 1;
-//            while (l < r) {
-//                // (i, l) <-> (i, r)
-//                int temp = matrix[i][l];
-//                matrix[i][l] = matrix[i][r];
-//                matrix[i][r] = temp;
-//                l++;
-//                r--;
-//            }
-//        }
-//    }
-//
-//    public void rotate(int[][] matrix) {
-//        transpose(matrix);
-//        reverseRows(matrix);
-//    }
-//
-//    public void printMatrix(int[][] matrix) {
-//        for (int[] row : matrix) {
-//            for (int num : row) {
-//                System.out.print(num + " ");
-//            }
-//            System.out.println();
-//        }
-//    }
+    public int longestValidParentheses(String inputString) {
+        // System.out.println("s = " + s.indexOf("()"));
+        while (inputString.contains("()")) {
+            inputString = inputString.replace("()", "__");
+        }
 
-    public void transpose(int[][] matrix) {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = i; j < matrix[0].length; j++) {
-                int t = matrix[i][j];
-                matrix[i][j] = matrix[j][i];
-                matrix[j][i] = t;
+        int currentSpaceLength = 0;
+        int maxLength = 0;
+
+        for (int i = 0; i < inputString.length(); i++) {
+            char currentChar = inputString.charAt(i);
+            if (currentChar == '_') {
+                // Nếu là khoảng trắng, tăng độ dài của khoảng trắng hiện tại
+                currentSpaceLength++;
+            } else {
+                // Nếu không phải khoảng trắng, kiểm tra xem độ dài hiện tại có lớn hơn max không
+                if (currentSpaceLength > maxLength) {
+                    maxLength = currentSpaceLength;
+                }
+                // Reset độ dài của khoảng trắng hiện tại
+                currentSpaceLength = 0;
             }
         }
-    }
 
-    public void reverseRows(int[][] matrix) {
-        for (int i = 0; i < matrix.length; i++) {
-            int l = 0, r = matrix.length - 1;
-            while (l < r) {
-                int t = matrix[i][l];
-                matrix[i][l] = matrix[i][r];
-                matrix[i][r] = t;
-                l++;
-                r--;
-            }
+        System.out.println("s = " + inputString);
+
+        // Kiểm tra lại sau vòng lặp cuối cùng
+        if (currentSpaceLength > maxLength) {
+            maxLength = currentSpaceLength;
         }
-    }
 
-    public void printMatrix(int[][] matrix) {
-        for (int[] row : matrix) {
-            for (int num : row) {
-                System.out.print(num + " ");
-            }
-            System.out.println();
-        }
-    }
+        System.out.println("Độ dài của khoảng trắng dài nhất là: " + maxLength);
 
-    public void rotate(int[][] matrix) {
-        transpose(matrix);
-        reverseRows(matrix);
+        return maxLength;
     }
 
     @Test
     public void test() {
-        int[][] matrix = {
-                {1, 2, 3},
-                {4, 5, 6},
-                {7, 8, 9}
-        };
-        System.out.println("Original Matrix:");
-        printMatrix(matrix);
-
-        rotate(matrix);
-
-        System.out.println("\nRotated Matrix:");
-        printMatrix(matrix);
+        // assertEquals(2, longestValidParentheses("(()"));
+        // assertEquals(4, longestValidParentheses(")()())"));
+        // assertEquals(2, longestValidParentheses("()(()"));
+        assertEquals(6, longestValidParentheses("()(())"));
     }
 
 }
