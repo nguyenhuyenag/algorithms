@@ -17,7 +17,7 @@ public class YourOrderPlease {
 
     public static String order(String str) {
         List<String> words = Arrays.asList(str.split(" "));
-        Collections.sort(words, Comparator.comparingInt(s -> {
+        words.sort(Comparator.comparingInt(s -> {
             String intNumber = s.replaceAll("\\D", "");
             return intNumber.isEmpty() ? 0 : Integer.parseInt(intNumber);
         }));
