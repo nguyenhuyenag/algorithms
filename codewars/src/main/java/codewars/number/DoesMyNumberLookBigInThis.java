@@ -1,20 +1,18 @@
-package codewars;
+package codewars.number;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.StringJoiner;
-
-import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
+ * https://www.codewars.com/kata/5287e858c6b5a9678200083c/
  *
+ * Kiểm tra số Narcissistic (số Armstrong)
+ *
+ *      153  = 1^3 + 5^3 + 3^3
+ *      1634 = 1^4 + 6^4 + 3^4 + 4^4
  */
-public class MainWar {
+public class DoesMyNumberLookBigInThis {
 
     public static boolean isNarcissistic(int number) {
         int sum = 0;

@@ -31,6 +31,22 @@ public class ValidPalindrome {
 //		return true;
 //	}
 
+//    public boolean isPalindrome(String input) {
+//        StringBuilder str = new StringBuilder();
+//        for (int i = 0; i < input.length(); i++) {
+//            char c = input.charAt(i);
+//            if (Character.isLetterOrDigit(c)) {
+//                str.append(Character.toLowerCase(c));
+//            }
+//        }
+//        int l = 0, r = str.length() - 1;
+//        while (l < r && str.charAt(l) != str.charAt(r)) {
+//            l++;
+//            r--;
+//        }
+//        return l >= r;
+//    }
+
     public boolean isPalindrome(String input) {
         StringBuilder str = new StringBuilder();
         for (int i = 0; i < input.length(); i++) {
@@ -49,22 +65,6 @@ public class ValidPalindrome {
         }
         return true;
     }
-
-//    public boolean isPalindrome(String input) {
-//        StringBuilder str = new StringBuilder();
-//        for (int i = 0; i < input.length(); i++) {
-//            char c = input.charAt(i);
-//            if (Character.isLetterOrDigit(c)) {
-//                str.append(Character.toLowerCase(c));
-//            }
-//        }
-//        int l = 0, r = str.length() - 1;
-//        while (l < r && str.charAt(l) != str.charAt(r)) {
-//            l++;
-//            r--;
-//        }
-//        return l >= r;
-//    }
 
     @Test
     public void test() {

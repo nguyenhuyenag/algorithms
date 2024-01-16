@@ -1,20 +1,21 @@
 package leetcode.string;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.Map;
-import java.util.Queue;
-import java.util.HashMap;
-import java.util.PriorityQueue;
+import java.util.*;
 
 /**
+ * Chủ đề: Mảng đánh dấu
+ * <p>
  * https://leetcode.com/problems/valid-anagram/
- *
+ * <p>
  * Nếu hai chuỗi có các phần tử bằng nhau thì bằng nhau (không tính thứ tự)
  */
 public class ValidAnagram {
 
-    public boolean isAnagram(String s1, String s2) {
+    public boolean isAnagram0(String s1, String s2) {
         if (s1.length() != s2.length()) {
             return false;
         }
@@ -32,25 +33,48 @@ public class ValidAnagram {
         return true;
     }
 
-    public boolean isAnagram2(String s1, String s2) {
-        if (s1.length() != s2.length()) {
-            return false;
-        }
-        Queue<Character> que1 = new PriorityQueue<>();
-        Queue<Character> que2 = new PriorityQueue<>();
-        for (int i = 0; i < s1.length(); i++) {
-            que1.add(s1.charAt(i));
-            que2.add(s2.charAt(i));
-        }
-        while (que1.size() > 0) {
-            if (!que1.poll().equals(que2.poll())) {
-                return false;
-            }
-        }
-        return true;
+//    public boolean isAnagram1(String s1, String s2) {
+//        if (s1.length() != s2.length()) {
+//            return false;
+//        }
+//        Queue<Character> que1 = new PriorityQueue<>();
+//        Queue<Character> que2 = new PriorityQueue<>();
+//        for (int i = 0; i < s1.length(); i++) {
+//            que1.add(s1.charAt(i));
+//            que2.add(s2.charAt(i));
+//        }
+//        while (que1.size() > 0) {
+//            if (!que1.poll().equals(que2.poll())) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+
+//    public boolean isAnagram(String s1, String s2) {
+//        int len = s1.length();
+//        if (len != s2.length()) return false;
+//        int[] mark = new int[26];
+//        for (int i = 0; i < len; i++) {
+//            mark[s1.charAt(i) - 'a']++;
+//            mark[s2.charAt(i) - 'a']--;
+//        }
+//        // System.out.println("mark = " + Arrays.toString(mark));
+//        for (int v : mark) {
+//            if (v != 0) return false;
+//        }
+//        return true;
+//    }
+
+    public boolean isAnagram(String s1, String s2) {
+        if (s1.length() != s2.length()) return false;
+        int[] mark = new int[26];
+        s1.chars().forEach(ch -> mark[ch - 'a']++);
+        s2.chars().forEach(ch -> mark[ch - 'a']--);
+        return Arrays.stream(mark).allMatch(v -> v == 0);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     public void doTest() {
         assertEquals(false, isAnagram("cat", "rat"));
         assertEquals(true, isAnagram("anagram", "nagaram"));

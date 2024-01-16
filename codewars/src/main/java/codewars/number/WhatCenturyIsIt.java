@@ -20,7 +20,8 @@ public class WhatCenturyIsIt {
 		String suffix;
 		// int century = (year - 1) / 100 + 1;
 		int century = getCentury(year);
-		if (11 <= century % 100 && century % 100 <= 13) {
+		int yearWithinCentury = century % 100; // Biểu thị năm trong khoảng 0 đến 99 của thế kỷ
+		if (11 <= yearWithinCentury && yearWithinCentury <= 13) {
 			suffix = "th";
 		} else {
 			suffix = switch (century % 10) {

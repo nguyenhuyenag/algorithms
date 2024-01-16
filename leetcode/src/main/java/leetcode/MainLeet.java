@@ -11,12 +11,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 /**
+ *
  */
 public class MainLeet {
 
     @Test
     public void test() {
-        assertEquals(3, 3);
+
     }
 
 }
