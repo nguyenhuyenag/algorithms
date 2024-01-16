@@ -1,13 +1,10 @@
-package codewars;
+package codewars.array;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * https://www.codewars.com/kata/56a5d994ac971f1ac500003e/
@@ -15,9 +12,11 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
  * Cho mảng string và số nguyên k. Tạo mảng mới bằng cách ghép k chuỗi liên tiếp.
  * Trả về chuỗi dài nhất
  *
- * arr = ["tree", "foling", "trashy", "blue", "abcdef", "uvwxyz"], k = 2
+ *      arr = ["tree", "foling", "trashy", "blue", "abcdef", "uvwxyz"], k = 2
+ *
+ *      new = ["treefoling", "folingtrashy",...]
  */
-public class MainWar {
+public class ConsecutiveStrings {
 
     public String longestConsec(String[] arr, int k) {
         String maxStr = "";

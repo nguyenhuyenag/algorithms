@@ -20,6 +20,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class FirstMissingPositive {
 
+//        public static int firstMissingPositive(int[] nums) {
+//        int current = 0; // Số nguyên dương hiện tại
+//        while (!queue.isEmpty()) {
+//            if (++current != queue.poll()) {
+//                return current;
+//            }
+//        }
+//    }
+
     public static int firstMissingPositive(int[] nums) {
         Set<Integer> visited = new HashSet<>();
         Queue<Integer> queue = new PriorityQueue<>();
@@ -40,25 +49,6 @@ public class FirstMissingPositive {
         return current + 1;
     }
 
-//    public static int firstMissingPositive(int[] nums) {
-//        Queue<Integer> queue = new PriorityQueue<>();
-//        Set<Integer> visited = new HashSet<>();
-//
-//        for (int num : nums) {
-//            if (num > 0 && visited.add(num)) {
-//                queue.add(num);
-//            }
-//        }
-//
-//        int current = 0; // Số nguyên dương hiện tại
-//        while (!queue.isEmpty()) {
-//            if (++current != queue.poll()) {
-//                return current;
-//            }
-//        }
-//
-//        return current + 1;
-//    }
 
     @Test
     public void test() {

@@ -1,13 +1,11 @@
-package codewars.number;
+package codewars.solved;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * https://www.codewars.com/kata/56a5d994ac971f1ac500003e/
- *
- * Cho mảng arr và số nguyên k, tìm phần tử có độ dài k ký tự liên tiếp
+ * https://www.codewars.com/kata/5a4e3782880385ba68000018/
  */
 public class BalancedNumber {
 

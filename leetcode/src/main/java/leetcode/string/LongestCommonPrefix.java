@@ -7,17 +7,19 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-// https://leetcode.com/problems/longest-common-prefix/
+/**
+ * https://leetcode.com/problems/longest-common-prefix/
+ */
 public class LongestCommonPrefix {
 
     /**
-     * Kiểm tra xem tất cả các chuỗi trong mảng arr có chứa cùng một ký tự ở vị trí cụ thể index không
+     * Kiểm tra xem tất cả các chuỗi trong mảng arr có chứa cùng một ký tự ở vị trí cụ thể i không
      */
-    private static boolean sameCharacterAtIndex(String[] arr, int index) {
-        String firstStr = arr[0];
+    public boolean allStringsEqualAtIndex(String[] arr, int i) {
+        char firstChar = arr[0].charAt(i);
         for (String s : arr) {
             // Nếu chỉ số vượt mảng hoặc vị trí index của a0 khác với ai -> false
-            if (index >= s.length() || firstStr.charAt(index) != s.charAt(index)) {
+            if (i >= s.length() || firstChar != s.charAt(i)) {
                 return false;
             }
         }
@@ -27,7 +29,7 @@ public class LongestCommonPrefix {
     public String longestCommonPrefix(String[] arr) {
         int pointer = 0;
         List<String> list = new ArrayList<>();
-        while (sameCharacterAtIndex(arr, pointer)) {
+        while (allStringsEqualAtIndex(arr, pointer)) {
             char currentChar = arr[0].charAt(pointer);
             list.add(String.valueOf(currentChar));
             pointer++;
