@@ -4,25 +4,26 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/*-
+/**
  * https://www.codewars.com/kata/55bf01e5a717a0d57e0000ec/
  *
- *      39 --> 3 (thực hiện 3 lần 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit)
+ * Nhân các chữ số lại với nhau cho đến khi kết quả cuối cùng < 10. Trả về số bước thực hiện
  *
- *      999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and finally 1*2 = 2)
+ *      39 --> 3 (thực hiện 3 lần 3*9 = 27, 2*7 = 14, 1*4 = 4)
+ *
+ *      999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, 1*2 = 2)
  *
  *      4 --> 0 (because 4 is already a one-digit number)
  */
 public class PersistentBugger {
 
     public int multiplyDigits(long n) {
-        int mul = 1;
+        int result  = 1;
         while (n > 0) {
-            int d = (int) (n % 10);
-            mul *= d;
+            result  *= n % 10;
             n /= 10;
         }
-        return mul;
+        return result ;
     }
 
     public int persistence(long n) {

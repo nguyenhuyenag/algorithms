@@ -11,41 +11,39 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class JumpingNumber {
 
-    public static String jumpingNumber(int number) {
+    public static boolean jumpingNumber(int number) {
         int[] digits = Integer.toString(number)
                 .chars()
                 .map(Character::getNumericValue)
                 .toArray();
-
         for (int i = 0; i < digits.length - 1; i++) {
             if (Math.abs(digits[i] - digits[i + 1]) != 1) {
-                return "Not!!";
+                return false;
             }
         }
-
-        return "Jumping!!";
+        return true;
     }
 
     @Test
     public void Single_Digit_Number() {
-        assertEquals("Jumping!!", jumpingNumber(9));
-        assertEquals("Jumping!!", jumpingNumber(1));
-        assertEquals("Jumping!!", jumpingNumber(7));
+        assertEquals(true, jumpingNumber(9));
+        assertEquals(true, jumpingNumber(1));
+        assertEquals(true, jumpingNumber(7));
     }
 
     @Test
     public void Two_Digit_Number() {
-        assertEquals("Jumping!!", jumpingNumber(23));
-        assertEquals("Jumping!!", jumpingNumber(32));
-        assertEquals("Not!!", jumpingNumber(79));
-        assertEquals("Jumping!!", jumpingNumber(98));
+        assertEquals(true, jumpingNumber(23));
+        assertEquals(true, jumpingNumber(32));
+        assertEquals(false, jumpingNumber(79));
+        assertEquals(true, jumpingNumber(98));
     }
 
     @Test
     public void Larger_Numbers() {
-        assertEquals("Jumping!!", jumpingNumber(8987));
-        assertEquals("Jumping!!", jumpingNumber(4343456));
-        assertEquals("Jumping!!", jumpingNumber(98789876));
+        assertEquals(true, jumpingNumber(8987));
+        assertEquals(true, jumpingNumber(4343456));
+        assertEquals(true, jumpingNumber(98789876));
     }
 
 }

@@ -1,19 +1,24 @@
-package leetcode;
+package leetcode.array;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 /**
+ * https://leetcode.com/problems/unique-number-of-occurrences/
  *
+ * Đếm số lần xuất hiện của các phần tử trong mảng, trả về true nếu chúng là duy nhất
+ *
+ *  [1, 2, 2, 1, 1, 3]  -> {1=3, 2=2,3=1} -> [3,2,1] -> true
+ *  [1, 1, 2, 2, 3]     -> {1=2, 2=2,3=1} -> [2,2,1] -> false
  */
-public class MainLeet {
+public class UniqueNumberOfOccurrences {
 
     public boolean uniqueOccurrences(int[] nums) {
         Map<Integer, Integer> countMap = new HashMap<>();
