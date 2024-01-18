@@ -64,15 +64,19 @@ public class MaximumSubarraySum {
         int max = arr[0], currentMax = arr[0];
         int start = 0, end = 0, tempStart = 0;
         for (int i = 1; i < arr.length; i++) {
-            if (arr[i] > max + arr[i]) {
-                max = arr[i];
+            // Nếu cộng x vào mà làm tổng < x thì gán là tổng = x và dời con trỏ lên vị trí x
+            int x = arr[i];
+            if (currentMax + x < x) {
+                currentMax = x;
                 tempStart = i;
             } else {
-                max = max + arr[i];
+                // Ngược lại thì cộng dồn
+                currentMax += x;
             }
 
-            if (max > currentMax) {
-                currentMax = max;
+            // Nếu tổng mới lớn hơn tổng cuối cùng
+            if (currentMax > max) {
+                max = currentMax;
                 start = tempStart;
                 end = i;
             }
