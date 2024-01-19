@@ -9,10 +9,15 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * Xóa ký tự trùng liên tiếp trong chuỗi:
  *
- * dup(["kelless","keenness"]) = ["keles","kenes"]
+ *      kelless -> keles
+ *      keenness -> kenes
  */
 public class StringArrayDuplicates {
 
+    /**
+     * Lặp từng ký tự và chèn vào builder, nếu ký tự hiện tại khác
+     * với ký tự trong builder thì mới add
+     */
     public static String removeDuplicate(String s) {
         StringBuilder builder = new StringBuilder();
         for (char c : s.toCharArray()) {

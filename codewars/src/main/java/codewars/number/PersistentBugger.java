@@ -14,16 +14,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *      999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, 1*2 = 2)
  *
  *      4 --> 0 (because 4 is already a one-digit number)
+ *
+ * Xem thêm: leetcode > AddDigits
  */
 public class PersistentBugger {
 
     public int multiplyDigits(long n) {
-        int result  = 1;
+        int result = 1;
         while (n > 0) {
-            result  *= n % 10;
+            result *= n % 10;
             n /= 10;
         }
-        return result ;
+        return result;
     }
 
     public int persistence(long n) {
