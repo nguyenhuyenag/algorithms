@@ -4,43 +4,30 @@ package leetcode;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
+import java.util.*;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * https://leetcode.com/problems/search-a-2d-matrix/
+ * https://leetcode.com/problems/find-k-closest-elements/description/
+ *
+ * Cho mảng đã sắp xếp, tìm k số gần x nhất
  */
 public class MainLeet {
 
-//    public boolean searchMatrix(int[][] matrix, int target) {
-//        int m = matrix.length;
-//        int n = matrix[0].length;
-//        // System.out.println(String.format("m = %s, n = %s", m, n));
-//        for (int i = 0; i < m; i++) {
-//            int l = 0, r = n - 1;
-//            // System.out.println(Arrays.toString(matrix[i]));
-//            while (l <= r) {
-//                int mid = l + (r - l) / 2;
-//                if (matrix[i][mid] == target) {
-//                    return true;
-//                } else if (matrix[i][mid] < target) {
-//                    l = mid + 1;
-//                } else {
-//                    r = mid - 1;
-//                }
-//            }
-//        }
-//        return false;
-//    }
-//
-//    @Test
-//    public void test() {
-//        int[][] matrix = {{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 60}};
-//        // assertEquals(true, searchMatrix(matrix, 3));
-//        // assertEquals(false, searchMatrix(matrix, 61));
-//        // assertEquals(true, searchMatrix(new int[][]{{1}}, 1));
-//        assertEquals(true, searchMatrix(new int[][]{{1, 3}}, 3));
-//    }
+    public List<Integer> findClosestElements(int[] arr, int k, int x) {
+        List<Integer> list = Arrays.stream(arr).boxed().collect(Collectors.toList());
+        list.sort(Comparator.comparingInt(u -> Math.abs(u - x)));
+        List<Integer> result = list.subList(0, k);
+        Collections.sort(result);
+        return result;
+    }
+
+    @Test
+    public void test() {
+        findClosestElements(new int[]{1, 2, 3, 4, 5}, 4, 3);
+        findClosestElements(new int[]{1, 2, 3, 4, 5}, 4, -1);
+    }
 
 }

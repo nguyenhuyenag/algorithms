@@ -20,7 +20,7 @@ public class CacPhepToanTrenMang {
     /**
      * Gộp 2 mảng
      */
-    public static void merge2(int[] arrayA, int[] arrayB) {
+    public static void merge1(int[] arrayA, int[] arrayB) {
         int lenA = arrayA.length, lenB = arrayB.length;
         int[] ans = new int[lenA + lenB];
         System.arraycopy(arrayA, 0, ans, 0, lenA);
@@ -31,14 +31,14 @@ public class CacPhepToanTrenMang {
     /**
      * Gộp 2 mảng
      */
-    public int[] merge(int[] arrayA, int[] arrayB) {
-        int i = 0;
-        int[] result = new int[arrayA.length + arrayB.length];
-        for (int x : arrayA) {
-            result[i++] = x;
+    public int[] merge2(int[] A, int[] B) {
+        int pointer = 0;
+        int[] result = new int[A.length + B.length];
+        for (int x : A) {
+            result[pointer++] = x;
         }
-        for (int v : arrayB) {
-            result[i++] = v;
+        for (int x : B) {
+            result[pointer++] = x;
         }
         return result;
     }
@@ -76,7 +76,7 @@ public class CacPhepToanTrenMang {
     public void testMerge() {
         int[] A = {1, 2, 3, 4};
         int[] B = {5, 6, 7};
-        int[] X = merge(A, B);
+        int[] X = merge2(A, B);
         System.out.println("X = " + Arrays.toString(X));
         merge2(A, B);
     }
