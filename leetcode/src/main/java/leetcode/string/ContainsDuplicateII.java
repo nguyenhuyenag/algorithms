@@ -14,43 +14,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class ContainsDuplicateII {
 
-//	public static boolean containsNearbyDuplicate(int[] nums, int k) {
-//		Map<Integer, Integer> map = new HashMap<>();
-//		for (int i = 0; i < nums.length; i++) {
-//			if (map.containsKey(nums[i])) {
-//				if (i - map.get(nums[i]) <= k) {
-//					return true;
-//				}
-//			}
-//			map.put(nums[i], i);
-//		}
-//		return false;
-//	}
-
-//    public boolean containsNearbyDuplicate(int[] arr, int k) {
-//        Map<Integer, Integer> map = new HashMap<>();
-//        for (int i = 0; i < arr.length; i++) {
-//            int ai = arr[i];
-//            if (map.containsKey(ai)) {
-//                int j = map.get(ai);
-//                if (Math.abs(i - j) <= k) {
-//                    return true;
-//                }
-//            }
-//            map.put(ai, i);
-//        }
-//        return false;
-//    }
-
     public boolean containsNearbyDuplicate(int[] arr, int k) {
-        Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> numIndexMap = new HashMap<>();
         for (int i = 0; i < arr.length; i++) {
-            int ai = arr[i];
-            int j = map.getOrDefault(ai, -1); // Default to -1 if key not present
+            int j = numIndexMap.getOrDefault(arr[i], -1); // Nếu j = -1 -> Key not present
             if (j != -1 && Math.abs(i - j) <= k) {
                 return true;
             }
-            map.put(ai, i);
+            numIndexMap.put(arr[i], i);
         }
         return false;
     }

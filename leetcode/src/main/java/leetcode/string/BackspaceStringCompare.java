@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 /**
  * https://leetcode.com/problems/backspace-string-compare/
  *
- * Cho 2 chuỗi, s, t. Thực hiện thao tác xóa ký tự khoảng trắng và ký tự trước khoảng trắng.
+ * Cho 2 chuỗi s, t. Thực hiện thao tác xóa ký tự khoảng trắng và ký tự trước khoảng trắng.
  * Sao sánh 2 chuỗi sau khi thực hiện thao tác trên (xem '#' là khoảng trắng)
  */
 public class BackspaceStringCompare {
@@ -21,13 +21,15 @@ public class BackspaceStringCompare {
     public static String processString0(String inputStr) {
         StringBuilder result = new StringBuilder();
         for (char c : inputStr.toCharArray()) {
-        	// Nếu c !=  trắng -> chèn c vào result
-            if (c != '#') {
-                result.append(c);
-            } else { // ngược c là khoảng trắng thì xóa phần tử cuối cùng
+            // Nếu là khoảng trắng
+            if (c == '#') {
                 if (result.length() > 0) {
+                    // Thì xóa phần tử trước đó
                     result.deleteCharAt(result.length() - 1);
                 }
+            } else {
+                // Ngược lại thì thêm mới
+                result.append(c);
             }
         }
         return result.toString();
