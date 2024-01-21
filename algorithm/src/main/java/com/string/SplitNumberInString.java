@@ -25,13 +25,13 @@ public class SplitNumberInString {
 		}
 	}
 
-	public static void byPattern() {
-		Pattern p = Pattern.compile("(-?\\d+_");
-		Matcher m = p.matcher("string-1234more567string890");
-		while (m.find()) {
-			System.out.println(m.group());
-		}
-	}
+//	public static void byPattern() {
+//		Pattern p = Pattern.compile("(-?\\d+_)");
+//		Matcher m = p.matcher("string-1234more567string890");
+//		while (m.find()) {
+//			System.out.println(m.group());
+//		}
+//	}
 
 	public static int find1() {
 		String s = "string-1234more567string890";
@@ -63,4 +63,5 @@ public class SplitNumberInString {
 		// byWhileLoop();
 		find1();
 	}
+
 }

@@ -10,12 +10,10 @@ import java.util.regex.Pattern;
 public class SplitCharOutString {
 
 	static public void main(String[] args) {
-		try (Scanner io = new Scanner(System.in);) {
-			String s = io.nextLine();
-			Matcher matcher = Pattern.compile("[a-zA-Z]").matcher(s);
-			while (matcher.find()) {
-				System.out.print(matcher.group());
-			}
+		String s = "1254abcdd1425";
+		Matcher matcher = Pattern.compile("[a-zA-Z]").matcher(s);
+		while (matcher.find()) {
+			System.out.print(matcher.group());
 		}
 	}
 

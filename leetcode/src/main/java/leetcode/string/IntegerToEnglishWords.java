@@ -1,40 +1,68 @@
 package leetcode.string;
 
-// https://leetcode.com/problems/integer-to-english-words
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import java.util.StringJoiner;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+/**
+ * https://leetcode.com/problems/integer-to-english-words/
+ */
 public class IntegerToEnglishWords {
 
-	static String[] tens = { "", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety" };
-	static String[] ones = { "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
+	String[] tens = { "", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety" };
+	String[] ones = { "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
 			"Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" };
 
-	private static String helper(int num) {
-		StringBuilder sb = new StringBuilder();
-		if (num >= 1000000000) {
-			sb.append(helper(num / 1000000000)).append(" Billion ").append(helper(num % 1000000000));
-		} else if (num >= 1000000) {
-			sb.append(helper(num / 1000000)).append(" Million ").append(helper(num % 1000000));
-		} else if (num >= 1000) {
-			sb.append(helper(num / 1000)).append(" Thousand ").append(helper(num % 1000));
-		} else if (num >= 100) {
-			sb.append(helper(num / 100)).append(" Hundred ").append(helper(num % 100));
-		} else if (num >= 20) {
-			sb.append(tens[num / 10]).append(" ").append(helper(num % 10));
+//	public String helper(int n) {
+//		StringBuilder sb = new StringBuilder();
+//		if (n >= 1_000_000_000) {
+//			sb.append(helper(n / 1_000_000_000)).append(" Billion ").append(helper(n % 1_000_000_000));
+//		} else if (n >= 1_000_000) {
+//			sb.append(helper(n / 1_000_000)).append(" Million ").append(helper(n % 1_000_000));
+//		} else if (n >= 1000) {
+//			sb.append(helper(n / 1000)).append(" Thousand ").append(helper(n % 1000));
+//		} else if (n >= 100) {
+//			sb.append(helper(n / 100)).append(" Hundred ").append(helper(n % 100));
+//		} else if (n >= 20) {
+//			sb.append(tens[n / 10]).append(" ").append(helper(n % 10));
+//		} else {
+//			sb.append(ones[n]);
+//		}
+//		return sb.toString().trim();
+//	}
+
+	public String helper(int n) {
+		StringJoiner sj = new StringJoiner(" ");
+		if (n >= 1_000_000_000) {
+			sj.add(helper(n / 1_000_000_000)).add("Billion").add(helper(n % 1_000_000_000));
+		} else if (n >= 1_000_000) {
+			sj.add(helper(n / 1_000_000)).add("Million").add(helper(n % 1_000_000));
+		} else if (n >= 1000) {
+			sj.add(helper(n / 1000)).add("Thousand").add(helper(n % 1000));
+		} else if (n >= 100) {
+			sj.add(helper(n / 100)).add("Hundred").add(helper(n % 100));
+		} else if (n >= 20) {
+			sj.add(tens[n / 10]).add(helper(n % 10));
 		} else {
-			sb.append(ones[num]);
+			sj.add(ones[n]);
 		}
-		return sb.toString().trim();
+		return sj.toString().trim();
 	}
 
-	public static String numberToWords(int num) {
+	public String numberToWords(int num) {
 		if (num == 0) {
 			return "Zero";
 		}
 		return helper(num).trim();
 	}
 
-	public static void main(String[] args) {
-		int n = 123;
-		System.out.println(numberToWords(n));
+	@Test
+	public void test() {
+		String read = numberToWords(142);
+		System.out.println("Read = " + read);;
 	}
 
 }
