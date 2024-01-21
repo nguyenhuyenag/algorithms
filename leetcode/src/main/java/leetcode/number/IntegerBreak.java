@@ -21,7 +21,7 @@ public class IntegerBreak {
             n -= 3;
         }
         result *= n;
-        System.out.println("result = " + result);
+        // System.out.println("result = " + result);
         return result;
     }
 
@@ -37,6 +37,7 @@ public class IntegerBreak {
             remainder += 3;
         }
         // Số lớn nhất sẽ được tạo ra bằng cách sử dụng countOf3 số 3 và remainder số 1 hoặc 2
+        System.out.println("3^" + countOf3 + " * 2^" + remainder / 2);
         int maxProduct = (int) Math.pow(3, countOf3) * (int) Math.pow(2, remainder / 2);
         return maxProduct;
     }
@@ -46,6 +47,7 @@ public class IntegerBreak {
         assertEquals(1, integerBreak0(2));
         assertEquals(36, integerBreak0(10));
         assertEquals(324, integerBreak0(16));
+        assertEquals(integerBreak(41), integerBreak0(41));
     }
 
 }

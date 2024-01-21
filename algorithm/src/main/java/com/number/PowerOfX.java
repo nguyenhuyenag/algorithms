@@ -1,9 +1,13 @@
-package leetcode.number;
+package com.number;
 
-// https://leetcode.com/problems/power-of-four/
-public class PowerofFour {
+/**
+ * https://leetcode.com/problems/power-of-four/
+ *
+ * Cho số nguyên N, tìm x sao cho 4^x = n
+ */
+public class PowerOfX {
 
-	public static boolean isPowerOfFour(int n) {
+	public static boolean isPowerOf4(int n) {
 		if (n <= 0) {
 			return false;
 		}
