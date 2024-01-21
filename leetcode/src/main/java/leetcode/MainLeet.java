@@ -38,14 +38,37 @@ public class MainLeet {
     }
 
 
-    @Test
-    public void test() {
-        // assertEquals(3, triangleNumber(new int[]{2, 2, 3, 4}));
-        // assertEquals(4, triangleNumber(new int[]{4, 2, 3, 4}));
-        // assertEquals(75781, triangleNumber(new int[]{16, 70, 16, 36, 17, 39, 44, 72, 25, 88, 18, 22, 20, 84, 18, 66, 71, 74, 87, 59, 48, 91, 52, 15, 92, 29, 85, 21, 10, 34, 86, 68, 10, 27, 3, 42, 49, 48, 18, 15, 6, 39, 61, 28, 19, 52, 60, 8, 37, 32, 71, 82, 54, 38, 47, 33, 10, 64, 52, 71, 39, 63, 64, 79, 86, 47, 16, 72, 55, 17, 35, 88, 74, 93, 10, 59, 3, 64, 95, 91, 61, 28, 63, 23, 49, 6, 24, 47, 41, 88, 96, 23, 90, 53, 84, 3, 35, 23, 3, 17}));
-        int k = 3;
-        int[] arr = {16, 70, 16, 36, 17, 39, 44, 72, 25, 88, 18, 22, 20, 84, 18, 66};
-        generateSubsets(arr, k);
-    }
+//    @Test
+//    public void test() {
+//        String binary = Integer.toBinaryString(5);
+//        for (int i = 0; i < binary.length() - 1; i++) {
+//            System.out.println(binary.substring(i, i + 2));
+//            if (Math.abs(binary.charAt(i) - binary.charAt(i + 2)) != 1) {
+//
+//            }
+//        }
+//    }
+
+//    public static int findMaxProduct(int n) {
+//        if (n == 2 || n == 3) {
+//            return n; // Trường hợp đặc biệt khi n là 2 hoặc 3
+//        }
+//        int countOf3 = n / 3; // Đếm số 3
+//        int remainder = n % 3; // Còn dư
+//        if (remainder == 1) {
+//            // Nếu còn dư 1, thì lấy một số 3 và còn lại là 4
+//            countOf3--;
+//            remainder += 3;
+//        }
+//        // Số lớn nhất sẽ được tạo ra bằng cách sử dụng countOf3 số 3 và remainder số 1 hoặc 2
+//        int maxProduct = (int) Math.pow(3, countOf3) * (int) Math.pow(2, remainder / 2);
+//        return maxProduct;
+//    }
+//
+//    public static void main(String[] args) {
+//        int n = 10; // Thay đổi giá trị n theo nhu cầu
+//        int maxProduct = findMaxProduct(n);
+//        System.out.println("Số lớn nhất bằng tích của các số nguyên dương có tổng bằng " + n + " là: " + maxProduct);
+//    }
 
 }
