@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 /**
  * https://leetcode.com/problems/sum-of-square-numbers/
  * 
- * Kiểm tra số xem c = a^2 + b^2
+ * Cho số nguyên c, kiểm tra số xem c = a^2 + b^2
  */
 public class SumOfSquareNumbers {
 
@@ -40,6 +40,8 @@ public class SumOfSquareNumbers {
 	@Test
 	public void testSomething() {
 		assertEquals(true, judgeSquareSum(25));
+		assertEquals(false, judgeSquareSum(24));
+		assertEquals(true, judgeSquareSum(49));
 	}
 
 }
