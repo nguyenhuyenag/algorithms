@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * https://leetcode.com/problems/binary-number-with-alternating-bits/
  *
- * Kiểm tra bit xem kẻ
+ * Kiểm tra bit xen kẻ
  *
  *      5 = 101 -> true
  */

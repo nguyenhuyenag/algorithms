@@ -1,15 +1,5 @@
 package leetcode.string;
 
-/*-
- * def largestGoodInteger(self, num: str) -> str:
-        templates = ["999", "888", "777", "666", "555", "444", "333", "222", "111", "000"]
-
-        for t in templates:
-            if t in num:
-                return t
-        return ""
- */
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -17,12 +7,42 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *
  * Tìm 3 chữ số giống nhau lớn nhất trong chuỗi chữ số
  *
- *  "2300019"       ->      "000"
- *  "6777133339"    ->      "777"
+ * "2300019"       ->      "000"
+ * "6777133339"    ->      "777"
  */
 public class Largest3SameDigit {
 
-//    public String largestGoodInteger_OK(String num) {
+    public boolean allCharactersAreSame(String s, int startIndex, int endIndex) {
+        char firstChar = s.charAt(startIndex);
+        for (int i = startIndex + 1; i < endIndex; i++) {
+            if (firstChar != s.charAt(i)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public String largestGoodInteger(String numStr) {
+        int max = -1;
+        for (int i = 0; i < numStr.length() - 2; i++) {
+            if (allCharactersAreSame(numStr, i, i + 3)) {
+                // System.out.println(numStr.substring(i, i + 3));
+                max = Math.max(max, Integer.parseInt(numStr.substring(i, i + 3)));
+            }
+        }
+        if (max == -1) return "";
+        return max == 0 ? "000" : Integer.toString(max);
+    }
+
+    @org.junit.jupiter.api.Test
+    public void test() {
+        assertEquals("", largestGoodInteger("300"));
+        assertEquals("777", largestGoodInteger("6777133339"));
+        assertEquals("000", largestGoodInteger("2300019"));
+        assertEquals("", largestGoodInteger("101010"));
+    }
+
+    //    public String largestGoodInteger_OK(String num) {
 //        int max = -1;
 //        int len = num.length();
 //        for (int i = 0; i <= len - 3; i++) {
@@ -61,35 +81,5 @@ public class Largest3SameDigit {
 //        }
 //        return max;
 //    }
-
-    public boolean allCharactersAreSame(String s, int startIndex, int endIndex) {
-        char firstChar = s.charAt(startIndex);
-        for (int i = startIndex + 1; i < endIndex; i++) {
-            if (firstChar != s.charAt(i)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public String largestGoodInteger(String numStr) {
-        int max = -1;
-        for (int i = 0; i < numStr.length() - 2; i++) {
-            if (allCharactersAreSame(numStr, i, i + 3)) {
-                // System.out.println(numStr.substring(i, i + 3));
-                max = Math.max(max, Integer.parseInt(numStr.substring(i, i + 3)));
-            }
-        }
-        if (max == -1) return "";
-        return max == 0 ? "000" : Integer.toString(max);
-    }
-
-    @org.junit.jupiter.api.Test
-    public void test() {
-        assertEquals("", largestGoodInteger("300"));
-        assertEquals("777", largestGoodInteger("6777133339"));
-        assertEquals("000", largestGoodInteger("2300019"));
-        assertEquals("", largestGoodInteger("101010"));
-    }
 
 }

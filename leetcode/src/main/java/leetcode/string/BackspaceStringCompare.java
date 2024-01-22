@@ -35,6 +35,7 @@ public class BackspaceStringCompare {
         return result.toString();
     }
 
+    // Dùng Stack
     private static String processString(String str) {
         Stack<Character> stack = new Stack<>();
         for (char c : str.toCharArray()) {

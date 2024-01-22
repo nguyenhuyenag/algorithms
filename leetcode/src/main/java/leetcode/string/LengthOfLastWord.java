@@ -3,13 +3,15 @@ package leetcode.string;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-// https://leetcode.com/problems/length-of-last-word/
+/**
+ * https://leetcode.com/problems/length-of-last-word/
+ */
 public class LengthOfLastWord {
 
-	public static int lengthOfLastWord(String str) {
-		str = str.trim();
-		int last = str.lastIndexOf(" ") + 1;
-		return str.length() - last;
+	public static int lengthOfLastWord(String s) {
+		s = s.trim();
+		int lastIndex = s.lastIndexOf(" ") + 1; // Tìm vị trí của khoảng trắng cuối cùng
+		return s.length() - lastIndex;
 	}
 
 	@Test

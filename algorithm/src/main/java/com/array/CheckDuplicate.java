@@ -1,4 +1,4 @@
-package leetcode.string;
+package com.array;
 
 import org.junit.jupiter.api.Test;
 
@@ -7,11 +7,9 @@ import java.util.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * https://leetcode.com/problems/contains-duplicate/
- *
  * Cho mảng số nguyên, trả về true nếu có phần tử xuất hiện 2 lần
  */
-public class ContainsDuplicate {
+public class CheckDuplicate {
 
     public boolean containsDuplicate0(int[] nums) {
         Arrays.sort(nums);

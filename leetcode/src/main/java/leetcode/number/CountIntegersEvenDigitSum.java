@@ -25,7 +25,6 @@ public class CountIntegersEvenDigitSum {
         for (int i = 2; i <= n; i++) {
             if (sumDigit(i) % 2 == 0) {
                 count++;
-                // System.out.println(i);
             }
         }
         return count;
