@@ -62,15 +62,16 @@ public class NumberUtils {
      * Đảo ngược số
      */
     public static int reverseNumber(int n) {
-        int rev = 0;
+        int result = 0;
+        /**
+         * n = ab = 10 * a + b
+         * n % 10 => Lấy chữ số ra thêm vào hàng đơn vị
+         */
         while (n > 0) {
-            // b = n % 10 => Lấy chữ số ra
-            // thêm vào hàng đơn vị
-            // ab = 10 * a + b
-            rev = rev * 10 + n % 10;
+            result = 10 * result + n % 10;
             n = n / 10;
         }
-        return rev;
+        return result;
     }
 
     /**

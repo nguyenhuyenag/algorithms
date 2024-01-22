@@ -3,15 +3,15 @@ package leetcode.number;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/*-
+/**
+ * https://leetcode.com/problems/roman-to-integer/
+ *
  * - Quy tắc viết số La Mã là phải cộng, trái trừ
- * 	
+ *
  *	  	AB	:	A < B	=>	A - B
  *	  			A >= B	=>	A + B
- * 
+ *
  * - Các số: `I, X, C, M` không được phép lặp lại quá 3, các số: `V, L, D` chỉ được xuất hiện 1 lần duy nhất
- * 
- * https://leetcode.com/problems/roman-to-integer/
  */
 public class RomanToInteger {
 	
