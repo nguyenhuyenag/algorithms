@@ -51,8 +51,8 @@ public class MaxPalindromeSubstring {
         }
         String maxStr = s.substring(0, 1); // Chuỗi 1 ký tự luôn là chuỗi đối xứng
         for (int i = 0; i < s.length() - 1; i++) {
-            String odd = expandFromCenter(s, i, i);         // 'bcb'
-            String even = expandFromCenter(s, i, i + 1);    // 'bb'
+            String odd = expandFromCenter(s, i, i);         // Tìm chuỗi đối xứng dạng 'bcb'
+            String even = expandFromCenter(s, i, i + 1);    // Dạng 'bb'
             if (maxStr.length() < Math.max(odd.length(), even.length())) {
                 maxStr = (odd.length() > even.length()) ? odd : even;
             }
@@ -61,13 +61,14 @@ public class MaxPalindromeSubstring {
         return maxStr;
     }
 
-    // Manacher algỏithm: Khai triển ra hai hướng từ tâm
-    public String expandFromCenter(String s, int left, int right) {
-        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
-            left--;
-            right++;
+    // Manacher algorithm: Khai triển ra hai hướng từ tâm
+    public String expandFromCenter(String s, int toLeft, int toRight) {
+        while (toLeft >= 0 && toRight < s.length() && s.charAt(toLeft) == s.charAt(toRight)) {
+            // Hai con trỏ sẽ di chuyển về hai hướng và dừng tại vị trí mà chúng khác nhau
+            toLeft--;
+            toRight++;
         }
-        return s.substring(left + 1, right);
+        return s.substring(toLeft + 1, toRight);
     }
 
 

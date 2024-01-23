@@ -22,7 +22,7 @@ public class UglyNumber {
                 n /= d;
             }
         }
-        // Nếu còn lại chỉ là 1 thì tức là n = 2^x3^y5^z -> true
+        // Nếu == 1 tức số này có dạng 2^x * 3^y * 5^z
         return n == 1;
     }
 
