@@ -23,7 +23,6 @@ public class ValidTriangleNumber {
     public int triangleNumber(int[] arr) {
         int count = 0;
         List<Integer> triangle = new ArrayList<>();
-
         int len = arr.length;
         int totalSubsets = 1 << len;
         for (int i = 0; i < totalSubsets; i++) {

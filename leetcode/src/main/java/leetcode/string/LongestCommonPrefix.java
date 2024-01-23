@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class LongestCommonPrefix {
 
-    // Check các phần tử có chứa cùng một ký tự ở vị trí i
+    // Kiểm tra các phần tử có chứa cùng một ký tự ở vị trí i hay không
     public boolean sameCharacterAtIndex(String[] arr, int i) {
         char firstChar = arr[0].charAt(i);
         for (String s : arr) {

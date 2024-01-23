@@ -1,18 +1,29 @@
-package leetcode;
+package leetcode.array;
 
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
+import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/
+ *
+ * Cho tập s chứa các chuỗi, từ một tập con, ghép thành 1 chuỗi. Ttrong các tập mà
+ * không có ký tự trùng nhau hãy tìm tập con có độ dài lớn nhất
+ *
+ * s = ["un","iq","ue"] thì có các tập con thỏa mãn điều kiện là
+ *      ""
+ *      "un"
+ *      "iq"
+ *      "ue"
+ *      "uniq" ("un" + "iq") -> length = 4
+ *      "ique" ("iq" + "ue")
+ *
+ *      Vậy đáp số là 4
  */
-public class MainLeet {
+public class MaximumLengthOfAConcattenatedString {
 
     public boolean checkDuplicateCharacter(StringBuilder str) {
         boolean[] charSet = new boolean[26];

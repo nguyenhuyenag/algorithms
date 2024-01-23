@@ -8,10 +8,11 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * https://leetcode.com/problems/largest-odd-number-in-string/
  *
- * Tìm số lẽ lớn nhất là chuỗi con của 1 chuỗi
+ * Cho số dạng chuỗi. Tìm số lẽ lớn nhất là chuỗi con của 1 chuỗi
  */
 public class LargestOddNumberInString {
 
+    // Duyệt ngược, kiểm tra nếu số ở vị trí đó lẻ -> số lẻ lớn nhất
     public String largestOddNumber(String num) {
         for (int i = num.length() - 1; i >= 0; i--) {
             int currentChar = num.charAt(i);
