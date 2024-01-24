@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * https://leetcode.com/problems/reverse-words-in-a-string/
  *
- * "the sky is blue" -> "blue is sky the"
+ * Đảo chuỗi:   "the sky is blue" -> "blue is sky the"
  */
 public class ReverseWordInAString {
 

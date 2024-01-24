@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * https://leetcode.com/problems/reverse-words-in-a-string-iii/
  *
- * "Let's take LeetCode contest" -> "s'teL ekat edoCteeL tsetnoc"
+ * Đảo chuỗi:   "Let's take LeetCode contest" -> "s'teL ekat edoCteeL tsetnoc"
  */
 public class ReverseWordInAStringIII {
 

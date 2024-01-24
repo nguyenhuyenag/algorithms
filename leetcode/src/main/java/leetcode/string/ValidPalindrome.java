@@ -4,11 +4,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/*-
+/**
+ * https://leetcode.com/problems/valid-palindrome/
+ *
  * Given a string s, determine if it is a palindrome, considering only
  * alphanumeric characters and ignoring cases.
  *
- * https://leetcode.com/problems/valid-palindrome/
+ * Kiểm tra chuỗi s có đối xứng hay không (chỉ xét ký tự số và chữ hoa và chữ thường là như nhau)
  */
 public class ValidPalindrome {
 
