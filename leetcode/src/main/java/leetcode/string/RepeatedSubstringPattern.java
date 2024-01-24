@@ -13,21 +13,6 @@ import org.junit.jupiter.api.Test;
  */
 public class RepeatedSubstringPattern {
 
-    // Time Limit Exceeded
-//	public boolean repeatedSubstringPattern0(String input) {
-//		for (int i = 0; i < input.length() / 2; i++) {
-//			String sub = input.substring(0, i + 1);
-//			// System.out.println("i=" + i + ", " + "sub: " + sub);
-//			String afterReplace = input.replaceAll(sub, "");
-//			// System.out.println("afterReplace: " + afterReplace + ", length: " +
-//			// afterReplace.length());
-//			if (afterReplace.length() == 0) {
-//				return true;
-//			}
-//		}
-//		return false;
-//	}
-
 //	public boolean repeatedSubstringPattern_OK(String input) {
 //		int len = input.length();
 //		// Chỉ lặp đến len/2, vì nếu vượt quá thì chuỗi mới sẽ dài hơn chuỗi gốc
@@ -49,7 +34,7 @@ public class RepeatedSubstringPattern {
 
     public boolean repeatedSubstringPattern(String s) {
         int n = s.length();
-        // Chỉ lặp đến n/2, vì nếu vượt quá thì chuỗi mới sẽ dài hơn chuỗi gốc
+        // Chỉ lặp đến n/2, vì nếu vượt quá thì chuỗi repeat sẽ dài hơn chuỗi gốc
         for (int i = 1; i <= n / 2; i++) {
             //  Nếu n != k * i thì không cần lặp
             if (n % i != 0) continue;
