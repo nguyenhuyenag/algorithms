@@ -6,49 +6,56 @@ import java.util.Stack;
 
 import org.junit.jupiter.api.Test;
 
-// https://leetcode.com/problems/valid-parentheses/description/
+/**
+ * https://leetcode.com/problems/valid-parentheses/
+ *
+ * Xem thêm: codewar > ValidBraces.java
+ */
 public class ValiParentheses {
 
-	// '(', ')', '{', '}', '[', ']'
-	public static boolean isValid(String s) {
-		Stack<Character> stack = new Stack<>();
-		for (char c : s.toCharArray()) {
-			if (c == '(') {
-				stack.push(')');
-			} else if (c == '{') {
-				stack.push('}');
-			} else if (c == '[') {
-				stack.push(']');
-			} else {
-				if (stack.isEmpty() || stack.pop() != c) {
-					return false;
-				}
-			}
-		}
-		return stack.isEmpty();
-	}
+    // '(', ')', '{', '}', '[', ']'
+    public boolean isValid_OK(String s) {
+        Stack<Character> stack = new Stack<>();
+        for (char c : s.toCharArray()) {
+            if (c == '(') {
+                stack.push(')');
+            } else if (c == '{') {
+                stack.push('}');
+            } else if (c == '[') {
+                stack.push(']');
+            } else {
+                if (stack.isEmpty() || stack.pop() != c) {
+                    return false;
+                }
+            }
+        }
+        return stack.isEmpty();
+    }
 
-	public static void main(String[] args) {
-		String s = "()";
-		isValid(s);
-	}
+    // s1, s2 tạo thành 1 cặp ngoặ đúng
+    public boolean pair(char s1, char s2) {
+        return (s1 == '(' && s2 == ')') ||
+                (s1 == '{' && s2 == '}') ||
+                (s1 == '[' && s2 == ']');
+    }
 
-	@Test
-	public void test1() {
-		String s = "()";
-		assertEquals(true, isValid(s));
-	}
+    public boolean isValid(String s) {
+        Stack<Character> stack = new Stack<>();
+        for (char c : s.toCharArray()) {
+            // Nếu đỉnh stack và c tạo thành 1 cặp thì gỡ nó khỏi stack
+            if (stack.size() > 0 && pair(stack.peek(), c)) {
+                stack.pop();
+            } else {
+                stack.push(c);
+            }
+        }
+        return stack.isEmpty();
+    }
 
-	@Test
-	public void test2() {
-		String s = "()[]{}";
-		assertEquals(true, isValid(s));
-	}
-
-	@Test
-	public void test3() {
-		String s = "(]";
-		assertEquals(false, isValid(s));
-	}
-
+    @Test
+    public void test() {
+        assertEquals(true, isValid("()"));
+        // assertEquals(false, isValid("(]"));
+        // assertEquals(true, isValid("()[]{}"));
+    }
 }

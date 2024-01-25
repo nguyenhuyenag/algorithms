@@ -14,7 +14,32 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class ValidPalindrome {
 
-//	public boolean isPalindrome(String str) {
+    public boolean isPalindrome(String input) {
+        StringBuilder str = new StringBuilder();
+        for (int i = 0; i < input.length(); i++) {
+            char c = input.charAt(i);
+            if (Character.isLetterOrDigit(c)) {
+                str.append(Character.toLowerCase(c));
+            }
+        }
+        int l = 0, r = str.length() - 1;
+        while (l < r) {
+            if (str.charAt(l) != str.charAt(r)) {
+                return false;
+            }
+            l++;
+            r--;
+        }
+        return true;
+    }
+
+    @Test
+    public void test() {
+        // assertEquals(true, isPalindrome("A man, a plan, a canal: Panama"));
+        assertEquals(false, isPalindrome("0P"));
+    }
+
+    //	public boolean isPalindrome(String str) {
 //		int i = 0;
 //		int j = str.length() - 1;
 //		while (i <= j) {
@@ -49,28 +74,4 @@ public class ValidPalindrome {
 //        return l >= r;
 //    }
 
-    public boolean isPalindrome(String input) {
-        StringBuilder str = new StringBuilder();
-        for (int i = 0; i < input.length(); i++) {
-            char c = input.charAt(i);
-            if (Character.isLetterOrDigit(c)) {
-                str.append(Character.toLowerCase(c));
-            }
-        }
-        int l = 0, r = str.length() - 1;
-        while (l < r) {
-            if (str.charAt(l) != str.charAt(r)) {
-                return false;
-            }
-            l++;
-            r--;
-        }
-        return true;
-    }
-
-    @Test
-    public void test() {
-        // assertEquals(true, isPalindrome("A man, a plan, a canal: Panama"));
-        assertEquals(false, isPalindrome("0P"));
-    }
 }

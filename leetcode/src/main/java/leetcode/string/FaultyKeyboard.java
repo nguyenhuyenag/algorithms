@@ -27,10 +27,7 @@ public class FaultyKeyboard {
     @Test
     public void test() {
         assertEquals("rtsng", finalString("string"));
-        // assertEquals("ponter", finalString("poiinter"));
+        assertEquals("ponter", finalString("poiinter"));
     }
-
-//    public static void main(String[] args) {
-//    }
 
 }
