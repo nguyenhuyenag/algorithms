@@ -9,28 +9,9 @@ import org.junit.jupiter.api.Test;
 /**
  * https://leetcode.com/problems/valid-parentheses/
  *
- * Xem thêm: codewar > ValidBraces.java
+ * Xem thêm: Codewar > ValidBraces.java
  */
 public class ValiParentheses {
-
-    // '(', ')', '{', '}', '[', ']'
-    public boolean isValid_OK(String s) {
-        Stack<Character> stack = new Stack<>();
-        for (char c : s.toCharArray()) {
-            if (c == '(') {
-                stack.push(')');
-            } else if (c == '{') {
-                stack.push('}');
-            } else if (c == '[') {
-                stack.push(']');
-            } else {
-                if (stack.isEmpty() || stack.pop() != c) {
-                    return false;
-                }
-            }
-        }
-        return stack.isEmpty();
-    }
 
     // s1, s2 tạo thành 1 cặp ngoặ đúng
     public boolean pair(char s1, char s2) {
@@ -55,7 +36,27 @@ public class ValiParentheses {
     @Test
     public void test() {
         assertEquals(true, isValid("()"));
-        // assertEquals(false, isValid("(]"));
-        // assertEquals(true, isValid("()[]{}"));
+        assertEquals(false, isValid("(]"));
+        assertEquals(true, isValid("()[]{}"));
     }
+
+    // '(', ')', '{', '}', '[', ']'
+//    public boolean isValid_OK(String s) {
+//        Stack<Character> stack = new Stack<>();
+//        for (char c : s.toCharArray()) {
+//            if (c == '(') {
+//                stack.push(')');
+//            } else if (c == '{') {
+//                stack.push('}');
+//            } else if (c == '[') {
+//                stack.push(']');
+//            } else {
+//                if (stack.isEmpty() || stack.pop() != c) {
+//                    return false;
+//                }
+//            }
+//        }
+//        return stack.isEmpty();
+//    }
+
 }
