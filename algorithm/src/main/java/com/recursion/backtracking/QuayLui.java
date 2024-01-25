@@ -1,5 +1,6 @@
 package com.recursion.backtracking;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 
 /*-
@@ -43,21 +44,37 @@ public class QuayLui {
     private static final LinkedList<String> list = new LinkedList<>();
 
     // Sinh dãy nhị phân độ dài n
-    public static void gen(int n, int index) {
+    public static void genBinary(int n, int index) {
         if (index == n) {
             System.out.print(String.join("", list) + " ");
         } else {
             for (char c = '0'; c <= '1'; c++) {
                 list.addLast(String.valueOf(c));
-                gen(n, index + 1);
+                genBinary(n, index + 1);
                 list.removeLast();
             }
         }
     }
 
+    public static LinkedList<Integer> listSubset = new LinkedList<>();
+
+    // n là tập con lớn nhất, pos là sô lượng tập con hiện tại
+    // Sinh dãy nhị phân, nếu bit 0 thì add vào mảng
+    public static void genSubset(int n, int pos) {
+        //if (pos == n) {
+        System.out.println(Arrays.toString(listSubset.toArray()));
+        //} else {
+        for (int i = pos; i < n; i++) {
+            listSubset.addLast(i);
+            genSubset(n, i + 1);
+            listSubset.removeLast();
+        }
+        // }
+    }
+
     public static void main(String[] args) {
-        int n = 4;
-        gen(n, 0);
+        // genBinary(4, 0); // Bắt đầu từ vị trí 0
+        genSubset(3, 0);
     }
 
 }
