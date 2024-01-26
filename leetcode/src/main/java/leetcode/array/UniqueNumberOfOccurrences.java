@@ -25,8 +25,8 @@ public class UniqueNumberOfOccurrences {
         for (int num : nums) {
             countMap.put(num, countMap.getOrDefault(num, 0) + 1);
         }
-        Set<Integer> uniqueCounts = new HashSet<>(countMap.values());
-        return uniqueCounts.size() == countMap.size();
+        Set<Integer> uniqueValues = new HashSet<>(countMap.values());
+        return countMap.size() == uniqueValues.size();
     }
 
     @Test

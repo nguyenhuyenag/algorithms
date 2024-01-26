@@ -3,16 +3,12 @@ package leetcode.datetime;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/*-
- * You are given a string time in the form of hh:mm, where some of the digits in
- * the string are hidden (represented by ?)
- * 
- * The valid times are those inclusively between 00:00 and 23:59
- * 
- * Return the latest valid time you can get from time by replacing the hidden
- * digits
- * 
+/**
  * https://leetcode.com/problems/latest-time-by-replacing-hidden-digits/
+ *
+ * Thay thế các dấu '?' để được giờ lớn nhất
+ *
+ * Note: Giờ hợp lệ là giờ nằm giữa '00:00' và '23:59'
  */
 public class LatestTimeHiddenDigits {
 
@@ -21,28 +17,28 @@ public class LatestTimeHiddenDigits {
     // minute first digit 	: 0-5
     // minute second digit 	: 0-9
 	public static String maximumTime(String time) {
-		char[] A = time.toCharArray();
-		if (A[0] == '?') {
-			if (A[1] == '?' || A[1] < '4') {
-				A[0] = '2';
+		char[] chars = time.toCharArray();
+		if (chars[0] == '?') {
+			if (chars[1] == '?' || chars[1] < '4') {
+				chars[0] = '2';
 			} else {
-				A[0] = '1';
+				chars[0] = '1';
 			}
 		}
-		if (A[1] == '?') {
-			if (A[0] == '2') {
-				A[1] = '3';
+		if (chars[1] == '?') {
+			if (chars[0] == '2') {
+				chars[1] = '3';
 			} else {
-				A[1] = '9';
+				chars[1] = '9';
 			}
 		}
-		if (A[3] == '?') {
-			A[3] = '5';
+		if (chars[3] == '?') {
+			chars[3] = '5';
 		}
-		if (A[4] == '?') {
-			A[4] = '9';
+		if (chars[4] == '?') {
+			chars[4] = '9';
 		}
-		return new String(A);
+		return new String(chars);
 	}
 
 	@Test
