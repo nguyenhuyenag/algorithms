@@ -12,6 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
  * Chủ đề: Two pointer
  *
  * https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+ *
+ * Tìm 2 phần tử (i != j) có tổng bằng k trong mảng
  */
 public class TwoSumII {
 
