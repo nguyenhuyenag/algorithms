@@ -2,8 +2,13 @@ package leetcode.array;
 
 import java.util.Arrays;
 
-// https://leetcode.com/problems/valid-anagram/
-// Xem thêm AnagramsGroup.java
+/**
+ * https://leetcode.com/problems/valid-anagram/
+ *
+ * Anagrams là 2 chuỗi s1, s2 có cùng những ký tự (bằng nhau sau khi sắp xếp)
+ *
+ * Xem thêm GroupAnagrams.java
+ */
 public class AnagramValid {
 
     public static boolean isAnagram(String s, String t) {

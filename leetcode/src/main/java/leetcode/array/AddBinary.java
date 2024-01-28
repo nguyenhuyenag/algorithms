@@ -18,8 +18,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class AddBinary {
 
     public String addBinary(String a, String b) {
-        int maxLen = Math.max(a.length(), b.length());
         StringBuilder ans = new StringBuilder();
+        int maxLen = Math.max(a.length(), b.length());
         int carry = 0;
         for (int i = 1; i <= maxLen; i++) {
             int x = i <= a.length() ? Character.getNumericValue(a.charAt(a.length() - i)) : 0;
