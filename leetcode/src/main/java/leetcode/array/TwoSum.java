@@ -19,7 +19,7 @@ import java.util.Set;
  *      - Nếu (sum - arr[i]) có trong s thì in ra cặp giá trị thoả(arr[i], sum - arr[i])
  *      - Thêm arr[i] vào s
  *
- * Xem thêm TwoSum trong codewars
+ * Xem thêm codewar > TwoSum.java
  */
 public class TwoSum {
 

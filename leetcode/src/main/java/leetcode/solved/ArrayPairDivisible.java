@@ -1,12 +1,9 @@
-package leetcode.array;
+package leetcode.solved;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -19,27 +16,21 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class ArrayPairDivisible {
 
-    public boolean canArrange(int[] arr, int k) {
-        int count = 0;
-        Arrays.sort(arr);  // Sắp xếp mảng để sử dụng two-pointer
-        int left = 0, right = arr.length - 1;
-        while (left < right) {
-            int sum = arr[left] + arr[right];
-            if (sum % k == 0) {
-                count++;
-                System.out.print("(" + arr[left] + ", " + arr[right] + ") ");
-                left++;
-                right--;
-            } else if (sum < k) {
-                left++;
-            } else {
-                right--;
-            }
-            // if (k == 0) return true;
+    public boolean canArrange(int[] nums, int k) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            map.put(i, nums[i] % k);
         }
-        System.out.println();
-        System.out.println("count = " + count);
-        return count == arr.length / 2;  // Nếu left vượt qua right, có nghĩa là đã kiểm tra hết tất cả các cặp và thỏa mãn điều kiện
+        boolean[] mark = new boolean[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            int d1 = nums[i] % k; // Số dư của số hiện tại chia k
+            // d1 + d2 = 0 or d1 + d2 % k == 0
+            if (map.containsKey(k - d1)) {
+                System.out.println(i + "");
+            }
+        }
+        System.out.println("map = " + map);
+        return true;
     }
 
     @Test
@@ -52,6 +43,27 @@ public class ArrayPairDivisible {
         // assertEquals(false, canArrange(new int[]{1, 2, 3, 4, 5, 6}, 10));
         // assertEquals(true, canArrange(new int[]{-1, 1, -2, 2, -3, 3, -4, 4}, 3));
     }
+
+    //    public boolean canArrange(int[] arr, int k) {
+//        int[] frequency = new int[k];
+//        for (int x : arr) {
+//            x %= k;
+//            if (x < 0) {
+//                x += k;
+//            }
+//            frequency[x]++;
+//        }
+//        if (frequency[0] % 2 != 0) {
+//            return false;
+//        }
+//
+//        System.out.println("frequency = " + Arrays.toString(frequency));
+//
+//        for (int i = 1; i <= k / 2; i++)
+//            if (frequency[i] != frequency[k - i]) return false;
+//
+//        return true;
+//    }
 
 //    public int[] findPair(List<Integer> list, int k) {
 //        int n = list.size();
