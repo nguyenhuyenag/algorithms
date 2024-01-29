@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * https://leetcode.com/problems/buy-two-chocolates/
  *
- * Chọn 2 số a, b trong mảng sao cho tổng <= x cho trước
+ * Tìm 2 số a, b trong mảng sao cho a + b <= x
  */
 public class BuyTwoChocolates {
 

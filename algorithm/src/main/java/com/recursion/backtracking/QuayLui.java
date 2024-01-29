@@ -30,14 +30,13 @@ public class QuayLui {
      * Sinh dãy nhị phân độ dài n
      */
     private static final LinkedList<String> list = new LinkedList<>();
-
     public static void genBinary(int n, int i) {
         if (i == n) { // Chỉ in những chuỗi có độ dài 'n'
             System.out.print(String.join("", list) + " ");
         } else {
-            for (char c = '0'; c <= '1'; c++) {
+            for (char c = '0'; c <= '1'; c++) { // Tất cả các giá trị có thể có ở vị trí i
                 list.addLast(String.valueOf(c));
-                genBinary(n, i + 1);
+                genBinary(n, i + 1); // Quay lui
                 list.removeLast();
             }
         }
@@ -47,7 +46,6 @@ public class QuayLui {
      * Sinh tập con của {1, 2, 3,... 5}
      */
     public static LinkedList<Integer> listSubset = new LinkedList<>();
-
     // n = số lượng phần tử lớn nhất của 1 tập con, pos = số lượng phần tử của tập con hiện tại
     // Có thể sinh dãy nhị phân sau đếm bit 1 để add vào mảng
     public static void genSubset(int n, int pos) {
@@ -64,7 +62,6 @@ public class QuayLui {
      */
     public static List<String> S = List.of("a", "b", "c");
     public static LinkedList<String> listSubsetS = new LinkedList<>();
-
     public static void genSubsetOfS(int pos) {
         System.out.println(Arrays.toString(listSubsetS.toArray()));
         for (int i = pos; i < S.size(); i++) {
@@ -79,7 +76,6 @@ public class QuayLui {
      */
     public static List<Integer> menhGia = List.of(10, 20, 50);
     public static Set<List<Integer>> visited = new HashSet<>();
-
     public static void doiTien_OK(LinkedList<Integer> combination, int n, int pos) {
         // Đã đổi đủ số tiền
         if (n == 0) {
@@ -98,10 +94,13 @@ public class QuayLui {
     }
 
     public static void main(String[] args) {
-        // genBinary(4, 0); // là 0-index
+        genBinary(3, 0); // là 0-index
+
         // genSubset(3, 1); // 1 là giá trị thuộc {1, 2, 3,...}
+
         // genSubsetOfS(0); // là 0-index
-        doiTien_OK(new LinkedList<>(), 100, 0);
+
+        // doiTien_OK(new LinkedList<>(), 100, 0);
         // System.out.println(" = ");
         // doiTien(new LinkedList<>(), 100);
     }

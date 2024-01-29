@@ -13,11 +13,12 @@ import org.junit.jupiter.api.Test;
  *
  * Cho n bóng đèn:
  *
- * B1: Bật tất cả
+ * B1: Bật tất cả các vị trí là bội của 1 (tức là bật all)
  * B2: Bật tất cả các vị trí là bội của 2
- * B3: ...
+ * B3: Bật tất cả các vị trí là bội của 3
+ * ...
  *
- * Đếm số bóng đèn sau khi hoàn thành các bước
+ * Đếm số bóng đèn sáng sau khi hoàn thành các bước
  *
  * Step: https://leetcode.com/problems/bulb-switcher/Figures/319/Slide.PNG
  */
