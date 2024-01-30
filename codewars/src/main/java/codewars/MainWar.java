@@ -2,45 +2,57 @@ package codewars;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * https://www.codewars.com/kata/5679aa472b8f57fb8c000047/
- *
- * Cho mảng số nguyên, tìm vị trí mà tổng bên trái và bên phải
- * bằng nhau. Trả về -1 nếu không có
+ * https://www.codewars.com/kata/54b724efac3d5402db00065e/
  */
 public class MainWar {
 
-    public int findEvenIndex(int[] arr) {
-        int sum = Arrays.stream(arr).sum();
-        // System.out.println(Arrays.toString(arr));
-        // System.out.println();
-        for (int i = 0; i < arr.length; i++) {
-            int[] before = Arrays.copyOfRange(arr, 0, i);
-            int[] after = Arrays.copyOfRange(arr, i + 1, arr.length);
-            // System.out.print(Arrays.toString(before) + ", " + Arrays.toString(after));
-            // System.out.println();
-            int leftSum = Arrays.stream(before).sum();
-            int rightSum = sum - leftSum - arr[i];
-            if (leftSum == rightSum) {
-                return i;
+    public static long fibonacci(long n) {
+        Map<Integer, Long> fibo = new HashMap<>();
+        fibo.put(0, 0L);
+        fibo.put(1, 1L);
+        int i = 2;
+        long sum = 0;
+        while (true) {
+            long currentFibo = fibo.get(i - 1) + fibo.get(i - 2);
+            if (currentFibo > n) break;
+            fibo.put(i, currentFibo);
+            if (currentFibo % 2 == 0 && currentFibo < n) {
+                sum += currentFibo;
             }
+            i++;
         }
-        return -1;
+        // System.out.println("fibo = " + fibo);
+        return sum;
+    }
+
+    public static long fibonacci_0(long limit) {
+        long a = 1, b = 1, s = 0;
+        while (a < limit) {
+            if (a % 2 == 0) s += a;
+            long temp = a;
+            a = b;
+            b += temp;
+        }
+        return s;
     }
 
     @Test
     public void test() {
-        assertEquals(3, findEvenIndex(new int[]{1, 2, 3, 4, 3, 2, 1}));
-        assertEquals(1, findEvenIndex(new int[]{1, 100, 50, -51, 1, 1}));
-        assertEquals(-1, findEvenIndex(new int[]{1, 2, 3, 4, 5, 6}));
-        assertEquals(3, findEvenIndex(new int[]{20, 10, 30, 10, 10, 15, 35}));
-        assertEquals(-1, findEvenIndex(new int[]{-8505, -5130, 1926, -9026}));
-        assertEquals(1, findEvenIndex(new int[]{2824, 1774, -1490, -9084, -9696, 23094}));
-        assertEquals(6, findEvenIndex(new int[]{4, 5, 6, 7, 8, 9, 10, 9, 8, 7, 6, 5, 4}));
+        assertEquals(1485607536, fibonacci(2147483647));
+        assertEquals(350704366, fibonacci(1000000000));
+        assertEquals(82790070, fibonacci(100000000));
+        assertEquals(1089154, fibonacci(1000000));
+        assertEquals(798, fibonacci(1000));
+        assertEquals(44, fibonacci(100));
+        assertEquals(2, fibonacci(5));
+        assertEquals(2, fibonacci(8));
+        assertEquals(10, fibonacci(10));
+        assertEquals(0, fibonacci(1));
     }
 
 }
