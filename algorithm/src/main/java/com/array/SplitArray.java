@@ -37,20 +37,16 @@ public class SplitArray {
             return null;  // The array cannot be divided into sets of size k
         }
         Arrays.sort(nums);  // Sort the array
-
         List<List<Integer>> result = new ArrayList<>();
         Map<Integer, Integer> numFrequency = new HashMap<>();
-
         for (int num : nums) {
             numFrequency.put(num, numFrequency.getOrDefault(num, 0) + 1);
         }
-
         for (int num : nums) {
             if (numFrequency.get(num) > 0) {
                 List<Integer> currentSet = new ArrayList<>();
                 for (int i = 0; i < k; i++) {
                     int nextNum = num + i;
-
                     if (numFrequency.getOrDefault(nextNum, 0) > 0) {
                         currentSet.add(nextNum);
                         numFrequency.put(nextNum, numFrequency.get(nextNum) - 1);

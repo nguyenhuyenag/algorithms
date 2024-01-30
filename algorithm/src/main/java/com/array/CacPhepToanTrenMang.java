@@ -20,12 +20,12 @@ public class CacPhepToanTrenMang {
     /**
      * Gộp 2 mảng
      */
-    public static void merge1(int[] arrayA, int[] arrayB) {
-        int lenA = arrayA.length, lenB = arrayB.length;
-        int[] ans = new int[lenA + lenB];
-        System.arraycopy(arrayA, 0, ans, 0, lenA);
-        System.arraycopy(arrayB, 0, ans, lenA, lenB);
-        System.out.println("c = " + Arrays.toString(ans));
+    public void merge1(int[] A, int[] B) {
+        int lenA = A.length, lenB = B.length;
+        int[] result = new int[lenA + lenB];
+        System.arraycopy(A, 0, result, 0, lenA);
+        System.arraycopy(B, 0, result, lenA, lenB);
+        System.out.println("c = " + Arrays.toString(result));
     }
 
     /**
