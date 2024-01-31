@@ -39,7 +39,7 @@ public class CheckSortedArray {
     public static void main(String[] args) {
         int[] arr1 = {1, 2, 3, 4, 4};
         int[] arr2 = {5, 3, 0, 1, 0, -1};
-        int[] arr3 = {3, 2};
+        int[] arr3 = {3, 2, 1, -1};
         System.out.println("isSorted = " + isSorted(arr1));
         System.out.println("isSorted = " + isSorted(arr2));
         System.out.println("isSorted = " + isSorted(arr3));

@@ -1,4 +1,4 @@
-package com.array;
+package com.zother;
 
 import com.util.RandomUtils;
 

@@ -2,9 +2,7 @@ package com.array;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * System.arraycopy(int[] src, int srcPos, int[] dest, int destPos, int length)
@@ -20,7 +18,7 @@ public class CacPhepToanTrenMang {
     /**
      * Gộp 2 mảng
      */
-    public void merge_0(int[] A, int[] B) {
+    public void mergeArray_0(int[] A, int[] B) {
         int lenA = A.length, lenB = B.length;
         int[] result = new int[lenA + lenB];
         System.arraycopy(A, 0, result, 0, lenA);
@@ -28,10 +26,7 @@ public class CacPhepToanTrenMang {
         System.out.println("c = " + Arrays.toString(result));
     }
 
-    /**
-     * Gộp 2 mảng
-     */
-    public int[] merge_1(int[] A, int[] B) {
+    public int[] mergeArray_1(int[] A, int[] B) {
         int pointer = 0;
         int[] result = new int[A.length + B.length];
         for (int x : A) {
@@ -43,8 +38,14 @@ public class CacPhepToanTrenMang {
         return result;
     }
 
+    //==================================================//
+
     /**
      * Tìm phần tử chung của 2 mảng
+     *
+     * Use retainAll() method to find common elements
+     *      set1.retainAll(set2);
+     *      System.out.println("Common elements- " + set1);
      */
     public List<Integer> intersect(int[] A, int[] B) {
         Arrays.sort(A);
@@ -65,6 +66,32 @@ public class CacPhepToanTrenMang {
         return result;
     }
 
+    /**
+     * Check duplicate
+     */
+    public static boolean containsDuplicate(int[] nums) {
+        Set<Integer> unique = new HashSet<>();
+        for (int num : nums) {
+            if (!unique.add(num)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Check duplicate
+     */
+    public static boolean containsDuplicate_1(int[] nums) {
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] == nums[i + 1]) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Test
     public void testIntersect() {
         // int[] arr = intersect(new int[]{1, 2, 2, 1}, new int[]{2, 2});
@@ -76,9 +103,6 @@ public class CacPhepToanTrenMang {
     public void testMerge() {
         int[] A = {1, 2, 3, 4};
         int[] B = {5, 6, 7};
-//        int[] X = merge2(A, B);
-//        System.out.println("X = " + Arrays.toString(X));
-//        merge2(A, B);
     }
 
 }
