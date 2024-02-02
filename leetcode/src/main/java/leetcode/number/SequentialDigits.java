@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class SequentialDigits {
 
-    public List<Integer> sequentialDigits(int low, int high) {
+    public List<Integer> sequentialDigits_0(int low, int high) {
         List<Integer> result = new ArrayList<>();
         // Bắt đầu từ 1
         for (int start = 1; start < 9; start++) {
@@ -34,6 +34,21 @@ public class SequentialDigits {
         }
         Collections.sort(result);
         return result;
+    }
+
+    public List<Integer> sequentialDigits(int low, int high) {
+        String c = "123456789";
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < c.length(); i++) {
+            for (int j = i + 1; j <= c.length(); j++) {
+                int curr = Integer.parseInt(c.substring(i, j));
+                if (curr <= high && curr >= low) {
+                    list.add(curr);
+                }
+            }
+        }
+        list.sort(null);
+        return list;
     }
 
     @Test
