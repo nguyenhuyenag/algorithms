@@ -10,37 +10,32 @@ import java.util.List;
  *
  * Cho mảng các từ, nhóm các anagram lại với nhau:
  *
- *      ["eat","tea","tan","ate","nat","bat"] -> [["bat"],["nat","tan"],["ate","eat","tea"]]
+ * ["eat","tea","tan","ate","nat","bat"] -> [["bat"],["nat","tan"],["ate","eat","tea"]]
  */
 public class GroupAnagrams {
 
-    public String anagramOf(String s) {
-        StringBuilder result = new StringBuilder();
+    /**
+     * 'aet' và 'ate' có cùng mảng đánh dấu -> có cùng hashCode()
+     */
+    public int anagramOf(String s) {
         int[] mark = new int[26];
         for (char c : s.toCharArray()) {
             mark[c - 'a']++;
         }
-        for (int i = 0; i < mark.length; i++) {
-            if (mark[i] > 0) {
-                char ch = (char) (i + 'a');
-                result.append(String.valueOf(ch).repeat(mark[i]));
-            }
-        }
-        return result.toString();
+        return Arrays.hashCode(mark);
     }
 
     public List<List<String>> groupAnagrams(String[] words) {
         List<List<String>> result = new ArrayList<>();
-
         /**
          * Nhóm lại theo index:
          *      {aet=[0, 1, 3], abt=[5], ant=[2, 4]}
          *      {aet=[eat, tea, ate], abt=[bat], ant=[tan, nat]}
          */
-        Map<String, List<String>> groupMap = new HashMap<>();
+        Map<Integer, List<String>> groupMap = new HashMap<>();
         for (String word : words) {
-            String anagram = anagramOf(word);
-            groupMap.computeIfAbsent(anagram, k -> new ArrayList<>()).add(word);
+            int val = anagramOf(word);
+            groupMap.computeIfAbsent(val, k -> new ArrayList<>()).add(word);
         }
         // System.out.println("groupMap = " + groupMap);
         result.addAll(groupMap.values());
@@ -52,6 +47,39 @@ public class GroupAnagrams {
         String[] arr = {"eat", "tea", "tan", "ate", "nat", "bat"};
         groupAnagrams(arr);
     }
+
+    //    public String anagramOf(String s) {
+//        StringBuilder result = new StringBuilder();
+//        int[] mark = new int[26];
+//        for (char c : s.toCharArray()) {
+//            mark[c - 'a']++;
+//        }
+//        for (int i = 0; i < mark.length; i++) {
+//            if (mark[i] > 0) {
+//                char ch = (char) (i + 'a');
+//                result.append(String.valueOf(ch).repeat(mark[i]));
+//            }
+//        }
+//        return result.toString();
+//    }
+
+    //    public List<List<String>> groupAnagrams(String[] words) {
+//        List<List<String>> result = new ArrayList<>();
+//
+//        /**
+//         * Nhóm lại theo index:
+//         *      {aet=[0, 1, 3], abt=[5], ant=[2, 4]}
+//         *      {aet=[eat, tea, ate], abt=[bat], ant=[tan, nat]}
+//         */
+//        Map<String, List<String>> groupMap = new HashMap<>();
+//        for (String word : words) {
+//            String anagram = anagramOf(word);
+//            groupMap.computeIfAbsent(anagram, k -> new ArrayList<>()).add(word);
+//        }
+//        // System.out.println("groupMap = " + groupMap);
+//        result.addAll(groupMap.values());
+//        return result;
+//    }
 
 //    public List<List<String>> groupAnagrams_OK(String[] words) {
 //        List<List<String>> result = new ArrayList<>();
