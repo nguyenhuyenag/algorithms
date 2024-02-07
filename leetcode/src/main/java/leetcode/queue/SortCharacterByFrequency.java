@@ -22,7 +22,7 @@ public class SortCharacterByFrequency {
         }
         // Hàng đợi ưu tiên theo value
         PriorityQueue<Map.Entry<Character, Integer>> pq = new PriorityQueue<>(
-                (e1, e2) -> e2.getValue() - e1.getValue()
+            (e1, e2) -> e2.getValue() - e1.getValue()
         );
         pq.addAll(charCount.entrySet());
         // Ghép chuỗi thành kết quả
