@@ -10,12 +10,34 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
+ *
  */
 public class MainLeet {
 
+//    public String frequencySort(String input) {
+//        // Đếm ký tự
+//        Map<Character, Integer> charCount = new HashMap<>();
+//        for (char c : input.toCharArray()) {
+//            charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+//        }
+//        // Hàng đợi ưu tiên theo value
+//        PriorityQueue<Map.Entry<Character, Integer>> pq = new PriorityQueue<>(
+//                (e1, e2) -> e2.getValue() - e1.getValue()
+//        );
+//        pq.addAll(charCount.entrySet());
+//        // Ghép chuỗi thành kết quả
+//        StringBuilder result = new StringBuilder();
+//        while (!pq.isEmpty()) {
+//            Map.Entry<Character, Integer> e = pq.poll();
+//            result.append(String.valueOf(e.getKey()).repeat(e.getValue()));
+//        }
+//        return result.toString();
+//    }
+
     @Test
     public void test() {
-        // assertArrayEquals(new int[]{1, 1, 1, 0}, dailyTemperatures(new int[]{30, 40, 50, 60}));
+//        assertEquals("eert", frequencySort("tree"));
+//        assertEquals("eeeeoollvtdc", frequencySort("loveleetcode"));
     }
 
 }

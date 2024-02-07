@@ -8,37 +8,10 @@ import org.junit.jupiter.api.Test;
  * https://leetcode.com/problems/add-digits/
  *
  * Cộng các chữ chữ chữ số cho đến khi chỉ còn 1 chữ số
+ *
+ * Xem them: codewars > SumOfDigits
  */
 public class AddDigits {
-
-//	public int addDigits1(int n) {
-//		while (true) {
-//			n = sumOfDigits(n);
-//			if (n < 10) {
-//				break;
-//			}
-//		}
-//		return n;
-//	}
-
-//	public int addDigits2(int n) {
-//		while (n >= 10) {
-//			int sum = 0;
-//			while (n > 0) {
-//				sum += n % 10;
-//				n /= 10;
-//			}
-//			n = sum;
-//		}
-//		return n;
-//	}
-
-//	public int addDigits3(int n) {
-//		while (n >= 10) {
-//			n = n / 10 + n % 10;
-//		}
-//		return n;
-//	}
 
     public static int sumOfDigits(int n) {
         int sum = 0;
@@ -66,5 +39,34 @@ public class AddDigits {
         int n = 125564;
         assertEquals((sumOfDigits(n)), addDigits2(38));
     }
+
+    //	public int addDigits1(int n) {
+//		while (true) {
+//			n = sumOfDigits(n);
+//			if (n < 10) {
+//				break;
+//			}
+//		}
+//		return n;
+//	}
+
+//	public int addDigits2(int n) {
+//		while (n >= 10) {
+//			int sum = 0;
+//			while (n > 0) {
+//				sum += n % 10;
+//				n /= 10;
+//			}
+//			n = sum;
+//		}
+//		return n;
+//	}
+
+//	public int addDigits3(int n) {
+//		while (n >= 10) {
+//			n = n / 10 + n % 10;
+//		}
+//		return n;
+//	}
 
 }
