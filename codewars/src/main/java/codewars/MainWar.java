@@ -14,7 +14,9 @@ public class MainWar {
 
     @Test
     public void test() {
-
+//         assertEquals(true, scramble("rkqodlw", "world"));
+//        assertEquals(true, scramble("cedewaraaossoqqyt", "codewars"));
+//        assertEquals(false, scramble("katas", "steak"));
     }
 
 
