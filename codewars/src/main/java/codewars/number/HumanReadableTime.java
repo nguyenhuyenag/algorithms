@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
+ * Chủ đề: Time
+ *
  * Chuyển số thành giờ
  */
 public class HumanReadableTime {
@@ -16,15 +18,14 @@ public class HumanReadableTime {
         return String.valueOf(n);
     }
 
-    public static String makeReadable(int n) {
+    public static String makeReadable(int seconds) {
+        int h = seconds / 3600;
+        seconds = seconds - h * 3600;
 
-        int h = n / (60 * 60);
-        n = n - h * (60 * 60);
+        int m = seconds / 60;
+        seconds = seconds - m * 60;
 
-        int m = n / 60;
-        n = n - m * 60;
-
-        return format(h) + ":" + format(m) + ":" + format(n);
+        return format(h) + ":" + format(m) + ":" + format(seconds);
     }
 
     public static String _makeReadable(int seconds) {
