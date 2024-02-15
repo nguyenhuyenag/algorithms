@@ -15,7 +15,7 @@ public class MainWar {
 
     @Test
     public void test() {
-        // assertEquals("1 second", formatDuration(1));
+        System.out.println(9 / 2);
     }
 
 }
