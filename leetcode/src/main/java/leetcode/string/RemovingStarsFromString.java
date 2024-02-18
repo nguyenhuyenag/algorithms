@@ -4,7 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-// https://leetcode.com/problems/removing-stars-from-a-string/
+/**
+ * https://leetcode.com/problems/removing-stars-from-a-string/
+ */
 public class RemovingStarsFromString {
 
 	public String removeStars(String s) {
@@ -20,15 +22,9 @@ public class RemovingStarsFromString {
 	}
 
 	@Test
-	public void test1() {
-		String s = "leet**cod*e";
-		assertEquals("lecoe", removeStars(s));
-	}
-
-	@Test
-	public void test2() {
-		String s = "erase*****";
-		assertEquals("", removeStars(s));
+	public void test() {
+		assertEquals("", removeStars("erase*****"));
+		assertEquals("lecoe", removeStars("leet**cod*e"));
 	}
 
 }
