@@ -9,6 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
  * https://leetcode.com/problems/power-of-four/
  *
  * Kiểm tra số N có phải là lũy thừa của 4 hay không (4^x = N)
+ *
+ * Xem thêm: leetcode > PowerOfTwo.java
  */
 public class PowerOfFour {
 

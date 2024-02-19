@@ -9,20 +9,9 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * https://leetcode.com/problems/powx-n/
  *
- * Implement Math.pow(x, n)
+ * Implement hàm: Math.pow(x, n)
  */
 public class PowXN {
-
-//	public static double myPow(double x, long n) {
-//		if (n == 0) {
-//			return 1;
-//		}
-//		if (n < 0) {
-//			n = -n;
-//			x = 1 / x;
-//		}
-//		return n % 2 == 0 ? myPow(x * x, n / 2) : x * myPow(x * x, n / 2);
-//	}
 
     public double myPow(double x, long n) {
         if (n == 0) return 1;
@@ -47,5 +36,16 @@ public class PowXN {
         // Time Limit Exceeded ↓
         assertEquals(pow(1.0, 2147483647), myPow(1.00000, 2147483647));
     }
+
+//    	public static double myPow(double x, long n) {
+//		if (n == 0) {
+//			return 1;
+//		}
+//		if (n < 0) {
+//			n = -n;
+//			x = 1 / x;
+//		}
+//		return n % 2 == 0 ? myPow(x * x, n / 2) : x * myPow(x * x, n / 2);
+//	}
 
 }
