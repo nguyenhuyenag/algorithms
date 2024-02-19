@@ -5,6 +5,8 @@ import java.math.BigInteger;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class SumOfString {
 
 	public static String add(String n1, String n2) {
@@ -47,7 +49,7 @@ public class SumOfString {
 	public void testMethod() {
 		String n1 = "555555555555959595959526147812314787946914";
 		String n2 = "121212121564644847947916161616136131313165464";
-		Assertions.assertEquals(test(n1, n2), add(n1, n2));
+		assertEquals(test(n1, n2), add(n1, n2));
 	}
 
 }
