@@ -7,11 +7,11 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * https://www.codewars.com/kata/525f4206b73515bffb000b21
+ * https://www.codewars.com/kata/525f4206b73515bffb000b21/
  *
- * Cộng, trừ 2 số lớn
+ * Cộng 2 số lớn dạng chuỗi
  *
- * Xem thêm: SumStringsAsNumbers.java
+ * Xem thêm: SumStringsAsNumbers.java, SumOfString.java, AddStrings.java
  */
 public class SumBigNumbers {
 
@@ -30,18 +30,18 @@ public class SumBigNumbers {
         int[] A = toStringArray(leftPad(x, maxLen));
         int[] B = toStringArray(leftPad(y, maxLen));
 
-        int carry = 0; // Số nhớ
         StringBuilder ans = new StringBuilder();
 
+        int rem = 0; // Số nhớ
         for (int i = maxLen - 1; i >= 0; i--) {
-            int sum = (A[i] + B[i]) + carry;
-            carry = sum / 10;       // sum < 10 thì carry = 0, sum >= 10 thì carry = 1
+            int sum = (A[i] + B[i]) + rem;
+            rem = sum / 10;       // sum < 10 thì rem = 0, sum >= 10 thì rem = 1
             ans.append(sum % 10);   // Chèn 9 vào
         }
 
         // Nếu ở cuối vòng lặp mà vẫn còn nhớ
-        if (carry > 0) {
-            ans.append(carry);
+        if (rem > 0) {
+            ans.append(rem);
         }
 
         // Xóa số 0 vô nghĩa ở đầu số 0123 -> 123

@@ -7,9 +7,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * https://www.codewars.com/kata/5324945e2ece5e1f32000370/
  *
- * Cộng 2 số as string
+ * Cộng 2 số lớn dạng chuỗi
  *
- * Xem thêm: SumOfTwoIntegers.java
+ * Xem thêm: SumBigNumbers.java, SumOfString.java, AddStrings.java
  */
 public class SumStringsAsNumbers {
 

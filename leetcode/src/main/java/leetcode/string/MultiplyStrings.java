@@ -1,4 +1,4 @@
-package leetcode.incomplete;
+package leetcode.string;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -68,9 +68,8 @@ public class MultiplyStrings {
             int rem = 0;
             StringBuilder builder = new StringBuilder();
             for (int j = s2.length() - 1; j >= 0; j--) {
-                int n1 = Character.getNumericValue(s1.charAt(i));
-                int n2 = Character.getNumericValue(s2.charAt(j));
-                // System.out.print(n1 + "x" + n2 + " ");
+                int n1 = s1.charAt(i) - '0';
+                int n2 = s2.charAt(j) - '0';
                 int prod = n1 * n2 + rem;
                 rem = prod / 10;
                 builder.append(prod % 10);
@@ -79,9 +78,7 @@ public class MultiplyStrings {
                 builder.append(rem);
             }
             listNum.add(builder.reverse().append("0".repeat(p++)).toString());
-            // System.out.println();
         }
-        // System.out.println(listNum);
         String result = "0";
         for (String v : listNum) {
             result = add(result, v);
