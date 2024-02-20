@@ -1,4 +1,4 @@
-package leetcode.incomplete;
+package leetcode.string;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -48,7 +48,7 @@ public class AddToArrayFormOfInteger {
     @Test
     public void test() {
         assertIterableEquals(List.of(4, 5, 5), addToArrayForm(new int[]{2, 7, 4}, 181));
-        // assertIterableEquals(List.of(1, 2, 3, 4), addToArrayForm(new int[]{1, 2, 0, 0}, 34));
+        assertIterableEquals(List.of(1, 2, 3, 4), addToArrayForm(new int[]{1, 2, 0, 0}, 34));
     }
 
 }

@@ -14,12 +14,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class MainLeet {
 
+    public int removeDuplicates(int[] nums) {
+        nums = Arrays.stream(nums).distinct().toArray();
+        return nums.length;
+    }
+
     @Test
     public void test() {
-        String str1 = "000000123";
-        str1 = str1.replaceFirst("^0+(?!$)", "");
-        // str2 = str2.replaceFirst("^0+(?!$)", "");
-        System.out.println("str1 = " + str1);
+
     }
 
 }

@@ -36,8 +36,17 @@ public class AddStrings {
         while (result.length() > 1 && result.charAt(0) == '0') {
             result.deleteCharAt(0);
         }
-
         return result.toString();
+    }
+
+    private static String removeFirstZero(String input) {
+        // Find the index of the first non-zero digit
+        int index = 0;
+        while (index < input.length() && input.charAt(index) == '0') {
+            index++;
+        }
+        // Extract the substring starting from the first non-zero digit
+        return input.substring(index);
     }
 
     @Test
