@@ -2,6 +2,8 @@ package leetcode.array;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*-
@@ -14,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class MissingNumber {
 
-    public int missingNumber(int[] nums) {
+    public int missingNumber_OK(int[] nums) {
         boolean[] mark = new boolean[nums.length + 1];
         for (int v : nums) {
             mark[v] = true;
@@ -25,6 +27,15 @@ public class MissingNumber {
             }
         }
         return 0;
+    }
+
+    public int missingNumber(int[] nums) {
+        int n = nums.length;
+        int sum = n * (n + 1) / 2;
+        for (int num : nums) {
+            sum -= num;
+        }
+        return sum;
     }
 
     @Test

@@ -15,15 +15,17 @@ public class AddStrings {
 
     public String addStrings(String s1, String s2) {
         StringBuilder result = new StringBuilder();
-        int max = Math.max(s1.length(), s2.length());
+        int len1 = s1.length(), len2 = s2.length();
+        int max = Math.max(len1, len2);
         int rem = 0;
         for (int i = 0; i < max; i++) {
-            int n1 = i < s1.length() ? s1.charAt(s1.length() - 1 - i) - '0' : 0;
-            int n2 = i < s2.length() ? s2.charAt(s2.length() - 1 - i) - '0' : 0;
+            int n1 = i < len1 ? s1.charAt(len1 - 1 - i) - '0' : 0;
+            int n2 = i < len2 ? s2.charAt(len2 - 1 - i) - '0' : 0;
             int sum = n1 + n2 + rem;
-            rem = sum / 10;
             result.append(sum % 10);
+            rem = sum / 10;
         }
+
         if (rem > 0) {
             result.append(rem);
         }
@@ -31,7 +33,7 @@ public class AddStrings {
         result.reverse();
 
         // Remove leading zeros
-        while (result.length() >= 2 && result.charAt(0) == '0') {
+        while (result.length() > 1 && result.charAt(0) == '0') {
             result.deleteCharAt(0);
         }
 
@@ -46,5 +48,32 @@ public class AddStrings {
         assertEquals("8670", addStrings("00103", "08567"));
         assertEquals("0", addStrings("0", "0"));
     }
+
+    //    public String addStrings(String s1, String s2) {
+//        StringBuilder result = new StringBuilder();
+//
+//        // Remove leading zeros
+//        s1 = s1.replaceFirst("^0+(?!$)", "");
+//        s2 = s2.replaceFirst("^0+(?!$)", "");
+//
+//        int len1 = s1.length(), len2 = s2.length();
+//        int max = Math.max(len1, len2);
+//
+//        int rem = 0;
+//
+//        for (int i = 0; i < max; i++) {
+//            int n1 = i < len1 ? s1.charAt(len1 - 1 - i) - '0' : 0;
+//            int n2 = i < len2 ? s2.charAt(len2 - 1 - i) - '0' : 0;
+//            int sum = n1 + n2 + rem;
+//            result.append(sum % 10);
+//            rem = sum / 10;
+//        }
+//
+//        if (rem > 0) {
+//            result.append(rem);
+//        }
+//
+//        return result.reverse().toString();
+//    }
 
 }

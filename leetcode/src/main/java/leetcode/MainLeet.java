@@ -16,7 +16,10 @@ public class MainLeet {
 
     @Test
     public void test() {
-
+        String str1 = "000000123";
+        str1 = str1.replaceFirst("^0+(?!$)", "");
+        // str2 = str2.replaceFirst("^0+(?!$)", "");
+        System.out.println("str1 = " + str1);
     }
 
 }
