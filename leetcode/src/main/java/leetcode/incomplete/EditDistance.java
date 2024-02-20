@@ -34,7 +34,7 @@ public class EditDistance {
         // assertEquals(3, minDistance("horse", "ros"));
         // assertEquals(5, minDistance("intention", "execution"));
         // assertEquals(0, minDistance("a", "a"));
-        assertEquals(1, minDistance("a", "b"));
+        Assertions.assertEquals(1, minDistance("a", "b"));
     }
 
 }

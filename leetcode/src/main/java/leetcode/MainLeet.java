@@ -14,11 +14,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class MainLeet {
 
-    public int removeDuplicates(int[] nums) {
-        nums = Arrays.stream(nums).distinct().toArray();
-        return nums.length;
-    }
-
     @Test
     public void test() {
 
