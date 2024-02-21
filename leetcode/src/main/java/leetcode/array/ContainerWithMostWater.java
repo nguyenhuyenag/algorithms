@@ -7,42 +7,26 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Chủ đề: Two pointer
- *
+ * <p>
  * https://leetcode.com/problems/container-with-most-water/
- *
+ * <p>
  * Cho mảng chiều cao, tìm 2 điểm mà diện tích nước trong đó là nhiều nhất
  */
 public class ContainerWithMostWater {
-
-//    public int maxArea(int[] arr) {
-//        int maxArea = 0;
-//        int l = 0, r = arr.length - 1;
-//        while (l < r) {
-//            int width = r - l;
-//            int height = Math.min(arr[l], arr[r]);
-//            int area = height * width;
-//            maxArea = Math.max(area, maxArea);
-//            // Cột trái đỏ < phải đỏ thì dời trái
-//            if (arr[l] < arr[r]) {
-//                l++;
-//            } else if (arr[l] > arr[r]) {
-//                r--;
-//            } else {
-//                l++;
-//                r--;
-//            }
-//        }
-//        return maxArea;
-//    }
 
     public int maxArea(int[] arr) {
         int maxArea = 0;
         int left = 0, right = arr.length - 1;
         while (left < right) {
+            // Chiều rộng
             int width = right - left;
-            int height = Math.min(arr[left], arr[right]);
-            int area = width * height;
+            // Chiều cao
+            int hight = Math.min(arr[left], arr[right]);
+            // Tính diện tích
+            int area = width * hight;
+            // Tìm diện tích lớn nhất
             maxArea = Math.max(maxArea, area);
+            // Dời con trỏ
             if (arr[left] < arr[right]) {
                 left++;
             } else if (arr[left] > arr[right]) {
