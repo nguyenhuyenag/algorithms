@@ -14,21 +14,46 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class MainLeet {
 
-    public static int rangeBitwiseAnd(int left, int right) {
-        int shift = 0;
-        // Tìm số lượng bit chung bên trái của left và right
-        while (left < right) {
-            left >>= 1;
-            right >>= 1;
-            shift++;
+//    @Test
+//    public void test() {
+//    }
+
+
+    public int calculate(String s) {
+        Stack<Integer> st = new Stack<>();
+
+        int num = 0;
+        char operator = '+';
+
+        for (int i = 0; i <= s.length(); i++) {
+            char c = (i == s.length()) ? '+' : s.charAt(i);
+
+            if (Character.isDigit(c)) {
+                num = num * 10 + (c - '0');
+            } else if (isOperator(c)) {
+                switch (operator) {
+                    case '+' -> st.push(num);
+                    case '-' -> st.push(-num);
+                    case '*' -> st.push(st.pop() * num);
+                    case '/' -> st.push(st.pop() / num);
+                }
+                num = 0;
+                operator = c;
+            }
         }
-        // Dịch trái left để lấy kết quả cuối cùng
-        return left << shift;
+
+        int ans = 0;
+
+        while (!st.isEmpty()) {
+            ans += st.pop();
+        }
+
+        return ans;
     }
 
-    @Test
-    public void test() {
-        assertEquals(2147483647, rangeBitwiseAnd(2147483647, 2147483647));
+    private boolean isOperator(char c) {
+        return c == '+' || c == '-' || c == '*' || c == '/';
     }
+
 
 }
