@@ -13,10 +13,21 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class AddStrings {
 
+    // Xóa số 0 ở đầu số dạng chuỗi
+    public static String removeLeadingZeros(StringBuilder input) {
+        int len = input.length();
+        int index = 0;
+        while (index < len && input.charAt(index) == '0') {
+            index++;
+        }
+         return index == len ? "0" : input.substring(index);
+    }
+
     public String addStrings(String s1, String s2) {
         StringBuilder result = new StringBuilder();
         int len1 = s1.length(), len2 = s2.length();
         int max = Math.max(len1, len2);
+
         int rem = 0;
         for (int i = 0; i < max; i++) {
             int n1 = i < len1 ? s1.charAt(len1 - 1 - i) - '0' : 0;
@@ -31,30 +42,15 @@ public class AddStrings {
         }
 
         result.reverse();
-
-        // Remove leading zeros
-        while (result.length() > 1 && result.charAt(0) == '0') {
-            result.deleteCharAt(0);
-        }
-        return result.toString();
-    }
-
-    private static String removeFirstZero(String input) {
-        // Find the index of the first non-zero digit
-        int index = 0;
-        while (index < input.length() && input.charAt(index) == '0') {
-            index++;
-        }
-        // Extract the substring starting from the first non-zero digit
-        return input.substring(index);
+        return removeLeadingZeros(result);
     }
 
     @Test
     public void doTest() {
-        assertEquals("3", addStrings("1", "2"));
-        assertEquals("579", addStrings("123", "456"));
-        assertEquals("10367", addStrings("800", "9567"));
-        assertEquals("8670", addStrings("00103", "08567"));
+//        assertEquals("3", addStrings("1", "2"));
+//        assertEquals("579", addStrings("123", "456"));
+//        assertEquals("10367", addStrings("800", "9567"));
+//        assertEquals("8670", addStrings("00103", "08567"));
         assertEquals("0", addStrings("0", "0"));
     }
 

@@ -12,40 +12,29 @@ public class Benmark {
         System.out.println("Thời gian thực thi: " + executionTime + " milliseconds");
     }
 
-    private static final int n = 10_000;
-
     @Test
     public void test_1() {
         measureExecutionTime(() -> {
-            concatenateStrings(n);
+            String s = "0".repeat(100_000) + "123456789";
+            StringBuilder builder = new StringBuilder(s);
+            while (!builder.isEmpty() && builder.charAt(0) == '0') {
+                builder.deleteCharAt(0);
+            }
+            System.out.println(builder.toString());
         });
     }
 
     @Test
     public void test_2() {
         measureExecutionTime(() -> {
-            useStringBuilder(n);
+            String s = "0".repeat(100_000) + "123456789";
+            int index = 0;
+            while (index < s.length() && s.charAt(index) == '0'){
+                index++;
+            }
+            System.out.println(s.substring(index));
         });
     }
 
-    /**
-     * Method test
-     */
-
-    public static String concatenateStrings(int n) {
-        String result = "";
-        for (int i = 0; i < n; i++) {
-            result += "Hello ";
-        }
-        return result;
-    }
-
-    public static String useStringBuilder(int n) {
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < n; i++) {
-            result.append("Hello ");
-        }
-        return result.toString();
-    }
 
 }
