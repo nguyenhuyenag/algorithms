@@ -20,7 +20,7 @@ public class AddStrings {
         while (index < len && input.charAt(index) == '0') {
             index++;
         }
-         return index == len ? "0" : input.substring(index);
+        return index == len ? "0" : input.substring(index);
     }
 
     public String addStrings(String s1, String s2) {
@@ -47,10 +47,10 @@ public class AddStrings {
 
     @Test
     public void doTest() {
-//        assertEquals("3", addStrings("1", "2"));
-//        assertEquals("579", addStrings("123", "456"));
-//        assertEquals("10367", addStrings("800", "9567"));
-//        assertEquals("8670", addStrings("00103", "08567"));
+        assertEquals("3", addStrings("1", "2"));
+        assertEquals("579", addStrings("123", "456"));
+        assertEquals("10367", addStrings("800", "9567"));
+        assertEquals("8670", addStrings("00103", "08567"));
         assertEquals("0", addStrings("0", "0"));
     }
 
