@@ -15,13 +15,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ContainsDuplicateII {
 
     public boolean containsNearbyDuplicate(int[] arr, int k) {
-        Map<Integer, Integer> numIndexMap = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < arr.length; i++) {
-            int j = numIndexMap.getOrDefault(arr[i], -1); // Nếu j = -1 -> Key not present
+            int j = map.getOrDefault(arr[i], -1); // Nếu j = -1 -> Key not present
             if (j != -1 && Math.abs(i - j) <= k) {
                 return true;
             }
-            numIndexMap.put(arr[i], i);
+            map.put(arr[i], i);
         }
         return false;
     }
