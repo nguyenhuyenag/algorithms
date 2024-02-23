@@ -12,16 +12,26 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class BestTimeToBuyAndSaleStock {
 
-    public int maxProfit(int[] arr) {
-        int maxDiff = 0;
-        int minElement = arr[0];
-        for (int x : arr) {
-            // Tính toán diff của phần tử hiện tại và phần tử nhỏ nhất
-            int currentDiff = x - minElement;
-            // Tìm maxDiff mới nếu có
-            maxDiff = Math.max(maxDiff, currentDiff);
-            // Tìm phần tử nhỏ nhất nếu có
-            minElement = Math.min(minElement, x);
+//    public int maxProfit(int[] arr) {
+//        int maxDiff = 0;
+//        int minElement = arr[0];
+//        for (int x : arr) {
+//            // Tính toán diff của phần tử hiện tại và phần tử nhỏ nhất
+//            // int currentDiff = x - minElement;
+//            // Tìm maxDiff mới nếu có
+//            maxDiff = Math.max(maxDiff, x - minElement);
+//            // Tìm phần tử nhỏ nhất nếu có
+//            minElement = Math.min(minElement, x);
+//        }
+//        return maxDiff;
+//    }
+
+    public int maxProfit(int[] nums) {
+        int minValue = nums[0];
+        int maxDiff = -1;
+        for (int num : nums) {
+            maxDiff = Math.max(maxDiff, num - minValue);
+            minValue = Math.min(minValue, num);
         }
         return maxDiff;
     }

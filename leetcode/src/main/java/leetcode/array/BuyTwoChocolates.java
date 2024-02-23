@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * https://leetcode.com/problems/buy-two-chocolates/
  *
- * Tìm 2 số a, b trong mảng sao cho a + b <= x
+ * Tìm 2 số a, b trong mảng sao cho a + b <= x. Trả về giá trị x - a - b
  */
 public class BuyTwoChocolates {
 
@@ -48,8 +48,8 @@ public class BuyTwoChocolates {
     @org.junit.jupiter.api.Test
     public void doTest() {
         assertEquals(0, buyChoco(new int[]{1, 2, 2}, 3));
-        // assertEquals(3, buyChoco(new int[]{3, 2, 3}, 3));
-        // assertEquals(3, buyChoco(new int[]{98, 54, 6, 34, 66, 63, 52, 39}, 62)); // 3
+        assertEquals(3, buyChoco(new int[]{3, 2, 3}, 3));
+        assertEquals(3, buyChoco(new int[]{98, 54, 6, 34, 66, 63, 52, 39}, 62)); // 3
     }
 
 }

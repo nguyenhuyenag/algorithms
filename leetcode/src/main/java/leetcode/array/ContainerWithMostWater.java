@@ -7,9 +7,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Chủ đề: Two pointer
- * <p>
+ *
  * https://leetcode.com/problems/container-with-most-water/
- * <p>
+ *
  * Cho mảng chiều cao, tìm 2 điểm mà diện tích nước trong đó là nhiều nhất
  */
 public class ContainerWithMostWater {
