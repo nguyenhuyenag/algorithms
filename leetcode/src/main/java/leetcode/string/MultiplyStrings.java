@@ -83,8 +83,8 @@ public class MultiplyStrings {
     @Test
     public void test() {
         assertEquals("972", multiply("36", "27"));
-        // assertEquals("56088", multiply("123", "456"));
-        // assertEquals("838102050", multiply("12345", "67890"));
+        assertEquals("56088", multiply("123", "456"));
+        assertEquals("838102050", multiply("12345", "67890"));
     }
 
 }
