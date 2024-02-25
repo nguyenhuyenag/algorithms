@@ -94,11 +94,11 @@ public class QuayLui {
     }
 
     public static void main(String[] args) {
-        genBinary(3, 0); // là 0-index
+        // genBinary(3, 0); // là 0-index
 
         // genSubset(3, 1); // 1 là giá trị thuộc {1, 2, 3,...}
 
-        // genSubsetOfS(0); // là 0-index
+        genSubsetOfS(0); // là 0-index
 
         // doiTien_OK(new LinkedList<>(), 100, 0);
         // System.out.println(" = ");

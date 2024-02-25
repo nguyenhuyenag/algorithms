@@ -24,7 +24,7 @@ public class HoanViChuoi {
 	}
 
 	public static void main(String[] args) {
-		String str = "ABCD";
+		String str = "123";
 		char[] arr = str.toCharArray();
 		permute(arr, 0, str.length() - 1);
 	}
