@@ -1,7 +1,7 @@
-arr = [1,2,3,4,5]
+my_str = "abc"
 
-hash_value = 0
-for x in arr:
-    hash_value += ord(x)
+# for s in my_str:
+#     print(type(s))
 
-print(hash_value)
+for v in list(my_str):
+    print(type(v))
