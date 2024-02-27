@@ -1,7 +1,7 @@
-my_str = "abc"
+x = 10
+y = 20
 
-# for s in my_str:
-#     print(type(s))
+def print_globals():
+    print(globals())
 
-for v in list(my_str):
-    print(type(v))
+print_globals()

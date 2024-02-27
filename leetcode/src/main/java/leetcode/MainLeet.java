@@ -19,40 +19,12 @@ public class MainLeet {
 //    }
 
 
-    public int calculate(String s) {
-        Stack<Integer> st = new Stack<>();
-
-        int num = 0;
-        char operator = '+';
-
-        for (int i = 0; i <= s.length(); i++) {
-            char c = (i == s.length()) ? '+' : s.charAt(i);
-
-            if (Character.isDigit(c)) {
-                num = num * 10 + (c - '0');
-            } else if (isOperator(c)) {
-                switch (operator) {
-                    case '+' -> st.push(num);
-                    case '-' -> st.push(-num);
-                    case '*' -> st.push(st.pop() * num);
-                    case '/' -> st.push(st.pop() / num);
-                }
-                num = 0;
-                operator = c;
-            }
+    public static void main(String[] args) {
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < 8_000_000; i++) {
+            builder.append(i);
         }
-
-        int ans = 0;
-
-        while (!st.isEmpty()) {
-            ans += st.pop();
-        }
-
-        return ans;
-    }
-
-    private boolean isOperator(char c) {
-        return c == '+' || c == '-' || c == '*' || c == '/';
+        System.out.println("builder = " + builder.length());
     }
 
 
