@@ -32,3 +32,4 @@ leetcode/leetcode.iml
 .idea/algorithms.iml
 .idea/misc.xml
 .idea/modules.xml
+*.pyc

@@ -1,7 +1,5 @@
 import unittest
 
-import numpy as np
-
 """
     https://leetcode.com/problems/smallest-good-base/
     
@@ -11,8 +9,6 @@ import numpy as np
     
     Ví dụ 13 biểu diễn ở dạng cơ số 3 là 111
 """
-
-
 class Solution(unittest.TestCase):
 
     def convert_to_base(self, n: int, base: int) -> str:
