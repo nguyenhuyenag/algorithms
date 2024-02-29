@@ -23,14 +23,14 @@ class Solution(unittest.TestCase):
                 min_index = i
         return min_index
 
-    def queue_time(self, customers, n):
+    def queue_time_1(self, customers, n):
         queue = [0] * n
         for time in customers:
             min_index = self.find_min_index(queue)
             queue[min_index] += time
         return max(queue)
 
-    def queue_time_1(self, customers, n):
+    def queue_time_2(self, customers, n):
         queue = PriorityQueue()
 
         for i in range(n):
@@ -46,7 +46,7 @@ class Solution(unittest.TestCase):
 
         return max_time
 
-    def queue_time_OK(self, customers, n):
+    def queue_time(self, customers, n):
         queue = [0] * n
         heapq.heapify(queue)
         for time in customers:
