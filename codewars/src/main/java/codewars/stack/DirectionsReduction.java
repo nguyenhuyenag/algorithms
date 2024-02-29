@@ -31,8 +31,7 @@ public class DirectionsReduction {
                 stack.push(s);
             }
         }
-        String[] result = stack.stream().toArray(String[]::new);
-        return result;
+        return stack.stream().toArray(String[]::new);
     }
 
     @Test
