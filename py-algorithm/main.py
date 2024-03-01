@@ -1,12 +1,12 @@
-# def maximumOddBinaryNumber(s: str) -> str:
-#     chars = sorted(s, key=lambda x: int(x), reverse=True)
-#     chars[0], chars[-1] = chars[-1], chars[0]
-#     return ''.join(chars)
-#
-# # Example usage
-# result = maximumOddBinaryNumber("1010")
-# print(result)
-
-l = [1, 2, 3, 4]
-l[0], l[-1] = l[-1], l[0]
-print(l)
+def calculate(n1, op, n2):
+    match op:
+        case "+":
+            return n1 + n2
+        case "-":
+            return n1 - n2
+        case "*":
+            return n1 * n2 + 0.0
+        case "/":
+            n1 / n2 if n2 != 0 else None
+        case default:
+            return None
