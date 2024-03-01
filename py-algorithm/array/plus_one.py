@@ -7,8 +7,6 @@ from typing import List
 
     Cho một số nguyên biểu diễn dưới dạng mảng, trả về mảng kết quả của số đó + 1
 """
-
-
 class Solution(unittest.TestCase):
 
     def plusOne(self, digits: List[int]) -> List[int]:

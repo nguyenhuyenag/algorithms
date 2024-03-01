@@ -6,8 +6,6 @@ https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 
 Cho mảng số nguyên nums, tìm hai vị trí i < j sao cho nums[i] - nums[j] lớn nhất 
 """
-
-
 class Solution(unittest.TestCase):
 
     def maxProfit(self, nums: List[int]) -> int:
