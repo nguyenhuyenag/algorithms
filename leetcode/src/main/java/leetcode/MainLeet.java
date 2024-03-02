@@ -15,13 +15,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class MainLeet {
 
-//    @Test
-//    public void test() {
-//    }
-
-
     public static void main(String[] args) {
-        // BigInteger number = new BigInteger("123456");
+        float x = 1.2F;
+        System.out.println("x = " + (Integer.class.isInstance(x)));
+
     }
 
 
