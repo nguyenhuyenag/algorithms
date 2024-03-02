@@ -1,3 +1,4 @@
+import heapq
 import unittest
 from typing import List
 from queue import PriorityQueue
@@ -10,7 +11,7 @@ from queue import PriorityQueue
 """
 class Solution(unittest.TestCase):
 
-    def sortedSquares(self, nums: List[int]) -> List[int]:
+    def sortedSquares_OK(self, nums: List[int]) -> List[int]:
         queue = PriorityQueue()
 
         for num in nums:
@@ -20,6 +21,15 @@ class Solution(unittest.TestCase):
             nums[i] = queue.get()
 
         return nums
+
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        nums = list(map(lambda x: x ** 2, nums))
+        heapq.heapify(nums)
+        result = []
+        while len(nums) > 0:
+            result.append(heapq.heappop(nums))
+
+        return result
 
     def test(self):
         self.assertEqual([0, 1, 9, 16, 100], self.sortedSquares([-4, -1, 0, 3, 10]))
