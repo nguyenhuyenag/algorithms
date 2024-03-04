@@ -7,11 +7,19 @@ from typing import List
 """
 class Solution(unittest.TestCase):
 
+    def first_non_repeating_letter_2(self, s):
+        counter = collections.Counter(s.lower())
+        for c in s:
+            if counter[c.lower()] == 1:
+                return c
+
+        return ''
+
     def first_non_repeating_letter(self, s):
-        counter = collections.Counter(s)
-        for k, v in counter.items():
-            if v == 1:
-                return k
+        string_lower = s.lower()
+        for i, letter in enumerate(string_lower):
+            if string_lower.count(letter) == 1:
+                return s[i]
         return ''
 
     def test(self):

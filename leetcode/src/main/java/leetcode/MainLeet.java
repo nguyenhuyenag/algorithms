@@ -16,9 +16,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class MainLeet {
 
     public static void main(String[] args) {
-        float x = 1.2F;
-        System.out.println("x = " + (Integer.class.isInstance(x)));
-
     }
 
 

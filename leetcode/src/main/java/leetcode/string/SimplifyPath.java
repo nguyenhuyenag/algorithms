@@ -1,4 +1,4 @@
-package leetcode.incomplete;
+package leetcode.string;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -15,11 +15,11 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * The canonical path should have the following format:
  *
- * - The path starts with a single slash '/'.
- * - Any two directories are separated by a single slash '/'.
- * - The path does not end with a trailing '/'.
- * - The path only contains the directories on the path from the root
- *   directory to the target file or directory (i.e., no period '.' or double period '..')
+ *  - The path starts with a single slash '/'.
+ *  - Any two directories are separated by a single slash '/'.
+ *  - The path does not end with a trailing '/'.
+ *  - The path only contains the directories on the path from the root
+ *    directory to the target file or directory (i.e., no period '.' or double period '..')
  *
  * Return the simplified canonical path.
  */
@@ -43,15 +43,14 @@ public class SimplifyPath {
 
     public String simplifyPath(String paths) {
         Stack<String> stack = new Stack<>();
-
-        List<String> list = List.of("", ".");
+        List<String> skip = List.of("", ".");
 
         for (String path : paths.split("/")) {
             if ("..".equals(path)) {
                 if (!stack.isEmpty()) {
                     stack.pop();
                 }
-            } else if (!list.contains(path)) {
+            } else if (!skip.contains(path)) {
                 stack.add(path);
             }
         }
