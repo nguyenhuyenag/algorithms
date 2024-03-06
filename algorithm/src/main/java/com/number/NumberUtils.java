@@ -93,23 +93,33 @@ public class NumberUtils {
 
     /**
      * Ước chung lớn nhất: Euclid
+     *
+     * gcd(3,4) = 1, gcd(4,6) = 2
+     *
+     * BigInteger.gcd()
      */
     public static int gcd(int a, int b) {
         while (a != b) {
             if (a > b) {
-                a = a - b;
+                a -= b;
             } else {
-                b = b - a;
+                b -= a;
             }
         }
         return a; // hay b cũng được vì lúc này a = b
     }
 
+    /**
+     * a = bq + r -> gcd(a,b) = gcd(b,r)
+     */
+    public static int gcd_2(int a, int b) {
+        if (a == 0) return b;
+        return gcd_2(b, a % b);
+    }
+
     // n là lũy thừa của k: k^i = n
     public static boolean isPowerOfAny(int n, int k) {
-        if (n <= 0) {
-            return false;
-        }
+        if (n <= 0) return false;
         while (n > 1) {
             if (n % k == 0) {
                 n /= k;
