@@ -121,5 +121,4 @@ public class HumanReadbleDurationFormat {
         assertEquals("1 hour, 1 minute and 2 seconds", formatDuration(3662));
     }
 
-
 }

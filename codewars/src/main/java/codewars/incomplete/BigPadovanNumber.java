@@ -16,8 +16,6 @@ import java.util.Map;
  */
 public class BigPadovanNumber {
 
-
-    //
 //    public static BigInteger Get_0(long power) {
 //        Map<Long, BigInteger> mapNums = new HashMap<>();
 //        mapNums.put(0L, BigInteger.ONE);
