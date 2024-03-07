@@ -112,9 +112,9 @@ public class NumberUtils {
     /**
      * a = bq + r -> gcd(a,b) = gcd(b,r)
      */
-    public static int gcd_2(int a, int b) {
-        if (a == 0) return b;
-        return gcd_2(b, a % b);
+    public static long gcd(long a, long b) {
+        if (b == 0) return a;
+        return gcd(b, a % b);
     }
 
     // n là lũy thừa của k: k^i = n

@@ -5,7 +5,6 @@ from collections import Counter
 
 """
     https://leetcode.com/problems/count-vowel-strings-in-ranges/
-    
 """
 class Solution(unittest.TestCase):
 

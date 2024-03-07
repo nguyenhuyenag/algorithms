@@ -5,13 +5,16 @@ import java.util.stream.Collectors;
 
 public class AlgMain {
 
+    public static long gcd(long a, long b) {
+        if (b == 0) return a;
+        return gcd(b, a % b);
+    }
+
     public static void main(String[] args) {
-        int[] arr1 = {1, 2, 3, 4, 5};
-        int[] arr2 = {3, 4, 5, 6, 7, 8};
-        List<Integer> list1 = Arrays.stream(arr1).boxed().collect(Collectors.toList());
-        List<Integer> list2 = Arrays.stream(arr2).boxed().collect(Collectors.toList());
-        list1.retainAll(list2);
-        System.out.println("list1 = " + list1);
+        long a = 7;
+        long b = 9515459940L;
+        long v = gcd(a, b);
+        System.out.println("v = " + v);
     }
 
 }
