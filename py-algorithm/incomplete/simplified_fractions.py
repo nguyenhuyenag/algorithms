@@ -8,8 +8,6 @@ from math import gcd
     
     Cho số nguyên n. Tìm tất cả các phân số thuộc (0,1) có mẫu số <= n 
 """
-
-
 class Solution(unittest.TestCase):
 
     @staticmethod
