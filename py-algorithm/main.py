@@ -1,13 +1,29 @@
-# from fractions import Fraction
+# from decimal import Decimal, getcontext
+# getcontext().prec = 1_00
 #
-# decimal_number = "8/4"
-# max_denominator = 1000  # You can adjust this value based on your preference
 #
-# frac = Fraction(str(decimal_number)).limit_denominator(max_denominator)
+# def cycle(n: int) -> int:
+#     s = str(Decimal(1) / Decimal(69))
+#     # print(result)
+#     index = s.index('.')
+#     j = 1
+#     if index != -1:
+#         for i in range(index + 1, len(s)):
+#             x = s[index + 1:i + 1]
+#             y = s[i + 1:i + 1 + j]
+#             j += 1
+#             if x == y:
+#                 # print(f"{i} -> {x} = {y}")
+#                 return j - 1
 #
-# print(f"The simplified fraction representation of {decimal_number} is: {frac}")
+#         return -1
 #
-# a, b = frac
-values = set()
-values.add(1)
-values.add(2)
+#
+# if __name__ == '__main__':
+#     v = cycle(69)
+#     print(v)
+#
+# # from decimal import Decimal, getcontext
+# # getcontext().prec = 1_00  # Số 15 ở đây là số lượng chữ số thập phân bạn muốn
+# # result = Decimal(1) / Decimal(69)
+# # print(result)

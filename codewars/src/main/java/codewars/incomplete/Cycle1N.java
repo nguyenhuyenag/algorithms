@@ -2,7 +2,9 @@ package codewars.incomplete;
 
 import java.math.BigDecimal;
 
-// https://www.codewars.com/kata/5a057ec846d843c81a0000ad/
+/**
+ * https://www.codewars.com/kata/5a057ec846d843c81a0000ad/
+ */
 public class Cycle1N {
 
     public static void main(String[] args) {
