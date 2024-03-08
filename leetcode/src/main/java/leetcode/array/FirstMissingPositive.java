@@ -23,6 +23,7 @@ public class FirstMissingPositive {
     public static int firstMissingPositive(int[] nums) {
         Set<Integer> visited = new HashSet<>();
         Queue<Integer> queue = new PriorityQueue<>();
+        // Xóa các phần tử < 0 và trùng nhau
         for (int num : nums) {
             if (num > 0 && !visited.contains(num)) {
                 queue.add(num);
@@ -39,7 +40,6 @@ public class FirstMissingPositive {
         }
         return current + 1;
     }
-
 
     @Test
     public void test() {

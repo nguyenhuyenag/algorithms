@@ -30,6 +30,7 @@ class Solution(unittest.TestCase):
                 return length
 
         return -1
+
     # def cycle(n: int) -> int:
     #     s = str(Decimal(1) / Decimal(n))
     #     index = s.index('.')

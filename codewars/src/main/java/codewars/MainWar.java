@@ -1,27 +1,22 @@
 package codewars;
 
 import java.util.PriorityQueue;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- *
+ * Cho số nguyên n. Với mỗi i thuộc [0, n] đếm số bit '1' trong biểu diễn của i dưới dạng nhị phân
+ * Trả về mảng n + 1 kết quả trên
  */
 public class MainWar {
 
-    public static Double calculate(final double n1, final String operation, final double n2) {
-        return switch (operation) {
-            case "+" -> n1 + n2;
-            case "-" -> n1 - n2;
-            case "*" -> n1 * n2;
-            case "/" -> {
-                if (n2 == 0) {
-                    yield null;
-                }
-                yield n1 / n2;
-            }
-            default -> null;
-        };
+    public static void main(String[] args) {
+        int n = 5;
+        for (int i = 0; i <= n; i++) {
+//            System.out.println("binary = " + Integer.toString(i, 2));
+            System.out.println("bitcount = " + Integer.bitCount(i));
+        }
     }
 
 }
