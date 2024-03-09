@@ -47,23 +47,23 @@ public class CacPhepToanTrenMang {
      *      set1.retainAll(set2);
      *      System.out.println("Common elements- " + set1);
      */
-    public List<Integer> intersect(int[] A, int[] B) {
-        Arrays.sort(A);
-        Arrays.sort(B);
-        List<Integer> result = new ArrayList<>();
+    public Set<Integer> intersect(int[] nums1, int[] nums2) {
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+        Set<Integer> common = new HashSet<>();
         int i = 0, j = 0;
-        while (i < A.length && j < B.length) {
-            if (A[i] == B[j]) {
-                result.add(A[i]);
+        while (i < nums1.length && j < nums2.length) {
+            if (nums1[i] == nums2[j]) {
+                common.add(nums1[i]);
                 i++;
                 j++;
-            } else if (A[i] < B[j]) {
+            } else if (nums1[i] < nums2[j]) {
                 i++;
             } else {
                 j++;
             }
         }
-        return result;
+        return common;
     }
 
     /**
@@ -95,7 +95,7 @@ public class CacPhepToanTrenMang {
     @Test
     public void testIntersect() {
         // int[] arr = intersect(new int[]{1, 2, 2, 1}, new int[]{2, 2});
-        List<Integer> intersect = intersect(new int[]{4, 9, 5}, new int[]{9, 4, 9, 8, 4});
+        Set<Integer> intersect = intersect(new int[]{4, 9, 5}, new int[]{9, 4, 9, 8, 4});
         System.out.println(Arrays.toString(intersect.toArray()));
     }
 
