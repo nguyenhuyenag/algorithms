@@ -9,8 +9,8 @@ public class SplitArray {
      */
     public static <T> List<List<T>> splitList(List<T> list, int n) {
         List<List<T>> result = new ArrayList<>();
-        int partitionSize = list.size() / n;    // Dự đoán kích thước 1 list con
-        int remaining = list.size() % n;    // Phần dư
+        int partitionSize   = list.size() / n;    // Dự đoán kích thước 1 list con
+        int remaining       = list.size() % n;    // Phần dư
         int currentIndex = 0;
         for (int i = 0; i < n; i++) {
             int subListSize = partitionSize;    // Kích thước 1 list con thực tế

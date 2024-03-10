@@ -4,14 +4,14 @@ import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
-/**
+/*-
  * System.arraycopy(int[] src, int srcPos, int[] dest, int destPos, int length)
  *
- * src        Mảng nguồn
- * srcPos     Vị trí bắt đầu sao chép
- * dest       Mảng đích
- * destPos    Vị trí bắt đầu gán kết quả
- * length     Số phần tử cần sao chép
+ *      src        Mảng nguồn
+ *      srcPos     Vị trí bắt đầu sao chép
+ *      dest       Mảng đích
+ *      destPos    Vị trí bắt đầu gán kết quả
+ *      length     Số phần tử cần sao chép
  */
 public class CacPhepToanTrenMang {
 

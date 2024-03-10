@@ -13,12 +13,10 @@ public class CheckSortedArray {
     }
 
     public static boolean isSorted(int[] array) {
-        int len = array.length;
-
         boolean ascending = true;   // Giả sử mảng là đang tăng dần
         boolean descending = true;  // Giả sử mảng là đang giảm dần
 
-        for (int i = 0; i < len - 1; i++) {
+        for (int i = 0; i < array.length - 1; i++) {
             if (array[i] > array[i + 1]) {
                 ascending = false; // mảng không tăng dần
             }
