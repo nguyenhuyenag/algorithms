@@ -26,9 +26,10 @@ public class FindCommonCharacters {
             listOfMaps.add(map);
         }
 
+        // Kết quả
         List<String> commons = new ArrayList<>();
+        // Các ký tự duy nhất trong chuỗi đầu tiên
         Set<Character> charOfFirstItem = listOfMaps.get(0).keySet();
-
         for (char ch : charOfFirstItem) {
             int min = Integer.MAX_VALUE;
             // Kiểm tra 'ch' có phải là ký tự chung của mọi phần tử hay không?

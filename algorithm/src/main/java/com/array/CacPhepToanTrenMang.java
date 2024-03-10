@@ -7,45 +7,44 @@ import java.util.*;
 /**
  * System.arraycopy(int[] src, int srcPos, int[] dest, int destPos, int length)
  *
- *      src        Mảng nguồn
- *      srcPos     Vị trí bắt đầu sao chép
- *      dest       Mảng đích
- *      destPos    Vị trí bắt đầu gán kết quả
- *      length     Số phần tử cần sao chép
+ * src        Mảng nguồn
+ * srcPos     Vị trí bắt đầu sao chép
+ * dest       Mảng đích
+ * destPos    Vị trí bắt đầu gán kết quả
+ * length     Số phần tử cần sao chép
  */
 public class CacPhepToanTrenMang {
 
     /**
-     * Gộp 2 mảng
+     * Gộp 2 mảng (System.arraycopy() thường thực hiện sao chép nhanh chóng
+     * hơn so với vòng lặp thông thường)
      */
-    public void mergeArray_0(int[] A, int[] B) {
-        int lenA = A.length, lenB = B.length;
-        int[] result = new int[lenA + lenB];
-        System.arraycopy(A, 0, result, 0, lenA);
-        System.arraycopy(B, 0, result, lenA, lenB);
+    public void mergeArray_1(int[] nums1, int[] nums2) {
+        int len1 = nums1.length, len2 = nums2.length;
+        int[] result = new int[len1 + len2];
+        System.arraycopy(nums1, 0, result, 0, len1);
+        System.arraycopy(nums2, 0, result, len1, len2);
         System.out.println("c = " + Arrays.toString(result));
     }
 
-    public int[] mergeArray_1(int[] A, int[] B) {
+    public int[] mergeArray_2(int[] nums1, int[] nums2) {
+        int[] result = new int[nums1.length + nums2.length];
         int pointer = 0;
-        int[] result = new int[A.length + B.length];
-        for (int x : A) {
-            result[pointer++] = x;
+        for (int num : nums1) {
+            result[pointer++] = num;
         }
-        for (int x : B) {
-            result[pointer++] = x;
+        for (int num : nums2) {
+            result[pointer++] = num;
         }
         return result;
     }
-
-    //==================================================//
 
     /**
      * Tìm phần tử chung của 2 mảng
      *
      * Use retainAll() method to find common elements
-     *      set1.retainAll(set2);
-     *      System.out.println("Common elements- " + set1);
+     * set1.retainAll(set2);
+     * System.out.println("Common elements- " + set1);
      */
     public Set<Integer> intersect(int[] nums1, int[] nums2) {
         Arrays.sort(nums1);
@@ -66,10 +65,49 @@ public class CacPhepToanTrenMang {
         return common;
     }
 
-    /**
-     * Check duplicate
+    /*-
+     * Tìm các ký tự chung của mảng các chuỗi
+     *
+     *  ["bella","label","roller"] -> ["e", "l", "l"]
      */
-    public static boolean containsDuplicate(int[] nums) {
+    public List<String> commonChars(String[] words) {
+        // [{a=1, b=1, e=1, l=2}, {a=1, b=1, e=1, l=2}, {r=2, e=1, l=2, o=1}]
+        List<Map<Character, Integer>> listOfMaps = new ArrayList<>();
+        for (String word : words) {
+            Map<Character, Integer> map = new HashMap<>();
+            for (char c : word.toCharArray()) {
+                map.put(c, map.getOrDefault(c, 0) + 1);
+            }
+            listOfMaps.add(map);
+        }
+        // Kết quả
+        List<String> commons = new ArrayList<>();
+        // Các ký tự duy nhất trong chuỗi đầu tiên
+        Set<Character> charOfFirstItem = listOfMaps.get(0).keySet();
+        for (char ch : charOfFirstItem) {
+            int min = Integer.MAX_VALUE;
+            // Kiểm tra 'ch' có phải là ký tự chung của mọi phần tử hay không?
+            for (Map<Character, Integer> map : listOfMaps) {
+                // -> Nếu không
+                if (!map.containsKey(ch)) {
+                    min = 0; // Gán min = 0 để vòng lặp phía dưới ko chạy (có thể xem nó là flag = false)
+                    break;
+                } else { // Nếu có
+                    min = Math.min(min, map.get(ch));
+                }
+            }
+            // Lấy kết quả, ví dụ [{a=1,b=2}, {a=2,c=1}] -> {a=1} là phần tử chung
+            for (int i = 0; i < min; i++) {
+                commons.add(String.valueOf(ch));
+            }
+        }
+        return commons;
+    }
+
+    /**
+     * Check duplicate 1
+     */
+    public boolean containsDuplicate(int[] nums) {
         Set<Integer> unique = new HashSet<>();
         for (int num : nums) {
             if (!unique.add(num)) {
@@ -80,16 +118,10 @@ public class CacPhepToanTrenMang {
     }
 
     /**
-     * Check duplicate
+     * Check duplicate 2
      */
-    public static boolean containsDuplicate_1(int[] nums) {
-        Arrays.sort(nums);
-        for (int i = 0; i < nums.length - 1; i++) {
-            if (nums[i] == nums[i + 1]) {
-                return true;
-            }
-        }
-        return false;
+    public boolean containsDuplicate_2(int[] nums) {
+        return Arrays.stream(nums).distinct().count() < nums.length;
     }
 
     @Test
@@ -99,10 +131,10 @@ public class CacPhepToanTrenMang {
         System.out.println(Arrays.toString(intersect.toArray()));
     }
 
-    @Test
-    public void testMerge() {
-        int[] A = {1, 2, 3, 4};
-        int[] B = {5, 6, 7};
-    }
+//    @Test
+//    public void testMerge() {
+//        int[] A = {1, 2, 3, 4};
+//        int[] B = {5, 6, 7};
+//    }
 
 }
