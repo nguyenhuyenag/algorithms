@@ -6,10 +6,15 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * https://leetcode.com/problems/intersection-of-two-arrays/description/
+/*-
+ * https://leetcode.com/problems/intersection-of-two-arrays/
+ * https://leetcode.com/problems/intersection-of-two-arrays-ii/
  *
  * Tìm giao của 2 mảng
+ *
+ *      [1, 2, 2, 3, 4] & [1, 2, 2] = [2]
+ *
+ *      [1, 2, 2, 3, 4] & [1, 2, 2] = [2, 2]
  */
 public class IntersectionOfTwoArrays {
 
