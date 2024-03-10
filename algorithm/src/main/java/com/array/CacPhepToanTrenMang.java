@@ -3,6 +3,7 @@ package com.array;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /*-
  * System.arraycopy(int[] src, int srcPos, int[] dest, int destPos, int length)
@@ -102,6 +103,30 @@ public class CacPhepToanTrenMang {
             }
         }
         return commons;
+    }
+
+    /*-
+     * Tìm các phần tử khác nhau của 2 mảng
+     *
+     *      [1,2,3], [2,4,6] -> [[1,3],[4,6]]
+     */
+    public List<List<Integer>> findDifference(int[] nums1, int[] nums2) {
+        List<List<Integer>> result = new ArrayList<>();
+
+        Set<Integer> set1 = new HashSet<>(Arrays.stream(nums1).boxed().collect(Collectors.toList()));
+        Set<Integer> set2 = new HashSet<>(Arrays.stream(nums2).boxed().collect(Collectors.toList()));
+
+        // Tìm hiệu nums1 - nums2
+        Set<Integer> diff1 = new HashSet<>(set1);
+        diff1.removeAll(set2);
+        result.add(new ArrayList<>(diff1));
+
+        // Tìm hiệu nums2 - nums1
+        Set<Integer> diff2 = new HashSet<>(set2);
+        diff2.removeAll(set1);
+        result.add(new ArrayList<>(diff2));
+
+        return result;
     }
 
     /**
