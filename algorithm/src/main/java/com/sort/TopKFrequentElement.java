@@ -1,17 +1,18 @@
-package leetcode.array;
+package com.sort;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
  * https://leetcode.com/problems/top-k-frequent-elements/
  *
- * Given a non-empty array of integers, return the k most frequent elements
- *
- * Cho mảng số nguyên và số nguyên k. Trả về k số có số lần xuất hiện cao nhất
+ * Cho mảng số nguyên và số nguyên k. Trả về k số có số lần xuất hiện nhiêu nhất
  */
 public class TopKFrequentElement {
 
