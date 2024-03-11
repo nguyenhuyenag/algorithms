@@ -16,9 +16,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class MainLeet {
 
     public static void main(String[] args) {
-        String s = "bbbbbbbbbbbbbbbbbbbbbbbbbbbabbbbbbbbbbbbbbbccbcbcbccbbabbb";
-        int l = 0, r = s.length() - 1;
-        System.out.println(s.charAt(r) + ", " + s.charAt(r -1));
+        Set<Integer> set1 = new HashSet<>();
+        Set<Integer> set2 = new HashSet<>(Arrays.asList(1,2,3,4));
+        set2.retainAll(set1);
+        System.out.println("set2 = " + set2);
     }
 
 
