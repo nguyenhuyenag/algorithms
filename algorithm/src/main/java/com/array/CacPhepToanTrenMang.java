@@ -67,7 +67,7 @@ public class CacPhepToanTrenMang {
     }
 
     /*-
-     * Tìm các ký tự chung của mảng các chuỗi
+     * Tìm các ký tự chung của mảng các chuỗi (có phần tử trùng nhau)
      *
      *  ["bella","label","roller"] -> ["e", "l", "l"]
      */
