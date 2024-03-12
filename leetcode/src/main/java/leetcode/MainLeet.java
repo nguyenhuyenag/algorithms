@@ -17,10 +17,9 @@ public class MainLeet {
 
     public static void main(String[] args) {
         Set<Integer> set1 = new HashSet<>();
-        Set<Integer> set2 = new HashSet<>(Arrays.asList(1,2,3,4));
+        Set<Integer> set2 = new HashSet<>(Arrays.asList(1, 2, 3, 4));
         set2.retainAll(set1);
         System.out.println("set2 = " + set2);
     }
-
 
 }
