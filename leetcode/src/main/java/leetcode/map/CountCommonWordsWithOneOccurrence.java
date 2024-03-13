@@ -1,4 +1,4 @@
-package leetcode.array;
+package leetcode.map;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -40,6 +40,7 @@ public class CountCommonWordsWithOneOccurrence {
 
     @Test
     public void test() {
-        assertEquals(2, countWords(new String[]{"leetcode", "is", "amazing", "as", "is"}, new String[]{"amazing", "leetcode", "is"}));
+        assertEquals(2, countWords(new String[]{"leetcode", "is", "amazing", "as", "is"},
+                new String[]{"amazing", "leetcode", "is"}));
     }
 }

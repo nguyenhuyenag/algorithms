@@ -16,10 +16,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class MainLeet {
 
     public static void main(String[] args) {
-        Set<Integer> set1 = new HashSet<>();
-        Set<Integer> set2 = new HashSet<>(Arrays.asList(1, 2, 3, 4));
-        set2.retainAll(set1);
-        System.out.println("set2 = " + set2);
+        String s = "";
+        int[] mark1 = new int[26];
+        int[] mark2 = new int[26];
+        s.chars().forEach(c -> {
+            mark1[c - 'a']++;
+            mark2[c - 'a']++;
+        });
+        System.out.println(Arrays.hashCode(mark1));
+        System.out.println(Arrays.hashCode(mark2));
     }
 
 }

@@ -2,6 +2,8 @@ package leetcode.array;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -14,10 +16,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class AnagramValid {
 
     public boolean isAnagrams(String s1, String s2) {
-        int n = s1.length();
-        if (n != s2.length()) return false;
+        if (s1.length() != s2.length()) return false;
         char[] mark = new char[26];
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < s1.length(); i++) {
             mark[s1.charAt(i) - 'a']++;
             mark[s2.charAt(i) - 'a']--;
         }
@@ -27,25 +28,17 @@ public class AnagramValid {
         return true;
     }
 
+    public boolean isAnagram(String s1, String s2) {
+        if (s1.length() != s2.length()) return false;
+        int[] mark = new int[26];
+        s1.chars().forEach(c -> mark[c - 'a']++);
+        s2.chars().forEach(c -> mark[c - 'a']--);
+        return Arrays.stream(mark).allMatch(v -> v == 0);
+    }
+
     @Test
     public void test() {
         assertEquals(true, isAnagrams("anagram", "nagaram"));
     }
-
-    //    public static boolean isAnagram(String s, String t) {
-//        int n = s.length();
-//        if (n != t.length())
-//            return false;
-//        char[] arrs = s.toCharArray();
-//        char[] arrt = t.toCharArray();
-//        Arrays.sort(arrs);
-//        Arrays.sort(arrt);
-//        for (int i = 0; i < n; i++) {
-//            if (arrs[i] != arrt[i]) {
-//                return false;
-//            }
-//        }
-//        return true;
-//    }
 
 }

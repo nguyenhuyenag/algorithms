@@ -6,14 +6,14 @@ import numpy as np
 
     Biểu diễn số n dưới dạng cơ số 7
 """
-
-
 class Solution(unittest.TestCase):
 
-    def convert_to_base_7(self, n: int) -> str:
+    @staticmethod
+    def convert_to_base_7(n: int) -> str:
         return np.base_repr(n, base=7)
 
-    def convertToBase7(self, n: int) -> str:
+    @staticmethod
+    def convertToBase7(n: int) -> str:
         if n == 0:
             return "0"
 

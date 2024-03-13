@@ -12,7 +12,24 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class BestTimeToBuyAndSaleStock {
 
-//    public int maxProfit(int[] arr) {
+    public int maxProfit(int[] nums) {
+        int min = nums[0];
+        int maxDiff = -1;
+        for (int num : nums) {
+            maxDiff = Math.max(maxDiff, num - min);
+            min = Math.min(min, num);
+        }
+        return maxDiff;
+    }
+
+    @Test
+    public void test() {
+        assertEquals(5, maxProfit(new int[]{7, 1, 5, 3, 6, 4}));
+        assertEquals(0, maxProfit(new int[]{7, 6, 4, 3, 1}));
+        assertEquals(3, maxProfit(new int[]{2, 1, 4}));
+    }
+
+//        public int maxProfit(int[] arr) {
 //        int maxDiff = 0;
 //        int minElement = arr[0];
 //        for (int x : arr) {
@@ -25,22 +42,5 @@ public class BestTimeToBuyAndSaleStock {
 //        }
 //        return maxDiff;
 //    }
-
-    public int maxProfit(int[] nums) {
-        int minValue = nums[0];
-        int maxDiff = -1;
-        for (int num : nums) {
-            maxDiff = Math.max(maxDiff, num - minValue);
-            minValue = Math.min(minValue, num);
-        }
-        return maxDiff;
-    }
-
-    @Test
-    public void test() {
-        assertEquals(5, maxProfit(new int[]{7, 1, 5, 3, 6, 4}));
-        assertEquals(0, maxProfit(new int[]{7, 6, 4, 3, 1}));
-        assertEquals(3, maxProfit(new int[]{2, 1, 4}));
-    }
 
 }

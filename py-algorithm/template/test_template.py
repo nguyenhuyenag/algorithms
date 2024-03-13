@@ -12,7 +12,7 @@ class Solution(unittest.TestCase):
         pass
 
     def test(self):
-        self.assertEqual(True, self.doTest([1, 1, 2, 3, 4]))
+        self.assertEqual(True, self.doTest([]))
 
 
 if __name__ == '__main__':
