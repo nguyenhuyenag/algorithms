@@ -17,6 +17,9 @@ public class DayConLienTiep {
         return maxLength;
     }
 
+    /**
+     * Dãy con dương dài nhất
+     */
     public static void findDayConDuongDaiNhat() {
         Integer[] arr = {1, 2, 3, -4, 5};
         int result = findContiguousSubsequence(arr, t -> t > 0);

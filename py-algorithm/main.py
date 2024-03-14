@@ -1,13 +1,52 @@
-# def is_anagram(s1: str, s2: str):
-#     if len(s1) != len(s2): return False
-#     mark = [0] * 26
-#     for i in range(len(s1)):
-#         mark[ord(s1[i]) - ord('a')] += 1
-#         mark[ord(s2[i]) - ord('a')] -= 1
-#
-#     return all(val == 0 for val in mark)
-#
-# if __name__ == '__main__':
-#     s1 = 'abc'
-#     s2 = 'bca'
-#     print(is_anagram(s1, s2))
+def subarrays_with_sum(nums, s):
+    result = []
+    current_sum = 0
+    sum_map = {}
+
+    for index, num in enumerate(nums):
+        current_sum += num
+
+        if current_sum == s:
+            result.append(nums[0:index + 1])
+
+        if current_sum - s in sum_map:
+            for start in sum_map[current_sum - s]:
+                result.append(nums[start + 1:index + 1])
+
+        if current_sum not in sum_map:
+            sum_map[current_sum] = [index]
+        else:
+            sum_map[current_sum].append(index)
+
+    return result
+
+
+def numSubarraysWithSum(self, nums: List[int], s: int) -> int:
+    result = 0
+    current_sum = 0
+    sum_map = {}
+
+    for index, num in enumerate(nums):
+        current_sum += num
+
+        if current_sum == s:
+            result += 1
+
+        if current_sum - s in sum_map:
+            for start in sum_map[current_sum - s]:
+                result += 1
+
+        if current_sum not in sum_map:
+            sum_map[current_sum] = [index]
+        else:
+            sum_map[current_sum].append(index)
+
+    return result
+
+
+# Example usage:
+nums = [0, 0, 0, 0, 0]
+s = 0
+with_sum = subarrays_with_sum(nums, s)
+print(len(with_sum))
+print(with_sum)

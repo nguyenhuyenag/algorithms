@@ -12,13 +12,28 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class MangConCoTongBangK {
 
-//    public void printSubarray(int[] arr, int start, int end, int k) {
-//        System.out.print("Subarray with sum " + k + ": ");
-//        for (int i = start; i <= end; i++) {
-//            System.out.print(arr[i] + " ");
-//        }
-//        System.out.println();
-//    }
+    public List<int[]> numSubarraysWithSum(int[] nums, int s) {
+        List<int[]> result = new ArrayList<>();
+        int currentSum = 0;
+        Map<Integer, List<Integer>> sumMap = new HashMap<>();
+        for (int index = 0; index < nums.length; index++) {
+            currentSum += nums[index];
+            if (currentSum == s) {
+                result.add(new int[]{0, index});
+            }
+            if (sumMap.containsKey(currentSum - s)) {
+                List<Integer> indices = sumMap.get(currentSum - s);
+                for (int start : indices) {
+                    result.add(new int[]{start + 1, index});
+                }
+            }
+            if (!sumMap.containsKey(currentSum)) {
+                sumMap.put(currentSum, new ArrayList<>());
+            }
+            sumMap.get(currentSum).add(index);
+        }
+        return result;
+    }
 
     public int subarraySum0(int[] arr, int k) {
         int count = 0;
