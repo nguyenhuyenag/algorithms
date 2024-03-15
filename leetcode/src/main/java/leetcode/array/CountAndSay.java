@@ -22,16 +22,7 @@ import org.junit.jupiter.api.Test;
  */
 public class CountAndSay {
 
-    public String countAndSay(int n) {
-        if (n <= 0) return "";
-        String result = "1";
-        for (int i = 1; i < n; i++) {
-            result = say(result);
-        }
-        return result;
-    }
-
-    public static String say(String text) {
+    public String say(String text) {
         StringBuilder result = new StringBuilder();
         int count = 1;
         for (int i = 1; i < text.length(); i++) {
@@ -44,6 +35,15 @@ public class CountAndSay {
         }
         result.append(count).append(text.charAt(text.length() - 1));
         return result.toString();
+    }
+
+    public String countAndSay(int n) {
+        if (n <= 0) return "";
+        String result = "1";
+        for (int i = 1; i < n; i++) {
+            result = say(result);
+        }
+        return result;
     }
 
     @Test

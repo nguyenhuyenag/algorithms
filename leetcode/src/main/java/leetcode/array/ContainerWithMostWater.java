@@ -18,14 +18,10 @@ public class ContainerWithMostWater {
         int maxArea = 0;
         int left = 0, right = arr.length - 1;
         while (left < right) {
-            // Chiều rộng
-            int width = right - left;
-            // Chiều cao
-            int hight = Math.min(arr[left], arr[right]);
-            // Tính diện tích
-            int area = width * hight;
-            // Tìm diện tích lớn nhất
-            maxArea = Math.max(maxArea, area);
+            int width = right - left; // Chiều rộng
+            int hight = Math.min(arr[left], arr[right]); // Chiều cao
+            int area = width * hight; // Tính diện tích
+            maxArea = Math.max(maxArea, area); // Tìm diện tích lớn nhất
             // Dời con trỏ
             if (arr[left] < arr[right]) {
                 left++;
