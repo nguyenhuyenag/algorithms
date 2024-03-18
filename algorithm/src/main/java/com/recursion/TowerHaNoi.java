@@ -7,43 +7,32 @@ import java.util.Stack;
 
 public class TowerHaNoi {
 
+    /**
+     * towerOfHaNoi(n, cột_nguồn, cột_trung_gian, cột_đích)
+     *
+     * - Toàn bộ quá trình là một số hữu hạn các bước, vì đến một lúc nào đó
+     * thuật toán sẽ áp dụng cho n = 1. Bước này chỉ đơn giản là chuyển một
+     * đĩa duy nhất từ cọc A sang cọc C.
+     *
+     * - Có 2^n - 1 bước di chuyển
+     */
+    public static void towerOfHaNoi(int n, String A, String B, String C) {
+        if (n == 1) {
+            System.out.println(String.format("%s ---> %s", A, C));
+            return;
+        } else {
+            // Dùng C là trung gian, dời n - 1 đĩa từ A -> B
+            towerOfHaNoi(n - 1, A, C, B);
+            // Còn 1 đĩa cuối cùng thì trở về case = 1
+            towerOfHaNoi(n - 1, A, B, C);
+            // Dùng A làm trung gian, dời n - 1 đĩa từ B -> C
+            towerOfHaNoi(n - 1, B, A, C);
+        }
+    }
+
     public static void main(String[] args) {
-        List<List<Integer>> towers = new ArrayList<>();
-
-        // Initialize the towers
-        for (int i = 0; i < 3; i++) {
-            towers.add(new ArrayList<>());
-        }
-
-        int nDisc = 3; // Number of discs
-        // Add discs to the first tower
-        for (int i = nDisc; i > 0; i--) {
-            towers.get(0).add(i);
-        }
-
-        // Print initial state
-        printTowers(towers);
-
-        // Move discs from tower 1 to tower 3 using tower 2 as auxiliary
-        moveTower(nDisc, towers, 0, 1, 2);
-    }
-
-    private static void moveTower(int n, List<List<Integer>> towers, int A, int B, int C) {
-        if (n > 0) {
-            // Dời n-1 đĩa từ A qua B (dùng C là trung gian)
-            moveTower(n - 1, towers, A, C, B);
-            // Dời n đĩa từ A qua C
-            int disc = towers.get(A).remove(towers.get(A).size() - 1);
-            towers.get(C).add(disc);
-            // Print the current state of towers
-            printTowers(towers);
-            // Dời n-1 đĩa từ B qua C (dùng A làm trung gian)
-            moveTower(n - 1, towers, B, A, C);
-        }
-    }
-
-    private static void printTowers(List<List<Integer>> towers) {
-        System.out.println(towers);
+        int n = 3;
+        towerOfHaNoi(n, "A", "B", "C");
     }
 
 }
