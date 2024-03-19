@@ -30,11 +30,14 @@ public class TowerHaNoi2 {
         if (n > 0) {
             // Dời n-1 đĩa từ A qua B (dùng C là trung gian)
             moveTower(n - 1, towers, A, C, B);
+            
             // Dời n đĩa từ A qua C
             int disc = towers.get(A).remove(towers.get(A).size() - 1);
             towers.get(C).add(disc);
+
             // Print the current state of towers
             printTowers(towers);
+
             // Dời n-1 đĩa từ B qua C (dùng A làm trung gian)
             moveTower(n - 1, towers, B, A, C);
         }
