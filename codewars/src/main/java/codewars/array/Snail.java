@@ -15,11 +15,11 @@ import static org.junit.jupiter.api.Assertions.*;
 public class Snail {
 
     public static int[] snail(int[][] matrix) {
-        int rows = matrix.length;
-        int cols = matrix[0].length;
+        int rows = matrix.length; // Số dòng
+        int cols = matrix[0].length; // Số cột
 
-        int top = 0, bottom = rows - 1; // Dòng
-        int left = 0, right = cols - 1; // Cột
+        int top = 0, bottom = rows - 1; // Dòng hiện tại
+        int left = 0, right = cols - 1; // Cột hiện tại
 
         int p = 0;
         int[] result = new int[rows * cols];
