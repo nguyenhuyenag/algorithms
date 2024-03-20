@@ -17,9 +17,9 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class SimplityFractions {
 
-    // p = q * x + y -> gcd(p,a) = gcd(q, p % q)
-    public int gcd(int p, int q) {
-        return q == 0 ? p : gcd(q, p % q);
+    // a = b * x + y -> gcd(a,b) = gcd(b, a % b)
+    public int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
     }
 
     public List<String> simplifiedFractions(int n) {
