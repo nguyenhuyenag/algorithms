@@ -16,9 +16,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class MainLeet {
 
     public static void main(String[] args) {
-        String s = "abcdf";
-        System.out.println("s.indexOf() = " + s.indexOf("d"));
-        System.out.println("s.indexOf() = " + s.substring(0, 1 + s.indexOf('d')));
+        BigInteger b1 = new BigInteger("1");
+        BigInteger b2 = new BigInteger("2");
+        BigInteger sum = b1.add(b2);
+        System.out.println(sum.toString());
     }
 
 }

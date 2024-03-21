@@ -1,6 +1,6 @@
 package com.linked;
 
-public class LinkedList {
+public class Linked2List {
 
 	Node head; // head of list
 	Node tail; // tail of list
@@ -79,7 +79,7 @@ public class LinkedList {
 //	}
 
 	public static void main(String[] args) {
-		LinkedList list = new LinkedList(); // Create an empty list
+		Linked2List list = new Linked2List(); // Create an empty list
 
 		list.addFirst(1);
 		list.addFirst(2);
