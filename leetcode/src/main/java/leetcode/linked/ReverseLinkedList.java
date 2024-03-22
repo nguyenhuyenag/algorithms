@@ -3,6 +3,7 @@ package leetcode.linked;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class ReverseLinkedList {
 
-    public ListNode reverseList(ListNode head) {
+    public ListNode reverseList_OK(ListNode head) {
         ListNode rev = null;
         ListNode current = head;
         while (current != null) {
@@ -22,12 +23,33 @@ public class ReverseLinkedList {
             ListNode nextNode = current.next;
             // Đảo ngược con trỏ
             current.next = rev;
-
             // Di chuyển con trỏ và rev đến vị trí tiếp theo
             rev = current;
             current = nextNode;
         }
         return rev;
+    }
+
+    public ListNode reverseList(ListNode head) {
+        List<Integer> list = new ArrayList<>();
+        ListNode current = head;
+        while (current != null) {
+            list.add(current.val);
+            current = current.next;
+        }
+        Collections.reverse(list);
+        head = null;
+        // current hiện tại đã là null (thoát vòng lặp)
+        for (int val : list) {
+            ListNode newNode = new ListNode(val);
+            if (head == null) {
+                head = newNode;
+            } else {
+                current.next = newNode;
+            }
+            current = newNode;
+        }
+        return head;
     }
 
     /**
