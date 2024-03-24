@@ -1,6 +1,5 @@
 package com.linked;
 
-import java.util.LinkedList;
 import java.util.StringJoiner;
 
 /*-
@@ -37,61 +36,51 @@ import java.util.StringJoiner;
 */
 public class Linked2List {
 
-	ListNode head; // head of list
-	ListNode tail; // tail of list
+    ListNode head; // head of list
+    ListNode tail; // tail of list
 
-//	private class Node {
-//		int data;
-//		Node next;
-//
-//		public Node(int data) {
-//			this.data = data;
-//			this.next = null;
-//		}
-//	}
+    public static void main(String[] args) {
+        Linked2List list = new Linked2List(); // Create an empty list
 
-	public void add(int val) {
-		ListNode newNode = new ListNode(val);
-		if (head == null) {
-			// If list is empty, both head and tail will point to new node
-			head = newNode;
-		} else {
-			// newNode will be added after tail such that tail's next will point to newNode
-			tail.next = newNode;
-			// newNode will become new tail of the list
-		}
-		tail = newNode;
-	}
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.addFirst(0);
+        list.addFirst(-1);
+        list.addFirst(-3);
 
-	public void addFirst(int val) {
-		ListNode newNode = new ListNode(val);
-		if (head == null) {
-			// head = newNode;
-			tail = newNode;
-		} else {
-			// newNode will be added before head such that newNode next will point to head
-			newNode.next = head;
-			// newNode will become new head of the list
-			// head = newNode;
-		}
-		head = newNode;
-	}
+        // System.out.println("Size: " + list.length());
+        list.showList();
 
-//	public void addFirst(int data) {
-//		Node new_node = new Node(data);
-//		new_node.next = head;
-//		head = new_node;
-//	}
+        // System.out.println("Contain: " + list.contains(5));
+    }
 
-	public void showList() {
-		StringJoiner joiner = new StringJoiner(", ", "[", "]");
-		ListNode current = this.head;
-		while (current != null) {
-			joiner.add(String.valueOf(current.val));
-			current = current.next;
-		}
-		System.out.println(joiner.toString());
-	}
+    public void add(int val) {
+        ListNode newNode = new ListNode(val);
+        if (head == null) {
+            // If list is empty, both head and tail will point to new node
+            head = newNode;
+        } else {
+            // newNode will be added after tail such that tail's next will point to newNode
+            tail.next = newNode;
+            // newNode will become new tail of the list
+        }
+        tail = newNode;
+    }
+
+    public void addFirst(int val) {
+        ListNode newNode = new ListNode(val);
+        if (head == null) {
+            // head = newNode;
+            tail = newNode;
+        } else {
+            // newNode will be added before head such that newNode next will point to head
+            newNode.next = head;
+            // newNode will become new head of the list
+            // head = newNode;
+        }
+        head = newNode;
+    }
 
 //	public int length() {
 //		int length = 0;
@@ -114,20 +103,14 @@ public class Linked2List {
 //		return false;
 //	}
 
-	public static void main(String[] args) {
-		Linked2List list = new Linked2List(); // Create an empty list
-
-		list.add(1);
-		list.add(2);
-		list.add(3);
-		list.addFirst(0);
-		list.addFirst(-1);
-		list.addFirst(-3);
-
-		// System.out.println("Size: " + list.length());
-		list.showList();
-
-		// System.out.println("Contain: " + list.contains(5));
-	}
+    public void showList() {
+        StringJoiner joiner = new StringJoiner(", ", "[", "]");
+        ListNode current = this.head;
+        while (current != null) {
+            joiner.add(String.valueOf(current.val));
+            current = current.next;
+        }
+        System.out.println(joiner.toString());
+    }
 
 }

@@ -27,6 +27,17 @@ public class ListNode {
     /**
      * CRUD
      */
+    public static ListNode of(Integer... vals) {
+        ListNode head = new ListNode(0);
+        ListNode current = head;
+        for (int val : vals) {
+            ListNode newNode = new ListNode(val);
+            current.next = newNode;
+            current = current.next;
+        }
+        return head.next;
+    }
+
     public static ListNode of(int[] vals) {
         ListNode head = null;
         ListNode current = null;
@@ -62,7 +73,6 @@ public class ListNode {
         System.out.println(joiner.toString());
     }
 
-    // @Override
     public boolean equals(ListNode l2) {
         ListNode current1 = this;
         ListNode current2 = l2;
@@ -76,19 +86,5 @@ public class ListNode {
         // If both lists reach the end at the same time, they are equal
         return current1 == null && current2 == null;
     }
-
-//    public boolean compare(ListNode l2) {
-//        ListNode current1 = this;
-//        ListNode current2 = l2;
-//        while (current1 != null && current2 != null) {
-//            if (current1.val != current2.val) {
-//                return false;
-//            }
-//            current1 = current1.next;
-//            current2 = current2.next;
-//        }
-//        // If both lists reach the end at the same time, they are equal
-//        return current1 == null && current2 == null;
-//    }
 
 }

@@ -30,19 +30,6 @@ public class LKSample {
         return head;
     }
 
-//    /**
-//     * Duyệt danh sách liên kết
-//     */
-//    public static void printLinkedList(ListNode head) {
-//        StringJoiner joiner = new StringJoiner(", ", "[", "]");
-//        ListNode curent = head;
-//        while (curent != null) {
-//            joiner.add(String.valueOf(curent.val));
-//            curent = curent.next; // Di chuyển con trỏ
-//        }
-//        System.out.println(joiner.toString());
-//    }
-
     public static ListNode reverseList(ListNode head) {
         ListNode prev = null;
         ListNode current = head;
@@ -57,12 +44,19 @@ public class LKSample {
         return prev;
     }
 
+    public static void testAddFirst() {
+        ListNode head = ListNode.of(1, 2, 3, 4, 5);
+        head.addFirst(-1);
+        head.showList();
+    }
+
     public static void main(String[] args) {
-        ListNode listNode = create2();
-//        listNode.addFirst(100);
-        listNode.showList();
+        // ListNode listNode = create2();
         // listNode = reverseList(listNode);
         // printLinkedList(listNode);
+        // listNode.showList();
+        testAddFirst();
     }
+
 
 }

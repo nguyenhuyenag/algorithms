@@ -47,8 +47,8 @@ public class AddTwoNumbers {
      * Tạo ListNode có 1 giá trị, kết quả trả về là result.next
      */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode result = new ListNode(0);
-        ListNode current = result;
+        ListNode head = new ListNode(0);
+        ListNode current = head;
         int carry = 0;
 
         while (l1 != null || l2 != null) {
@@ -69,7 +69,7 @@ public class AddTwoNumbers {
             current.next = new ListNode(carry);
         }
 
-        return result.next; // Bỏ nút đầu tiên
+        return head.next; // Bỏ nút đầu tiên
     }
 
     /**

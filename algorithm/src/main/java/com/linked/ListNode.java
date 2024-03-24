@@ -1,33 +1,54 @@
 package com.linked;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.StringJoiner;
 
 /**
- * Danh sách liên kết đơn
+ * Definition for singly-linked list
  */
+@NoArgsConstructor
+@AllArgsConstructor
 public class ListNode {
 
     public int val;
     public ListNode next;
 
-    public ListNode() {
-    }
-
     public ListNode(int val) {
         this.val = val;
     }
 
-    public ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
+    public static ListNode of(Integer... vals) {
+        ListNode head = new ListNode(0);
+        ListNode current = head;
+        for (int val : vals) {
+            ListNode newNode = new ListNode(val);
+            current.next = newNode;
+            current = current.next;
+        }
+        return head.next;
     }
 
-    /**
-     * add() = addLast()
-     */
+    public static ListNode of(int[] vals) {
+        ListNode head = null;
+        ListNode current = null;
+        for (int val : vals) {
+            ListNode newNode = new ListNode(val);
+            if (head == null) {
+                head = newNode;
+            } else {
+                current.next = newNode;
+            }
+            current = newNode;
+        }
+        return head;
+    }
+
     public void add(int val) {
         ListNode newNode = new ListNode(val);
         ListNode current = this; // Gán con trỏ là node hiện tại
@@ -35,6 +56,16 @@ public class ListNode {
             current = current.next; // Dời con trỏ đến cuối danh sách
         }
         current.next = newNode; // Liên kết node cuối với node mới
+    }
+
+    public List<Integer> toList() {
+        List<Integer> result = new ArrayList<>();
+        ListNode current = this;
+        while (current != null) {
+            result.add(current.val);
+            current = current.next;
+        }
+        return result;
     }
 
     public void showList() {
@@ -46,5 +77,26 @@ public class ListNode {
         }
         System.out.println(joiner.toString());
     }
+
+    public boolean equals(ListNode l2) {
+        ListNode current1 = this;
+        ListNode current2 = l2;
+        while (current1 != null && current2 != null) {
+            if (current1.val != current2.val) {
+                return false;
+            }
+            current1 = current1.next;
+            current2 = current2.next;
+        }
+        // If both lists reach the end at the same time, they are equal
+        return current1 == null && current2 == null;
+    }
+
+    public void addFirst(int val) {
+        ListNode newNode = new ListNode(val); // Create a new node
+        newNode.next = this; // Set the next of the new node to the current head of the list
+        this = newNode; // Update the head of the list to point to the new node
+    }
+
 
 }
