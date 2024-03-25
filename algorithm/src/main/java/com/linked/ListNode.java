@@ -67,14 +67,13 @@ public class ListNode {
         return result;
     }
 
-    public void showList() {
-        StringJoiner joiner = new StringJoiner(", ", "[", "]");
-        ListNode current = this;
-        while (current != null) {
-            joiner.add(String.valueOf(current.val));
-            current = current.next;
-        }
-        System.out.println(joiner.toString());
+    /**
+     * Thêm node vào đầu danh sách. Có cách không return?
+     */
+    public ListNode addFirst(int val) {
+        ListNode newNode = new ListNode(val);
+        newNode.next = this;
+        return newNode;
     }
 
     public boolean equals(ListNode l2) {
@@ -91,14 +90,14 @@ public class ListNode {
         return current1 == null && current2 == null;
     }
 
-    /**
-     * Thêm node vào đầu danh sách
-     */
-    public ListNode addFirst(int val) {
-        ListNode newNode = new ListNode(val);
-        newNode.next = this;
-        return newNode;
+    public void showList() {
+        StringJoiner joiner = new StringJoiner(", ", "[", "]");
+        ListNode current = this;
+        while (current != null) {
+            joiner.add(String.valueOf(current.val));
+            current = current.next;
+        }
+        System.out.println(joiner.toString());
     }
-
 
 }
