@@ -27,8 +27,7 @@ public class ListNode {
         ListNode head = new ListNode(0);
         ListNode current = head;
         for (int val : vals) {
-            ListNode newNode = new ListNode(val);
-            current.next = newNode;
+            current.next = new ListNode(val);
             current = current.next;
         }
         return head.next;
@@ -92,10 +91,13 @@ public class ListNode {
         return current1 == null && current2 == null;
     }
 
-    public void addFirst(int val) {
-        ListNode newNode = new ListNode(val); // Create a new node
-        newNode.next = this; // Set the next of the new node to the current head of the list
-        this = newNode; // Update the head of the list to point to the new node
+    /**
+     * Thêm node vào đầu danh sách
+     */
+    public ListNode addFirst(int val) {
+        ListNode newNode = new ListNode(val);
+        newNode.next = this;
+        return newNode;
     }
 
 

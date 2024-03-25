@@ -9,8 +9,6 @@ from collections import Counter
 """
     
 """
-
-
 class Solution(unittest.TestCase):
 
     def doTest(self, nums: List[int]) -> bool:

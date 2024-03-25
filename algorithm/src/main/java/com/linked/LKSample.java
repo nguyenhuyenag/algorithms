@@ -46,7 +46,7 @@ public class LKSample {
 
     public static void testAddFirst() {
         ListNode head = ListNode.of(1, 2, 3, 4, 5);
-        head.addFirst(-1);
+        head = head.addFirst(-1);
         head.showList();
     }
 
