@@ -24,15 +24,17 @@ public class RemoveNthNodeFromEndOfList {
      * Tìm vị trí cần xóa. Duyệt danh sách bỏ qua vị trí cần xóa
      */
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        int index = 0;
+
+        // Kích thước của danh sách
         int size = sizeOf(head);
 
         ListNode result = new ListNode(0);
         ListNode resultPointer = result;
 
+        int index = 0;
         ListNode current = head;
         while (current != null) {
-            if (index != size - n) { // size - n is n-th from end
+            if (index != size - n) { // (size - n) là vị trí sẽ bỏ qua (cần xóa)
                 ListNode newNode = new ListNode(current.val);
                 resultPointer.next = newNode;
                 resultPointer = newNode;
