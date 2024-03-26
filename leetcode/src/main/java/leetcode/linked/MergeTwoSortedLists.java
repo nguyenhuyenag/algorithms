@@ -1,10 +1,11 @@
 package leetcode.linked;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Queue;
 import java.util.PriorityQueue;
+
+import static leetcode.linked.LinkedListTestUtils.*;
 
 /**
  * https://leetcode.com/problems/merge-two-sorted-lists/
@@ -62,7 +63,7 @@ public class MergeTwoSortedLists {
     public void test() {
         ListNode l1 = ListNode.of(1, 2, 4);
         ListNode l2 = ListNode.of(1, 3, 4);
-        TestForLinkedList.test(ListNode.of(1, 1, 2, 3, 4, 4), mergeTwoLists(l1, l2));
+        assertLinkedListEquals(ListNode.of(1, 1, 2, 3, 4, 4), mergeTwoLists(l1, l2));
     }
 
 }
