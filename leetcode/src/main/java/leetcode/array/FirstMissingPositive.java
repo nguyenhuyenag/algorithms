@@ -22,6 +22,7 @@ public class FirstMissingPositive {
 
     public static int firstMissingPositive(int[] nums) {
         Set<Integer> visited = new HashSet<>();
+        // Hàng đợi ưu tiên nhỏ -> lớn
         Queue<Integer> queue = new PriorityQueue<>();
         // Xóa các phần tử < 0 và trùng nhau
         for (int num : nums) {
@@ -32,12 +33,13 @@ public class FirstMissingPositive {
         }
         int current = 0; // Bắt đầu từ 0
         while (!queue.isEmpty()) {
-            // Nếu current + 1 (số kế tiếp) không phải là số kế tiếp (ở đỉnh) thì nó là số bị thiếu
+            // Nếu current + 1 không phải là số kế tiếp (ở đỉnh) thì nó là số bị thiếu
             if (current + 1 != queue.peek()) {
                 return current + 1;
             }
             current = queue.poll(); // Gán số ở đỉnh là số hiện tại
         }
+        // Chạy hết mảng thì max + 1
         return current + 1;
     }
 
@@ -48,14 +50,5 @@ public class FirstMissingPositive {
         assertEquals(1, firstMissingPositive(new int[]{7, 8, 9, 11, 12}));
         assertEquals(3, firstMissingPositive(new int[]{0, 2, 2, 1, 1}));
     }
-
-//    public static int firstMissingPositive(int[] nums) {
-//        int current = 0; // Số nguyên dương hiện tại
-//        while (!queue.isEmpty()) {
-//            if (++current != queue.poll()) {
-//                return current;
-//            }
-//        }
-//    }
 
 }
