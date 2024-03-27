@@ -1,4 +1,4 @@
-package com.array.dayconlientiep;
+package com.array.subs;
 
 // Tìm tổng lớn nhất của một chuỗi con liên tiếp trong mảng một chiều.
 public class MaxSubArray {

@@ -65,8 +65,8 @@ public class LKSample {
         // listNode.showList();
         // testAddFirst();
         // testInsert();
-         testReverse();
-        // testIndexOf();
+        // testReverse();
+        testIndexOf();
     }
 
 

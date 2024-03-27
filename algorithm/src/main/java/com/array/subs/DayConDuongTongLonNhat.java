@@ -1,4 +1,4 @@
-package com.array.dayconlientiep;
+package com.array.subs;
 
 /**
  * https://leetcode.com/problems/maximum-subarray/

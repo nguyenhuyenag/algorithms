@@ -140,13 +140,13 @@ public class ListNode {
         return indexOfByRecusive(listNode.next, val, ++index);
     }
 
-    private int indexOf2(int val) {
+    public int indexOf(int val) {
+        // return indexOf1(val);
         return indexOfByRecusive(this, val, 0);
     }
 
-    public int indexOf(int val) {
-        // return indexOf1(val);
-        return indexOf2(val);
+    public void removeByIndex(int index) {
+        ListNode current = this;
     }
 
     public boolean equals(ListNode l2) {

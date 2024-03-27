@@ -21,10 +21,9 @@ public class RemoveNthNodeFromEndOfList {
     }
 
     /**
-     * Tìm vị trí cần xóa. Duyệt danh sách bỏ qua vị trí cần xóa
+     * Tìm vị trí cần xóa. Duyệt danh sách và bỏ qua vị trí cần xóa
      */
-    public ListNode removeNthFromEnd(ListNode head, int n) {
-
+    public ListNode removeNthFromEnd_OK(ListNode head, int n) {
         // Kích thước của danh sách
         int size = sizeOf(head);
 
@@ -43,6 +42,22 @@ public class RemoveNthNodeFromEndOfList {
             index++;
         }
         return result.next;
+    }
+
+    public ListNode removeNthFromEnd(ListNode listNode, int k) {
+        // Kích thước của danh sách
+        int size = sizeOf(listNode);
+        // Tạo node mới và gán node hiện tại vào node mới
+        ListNode head = new ListNode(0);
+        head.next = listNode;
+        ListNode current = head;
+        // Tìm vị trí trước vị trí cần xóa
+        for (int i = 0; i < size - k; i++) {
+            current = current.next;
+        }
+        // Xóa node bằng cách bỏ qua nó
+        current.next = current.next.next;
+        return head.next;
     }
 
     @Test

@@ -25,19 +25,21 @@ public class ListNode {
     }
 
     /**
-     * CRUD
+     * Tạo Linked List có giá trị khởi đầu
      */
     public static ListNode of(Integer... vals) {
         ListNode head = new ListNode(0);
         ListNode current = head;
         for (int val : vals) {
-            ListNode newNode = new ListNode(val);
-            current.next = newNode;
+            current.next = new ListNode(val);
             current = current.next;
         }
-        return head.next;
+        return head.next; // Bỏ node đầu tiên
     }
 
+    /**
+     * Không có giá trị khởi đầu
+     */
     public static ListNode of(int[] vals) {
         ListNode head = null;
         ListNode current = null;

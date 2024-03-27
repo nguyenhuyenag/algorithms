@@ -1,4 +1,4 @@
-package com.array.dayconlientiep;
+package com.array.subs;
 
 
 import org.junit.jupiter.api.Test;

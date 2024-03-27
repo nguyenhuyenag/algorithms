@@ -1,4 +1,4 @@
-package com.array.dayconlientiep;
+package com.array.subs;
 
 import java.util.function.Predicate;
 
