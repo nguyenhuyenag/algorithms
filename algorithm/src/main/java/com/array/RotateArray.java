@@ -48,7 +48,7 @@ public class RotateArray {
         int k = 2; // Số lần xoay trái
 
         if (n <= k) k = k % n; // Đảm bảo k luôn nhỏ hơn n
-        int rotate = n - k; // Số phần xoay phải tương
+        int rotate = n - k; // Số lần xoay phải tương
 
         Collections.rotate(list1, k);
         Collections.rotate(list2, -rotate); // số âm sẽ xoay phải

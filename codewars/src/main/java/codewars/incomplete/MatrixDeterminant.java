@@ -1,4 +1,4 @@
-package leetcode.incomplete;
+package codewars.incomplete;
 
 /**
  * https://www.codewars.com/kata/52a382ee44408cea2500074c/

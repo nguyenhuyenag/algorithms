@@ -28,7 +28,7 @@ public class ValidTriangleNumber {
         for (int i = 0; i < totalSubsets; i++) {
             int bitCount = Integer.bitCount(i);
             if (bitCount == 3) {
-                int pointer = 0;
+                // int pointer = 0;
                 for (int j = 0; j < len; j++) {
                     if ((i & (1 << j)) != 0) {
                         triangle.add(arr[j]);

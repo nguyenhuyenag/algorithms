@@ -52,8 +52,6 @@ public class DailyTemperatures {
         return result;
     }
 
-
-
     @Test
     public void test() {
         assertArrayEquals(new int[]{1, 1, 1, 0}, dailyTemperatures(new int[]{30, 40, 50, 60}));

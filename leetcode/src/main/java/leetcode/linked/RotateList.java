@@ -1,4 +1,4 @@
-package leetcode.incomplete;
+package leetcode.linked;
 
 import leetcode.linked.LinkedListTestUtils;
 import leetcode.linked.ListNode;
@@ -28,12 +28,12 @@ public class RotateList {
     }
 
     public ListNode moveOne(ListNode head) {
-        ListNode node0 = new ListNode(head.val);
+        ListNode node1 = new ListNode(head.val);
         ListNode current = head;
         while (current.next != null) {
             current = current.next;
         }
-        current.next = node0;
+        current.next = node1;
         return head.next;
     }
 

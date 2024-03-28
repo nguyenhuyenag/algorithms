@@ -1,4 +1,4 @@
-package leetcode.incomplete;
+package leetcode.queue;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -18,16 +18,16 @@ import static org.junit.jupiter.api.Assertions.*;
 public class FindClosestNumberToZero {
 
     public int findClosestNumber(int[] nums) {
-        int zero = 0;
         Map<Integer, Integer> map = new HashMap<>();
+        int zero = 0;
         for (int num : nums) {
             map.put(num, Math.abs(num - zero));
         }
         // Hàng đợi ưu tiên theo |x - 0|
-        Queue<Integer> queue = new PriorityQueue<>((x1, x2) -> {
-            int v1 = map.get(x1);
-            int v2 = map.get(x2);
-            return v1 != v2 ? v1 - v2 : x2 - x1;
+        Queue<Integer> queue = new PriorityQueue<>((k1, k2) -> {
+            int v1 = map.get(k1);
+            int v2 = map.get(k2);
+            return v1 == v2 ? k2 - k1 : v1 - v2;
         });
         queue.addAll(map.keySet());
         return queue.poll();
