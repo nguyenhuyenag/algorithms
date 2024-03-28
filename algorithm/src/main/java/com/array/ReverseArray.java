@@ -1,24 +1,13 @@
 package com.array;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Xem thêm: Leetcode > RotateArray.java
  */
 public class ReverseArray {
-
-    // Đảo mảng dùng 2 con trỏ
-    public static void reverse0(int[] nums, int start, int end) {
-        while (start < end) {
-            // Swap giá trị của nums[start] và nums[end]
-            int temp = nums[start];
-            nums[start] = nums[end];
-            nums[end] = temp;
-            // Di chuyển về phía giữa mảng
-            start++;
-            end--;
-        }
-    }
 
     // Đảo mảng dùng vòng for
     public static void reverse1(int[] arr) {
@@ -40,36 +29,68 @@ public class ReverseArray {
 //        return result;
 //    }
 
-    // Không dùng mảng phụ
-//    public static void reverseInPlaceUsingWhile(int[] arr) {
-//        int i = 0;
-//        int j = arr.length - 1;
-//        while (i != j) {
-//            int temp = arr[i];
-//            arr[i] = arr[j];
-//            arr[j] = temp;
-//            i++;
-//            j--;
+    // Đảo mảng dùng 2 con trỏ
+    public static void reverse0(int[] nums, int left, int right) {
+        while (left < right) {
+            int temp = nums[left];
+            nums[left] = nums[right];
+            nums[right] = temp;
+            left++;
+            right--;
+        }
+    }
+
+//        public static void reverseByKGroup() {
+//        int k = 3;
+//        int[] arr = {1, 2, 3, 4, 5};
+//        for (int i = 0; i < arr.length; i += k) {
+//            int left = i;
+//            int right = Math.min(i + k - 1, arr.length - 1);
+//            if (right - left + 1 == k) { // Kiểm tra xem nhóm có đủ k phần tử không
+//                while (left < right) {
+//                    int temp = arr[left];
+//                    arr[left] = arr[right];
+//                    arr[right] = temp;
+//                    left++;
+//                    right--;
+//                }
+//            }
 //        }
+//        System.out.println(Arrays.toString(arr));
 //    }
 
-    // Dùng IntStream
-//    public static int[] reverse2(int[] A) {
-//        int n = A.length;
-//        return IntStream.range(0, n).map(i -> A[n - 1 - i]).toArray();
-//    }
-
-    // Chỉ định vị tri cần xoay
-//    public static int[] reverse3(int[] A) {
-//        int from = 0, to = A.length;
-//        return IntStream.range(from, to).map(i -> from - 1 + to - i).map(t -> A[t]).toArray();
-//    }
+    /**
+     * Đảo danh sách theo nhóm k phần tử liên tiếp không giao nhau
+     *
+     * [1, 2, 3, 4, 5] , k = 2 -> [2, 1, 4, 3, 5]
+     *
+     * [1, 2, 3, 4, 5] , k = 3 -> [3, 2, 1, 4, 5]
+     *
+     * Xem leetcode > ReverseNodeInKGroup.java
+     */
+    public static void reverseByKGroup() {
+        int k = 2;
+        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
+        for (int i = 0; i < list.size(); i += k) {
+            int left = i;
+            int right = Math.min(i + k - 1, list.size() - 1);
+            if (right - left + 1 == k) { // Kiểm tra xem nhóm có đủ k phần tử không
+                while (left < right) {
+                    Collections.swap(list, left, right);
+                    left++;
+                    right--;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(list.toArray()));
+    }
 
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5};
-        System.out.println(Arrays.toString(arr));
-        reverse0(arr, 2, arr.length - 1);
-        System.out.println(Arrays.toString(arr));
+//        int[] arr = {1, 2, 3, 4, 5};
+//        System.out.println(Arrays.toString(arr));
+//        reverse0(arr, 2, arr.length - 1);
+//        System.out.println(Arrays.toString(arr));
+        reverseByKGroup();
     }
 
 }

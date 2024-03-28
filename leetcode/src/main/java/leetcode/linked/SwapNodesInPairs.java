@@ -38,12 +38,12 @@ public class SwapNodesInPairs {
         head.next = listNode; // Gán node hiện tại vào head
         ListNode curr = head;
         while (curr.next != null && curr.next.next != null) {
-            ListNode first = curr.next;
-            ListNode second = curr.next.next;
+            ListNode node1 = curr.next;
+            ListNode node2 = curr.next.next;
 
-            curr.next = second;
-            first.next = second.next;
-            second.next = first;
+            curr.next = node2;
+            node1.next = node2.next;
+            node2.next = node1;
 
             curr = curr.next.next;
         }
