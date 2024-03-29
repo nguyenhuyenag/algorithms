@@ -173,14 +173,22 @@ public class ListNode {
         System.out.println(joiner.toString());
     }
 
+//    public List<Integer> toList() {
+//        List<Integer> result = new ArrayList<>();
+//        ListNode current = this;
+//        while (current != null) {
+//            result.add(current.val);
+//            current = current.next;
+//        }
+//        return result;
+//    }
+
     public List<Integer> toList() {
-        List<Integer> result = new ArrayList<>();
-        ListNode current = this;
-        while (current != null) {
-            result.add(current.val);
-            current = current.next;
+        List<Integer> vals = new ArrayList<>();
+        for (ListNode current = this; current != null; current = current.next) {
+            vals.add(current.val);
         }
-        return result;
+        return vals;
     }
 
 }

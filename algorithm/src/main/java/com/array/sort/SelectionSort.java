@@ -12,9 +12,10 @@ import static com.array.sort.SortUtils.*;
 public class SelectionSort {
 
     public static void selectionSort() {
-        int[] arr = {9, 0, -1, 8, 6, 3, 1};
+        int[] arr = {9, 0, 1, 8, 6, 3, 1};
         int n = arr.length;
-        for (int i = 0; i < n - 1; i++) {
+        System.out.println("Array: " + Arrays.toString(arr));
+        for (int i = 0; i < n - 1; i++) { // i dừng ở n - 1 vì j bắt đầu ở i + 1
             // Tìm phần tử nhỏ nhất trong đoạn chưa sắp xếp [i, n]
             int minIndex = i;
             for (int j = i + 1; j < n; j++) {
@@ -22,9 +23,9 @@ public class SelectionSort {
                     minIndex = j;
                 }
             }
-            // Đổi chỗ phần tử nhỏ nhất, với phần tử đầu của đoạn [i, n]
+            // Tìm được phần tử nhỏ nhất thì đổi chỗ nó với phần tử đầu tiên của đoạn
             swap(arr, i, minIndex);
-            System.out.println("Sorted: " + Arrays.toString(arr));
+            System.out.printf("Min = %s -> %s%n", arr[i], Arrays.toString(arr));
         }
     }
 
