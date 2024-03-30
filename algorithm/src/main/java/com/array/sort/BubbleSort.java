@@ -4,6 +4,9 @@ import java.util.Arrays;
 
 import static com.array.sort.SortUtils.*;
 
+/**
+ * Nếu số liền kề nhỏ hơn thì đổi chỗ
+ */
 public class BubbleSort {
 
     public static void bubbleSort2() {
