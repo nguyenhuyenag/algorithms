@@ -19,7 +19,7 @@ public class SelectionSort {
             // Tìm phần tử nhỏ nhất trong đoạn chưa sắp xếp [i, n]
             int minIndex = i;
             for (int j = i + 1; j < n; j++) {
-                if (arr[minIndex] > arr[j]) {
+                if (arr[j] < arr[minIndex]) {
                     minIndex = j;
                 }
             }
