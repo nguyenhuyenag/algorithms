@@ -1,7 +1,5 @@
 package com.array.sort;
 
-import com.util.RandomUtils;
-
 import java.util.Arrays;
 
 import static com.array.sort.SortUtils.*;
@@ -12,30 +10,28 @@ import static com.util.RandomUtils.*;
  */
 public class BubbleSort {
 
-
     /**
      * Sắp xếp từ trái sang (từ trên xuống): Giả sử dãy cần sắp xếp có n phần tử.
      * - So sánh a0 và a1, nếu a0 > a1 thì đổi chỗ.
      * - Tiếp tục làm như vậy với các cặp (a1, a2), (a2, a3),...,(a_{n-1}, an).
-     * - Nghĩa là so sánh (và đổi chỗ nếu cần) phần tử thứ n - 1 với phần tử thứ n.
      * - Sau bước này phần tử cuối cùng chính là phần tử lớn nhất của dãy.
-     * - Sau đó, quay lại so sánh (và đổi chố nếu cần) hai phần tử đầu cho đến khi gặp phần tử thứ n - 2....
+     * - Sau đó, quay lại so sánh (và đổi chỗ nếu cần) 2 phần tử đầu cho đến khi gặp phần tử thứ n - 2....
      * Lưu ý: Nếu trong một lần duyệt, không phải đổi chỗ bất cứ cặp phần tử nào thì danh sách đã được sắp xếp xong
      */
-    public static void bubbleSort1() {
+    public static void bubbleSortLeftToRight() {
         int[] arr = randomArrays();
-        int n = arr.length;
-        System.out.println("Length = " + n);
-        System.out.println("Array: " + Arrays.toString(arr));
-        for (int i = 0; i < n - 1; i++) {
-            System.out.println("i = " + i);
-            for (int j = 0; j < n - 1 - i; j++) {
+        int len = arr.length - 1;
+        System.out.println("Array = " + Arrays.toString(arr) + ", length = " + arr.length);
+        for (int i = 0; i < len; i++) {
+            System.out.printf("i = %s%n", i);
+            for (int j = 0; j < len - i; j++) {
                 if (arr[j] > arr[j + 1]) {
                     swap(arr, j, j + 1);
-                    System.out.println(Arrays.toString(arr));
+                    System.out.printf("a%s <-> a%s: %s%n", j, j + 1, Arrays.toString(arr));
                 }
             }
         }
+        System.out.println("Done: " + Arrays.toString(arr));
     }
 
     public static void bubbleSort2() {
@@ -79,8 +75,8 @@ public class BubbleSort {
     }
 
     public static void main(String[] args) {
-        // bubbleSort1();
-        bubbleSort2();
+        bubbleSortLeftToRight();
+        // bubbleSort2();
         // bubbleSort3();
     }
 }
