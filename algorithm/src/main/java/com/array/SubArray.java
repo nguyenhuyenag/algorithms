@@ -2,17 +2,38 @@ package com.array;
 
 import java.util.Arrays;
 
-/*-
- * - Arrays.copyOfRange(arr, from, to) = arr[from...to-1]
+/* -----------------------------------------------------------------------------------
+ *  + System.arraycopy(int[] src, srcPos, int[] dest, destPos, numberOfEle)
  *
- * - Arrays.copyOf(arr, k) = Arrays.copyOfRange(arr, 0, k) = arr[0...k-1]
+ *      src        Mảng nguồn
+ *      srcPos     Vị trí bắt đầu sao chép trong mảng nguồn
+ *      dest       Mảng đích
+ *      destPos    Vị trí bắt đầu gán kết quả trong mảng đích
+ *      length     Số phần tử cần sao chép
+ * -----------------------------------------------------------------------------------
  *
- * - Chia một mảng thành 2 phần
+ *  + Arrays.copyOfRange(arr, from, to) = arr[from...to-1]
+ *  + Arrays.copyOf(arr, k) = Arrays.copyOfRange(arr, 0, k) = arr[0...k-1]
+ *
+ * -----------------------------------------------------------------------------------
+ *  + Chia một mảng thành 2 phần
  *
  *          int[] left  = Arrays.copyOfRange(arr, 0, k)          = arr[0...k-1]
  *          int[] right = Arrays.copyOfRange(arr, k, arr.length) = arr[k...n]
  */
 public class SubArray {
+
+    // Xóa phần tử tại vị trí chỉ định
+    public static int[] removeByIndex(int[] arr, int index) {
+        int n = arr.length;
+        if (index < 0 || index >= n) {
+            throw new IndexOutOfBoundsException("Index " + index + " out of bounds for array length " + n);
+        }
+        int[] result = new int[n - 1];
+        System.arraycopy(arr, 0, result, 0, index);
+        System.arraycopy(arr, index + 1, result, index, n - index - 1);
+        return result;
+    }
 
     public static void main(String[] args) {
         int[] arr = {2, -1, 4, 0, 8, 7, 1};
@@ -31,7 +52,7 @@ public class SubArray {
         // Nửa đầu và nửa cuối
         int k = 4;
         int[] left = Arrays.copyOfRange(arr, 0, k);
-        int[] right = Arrays.copyOfRange(arr, k , arr.length);
+        int[] right = Arrays.copyOfRange(arr, k, arr.length);
         System.out.printf("arr[%s...%s] = %s%n", 0, k - 1, Arrays.toString(left));
         System.out.printf("arr[%s...%s] = %s%n", k, arr.length, Arrays.toString(right));
 

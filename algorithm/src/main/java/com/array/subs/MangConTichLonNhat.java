@@ -1,4 +1,4 @@
-package com.array;
+package com.array.subs;
 
 import org.junit.jupiter.api.Test;
 

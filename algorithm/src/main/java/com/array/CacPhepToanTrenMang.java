@@ -5,15 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.*;
 import java.util.stream.Collectors;
 
-/**
- * System.arraycopy(int[] src, int srcPos, int[] dest, int destPos, int length)
- *
- *      src        Mảng nguồn
- *      srcPos     Vị trí bắt đầu sao chép trong mảng nguồn
- *      dest       Mảng đích
- *      destPos    Vị trí bắt đầu gán kết quả trong mảng đích
- *      length     Số phần tử cần sao chép
- */
+
 public class CacPhepToanTrenMang {
 
     /**
