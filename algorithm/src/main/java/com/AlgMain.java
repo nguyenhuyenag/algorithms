@@ -54,14 +54,42 @@ public class AlgMain {
         }
     }
 
+    public static void merge(int[] arr, int left, int mid, int right) {
+        // Copy dữ liệu vào mảng tạp
+        int[] L = Arrays.copyOfRange(arr, left, mid + 1);
+        int[] R = Arrays.copyOfRange(arr, mid + 1, right + 1);
+
+        int p = left;
+        int i = 0, j = 0;
+        int n1 = L.length, n2 = R.length;
+        while (i < n1 && j < n2) {
+            arr[p++] = L[i] <= R[j] ? L[i++] : R[j++];
+        }
+        while (i < n1) {
+            arr[p++] = L[i++];
+        }
+        while (j < n2) {
+            arr[p++] = R[j++];
+        }
+    }
+
+    public static void mergerSort(int[] arr, int left, int right) {
+        if (left < right) {
+            int mid = left + (right - left) / 2;
+            mergerSort(arr, left, mid);
+            mergerSort(arr, mid + 1, right);
+            merge(arr, left, mid, right);
+        }
+    }
+
     public static void main(String[] args) {
         int[] arr = {9, 0, 1, 8, 6, 3, 1};
-        // System.out.println("Before: " + Arrays.toString(arr));
+        System.out.println("Before: " + Arrays.toString(arr));
         // bubbleSort(arr);
         // insertionSort(arr);
         // selectionSort(arr);
-        // System.out.println("After: " + Arrays.toString(arr));
-
+        mergerSort(arr, 0, arr.length - 1);
+        System.out.println("After: " + Arrays.toString(arr));
     }
 
 }

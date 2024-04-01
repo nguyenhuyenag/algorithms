@@ -26,10 +26,10 @@ public class RandomUtils {
 	}
 	
 	public static int[] randomArrays() {
-		int n = getIntFrom(5, 10);
+		int n = getIntFrom(4, 9);
 		int[] array = new int[n];
 		for (int i = 0; i < n; i++) {
-			array[i] = getIntFrom(-5, 20);
+			array[i] = getIntFrom(0, 9);
 		}
 		// System.out.println("Array: " + Arrays.toString(array));
 		return array;
