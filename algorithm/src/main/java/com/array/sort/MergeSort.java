@@ -4,29 +4,52 @@ import java.util.Arrays;
 
 public class MergeSort {
 
-    // Merges two subarrays of arr[]
-    // First subarray is arr[left..mid]
-    // Second subarray is arr[mid+1..right]
+    // Left subarray is arr[left..mid]
+    // Right subarray is arr[mid+1..right]
+//    public static void merge(int[] arr, int left, int mid, int right) {
+//        // Find sizes of two subarrays to be merged
+//        int n1 = (mid + 1) - left;
+//        int n2 = right - mid;
+//
+//        // Create temp arrays
+//        int[] leftArray = new int[n1];
+//        int[] rightArray = new int[n2];
+//
+//        System.arraycopy(arr, left, leftArray, 0, n1);
+//        System.arraycopy(arr, mid + 1, rightArray, 0, n2);
+//
+//        // Merge the temp arrays
+//        int i = 0, j = 0;
+//        int p = left;
+//        while (i < n1 && j < n2) {
+//            if (leftArray[i] <= rightArray[j]) {
+//                arr[p++] = leftArray[i++];
+//            } else {
+//                arr[p++] = rightArray[j++];
+//            }
+//        }
+//
+//        // Copy remaining elements of leftArray[] if any
+//        while (i < n1) {
+//            arr[p++] = leftArray[i++];
+//        }
+//
+//        // Copy remaining elements of rightArray[] if any
+//        while (j < n2) {
+//            arr[p++] = rightArray[j++];
+//        }
+//    }
+
     public static void merge(int[] arr, int left, int mid, int right) {
-        // Find sizes of two subarrays to be merged
-        int n1 = (mid + 1) - left;
-        int n2 = right - mid;
-
         // Create temp arrays
-        int[] leftArray = new int[n1];
-        int[] rightArray = new int[n2];
-
-        // Copy data to temp arrays
-        for (int i = 0; i < n1; i++) {
-            leftArray[i] = arr[left + i];
-        }
-        for (int j = 0; j < n2; j++) {
-            rightArray[j] = arr[mid + 1 + j];
-        }
+        int[] leftArray = Arrays.copyOfRange(arr, left, mid + 1);
+        int[] rightArray = Arrays.copyOfRange(arr, mid + 1, right + 1);
 
         // Merge the temp arrays
-        int i = 0, j = 0;
         int p = left;
+        int i = 0, j = 0;
+        int n1 = leftArray.length, n2 = rightArray.length;
+
         while (i < n1 && j < n2) {
             if (leftArray[i] <= rightArray[j]) {
                 arr[p++] = leftArray[i++];
@@ -55,14 +78,14 @@ public class MergeSort {
     public static void mergerSort(int[] arr, int left, int right) {
         if (left < right) {
             // Find the middle point
-            int m = left + (right - left) / 2;
+            int mid = left + (right - left) / 2;
 
             // Sort first and second halves
-            mergerSort(arr, left, m);
-            mergerSort(arr, m + 1, right);
+            mergerSort(arr, left, mid);
+            mergerSort(arr, mid + 1, right);
 
             // Merge the sorted halves
-            merge(arr, left, m, right);
+            merge(arr, left, mid, right);
         }
     }
 

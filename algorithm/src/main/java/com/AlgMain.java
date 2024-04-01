@@ -56,11 +56,12 @@ public class AlgMain {
 
     public static void main(String[] args) {
         int[] arr = {9, 0, 1, 8, 6, 3, 1};
-        System.out.println("Before: " + Arrays.toString(arr));
+        // System.out.println("Before: " + Arrays.toString(arr));
         // bubbleSort(arr);
         // insertionSort(arr);
-        selectionSort(arr);
-        System.out.println("After: " + Arrays.toString(arr));
+        // selectionSort(arr);
+        // System.out.println("After: " + Arrays.toString(arr));
+
     }
 
 }
