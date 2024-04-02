@@ -14,8 +14,8 @@ import java.util.Arrays;
  */
 public class InsertionSort {
 
-    public static void insertionSort1() {
-        int[] arr = {9, 0, 1, 8, 6, 3, 1};
+    public static void insertionSort(int[] arr) {
+        // int[] arr = {9, 0, 1, 8, 6, 3, 1};
         int n = arr.length;
         System.out.println("Array: " + Arrays.toString(arr));
         for (int i = 1; i < n; i++) {
@@ -30,6 +30,7 @@ public class InsertionSort {
             arr[j + 1] = key;
             System.out.printf("Sorted: %s%n", Arrays.toString(arr));
         }
+        System.out.println("Done: " + Arrays.toString(arr));
     }
 
 //    public static void insertionSort2() {
@@ -49,9 +50,9 @@ public class InsertionSort {
 //        }
 //    }
 
-    public static void main(String[] args) {
-        insertionSort1();
-        // insertionSort2();
-    }
+//    public static void main(String[] args) {
+//        insertionSort1();
+//        // insertionSort2();
+//    }
 
 }
