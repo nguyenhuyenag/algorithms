@@ -11,8 +11,7 @@ import static com.array.sort.SortUtils.*;
  */
 public class SelectionSort {
 
-    public static void selectionSort() {
-        int[] arr = {9, 0, 1, 8, 6, 3, 1};
+    public static void selectionSort(int[] arr) {
         int n = arr.length;
         System.out.println("Array: " + Arrays.toString(arr));
         for (int i = 0; i < n - 1; i++) { // i dừng ở n - 1 vì j bắt đầu ở i + 1
@@ -27,10 +26,11 @@ public class SelectionSort {
             swap(arr, i, minIndex);
             System.out.printf("Min = %s -> %s%n", arr[i], Arrays.toString(arr));
         }
+        System.out.println("Done: " + Arrays.toString(arr));
     }
 
-    public static void main(String[] args) {
-        selectionSort();
-    }
+//    public static void main(String[] args) {
+//        selectionSort();
+//    }
 
 }

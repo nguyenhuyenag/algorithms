@@ -9,6 +9,7 @@ import java.util.Arrays;
 
 import static com.array.sort.BubbleSort.*;
 import static com.array.sort.InsertionSort.*;
+import static com.array.sort.SelectionSort.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -135,11 +136,13 @@ public class SortTest {
     public void test() {
         int numberOfTest = 1;
         for (int i = 0; i < numberOfTest; i++) {
-            int[] arr = RandomUtils.randomArrays(5, 0, 100);
+            int[] arr = RandomUtils.randomArrays(7, 0, 10);
             int[] result = copyAndSort(arr);
 
             // bubbleSortLeftToRight(arr);
             // bubbleSortRightToLeft(arr);
+            // selectionSort(arr);
+
             insertionSort(arr);
 
             assertArrayEquals(result, arr);
