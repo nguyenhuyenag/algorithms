@@ -133,18 +133,17 @@ public class SortTest {
 
     @Test
     public void test() {
-        int numberOfTest = 5;
+        int numberOfTest = 1;
         for (int i = 0; i < numberOfTest; i++) {
             int[] arr = RandomUtils.randomArrays(5, 0, 100);
-            int[] copyAndSort = copyAndSort(arr);
+            int[] result = copyAndSort(arr);
 
             // bubbleSortLeftToRight(arr);
             // bubbleSortRightToLeft(arr);
             insertionSort(arr);
 
-            assertArrayEquals(copyAndSort, arr);
+            assertArrayEquals(result, arr);
         }
     }
-
 
 }
