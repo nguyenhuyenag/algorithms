@@ -38,7 +38,7 @@ public class RandomUtils {
         int n = getIntFrom(4, 9);
         int[] array = new int[n];
         for (int i = 0; i < n; i++) {
-            array[i] = getIntFrom(0, 9);
+            array[i] = getIntFrom(-1, 9);
         }
         // System.out.println("Array: " + Arrays.toString(array));
         return array;
