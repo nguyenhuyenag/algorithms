@@ -10,6 +10,7 @@ import java.util.Arrays;
 import static com.array.sort.BubbleSort.*;
 import static com.array.sort.InsertionSort.*;
 import static com.array.sort.QuickSort.*;
+import static com.array.sort.QuickSort2.*;
 import static com.array.sort.SelectionSort.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -36,7 +37,9 @@ public class SortTest {
             // bubbleSortRightToLeft(arr);
             // selectionSort(arr);
             // insertionSort(arr);
-            quickSort(arr, 0, arr.length - 1);
+
+            //quickSort(arr, 0, arr.length - 1);
+            quickSort2(arr, 0, arr.length - 1);
 
             assertArrayEquals(result, arr);
         }

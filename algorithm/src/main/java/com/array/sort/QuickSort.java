@@ -48,36 +48,16 @@ public class QuickSort {
         return i; // Trả về chỉ mục của phần tử chốt
     }
 
-    private static int partitionMid(int[] arr, int left, int right) {
-        int mid = left + (right - left) / 2;
-        int pivot = arr[mid];
-
-        // Move the pivot element to the end
-        swap(arr, mid, right);
-
-        int i = left - 1; // Initialize the index of the smaller element
-
-        for (int j = left; j < right; j++) {
-            // If the current element is smaller than the pivot
-            if (arr[j] <= pivot) {
-                i++; // Increment index of smaller element
-                swap(arr, i, j);
-            }
-        }
-
-        // Move the pivot element to its correct position
-        swap(arr, i + 1, right);
-
-        return i + 1;
+    public static int partitionMid(int[] arr, int left, int right) {
+        return -1; // Việc chọn phần tử giữa làm chốt khá khó
     }
 
     public static void quickSort(int[] arr, int left, int right) {
         if (left < right) {
             // Tìm chốt
+             int pi = partitionLeft(arr, left, right);
             // int pi = partitionRight(arr, left, right);
-            // int pi = partitionLeft(arr, left, right);
-
-            int pi = partitionMid(arr, left, right);
+            // int pi = partitionMid(arr, left, right);
 
             // pi là chốt nên sẽ bỏ qua
             quickSort(arr, left, pi - 1); // Đệ quy trái
