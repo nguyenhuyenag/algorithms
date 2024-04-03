@@ -79,9 +79,9 @@ public class QuickSort {
 
             int pi = partitionMid(arr, left, right);
 
+            // pi là chốt nên sẽ bỏ qua
             quickSort(arr, left, pi - 1); // Đệ quy trái
             quickSort(arr, pi + 1, right); // Đệ quy phải
-            // pi là chốt nên sẽ bỏ qua
         }
     }
 

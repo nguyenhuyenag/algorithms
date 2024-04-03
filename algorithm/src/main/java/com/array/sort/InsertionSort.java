@@ -15,7 +15,6 @@ import java.util.Arrays;
 public class InsertionSort {
 
     public static void insertionSort(int[] arr) {
-        // int[] arr = {9, 0, 1, 8, 6, 3, 1};
         int n = arr.length;
         System.out.println("Array: " + Arrays.toString(arr));
         for (int i = 1; i < n; i++) {
@@ -33,22 +32,22 @@ public class InsertionSort {
         System.out.println("Done: " + Arrays.toString(arr));
     }
 
-//    public static void insertionSort2() {
-//        int[] arr = {9, 0, 1, 8, 6, 3, 1};
-//        int n = arr.length;
-//        System.out.println("Array: " + Arrays.toString(arr));
-//        for (int i = 1; i < n; i++) {
-//            int key = arr[i]; // Lưu giá trí phần tử cần chèn
-//            int j; //  = i - 1;
-//            // Dời các phần tử
-//            for (j = i - 1; j >= 0 && key < arr[j]; j--) {
-//                arr[j + 1] = arr[j];
-//            }
-//            // Gán key vào vị trí trống
-//            arr[j + 1] = key;
-//            System.out.printf("Sorted: %s%n", Arrays.toString(arr));
-//        }
-//    }
+    public static void insertionSort2() {
+        int[] arr = {9, 0, 1, 8, 6, 3, 1};
+        int n = arr.length;
+        System.out.println("Array: " + Arrays.toString(arr));
+        for (int i = 1; i < n; i++) {
+            int key = arr[i]; // Lưu giá trí phần tử cần chèn
+            int j; //  = i - 1;
+            // Dời các phần tử
+            for (j = i - 1; j >= 0 && key < arr[j]; j--) {
+                arr[j + 1] = arr[j];
+            }
+            // Gán key vào vị trí trống
+            arr[j + 1] = key;
+            System.out.printf("Sorted: %s%n", Arrays.toString(arr));
+        }
+    }
 
 //    public static void main(String[] args) {
 //        insertionSort1();
