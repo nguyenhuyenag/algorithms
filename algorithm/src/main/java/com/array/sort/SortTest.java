@@ -28,7 +28,7 @@ public class SortTest {
 
     @Test
     public void test() {
-        int numberOfTest = 14;
+        int numberOfTest = 90;
         for (int i = 0; i < numberOfTest; i++) {
             int[] arr = RandomUtils.randomArrays(7, 0, 10);
             int[] result = copyAndSort(arr);
@@ -38,8 +38,9 @@ public class SortTest {
             // selectionSort(arr);
             // insertionSort(arr);
 
-            //quickSort(arr, 0, arr.length - 1);
-            quickSort2(arr, 0, arr.length - 1);
+            // quickSort(arr, 0, arr.length - 1);
+            // quickSort2(arr, 0, arr.length - 1);
+            quickSort3(arr, 0, arr.length - 1);
 
             assertArrayEquals(result, arr);
         }

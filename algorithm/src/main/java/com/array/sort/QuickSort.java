@@ -14,29 +14,35 @@ import static com.array.sort.SortUtils.*;
 public class QuickSort {
 
     /**
-     * duyệt qua các phần tử của mảng từ left + 1 đến right, tìm các
+     * Duyệt qua các phần tử của mảng từ left + 1 đến right, tìm các
      * phần tử nhỏ hơn hoặc bằng pivot để đặt vào bên trái pivot và các
      * phần tử lớn hơn pivot để đặt vào bên phải pivot.
      */
     private static int partitionRight(int[] arr, int left, int right) {
-        int pivot = arr[right]; // Chọn phần tử cuối cùng làm chốt
-        int i = left - 1;
-        // Pivot là arr[right] nên duyệt từ left -> right = arr.length - 1
+        int pivot = arr[right]; // Choose the last element as the pivot
+        int i = left;
         for (int j = left; j < right; j++) {
-            // Nếu có phần tử < chốt
+            // Nếu có phần tử < chốt thì đổi chỗ với phần tử đầu tiên và tăng con trỏ lên
             if (arr[j] < pivot) {
-                i++;
                 swap(arr, i, j);
+                System.out.println("pivot = " + pivot + ": " + Arrays.toString(arr));
+                i++;
             }
         }
-        swap(arr, i + 1, right);
-        return i + 1; // Trả về chỉ mục của phần tử chốt
+        /*
+          - Sau thao tác swap() này, phần tử tại chỉ số i sẽ là phần tử chốt,
+          các số bên trái sẽ nhỏ hơn chốt và các số bên phải sẽ lớn hơn chốt.
+          - Thao tác hoán đổi này rất quan trọng nó đảm bảo rằng phần tử chốt
+          được đặt ở vị trí đúng đắn liên quan đến các phần tử khác trong mảng.
+         */
+        swap(arr, i, right);
+        return i; // Trả về chỉ mục của phần tử chốt
     }
 
     private static int partitionLeft(int[] arr, int left, int right) {
         int pivot = arr[left]; // Chọn phần tử đầu làm chốt
         int i = left;
-        // arr[left] là pivot nên duyệt từ [left + 1 -> right] ( = arr.length - 1)
+        // arr[left] là pivot nên duyệt từ left + 1 -> cuối mảng
         for (int j = left + 1; j <= right; j++) {
             // Nếu có phần tử < chốt
             if (arr[j] < pivot) {
@@ -48,16 +54,10 @@ public class QuickSort {
         return i; // Trả về chỉ mục của phần tử chốt
     }
 
-    public static int partitionMid(int[] arr, int left, int right) {
-        return -1; // Việc chọn phần tử giữa làm chốt khá khó
-    }
-
     public static void quickSort(int[] arr, int left, int right) {
         if (left < right) {
-            // Tìm chốt
-             int pi = partitionLeft(arr, left, right);
-            // int pi = partitionRight(arr, left, right);
-            // int pi = partitionMid(arr, left, right);
+            // int pi = partitionLeft(arr, left, right);
+            int pi = partitionRight(arr, left, right);
 
             // pi là chốt nên sẽ bỏ qua
             quickSort(arr, left, pi - 1); // Đệ quy trái
@@ -65,11 +65,37 @@ public class QuickSort {
         }
     }
 
+    public static void quickSort3(int[] arr, int left, int right) {
+        if (left >= right) return;
+        int pivot = arr[right];
+        // Tiến hành phân chia mảng
+        int i = left, j = right;
+        while (i <= j) {
+            // Nếu các giá trị bên trái vẫn < pivot
+            while (arr[i] < pivot) {
+                i++;
+            }
+            // Nếu các giá trị bên phải vẫn > pivot
+            while (arr[j] > pivot) {
+                j--;
+            }
+            // So sánh giá trị từ cả hai phía xem có cần đổi chỗ hay không
+            if (i <= j) {
+                swap(arr, i, j);
+                i++;
+                j--;
+            }
+        }
+        quickSort3(arr, left, j); // Pass j instead of i
+        quickSort3(arr, i, right); // Pass i instead of j
+    }
+
     public static void main(String[] args) {
         int[] arr = RandomUtils.randomArrays();
-        System.out.println(Arrays.toString(arr));
-        quickSort(arr, 0, arr.length - 1);
-        System.out.println(Arrays.toString(arr));
+        System.out.println("Array:" + Arrays.toString(arr));
+        // quickSort(arr, 0, arr.length - 1);
+        quickSort3(arr, 0, arr.length - 1);
+        System.out.println("Done: " + Arrays.toString(arr));
     }
 
 }
