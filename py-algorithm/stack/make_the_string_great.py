@@ -32,6 +32,7 @@ class Solution(unittest.TestCase):
                 stack.pop()
             else:
                 stack.append(c)
+
         return "".join(stack)
 
     def test(self):

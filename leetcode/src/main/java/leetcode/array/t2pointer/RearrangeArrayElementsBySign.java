@@ -1,4 +1,4 @@
-package leetcode.stack;
+package leetcode.array.t2pointer;
 
 
 import org.junit.jupiter.api.Test;
@@ -62,13 +62,13 @@ public class RearrangeArrayElementsBySign {
         int[] result = new int[len];
         int i = 0, posIndex = 0, negIndex = 0;
         // posIndex chỉ duyệt qua các số > 0, negIndex chỉ duyệt các số < 0
-        while (posIndex < len && negIndex < len) {
+        while (i < len) {
             // Tìm đến số dương gần nhất
-            while (arr[posIndex] < 0) {
+            while (posIndex < len && arr[posIndex] < 0) {
                 posIndex++;
             }
             // Tìm đến số âm gần nhất
-            while (arr[negIndex] > 0) {
+            while (negIndex < len && arr[negIndex] > 0) {
                 negIndex++;
             }
             // Đẩy kết quả vào result
