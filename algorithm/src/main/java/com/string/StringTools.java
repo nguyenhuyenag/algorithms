@@ -13,7 +13,8 @@ public class StringTools {
     }
 
     public static boolean isGoodPair2(char c1, char c2) {
-        return c1 != c2 && (c1 == Character.toUpperCase(c2) || c1 == Character.toLowerCase(c2));
+        return c1 != c2 && Character.toUpperCase(c1) == Character.toLowerCase(c2);
+        // return c1 != c2 && (c1 == Character.toUpperCase(c2) || c1 == Character.toLowerCase(c2));
     }
 
     // Xóa số 0 ở đầu số dạng chuỗi

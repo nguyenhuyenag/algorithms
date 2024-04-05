@@ -19,13 +19,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class MakeTheStringGreat {
 
-//    public static boolean isGoodPair(char c1, char c2) {
-//        return (Character.isLowerCase(c1) && Character.toUpperCase(c1) == c2) ||
-//                (Character.isUpperCase(c1) && Character.toLowerCase(c1) == c2);
-//    }
-
     public static boolean isNotGoodPair(char c1, char c2) {
-        return c1 != c2 && (c1 == Character.toUpperCase(c2) || c1 == Character.toLowerCase(c2));
+        return c1 != c2 && Character.toUpperCase(c1) == Character.toLowerCase(c2);
+        // return c1 != c2 && (c1 == Character.toUpperCase(c2) || c1 == Character.toLowerCase(c2));
     }
 
     /*

@@ -22,7 +22,8 @@ class Solution(unittest.TestCase):
 
     @staticmethod
     def isNotGoodPair(c1:str, c2:str):
-        return c1 != c2 and (c1 == c2.lower() or c1 == c2.upper())
+        return c1 != c2 and c1.lower() == c2.lower()
+        # return c1 != c2 and (c1 == c2.lower() or c1 == c2.upper())
 
     def makeGood(self, s: str) -> str:
         stack = []
