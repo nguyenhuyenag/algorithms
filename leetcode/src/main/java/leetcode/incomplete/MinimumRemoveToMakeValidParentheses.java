@@ -20,8 +20,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class MinimumRemoveToMakeValidParentheses {
 
     public String minRemoveToMakeValid(String s) {
+        // Lưu index những dấu '(', ')' không đúng
         Stack<Integer> stack = new Stack<>();
-        Set<Integer> invalidIndices = new HashSet<>();
+        Set<Integer> invalidIndex = new HashSet<>();
 
         // Bước 1: Tìm các dấu ngoặc không hợp lệ và index của chúng
         for (int i = 0; i < s.length(); i++) {
@@ -29,8 +30,9 @@ public class MinimumRemoveToMakeValidParentheses {
             if (c == '(') {
                 stack.push(i);
             } else if (c == ')') {
+                // Có đóng nhưng không có mở
                 if (stack.isEmpty()) {
-                    invalidIndices.add(i);
+                    invalidIndex.add(i);
                 } else {
                     stack.pop();
                 }
@@ -38,14 +40,12 @@ public class MinimumRemoveToMakeValidParentheses {
         }
 
         // Đánh dấu các dấu ngoặc mở không có cặp là không hợp lệ
-        while (!stack.isEmpty()) {
-            invalidIndices.add(stack.pop());
-        }
+        invalidIndex.addAll(stack);
 
         // Bước 2: Xây dựng chuỗi kết quả, bỏ qua các chỉ mục không hợp lệ
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
-            if (!invalidIndices.contains(i)) {
+            if (!invalidIndex.contains(i)) {
                 result.append(s.charAt(i));
             }
         }
