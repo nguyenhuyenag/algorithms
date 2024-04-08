@@ -9,12 +9,13 @@ import unittest
 
 class Solution(unittest.TestCase):
 
-    def isPalindrome_OK(self, x: int) -> bool:
-        if x < 0:
-            return False
+    @staticmethod
+    def isPalindrome_OK(x: int) -> bool:
+        if x < 0: return False
         return x == int(str(x)[::-1])
 
-    def isPalindrome(self, n: int) -> bool:
+    @staticmethod
+    def isPalindrome(n: int) -> bool:
         num = str(n)
         left, right = 0, len(num) - 1
         while left < right:

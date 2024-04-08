@@ -15,7 +15,8 @@ import numpy as np
 # MAX = (2 ** 31) - 1
 class Solution(unittest.TestCase):
 
-    def is_within_integer(self, n):
+    @staticmethod
+    def is_within_integer(n):
         return -(2 ** 31) <= n <= pow(2, 31) - 1
 
     def reverse_OK(self, x: int) -> int:
@@ -31,7 +32,8 @@ class Solution(unittest.TestCase):
 
         return sign * reversed_num if self.is_within_integer(sign * reversed_num) else 0
 
-    def reverse(self, x: int) -> int:
+    @staticmethod
+    def reverse(x: int) -> int:
         sign = -1 if x < 0 else 1
         rev = int(str(abs(x))[::-1])
         if not (-pow(2, 31) <= sign * rev <= pow(2, 31) - 1):
