@@ -17,7 +17,7 @@ public class ReverseBits {
     // You need treat n as an unsigned value
     public int reverseBits(int n) {
         String binary = Integer.toBinaryString(n);
-        // Thêm số '0' đầu chuỗi để đủ 32 bit
+        // Thêm số '0' đầu chuỗi để thành dãy 32 bit
         // "0".repeat(32 - binary.length()) + binary;
         StringBuilder builder = new StringBuilder(binary);
         builder.insert(0, "0".repeat(32 - binary.length()));
@@ -29,5 +29,5 @@ public class ReverseBits {
         assertEquals(805306368, reverseBits(12));
         assertEquals(2013265920, reverseBits(30));
     }
-    
+
 }
