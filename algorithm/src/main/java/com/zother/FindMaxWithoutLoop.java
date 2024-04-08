@@ -13,7 +13,7 @@ public class FindMaxWithoutLoop {
 	}
 
 	public static void main(String[] args) {
-		int[] arr = RandomUtils.randomArrays(10);
+		int[] arr = RandomUtils.randomArray();
 		System.out.println(findMax(arr, arr.length));
 	}
 

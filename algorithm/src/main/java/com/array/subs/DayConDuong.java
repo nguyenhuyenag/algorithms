@@ -35,7 +35,7 @@ public class DayConDuong {
     }
 
     public static void main(String[] args) {
-        int[] arr = RandomUtils.randomArrays();
+        int[] arr = RandomUtils.randomArray();
         System.out.println("arr = " + Arrays.toString(arr));
         findDayConDuong(arr);
     }

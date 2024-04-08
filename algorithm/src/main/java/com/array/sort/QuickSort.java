@@ -91,7 +91,7 @@ public class QuickSort {
     }
 
     public static void main(String[] args) {
-        int[] arr = RandomUtils.randomArrays();
+        int[] arr = RandomUtils.randomArray();
         System.out.println("Array:" + Arrays.toString(arr));
         // quickSort(arr, 0, arr.length - 1);
         quickSort3(arr, 0, arr.length - 1);

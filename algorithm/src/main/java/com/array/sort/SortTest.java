@@ -20,18 +20,12 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
  */
 public class SortTest {
 
-    private int[] copyAndSort(int[] arr) {
-        int[] copy = Arrays.copyOfRange(arr, 0, arr.length);
-        Arrays.sort(copy);
-        return copy;
-    }
-
     @Test
     public void test() {
         int numberOfTest = 90;
         for (int i = 0; i < numberOfTest; i++) {
-            int[] arr = RandomUtils.randomArrays(7, 0, 10);
-            int[] result = copyAndSort(arr);
+            int[] arr = RandomUtils.randomArray(7, 0, 10);
+            int[] result = SortUtils.copyAndSort(arr);
 
             // bubbleSortLeftToRight(arr);
             // bubbleSortRightToLeft(arr);
