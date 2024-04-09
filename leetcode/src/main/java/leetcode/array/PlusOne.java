@@ -7,57 +7,38 @@ import java.util.LinkedList;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-
-/**
+/*-
  * https://leetcode.com/problems/plus-one/submissions/1142998791/
  *
  * Cộng 1 vào mảng
- *
- * [1, 2, 3]   ->  [1, 2, 3]
- * [9]         ->  [1, 0]
+ *      [1, 2, 3]   ->  [1, 2, 4]
+ *      [9]         ->  [1, 0]
  */
 public class PlusOne {
 
-//    public int[] plusOne0(int[] arr) {
-//        LinkedList<Integer> ans = new LinkedList<>();
-//        int rem = 0;
-//        for (int i = arr.length - 1; i >= 0; i--) {
-//            int sum = arr[i] + rem;
-//            if (i == arr.length - 1) {
-//                sum += 1;
-//            }
-//            ans.addFirst(sum % 10);
-//            rem = sum / 10;
-//        }
-//        if (rem > 0) {
-//            ans.addFirst(rem);
-//        }
-//        return ans.stream().mapToInt(Integer::intValue).toArray();
-//    }
-
     public int[] plusOne(int[] arr) {
-        LinkedList<Integer> ans = new LinkedList<>();
-        int carry = 1; //
+        LinkedList<Integer> result = new LinkedList<>();
+        int rem = 1; // Số nhớ
         for (int i = arr.length - 1; i >= 0; i--) {
-            int sum = arr[i] + carry;
-            ans.addFirst(sum % 10);
-            carry = sum / 10;
+            int sum = arr[i] + rem;
+            result.addFirst(sum % 10);
+            rem = sum / 10;
         }
-        if (carry > 0) {
-            ans.addFirst(carry);
+        if (rem > 0) {
+            result.addFirst(rem);
         }
-        return ans.stream().mapToInt(Integer::intValue).toArray();
+        return result.stream().mapToInt(Integer::intValue).toArray();
     }
 
-    public int[] plusAny(int[] arr, int carry) {
+    public int[] plusAny(int[] arr, int rem) {
         LinkedList<Integer> ans = new LinkedList<>();
         for (int i = arr.length - 1; i >= 0; i--) {
-            int sum = arr[i] + carry;
+            int sum = arr[i] + rem;
             ans.addFirst(sum % 10);
-            carry = sum / 10;
+            rem = sum / 10;
         }
-        if (carry > 0) {
-            ans.addFirst(carry);
+        if (rem > 0) {
+            ans.addFirst(rem);
         }
         return ans.stream().mapToInt(Integer::intValue).toArray();
     }

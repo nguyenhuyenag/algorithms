@@ -13,7 +13,7 @@ class Solution(unittest.TestCase):
     @staticmethod
     def rotate(nums: List[int], k):
         result = deque(nums)
-        # Rotate the deque by 3 positions to the right
+        # Rotate the deque by k positions to the right
         n = len(nums)
         k = k % n
         result.rotate(k)
