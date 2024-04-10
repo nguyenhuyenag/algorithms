@@ -1,3 +1,4 @@
-n = 12
-binary = format(n, 'b').zfill(32)[::-1]
-print(binary)
+arr = [i for i in range(1,26)]
+print(arr)
+
+print(sum(arr))

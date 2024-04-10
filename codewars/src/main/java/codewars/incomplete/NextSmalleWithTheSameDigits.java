@@ -1,4 +1,4 @@
-package leetcode.incomplete;
+package codewars.incomplete;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

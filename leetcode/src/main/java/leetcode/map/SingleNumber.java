@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * https://leetcode.com/problems/single-number/
- * <p>
+ *
  * Tìm số xuất hiện duy nhất trong mảng
  */
 public class SingleNumber {
