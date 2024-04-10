@@ -3,8 +3,14 @@ package leetcode.array;
 import org.junit.jupiter.api.Test;
 
 
-/**
+/*-
  * https://leetcode.com/problems/rotate-image/
+ *
+ * Cho ma trận nxn. Xoay ma trận theo chiều kim đồng hồ
+ *
+ *      1  2  3        7  4  1
+ *      4  5  6   ->   8  5  2
+ *      7  8  9        9  6  3
  */
 public class RotateImage {
 
