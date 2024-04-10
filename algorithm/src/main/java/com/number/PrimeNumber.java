@@ -44,22 +44,20 @@ public class PrimeNumber {
     // Phân tích một số ra thừa số nguyên tố
     public static void primeFactorization(int n) {
         List<Integer> result = new ArrayList<>();
-        for (int i = 2; i * i <= n; ++i)
+        for (int i = 2; i * i <= n; ++i) {
             while (n % i == 0) {
-                n /= i;
-                // cout << i << ' ';
-                // System.out.println(i + " ");
                 result.add(i);
+                n /= i;
             }
+        }
         if (n > 1) {
-            // System.out.println(n + " ");
             result.add(n);
         }
         System.out.println(result);
     }
 
     public static void main(String[] args) {
-        primeFactorization(27);
+        primeFactorization(34);
     }
 
 }

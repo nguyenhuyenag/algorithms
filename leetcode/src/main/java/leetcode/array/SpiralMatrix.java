@@ -61,9 +61,9 @@ public class SpiralMatrix {
     @Test
     public void test() {
         int[][] matrix1 = {
-                {1, 2, 3},
-                {4, 5, 6},
-                {7, 8, 9}
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
         };
         assertIterableEquals(List.of(1, 2, 3, 6, 9, 8, 7, 4, 5), spiralOrder(matrix1));
     }
