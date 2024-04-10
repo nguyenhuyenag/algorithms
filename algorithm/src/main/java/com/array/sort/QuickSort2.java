@@ -5,8 +5,7 @@ import static com.array.sort.SortUtils.*;
 public class QuickSort2 {
 
     public static int partitionMid(int[] arr, int left, int right) {
-        int mid = left + (right - left) / 2;
-        int pivot = arr[mid];
+        int pivot = arr[left + (right - left) / 2];
         // Tiến hành phân chia mảng
         int i = left, j = right;
         while (i <= j) {
@@ -21,8 +20,8 @@ public class QuickSort2 {
             // So sánh giá trị từ cả hai phía xem có cần đổi chỗ hay không
             if (i <= j) {
                 swap(arr, i, j);
-                i++;
-                j--;
+                ++i;
+                --j;
             }
         }
         return i;
