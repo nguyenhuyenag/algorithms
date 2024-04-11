@@ -33,13 +33,14 @@ public class RemoveKDigits {
             while (i < sb.length() - 1 && sb.charAt(i) <= sb.charAt(i + 1)) {
                 i++;
             }
-            sb.delete(i, i + 1);
+            // sb.delete(i, i + 1);
+            sb.deleteCharAt(i);
             k--;
         }
         return removeLeadingZeros(sb);
     }
 
-    public String removeKdigits(String num, int k) {
+    public String removeKdigits_OK(String num, int k) {
         Stack<Character> stack = new Stack<>();
         for (char digit : num.toCharArray()) {
             while (k > 0 && !stack.isEmpty() && stack.peek() > digit) {
@@ -57,9 +58,34 @@ public class RemoveKDigits {
         return removeLeadingZeros(result);
     }
 
+    public String removeKdigits(String num, int k) {
+        int n = num.length();
+        if (k >= n) return "0";
+        char[] result = new char[n - k];
+        int len = result.length;
+        int top = -1;
+        for (char digit : num.toCharArray()) {
+            while (k > 0 && top >= 0 && result[top] > digit) {
+                top--;
+                k--;
+            }
+            if (top < len - 1) {
+                result[++top] = digit;
+            } else {
+                k--; // Skip digit
+            }
+        }
+        // Skip leading zeros
+        int i = 0;
+        while (i < len && result[i] == '0') {
+            i++;
+        }
+        return i == len ? "0" : new String(result, i, len - i);
+    }
+
     @Test
     public void test() {
-        assertEquals("1219", removeKdigits("1432219", 3));
+        assertEquals("1219", removeKdigits_TLE("1432219", 3));
         assertEquals("200", removeKdigits("10200", 1));
     }
 

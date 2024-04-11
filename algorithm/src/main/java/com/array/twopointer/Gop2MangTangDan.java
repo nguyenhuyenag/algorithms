@@ -16,12 +16,12 @@ public class Gop2MangTangDan {
 
         int i = 0, j = 0, p = 0;
         while (i < len1 && j < len2) {
-            // if (nums1[i] < nums2[j]) {
-            //    result[p++] = nums1[i++];
-            // } else {
-            //    result[p++] = nums2[j++];
-            // }
-            result[p++] = nums1[i] < nums2[j] ? nums1[i++] : nums2[j++];
+            if (nums1[i] < nums2[j]) {
+                result[p++] = nums1[i++];
+            } else {
+                result[p++] = nums2[j++];
+            }
+            // result[p++] = nums1[i] < nums2[j] ? nums1[i++] : nums2[j++];
         }
 
         // Sao chép các phần tử còn lại của dãy nums1 (nếu có)
