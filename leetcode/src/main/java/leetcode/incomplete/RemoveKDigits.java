@@ -42,7 +42,7 @@ public class RemoveKDigits {
     public String removeKdigits(String num, int k) {
         Stack<Character> stack = new Stack<>();
         for (char digit : num.toCharArray()) {
-            while (!stack.isEmpty() && stack.peek() > digit && k > 0) {
+            while (k > 0 && !stack.isEmpty() && stack.peek() > digit) {
                 stack.pop();
                 k--;
             }
