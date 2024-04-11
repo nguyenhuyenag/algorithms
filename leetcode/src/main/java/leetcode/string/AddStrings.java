@@ -14,13 +14,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class AddStrings {
 
     // Xóa số 0 ở đầu số dạng chuỗi
-    public static String removeLeadingZeros(StringBuilder input) {
-        int index = 0;
-        int len = input.length();
-        while (index < len && input.charAt(index) == '0') {
-            index++;
+    public static String removeLeadingZeros(StringBuilder num) {
+        int i = 0;
+        int len = num.length();
+        while (i < len && num.charAt(i) == '0') {
+            i++;
         }
-        return index == len ? "0" : input.substring(index);
+        return i == len ? "0" : num.substring(i);
     }
 
     public String addStrings(String s1, String s2) {
