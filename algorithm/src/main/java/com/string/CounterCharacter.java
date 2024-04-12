@@ -1,9 +1,9 @@
-package com.array;
+package com.string;
 
 /**
  * Các phép toán đếm trên mảng
  */
-public class Counter {
+public class CounterCharacter {
 
     /**
      * Đếm số lần xuất hiện của ký tự trong chuỗi

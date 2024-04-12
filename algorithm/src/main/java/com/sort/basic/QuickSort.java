@@ -1,10 +1,10 @@
-package com.array.sort;
+package com.sort.basic;
 
 import com.util.RandomUtils;
 
 import java.util.Arrays;
 
-import static com.array.sort.SortUtils.*;
+import static com.sort.basic.SortUtils.*;
 
 /**
  * - Chọn ngẫu nhiên một phần tử làm khóa X

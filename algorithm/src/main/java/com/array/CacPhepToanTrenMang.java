@@ -1,5 +1,6 @@
 package com.array;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
@@ -141,6 +142,7 @@ public class CacPhepToanTrenMang {
         return Arrays.stream(nums).distinct().count() < nums.length;
     }
 
+    @Disabled
     @Test
     public void testIntersect() {
         // int[] arr = intersect(new int[]{1, 2, 2, 1}, new int[]{2, 2});
@@ -148,10 +150,10 @@ public class CacPhepToanTrenMang {
         System.out.println(Arrays.toString(intersect.toArray()));
     }
 
-//    @Test
-//    public void testMerge() {
-//        int[] A = {1, 2, 3, 4};
-//        int[] B = {5, 6, 7};
-//    }
+    @Test
+    public void testMerge() {
+        int[] A = {1, 2, 3, 4};
+        int[] B = {5, 6, 7};
+    }
 
 }

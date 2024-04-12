@@ -1,4 +1,4 @@
-package com.array.twopointer;
+package com.array.t2pointer;
 
 /**
  * Cho mảng đã sắp xếp, tìm 2 số có tổng bằng x cho trước

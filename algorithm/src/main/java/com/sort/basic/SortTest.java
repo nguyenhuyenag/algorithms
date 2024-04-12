@@ -1,18 +1,10 @@
-package com.array.sort;
+package com.sort.basic;
 
 
 import com.util.RandomUtils;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
-import static com.array.sort.BubbleSort.*;
-import static com.array.sort.InsertionSort.*;
-import static com.array.sort.QuickSort.*;
-import static com.array.sort.QuickSort2.*;
-import static com.array.sort.SelectionSort.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static com.sort.basic.QuickSort.*;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**

@@ -1,8 +1,8 @@
-package com.array.sort;
+package com.sort.basic;
 
 import java.util.Arrays;
 
-import static com.array.sort.SortUtils.*;
+import static com.sort.basic.SortUtils.*;
 import static com.util.RandomUtils.*;
 
 /**

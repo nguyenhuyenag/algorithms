@@ -1,15 +1,5 @@
 package com;
 
-import com.array.sort.SortUtils;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-
-import java.util.*;
-import java.util.stream.Collectors;
-
-import static com.array.sort.SortUtils.*;
-import static org.junit.jupiter.api.Assertions.*;
-
 public class AlgMain {
 
 //    public void removeDuplicates(int[] nums) {

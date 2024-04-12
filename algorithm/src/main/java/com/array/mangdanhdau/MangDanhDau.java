@@ -17,11 +17,11 @@ public class MangDanhDau {
      * => c - 'a' là chỉ số của 'a'
      */
     public static void lowercase() {
-        String input = "abcxyz";
+        String s = "abcxyz";
         boolean[] mark = new boolean[26]; // 'a' đến 'z' là 26 ký tự
 
-        for (int i = 0; i < input.length(); i++) {
-            char c = input.charAt(i);
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
             if (Character.isLowerCase(c)) { // 'a' <= c && c <= 'c'
                 mark[c - 'a'] = true;
             }
