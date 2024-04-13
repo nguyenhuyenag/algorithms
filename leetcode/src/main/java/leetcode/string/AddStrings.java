@@ -24,11 +24,11 @@ public class AddStrings {
     }
 
     public String addStrings(String s1, String s2) {
-        StringBuilder result = new StringBuilder();
         int len1 = s1.length(), len2 = s2.length();
         int max = Math.max(len1, len2);
 
         int rem = 0;
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < max; i++) {
             int n1 = i < len1 ? s1.charAt(len1 - 1 - i) - '0' : 0;
             int n2 = i < len2 ? s2.charAt(len2 - 1 - i) - '0' : 0;
@@ -41,8 +41,8 @@ public class AddStrings {
             result.append(rem);
         }
 
-        result.reverse();
-        return removeLeadingZeros(result);
+        // result.reverse();
+        return removeLeadingZeros(result.reverse());
     }
 
     @Test
