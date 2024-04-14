@@ -16,8 +16,11 @@ public class PartitionArrayIntoThreePartsWithEqualSum {
 
     public boolean canThreePartsEqualSum(int[] nums) {
         int sum = Arrays.stream(nums).sum();
+
+        // Nếu tổng không chia hết cho 3 -> không thể chia
         if (sum % 3 != 0) return false;
-        sum /= 3;
+
+        sum /= 3; // Tổng của 1 đoạn
 
         int csum = 0; // Tính tồng của 1 đoạn
         int count = 0; // Đếm số đoạn có tổng = sum / 3
