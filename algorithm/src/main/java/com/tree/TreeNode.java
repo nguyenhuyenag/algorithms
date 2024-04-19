@@ -8,16 +8,33 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Definition for a binary tree node
+/*-
+ * (1) Definition for tree node:
+ *   - Root là nút không có nút cha (một cây có nhiều nhất một root).
+ *   - Edge là biểu thị liên kết từ nút cha đến nút con.
+ *   - Node lá (leaf) là nút không có nút con.
+ *   - Siblings là những nút có cùng nút cha.
+ *   - Nút A là ancestor (tổ tiên) của B nếu đi từ Root đến B có đi qua A. Nút B là descendant (con cháu) của A.
+ *   - Tập hợp các node ở cùng một độ sâu nhất định gọi là level của cây. Root là ở mức 0.
+ *   - Độ sâu của node là độ dài đường đi từ root đến node đó.
+ *   - Chiều cao của node là độ dài đường đi từ root đến node đó.
+ *   - Chiều cao của tree là độ dài từ root đến node sâu nhất.
+ *   - Kích thước của một node là số lượng node con + chính node đó.
+ *
+ * (2) Cây nhị phân (binary tree):
+ *   - Là cây mà mỗi node có nhiều nhất 2 node con.
+ *   - Các loại cây nhị phân
+ *     + Cây nhị phân nghiêm ngặt (strict BT) là cây mà mỗi node có 0 hoặc 2 node con
+ *     + Cây nhị phân đây đủ (full BT) là cây mà mỗi node có đúng 2 node con và các node lá ở cùng một mức.
+ *     + Cây nhị phân hoàn chỉnh (completed BT) ???
  */
 public class TreeNode {
 
-    int val;
-    TreeNode left;
-    TreeNode right;
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
 
-    TreeNode() {
+    public TreeNode() {
     }
 
     public TreeNode(int val) {
@@ -133,7 +150,7 @@ public class TreeNode {
     }
 
     public static void main(String[] args) {
-        int[] values = RandomUtils.randomArray(9, 0, 9);
+        int[] values = {1,2,3};
         System.out.println(Arrays.toString(values));
         TreeNode root = createBinaryTree(values);
         System.out.println("Tree structure:");

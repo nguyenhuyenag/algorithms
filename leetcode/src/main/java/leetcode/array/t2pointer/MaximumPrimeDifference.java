@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * Ví dụ: nums = [4,2,9,5,3] -> Kết quả là 3
  *
- * Vì nums[1], nums[3], và nums[4] là số nguyên tố. Nên |4 - 1| = 3 là gtln.
+ * Vì nums[1], nums[3], và nums[4] là số nguyên tố. Nên |4 - 1| = 3 là GTLN.
  */
 public class MaximumPrimeDifference {
 
@@ -32,7 +32,7 @@ public class MaximumPrimeDifference {
             // Tìm được cả 2 vị trí cùng là SNT
             if (leftCheck && primeCheck(nums[r])) {
                 return r - l;
-            } else if (leftCheck == false) { // Số bên trái không phải SNT -> tăng l
+            } else if (!leftCheck) { // Số bên trái không phải SNT -> tăng l
                 l++;
             } else { // Số bên phải không phải STN -> giảm r
                 r--;
