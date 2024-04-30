@@ -19,11 +19,11 @@ public class TowerHaNoi {
     public static void towerOfHaNoi(int n, String A, String B, String C) {
         if (n == 1) {
             System.out.println(String.format("%s ---> %s", A, C));
-            return;
         } else {
             // Dùng C là trung gian, dời n - 1 đĩa từ A -> B
             towerOfHaNoi(n - 1, A, C, B);
-            // Còn 1 đĩa cuối cùng thì trở về case = 1
+            // Còn 1 đĩa cuối cùng thì trở về case = 1 ???
+            // Di chuyển đĩa lớn nhất (thứ n) từ A -> C
             towerOfHaNoi(n - 1, A, B, C);
             // Dùng A làm trung gian, dời n - 1 đĩa từ B -> C
             towerOfHaNoi(n - 1, B, A, C);

@@ -1,30 +1,36 @@
 package com;
 
+import org.junit.jupiter.api.Test;
+
+import java.util.Collections;
+import java.util.Stack;
+
 public class AlgMain {
 
-//    public void removeDuplicates(int[] nums) {
-//        int p = 1;
-//        for (int i = 1; i < nums.length; i++) {
-//            if (nums[i - 1] != nums[i]) {
-//                nums[p++] = nums[i];
-//            }
-//        }
-//        // System.out.println(Arrays.toString(nums));
-//        // return p;
-//    }
-//
-//    @Test
-//    public void test1() {
-//        int[] arr = {1, 1, 2};
-//        removeDuplicates(arr);
-//        assertArrayEquals(new int[]{1, 2, 2}, arr);
-//    }
-//
-//    @Test
-//    public void test2() {
-//        int[] arr = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
-//        removeDuplicates(arr);
-//        assertArrayEquals(new int[]{0, 1, 2, 3, 4, 2, 2, 3, 3, 4}, arr);
-//    }
+    public void towerHaNoi(int n, Stack<Integer> A, Stack<Integer> B, Stack<Integer> C) {
+        if (n == 1) {
+            // Move A ---> C: Lấy phần tử tử stack A đẩy vào stack C
+            if (!A.isEmpty()) {
+                C.push(A.pop());
+                System.out.println(A + ", " + B + ", " + C);
+            }
+        } else {
+            // Dùng C là trung gian, dời n - 1 đĩa từ A -> B
+            towerHaNoi(n - 1, A, C, B);
+            // Dời đĩa lớn nhất từ A -> C
+            towerHaNoi(n - 1, A, B, C);
+            // Dùng A làm trung gian, dời n - 1 đĩa nhỏ từ B -> C
+            towerHaNoi(n - 1, B, A, C);
+        }
+    }
+
+
+    @Test
+    public void test() {
+        Stack<Integer> stack = new Stack<>();
+        Collections.addAll(stack, 3, 2, 1);
+        System.out.println(stack + ", [], []");
+        towerHaNoi(stack.size(), stack, new Stack<>(), new Stack<>());
+    }
 
 }
