@@ -16,15 +16,15 @@ from collections import Counter
 class Solution(unittest.TestCase):
 
     def findMaxK(self, nums: List[int]) -> int:
-        max_k = 0
-        seen = set()
+        k = -1
+        seen = set(nums)
         for num in nums:
-            if -num in seen:
-                max_k = max(max_k, num, -num)
+            if num > 0 and -num in seen:
+                k = max(k, num)
 
             seen.add(num)
 
-        return -1 if max_k == 0 else max_k
+        return k
 
     def test(self):
         self.assertEqual(3, self.findMaxK([-1, 2, -3, 3]))

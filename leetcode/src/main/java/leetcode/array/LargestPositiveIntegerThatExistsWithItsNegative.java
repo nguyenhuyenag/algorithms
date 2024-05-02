@@ -16,7 +16,30 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class LargestPositiveIntegerThatExistsWithItsNegative {
 
     public int findMaxK(int[] nums) {
-        int max = 0;
+        int max = -1;
+        Set<Integer> seen = new TreeSet<>();
+        for (int num : nums) {
+            seen.add(num);
+        }
+        for (int num : nums) {
+            // Kiểm tra số thứ 2 có trong mảng không (seen chưa các phần tử của mảng)
+            if (num > 0 && seen.contains(-num)) {
+                max = Math.max(max, num);
+            }
+        }
+        return max;
+    }
+
+    @Test
+    public void test() {
+        assertEquals(3, findMaxK(new int[]{-1, 2, -3, 3}));
+        assertEquals(7, findMaxK(new int[]{-1, 10, 6, 7, -7, 1}));
+        assertEquals(-1, findMaxK(new int[]{-10, 8, 6, 7, -2, -3}));
+        assertEquals(37, findMaxK(new int[]{-37, 37, -9, 2, 47, 18, 13, -11, 9, -28}));
+    }
+
+    public int findMaxK_OK1(int[] nums) {
+        int max = -1;
         Set<Integer> set = new TreeSet<>();
         // Số thứ nhất
         for (int n1 : nums) {
@@ -28,15 +51,7 @@ public class LargestPositiveIntegerThatExistsWithItsNegative {
             }
             set.add(n1);
         }
-        return max == 0 ? -1 : max;
-    }
-
-    @Test
-    public void test() {
-        assertEquals(3, findMaxK(new int[]{-1, 2, -3, 3}));
-        assertEquals(7, findMaxK(new int[]{-1, 10, 6, 7, -7, 1}));
-        assertEquals(-1, findMaxK(new int[]{-10, 8, 6, 7, -2, -3}));
-        assertEquals(37, findMaxK(new int[]{-37, 37, -9, 2, 47, 18, 13, -11, 9, -28}));
+        return max;
     }
 
     public int findMaxK_OK(int[] nums) {
