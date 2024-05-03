@@ -14,13 +14,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class MainWar {
 
-    public double[] tribonacci(double[] s, int n) {
-        double[] tritab = Arrays.copyOf(s, n);
-        for (int i = 3; i < n; i++) {
-            tritab[i] = tritab[i - 1] + tritab[i - 2] + tritab[i - 3];
+    public static Integer find(final int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] + 1 != arr[i + 1]) {
+                return arr[i + 1];
+            }
         }
-        return tritab;
-
+        return null;
     }
 
     @Test
