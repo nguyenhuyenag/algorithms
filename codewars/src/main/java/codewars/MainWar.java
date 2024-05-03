@@ -1,22 +1,30 @@
 package codewars;
 
+import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Cho số nguyên n. Với mỗi i thuộc [0, n] đếm số bit '1' trong biểu diễn của i dưới dạng nhị phân
- * Trả về mảng n + 1 kết quả trên
+ *
  */
 public class MainWar {
 
-    public static void main(String[] args) {
-        int n = 5;
-        for (int i = 0; i <= n; i++) {
-//            System.out.println("binary = " + Integer.toString(i, 2));
-            System.out.println("bitcount = " + Integer.bitCount(i));
+    public double[] tribonacci(double[] s, int n) {
+        double[] tritab = Arrays.copyOf(s, n);
+        for (int i = 3; i < n; i++) {
+            tritab[i] = tritab[i - 1] + tritab[i - 2] + tritab[i - 3];
         }
+        return tritab;
+
+    }
+
+    @Test
+    public void sampleTests() {
     }
 
 }
