@@ -1,12 +1,11 @@
 package leetcode.linked;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static leetcode.linked.LinkedListTestUtils.*;
+import static leetcode.util.LinkedListTestUtils.*;
 
 /**
  * https://leetcode.com/problems/reverse-linked-list-ii/

@@ -2,12 +2,10 @@ package leetcode.linked;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Set;
 
-import static leetcode.linked.LinkedListTestUtils.assertLinkedListEquals;
+import static leetcode.util.LinkedListTestUtils.assertLinkedListEquals;
 
 /**
  * https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/

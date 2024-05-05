@@ -1,8 +1,6 @@
 package leetcode.linked;
 
-import leetcode.linked.LinkedListTestUtils;
-import leetcode.linked.ListNode;
-import org.junit.jupiter.api.Assertions;
+import leetcode.util.LinkedListTestUtils;
 import org.junit.jupiter.api.Test;
 
 /**

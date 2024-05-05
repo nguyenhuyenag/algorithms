@@ -1,4 +1,6 @@
-package leetcode.linked;
+package leetcode.util;
+
+import leetcode.linked.ListNode;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,16 +1,12 @@
 package leetcode.linked;
 
-import leetcode.linked.LinkedListTestUtils;
-import leetcode.linked.ListNode;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static leetcode.linked.LinkedListTestUtils.*;
+import static leetcode.util.LinkedListTestUtils.*;
 
 /**
  * https://leetcode.com/problems/rotate-list/
@@ -37,7 +33,7 @@ public class RotateList {
         return head.next;
     }
 
-    public ListNode rotateRightOK(ListNode head, int k) {
+    public ListNode rotateRight_OK(ListNode head, int k) {
         if (head == null || k == 0) return head;
         int n = sizeOf(head);
         if (n <= k) k = k % n; // Đảm bảo k luôn nhỏ hơn n

@@ -1,15 +1,12 @@
 package leetcode.linked;
 
-import leetcode.linked.LinkedListTestUtils;
-import leetcode.linked.ListNode;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static leetcode.linked.LinkedListTestUtils.*;
+import static leetcode.util.LinkedListTestUtils.*;
 
 public class SwapNodesInPairs {
 

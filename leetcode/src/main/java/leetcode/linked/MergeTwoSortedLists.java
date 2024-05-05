@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Queue;
 import java.util.PriorityQueue;
 
-import static leetcode.linked.LinkedListTestUtils.*;
+import static leetcode.util.LinkedListTestUtils.*;
 
 /**
  * https://leetcode.com/problems/merge-two-sorted-lists/

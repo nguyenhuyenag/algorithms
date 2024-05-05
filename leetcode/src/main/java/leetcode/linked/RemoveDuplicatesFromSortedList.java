@@ -1,12 +1,8 @@
 package leetcode.linked;
 
-import leetcode.linked.LinkedListTestUtils;
-import leetcode.linked.ListNode;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import static leetcode.linked.LinkedListTestUtils.*;
+import static leetcode.util.LinkedListTestUtils.*;
 
 /**
  * https://leetcode.com/problems/remove-duplicates-from-sorted-list/

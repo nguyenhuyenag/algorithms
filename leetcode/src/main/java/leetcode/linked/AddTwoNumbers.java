@@ -2,18 +2,13 @@ package leetcode.linked;
 
 import org.junit.jupiter.api.Test;
 
-import java.math.BigInteger;
-import java.util.List;
-
-import static leetcode.linked.LinkedListTestUtils.*;
-import static leetcode.linked.ListNode.*;
+import static leetcode.util.LinkedListTestUtils.*;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 
 /**
  * https://leetcode.com/problems/add-two-numbers/
  */
 public class AddTwoNumbers {
-
 
     /**
      * Tạo ListNode có 1 giá trị, kết quả trả về là result.next
