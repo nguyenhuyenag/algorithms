@@ -134,15 +134,15 @@ public class ListNode {
         return -1;
     }
 
-    private int indexOfByRecusive(ListNode listNode, int val, int index) {
+    private int indexOfByRecursive(ListNode listNode, int val, int index) {
         if (listNode == null) return -1;
         if (listNode.val == val) return index;
-        return indexOfByRecusive(listNode.next, val, ++index);
+        return indexOfByRecursive(listNode.next, val, ++index);
     }
 
     public int indexOf(int val) {
         // return indexOf1(val);
-        return indexOfByRecusive(this, val, 0);
+        return indexOfByRecursive(this, val, 0);
     }
 
     public void removeByIndex(int index) {
@@ -185,10 +185,40 @@ public class ListNode {
 
     public List<Integer> toList() {
         List<Integer> vals = new ArrayList<>();
-        for (ListNode current = this; current != null; current = current.next) {
+        for (ListNode current = this; current.next != null; current = current.next) {
             vals.add(current.val);
         }
         return vals;
+    }
+
+    // Remove by value
+    public ListNode remove(int value) {
+        ListNode dummy = new ListNode(Integer.MIN_VALUE);
+        dummy.next = this;
+        for (ListNode current = dummy; current.next != null; current = current.next) {
+            if (current.next.val == value) {
+                current.next = current.next.next;
+                break; // Add break if you want to remove only the first occurrence of the value
+            }
+        }
+        return dummy.next;
+    }
+
+    public ListNode deleteNode(int data) {
+        ListNode prev = null;
+        ListNode head = this;
+        for (ListNode current = head; current != null; current = current.next) {
+            if (current.val == data) {
+                if (prev == null) {
+                    head = current.next;
+                } else {
+                    prev.next = current.next;
+                }
+            } else {
+                prev = current;
+            }
+        }
+        return head;
     }
 
 }

@@ -58,6 +58,13 @@ public class LKSample {
         System.out.println("idx = " + idx);
     }
 
+    public static void testRemove() {
+        ListNode head = ListNode.of(0, 1, 2, 3, 4);
+        // head = head.remove(0);
+        head = head.deleteNode(3);
+        head.showList();
+    }
+
     public static void main(String[] args) {
         // ListNode listNode = create2();
         // listNode = reverseList(listNode);
@@ -66,7 +73,8 @@ public class LKSample {
         // testAddFirst();
         // testInsert();
         // testReverse();
-        testIndexOf();
+        // testIndexOf();
+        testRemove();
     }
 
 
