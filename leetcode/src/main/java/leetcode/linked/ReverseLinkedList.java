@@ -16,18 +16,18 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ReverseLinkedList {
 
     public ListNode reverseList_OK(ListNode head) {
-        ListNode rev = null;
+        ListNode prev = null;
         ListNode current = head;
         while (current != null) {
             // Lưu node kế tiếp trước khi di chuyển
             ListNode nextNode = current.next;
             // Đảo ngược con trỏ
-            current.next = rev;
-            // Di chuyển con trỏ và rev đến vị trí tiếp theo
-            rev = current;
+            current.next = prev;
+            // Di chuyển con trỏ và prev đến vị trí tiếp theo
+            prev = current;
             current = nextNode;
         }
-        return rev;
+        return prev;
     }
 
     public ListNode reverseList(ListNode head) {
