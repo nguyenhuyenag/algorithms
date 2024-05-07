@@ -70,11 +70,11 @@ public class LKSample {
         // listNode = reverseList(listNode);
         // printLinkedList(listNode);
         // listNode.showList();
-        // testAddFirst();
+         testAddFirst();
         // testInsert();
         // testReverse();
         // testIndexOf();
-        testRemove();
+        // testRemove();
     }
 
 
