@@ -50,15 +50,15 @@ public class PowXN {
         assertEquals(pow(1.0, 2147483647), myPow_OK(1.00000, 2147483647));
     }
 
-//    	public static double myPow(double x, long n) {
-//		if (n == 0) {
-//			return 1;
-//		}
-//		if (n < 0) {
-//			n = -n;
-//			x = 1 / x;
-//		}
-//		return n % 2 == 0 ? myPow(x * x, n / 2) : x * myPow(x * x, n / 2);
-//	}
+    public static double myPow_3(double x, long n) {
+        if (n == 0) {
+            return 1;
+        }
+        if (n < 0) {
+            n = -n;
+            x = 1 / x;
+        }
+        return n % 2 == 0 ? myPow_3(x * x, n / 2) : x * myPow_3(x * x, n / 2);
+    }
 
 }
