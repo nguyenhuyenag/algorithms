@@ -21,6 +21,7 @@ public class CacPhepToanTrenMang {
         System.out.println("c = " + Arrays.toString(result));
     }
 
+
     public int[] mergeArray_2(int[] nums1, int[] nums2) {
         int[] result = new int[nums1.length + nums2.length];
         int pointer = 0;
