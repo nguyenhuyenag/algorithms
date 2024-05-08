@@ -11,9 +11,9 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
  * https://leetcode.com/problems/rotate-array/
- * <p>
+ *
  * Phải giữ cho k luôn nằm trong khoảng từ [0, len - 1] để đảm bảo rằng việc xoay sẽ có ý nghĩa.
- * <p>
+ *
  * Ví dụ, nếu len = 5, k = 7 thì việc xoay 7 phần tử sẽ giống như xoay 2 phần tử (vì 7 % 5 = 2).
  * Do đó, chúng ta sử dụng k = k % len để chắc chắn rằng giá trị của k không lớn hơn độ dài của
  * mảng nums.

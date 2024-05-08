@@ -1,6 +1,5 @@
 package leetcode.array;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * https://www.codewars.com/kata/57b6f5aadb5b3d0ae3000611/
  */
-public class LenghOfMissingArray {
+public class LengthOfMissingArray {
 
     public static int getLengthOfMissingArray(Object[][] arrayOfArrays) {
         if (arrayOfArrays == null || arrayOfArrays.length == 0) return 0;

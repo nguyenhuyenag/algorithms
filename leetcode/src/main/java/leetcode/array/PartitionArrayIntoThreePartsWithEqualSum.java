@@ -32,7 +32,7 @@ public class PartitionArrayIntoThreePartsWithEqualSum {
                 csum = 0;
                 count++;
                 /**
-                 * Đã tìm được 2 đoạn thỏa mã yêu cầu & chưa duyệt hết mảng -> true vì
+                 * Đã tìm được 2 đoạn thỏa mãn yêu cầu & chưa duyệt hết mảng -> true vì
                  * sum chia hết cho 3 nên phần còn lại cũng chia hết cho 3
                  */
                 if (count == 2 && i < nums.length - 1) return true;
@@ -42,7 +42,6 @@ public class PartitionArrayIntoThreePartsWithEqualSum {
         // If we have found three parts with sum equal to sum, return true
         return count == 3;
     }
-
 
     @Test
     public void test() {

@@ -7,7 +7,7 @@ import java.util.Queue;
 /**
  * https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/
  * 
- * (A - 1)*(B - 1) = max => A * B = max => max * secondMax = ans
+ * (A - 1)(B - 1) = max => A * B = max => max * secondMax = ans
  */
 public class MaximumProductOfTwoElements {
 
@@ -18,7 +18,7 @@ public class MaximumProductOfTwoElements {
 	 * tử lớn nhất
 	 */
 	public int[] getTwoMaximumValue(int[] nums) {
-		int twoMaximumValue[] = { 0, 0 };
+		int[] twoMaximumValue = { 0, 0 };
 		PriorityQueue<Integer> maxHeap = new PriorityQueue<>();
 		for (int x : nums) {
 			maxHeap.add(-x);
