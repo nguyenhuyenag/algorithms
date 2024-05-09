@@ -1,13 +1,10 @@
 package array;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /*-
     https://leetcode.com/problems/relative-ranks/
@@ -83,7 +80,6 @@ public class RelativeRanks {
         for (int i = 0; i < scores.length; i++) {
             answer[i] = getRank(ranks.get(scores[i]));
         }
-        // System.out.println("ranks = " + Arrays.toString(answer ));
         return answer;
     }
 
