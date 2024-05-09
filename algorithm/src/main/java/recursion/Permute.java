@@ -1,0 +1,40 @@
+package recursion;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.math3.util.CombinatoricsUtils;
+
+public class Permute {
+
+	public static void showAllPermuteByCommons(List<?> list) {
+		CollectionUtils.permutations(list).stream() //
+				.forEach(System.out::println);
+	}
+
+	private static void permute(List<?> list, int left, int right) {
+		if (left == right) {
+			System.out.println(Arrays.toString(list.toArray()));
+		} else {
+			for (int i = left; i <= right; i++) {
+				Collections.swap(list, left, i);
+				permute(list, left + 1, right);
+				Collections.swap(list, left, i); // backtrack
+			}
+		}
+	}
+
+	public static void showAllPermute(List<?> list) {
+		int size = list.size();
+		permute(list, 0, list.size() - 1);
+		System.out.println("Total: " + CombinatoricsUtils.factorial(size));
+	}
+
+	public static void main(String[] args) {
+		List<Integer> list = Arrays.asList(1, 2, 3, 4);
+		showAllPermute(list);
+	}
+
+}
