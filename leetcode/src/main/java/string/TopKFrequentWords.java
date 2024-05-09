@@ -1,6 +1,5 @@
 package string;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -34,7 +33,7 @@ public class TopKFrequentWords {
 
     @Test
     public void test() {
-        assertIterableEquals(List.of("i", "love"), topKFrequent(new String[]{"i", "love", "leetcode", "i", "love", "coding"}, 2));
+        assertIterableEquals(List.of("i", "love"), topKFrequent(new String[]{"i", "love", "test", "i", "love", "coding"}, 2));
         assertIterableEquals(List.of("the", "is", "sunny", "day"), topKFrequent(new String[]{"the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"}, 4));
     }
 

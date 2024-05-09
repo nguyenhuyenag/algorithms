@@ -3,8 +3,6 @@ package array;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -34,7 +32,7 @@ public class MinimumNumberOfStepsToMake2StringsAnagram {
     @Test
     public void test() {
         assertEquals(1, minSteps("bab", "aba"));
-        assertEquals(5, minSteps("leetcode", "practice"));
+        assertEquals(5, minSteps("test", "practice"));
         assertEquals(0, minSteps("anagram", "mangaar"));
     }
 

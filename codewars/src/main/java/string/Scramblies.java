@@ -30,7 +30,7 @@ public class Scramblies {
     @Test
     public void test() {
         assertEquals(true, scramble("rkqodlw", "world"));
-        assertEquals(true, scramble("cedewaraaossoqqyt", "codewars"));
+        assertEquals(true, scramble("cedewaraaossoqqyt", "test"));
         assertEquals(false, scramble("katas", "steak"));
     }
 

@@ -1,6 +1,5 @@
 package string;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -67,7 +66,7 @@ public class DeleteCharactersMakeFancyString {
 
     @Test
     public void test() {
-        assertEquals("leetcode", makeFancyString("leeeetcode"));
+        assertEquals("test", makeFancyString("leeeetcode"));
     }
 
 }

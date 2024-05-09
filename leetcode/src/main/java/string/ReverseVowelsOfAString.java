@@ -1,6 +1,5 @@
 package string;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -39,7 +38,7 @@ public class ReverseVowelsOfAString {
     @Test
     public void test() {
         assertEquals("holle", reverseVowels("hello"));
-        assertEquals("leotcede", reverseVowels("leetcode"));
+        assertEquals("leotcede", reverseVowels("test"));
         assertEquals("Aa", reverseVowels("aA"));
     }
 

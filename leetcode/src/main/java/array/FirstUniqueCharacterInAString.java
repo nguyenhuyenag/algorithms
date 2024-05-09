@@ -53,7 +53,7 @@ public class FirstUniqueCharacterInAString {
 
     @Test
     public void test() {
-        assertEquals(0, firstUniqChar("leetcode"));
+        assertEquals(0, firstUniqChar("test"));
         assertEquals(2, firstUniqChar("loveleetcode"));
         assertEquals(-1, firstUniqChar("aabb"));
     }

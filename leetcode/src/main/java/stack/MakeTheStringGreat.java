@@ -47,7 +47,7 @@ public class MakeTheStringGreat {
 
     @Test
     public void test() {
-        assertEquals("leetcode", makeGood("leEeetcode"));
+        assertEquals("test", makeGood("leEeetcode"));
         assertEquals("", makeGood("abBAcC"));
     }
 

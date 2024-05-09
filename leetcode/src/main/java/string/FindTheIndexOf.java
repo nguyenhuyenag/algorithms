@@ -45,7 +45,7 @@ public class FindTheIndexOf {
         assertEquals(0, strStr("a", "a"));
         assertEquals(2, strStr("hello", "ll"));
         assertEquals(0, strStr("sadbutsad", "sad"));
-        assertEquals(-1, strStr("leetcode", "leeto"));
+        assertEquals(-1, strStr("test", "leeto"));
     }
 
 }

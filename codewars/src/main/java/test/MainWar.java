@@ -1,13 +1,6 @@
-package codewars;
+package test;
 
 import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
-import java.util.PriorityQueue;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  *
