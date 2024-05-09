@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 /**
  * https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
  *
- * Cho mảng đã sắp xếp, trả về mảng chứa 2 vị trí mà giá trị ở đó bằng tới x
+ * Cho mảng đã sắp xếp, trả về mảng chứa 2 vị trí mà giá trị ở đó bằng với x
  * Nếu không tồn tại thì trả về [-1, -1]
  */
 public class FindFirstandLastPositionOfElementInSortedArray {
