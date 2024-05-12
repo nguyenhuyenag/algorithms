@@ -1,4 +1,4 @@
-package incomplete;
+package stack;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -47,22 +47,6 @@ public class ClumsyFactorial {
         return stack.stream().mapToInt(a -> a).sum();
     }
 
-    public int clumsy_OK(int n) {
-        LinkedList<String> listOp = new LinkedList<>();
-        Collections.addAll(listOp, "*", "/", "+", "-");
-        StringBuilder result = new StringBuilder();
-        for (int i = n; i >= 1; i--) {
-            if (result.isEmpty()) {
-                result.append(i);
-            } else {
-                String op = listOp.poll();
-                result.append(op).append(i);
-                listOp.addLast(op);
-            }
-        }
-        return calculate(result.toString());
-    }
-
     public int clumsy(int n) {
         char[] operators = {'*', '/', '+', '-'};
         StringBuilder result = new StringBuilder();
@@ -85,5 +69,21 @@ public class ClumsyFactorial {
         assertEquals(7, clumsy(4));
         assertEquals(12, clumsy(10));
     }
+
+//        public int clumsy_OK(int n) {
+//        LinkedList<String> listOp = new LinkedList<>();
+//        Collections.addAll(listOp, "*", "/", "+", "-");
+//        StringBuilder result = new StringBuilder();
+//        for (int i = n; i >= 1; i--) {
+//            if (result.isEmpty()) {
+//                result.append(i);
+//            } else {
+//                String op = listOp.poll();
+//                result.append(op).append(i);
+//                listOp.addLast(op);
+//            }
+//        }
+//        return calculate(result.toString());
+//    }
 
 }

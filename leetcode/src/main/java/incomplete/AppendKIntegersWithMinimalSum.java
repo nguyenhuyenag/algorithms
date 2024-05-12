@@ -48,8 +48,8 @@ public class AppendKIntegersWithMinimalSum {
     @Test
     public void test() {
         // assertEquals(25, minimalKSum(new int[]{5, 6}, 6));
-        // assertEquals(5, minimalKSum(new int[]{1, 4, 25, 10, 25}, 2));
-        assertEquals(5, minimalKSum(new int[]{44}, 91834962)); // TLE
+        assertEquals(5, minimalKSum(new int[]{1, 4, 25, 10, 25}, 2));
+        // assertEquals(5, minimalKSum(new int[]{44}, 91834962)); // TLE
     }
 
 //        public long minimalKSum_OK(int[] nums, int k) {
