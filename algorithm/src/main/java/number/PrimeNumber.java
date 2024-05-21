@@ -18,7 +18,7 @@ public class PrimeNumber {
     }
 
     // Tìm số nguyên tố trong đoạn (a, b)
-    public void sieveOfEratosthenes(int n) {
+    public static void sieveOfEratosthenes(int n) {
         boolean[] prime = new boolean[n + 1];
         Arrays.fill(prime, true);
         // Đánh dấu các số không phải số nguyên tố
@@ -57,6 +57,8 @@ public class PrimeNumber {
     }
 
     public static void main(String[] args) {
+        // primeCheck(19);
+        // sieveOfEratosthenes(10);
         primeFactorization(34);
     }
 
