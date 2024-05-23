@@ -42,7 +42,7 @@ public class FractionToRecurringDecimal {
 
         // Theo dõi số dư
         while (remainder > 0) {
-            System.out.println("map = " + map);
+            // System.out.println("map = " + map);
             if (map.containsKey(remainder)) {
                 int pos = map.get(remainder);
                 result.insert(pos, "(");

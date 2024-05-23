@@ -10,7 +10,7 @@ public class MainLeet {
 
     @Test
     public void test() {
-
+        System.out.println('Z' - 'A');
     }
 
 }
