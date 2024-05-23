@@ -9,9 +9,12 @@ from typing import List
 
         n = 3^0 + 3^1 + ... +
 """
+
+
 class Solution(unittest.TestCase):
 
     def checkPowersOfThree(self, n: int) -> bool:
+        # 1 = 3^0
         if n == 1: return True
         if n % 3 == 2: return False
         return self.checkPowersOfThree(n // 3)
