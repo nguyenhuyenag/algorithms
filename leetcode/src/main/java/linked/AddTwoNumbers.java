@@ -5,8 +5,17 @@ import util.LinkedListTestUtils;
 
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 
-/**
- * https://leetcode.com/problems/add-two-numbers/
+/*
+    https://leetcode.com/problems/add-two-numbers/
+
+    Hai số nguyên đại diện bởi 2 danh sách liên kết (đọc từ phải sang trái). Cộng 2 danh sách liên kết
+
+    Ví dụ: 342 + 465 = 807
+
+        2  4  3
+        5  6  4
+       ---------
+        7  0  8
  */
 public class AddTwoNumbers {
 

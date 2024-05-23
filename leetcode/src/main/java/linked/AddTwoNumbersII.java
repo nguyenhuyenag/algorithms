@@ -13,6 +13,8 @@ import static util.LinkedListTestUtils.*;
 
     Công 2 danh sách liên kết
 
+        7243 + 564 = 7807
+
         7  2  4  3
            5  6  4
        ------------
