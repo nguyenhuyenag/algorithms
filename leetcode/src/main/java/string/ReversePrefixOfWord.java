@@ -5,11 +5,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * https://leetcode.com/problems/reverse-prefix-of-word/
- *
- * Cho chuỗi s và ký tự ch, đảo chuỗi trong đoạn 0 -> vị trí của ch.
- * Nếu ch không tồn tại trong s thì không làm gì.
+/*
+    https://leetcode.com/problems/reverse-prefix-of-word/
+
+    Cho chuỗi s và ký tự ch, đảo chuỗi trong đoạn 0 -> vị trí của ch.
+    Nếu ch không tồn tại trong s thì không làm gì.
  */
 public class ReversePrefixOfWord {
 

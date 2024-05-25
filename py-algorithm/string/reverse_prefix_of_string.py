@@ -1,9 +1,11 @@
 import unittest
 
 """
+    https://leetcode.com/problems/reverse-prefix-of-word/
 
+    Cho chuỗi s và ký tự ch, đảo chuỗi trong đoạn 0 -> vị trí của ch.
+    Nếu ch không tồn tại trong s thì không làm gì.
 """
-
 class Solution(unittest.TestCase):
 
     def reversePrefix(self, word: str, ch: str) -> str:
