@@ -45,7 +45,11 @@ public class ReversePrefixOfWord {
             return word;
         }
         StringBuilder result = new StringBuilder(word.substring(0, index + 1));
-        return result.reverse().append(word.substring(index + 1)).toString();
+        // @formatter:off
+        return result.reverse()
+                .append(word.substring(index + 1))
+                .toString();
+        // @formatter:on
     }
 
     @Test
