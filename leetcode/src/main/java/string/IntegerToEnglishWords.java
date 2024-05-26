@@ -35,21 +35,21 @@ public class IntegerToEnglishWords {
 //	}
 
 	public String helper(int n) {
-		StringJoiner sj = new StringJoiner(" ");
+		StringJoiner joiner = new StringJoiner(" ");
 		if (n >= 1_000_000_000) {
-			sj.add(helper(n / 1_000_000_000)).add("Billion").add(helper(n % 1_000_000_000));
+			joiner.add(helper(n / 1_000_000_000)).add("Billion").add(helper(n % 1_000_000_000));
 		} else if (n >= 1_000_000) {
-			sj.add(helper(n / 1_000_000)).add("Million").add(helper(n % 1_000_000));
+			joiner.add(helper(n / 1_000_000)).add("Million").add(helper(n % 1_000_000));
 		} else if (n >= 1000) {
-			sj.add(helper(n / 1000)).add("Thousand").add(helper(n % 1000));
+			joiner.add(helper(n / 1000)).add("Thousand").add(helper(n % 1000));
 		} else if (n >= 100) {
-			sj.add(helper(n / 100)).add("Hundred").add(helper(n % 100));
+			joiner.add(helper(n / 100)).add("Hundred").add(helper(n % 100));
 		} else if (n >= 20) {
-			sj.add(tens[n / 10]).add(helper(n % 10));
+			joiner.add(tens[n / 10]).add(helper(n % 10));
 		} else {
-			sj.add(ones[n]);
+			joiner.add(ones[n]);
 		}
-		return sj.toString().trim();
+		return joiner.toString().trim();
 	}
 
 	public String numberToWords(int num) {
