@@ -11,9 +11,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * https://www.codewars.com/kata/5a651865fd56cb55760000e0/
  *
- * Một số gọi là leader nếu nó > tổng các phần tử bên phải nó
+ * Một số gọi là leader nếu nó > tổng các phần tử bên phải nó.
  *
- * Tìm tất cả các số leader trong mảng
+ * Tìm tất cả các số leader trong mảng.
  */
 public class ArrayLeader {
 

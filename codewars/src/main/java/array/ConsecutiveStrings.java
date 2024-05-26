@@ -19,16 +19,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ConsecutiveStrings {
 
     public String longestConsec(String[] arr, int k) {
-        String maxStr = "";
+        String max = "";
         int len = arr.length;
         if (k <= 0 || k > len) return "";
         for (int i = 0; i <= len - k; i++) {
             String str = String.join("", Arrays.copyOfRange(arr, i, i + k));
-            if (str.length() > maxStr.length()) {
-                maxStr = str;
+            if (str.length() > max.length()) {
+                max = str;
             }
         }
-        return maxStr;
+        return max;
     }
 
     public void testing(String actual, String expected) {
