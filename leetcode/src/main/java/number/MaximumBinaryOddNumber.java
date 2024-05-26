@@ -7,23 +7,31 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * https://leetcode.com/problems/maximum-odd-binary-number/
- *
- * Cho số nguyên dạng nhị phân, tìm số nguyên lẻ lớn nhất từ dãy nhị phân này.
- *
- * Ý tưởng:
- *      (1) Số lớn nhất khi tất cả các bit 1 ở trên đầu
- *      (2) Số nguyên lẻ khi biểu diễn nhị phân luôn luôn có một bit 1 ở cuối.
+/*
+    https://leetcode.com/problems/maximum-odd-binary-number/
+
+    Cho số nguyên dạng nhị phân, tìm số nguyên lẻ lớn nhất từ dãy nhị phân này.
+
+    Ý tưởng:
+        - Số lớn nhất khi tất cả các bit 1 ở trên đầu.
+        - Số nguyên lẻ khi biểu diễn nhị phân luôn luôn có một bit 1 ở cuối.
  */
 public class MaximumBinaryOddNumber {
 
-    public String maximumOddBinaryNumber(String s) {
+    public String maximumOddBinaryNumber(String str) {
         StringBuilder result = new StringBuilder();
-        int oneCount = (int) s.chars().filter(c -> c == '1').count();
-        result.append("1".repeat(oneCount - 1));
-        result.append("0".repeat(s.length() - oneCount));
-        result.append("1");
+        // Đếm số bit `1` trong chuỗi
+        int oneCount = (int) str.chars().filter(c -> c == '1').count();
+        // Tạo bit `1`
+        for (int i = 0; i < oneCount - 1; i++) {
+            result.append(1);
+        }
+        // Tạo bit `0`
+        for (int i = 0; i < str.length() - oneCount; i++) {
+            result.append(0);
+        }
+        // Thêm bit `1` ở cuối
+        result.append(1);
         return result.toString();
     }
 
