@@ -11,7 +11,7 @@ import static util.LinkedListTestUtils.*;
 /*
     https://leetcode.com/problems/add-two-numbers-ii/
 
-    Công 2 danh sách liên kết
+    Cộng 2 danh sách liên kết đại diện cho 2 số nguyên (từ trái sang phải).
 
         7243 + 564 = 7807
 

@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 /*
     https://leetcode.com/problems/add-two-numbers/
 
-    Hai số nguyên đại diện bởi 2 danh sách liên kết (đọc từ phải sang trái). Cộng 2 danh sách liên kết
+    Cộng 2 danh sách liên kết đại diện cho 2 số nguyên (từ phải sang trái).
 
     Ví dụ: 342 + 465 = 807
 
