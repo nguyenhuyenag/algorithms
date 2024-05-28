@@ -8,7 +8,7 @@ import java.util.Map;
 
         m − 1: Giảm m đi 1 để đưa giá trị về 0-based index.
 
-        %n: Thực hiện phép toán modulo với n để đảm bảo giá trị luôn nằm trong khoảng từ 0 đến n-1
+        `% n`: Thực hiện phép toán modulo với n để đảm bảo giá trị luôn nằm trong khoảng từ 0 đến n-1
             (giống như quay lại đầu danh sách nếu vượt quá n).
 
         +1: Chuyển kết quả từ 0-based index về lại 1-based index.
