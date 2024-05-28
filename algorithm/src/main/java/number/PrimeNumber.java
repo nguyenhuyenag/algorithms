@@ -1,8 +1,6 @@
 package number;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * https://vnoi.info/wiki/algo/algebra/primality_check.md
@@ -43,7 +41,7 @@ public class PrimeNumber {
 
     // Phân tích một số ra thừa số nguyên tố
     public static void primeFactorization(int n) {
-        List<Integer> result = new ArrayList<>();
+        Set<Integer> result = new HashSet<>();
         for (int i = 2; i * i <= n; ++i) {
             while (n % i == 0) {
                 result.add(i);
