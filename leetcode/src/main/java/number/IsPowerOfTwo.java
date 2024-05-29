@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class IsPowerOfTwo {
 
-    // Một số có dạng 2^n khi biểu diễn nhị phân sẽ có đúng một bit `1`
+    // Một số có dạng 2^k khi biểu diễn nhị phân sẽ có đúng một bit `1` (dạng 1000.....0)
     public boolean isPowerOfTwo_OK(int n) {
         return n > 0 && Integer.bitCount(n) == 1;
     }
