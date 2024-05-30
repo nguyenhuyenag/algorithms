@@ -1,6 +1,5 @@
 package number;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -15,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * Cho số nguyên dương n. Tìm tất cả phân số thuộc (0, n) có mẫu số <= n.
  */
-public class SimplityFractions {
+public class SimplifiedFractions {
 
     // a = b * x + y -> gcd(a,b) = gcd(b, a % b)
     public int gcd(int a, int b) {
@@ -26,10 +25,10 @@ public class SimplityFractions {
         Set<String> result = new HashSet<>();
         for (int i = 1; i <= n - 1; i++) { // Chỉ cần chạy đến n - 1
             for (int j = i + 1; j <= n; j++) { // Chạy đến n
-                int gcd = gcd(i, j);
-                if (gcd == 1) {
-                    String f = i + "/" + j;
-                    result.add(f);
+                // int gcd = gcd(i, j);
+                if (gcd(i, j) == 1) {
+                    // String f = i + "/" + j;
+                    result.add(i + "/" + j);
                 }
             }
         }

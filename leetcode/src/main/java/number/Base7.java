@@ -24,7 +24,7 @@ public class Base7 {
             result.append(m % 7);
             m /= 7;
         }
-        return (n < 0 ? "-" : "") + result.reverse().toString();
+        return (n < 0 ? "-" : "") + result.reverse(); // .toString();
     }
 
     @Test

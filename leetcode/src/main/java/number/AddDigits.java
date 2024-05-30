@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 /**
  * https://leetcode.com/problems/add-digits/
  *
- * Cộng các chữ chữ chữ số cho đến khi chỉ còn 1 chữ số
+ * Cộng các chữ số cho đến khi chỉ còn một chữ số.
  *
  * Xem them: codewars > SumOfDigits
  */
