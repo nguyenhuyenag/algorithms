@@ -1,17 +1,17 @@
 package map;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * https://leetcode.com/problems/single-number/
  *
- * Tìm số xuất hiện duy nhất trong mảng
+ * Cho mảng số nguyên chứa các số xuất hiện 2 lần và một số nguyên xuất hiện 1 lần.
+ * Tìm số xuất hiện 1 lần đó.
  */
 public class SingleNumber {
 
@@ -26,7 +26,11 @@ public class SingleNumber {
         return -1;
     }
 
-    // If a = b -> a^b = 1
+    /*
+        Nếu a = b -> a^b = 1.
+
+        Cách này chỉ áp dụng cho bài toán xuất hiện đúng 2 lần.
+     */
     public int singleNumber(int[] nums) {
         int result = nums[0];
         for (int i = 1; i < nums.length; i++) {

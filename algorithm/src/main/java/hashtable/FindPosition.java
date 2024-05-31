@@ -58,6 +58,5 @@ public class FindPosition {
 
         String result = findPosition(table, m);
         System.out.println("Vị trí tương ứng của x khi m = " + m + " là: " + result);
-
     }
 }

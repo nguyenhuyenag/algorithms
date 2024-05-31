@@ -1,4 +1,4 @@
-package string;
+package hashtable;
 
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
@@ -13,7 +13,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 // Đếm số lần xuất hiện của ký tự trong chuỗi
-public class CountChar {
+public class Counter {
 
 	public static Map<Character, Long> findTheMostFrequentByMap(String input) {
 		Map<Character, Long> map = new HashMap<>();
@@ -26,7 +26,7 @@ public class CountChar {
 	public static Map<Character, Long> findTheMostFrequentByMap2(String input) {
 		Map<Character, Long> map = new HashMap<>();
 		for (char val : input.toCharArray()) {
-			map.put(val, map.getOrDefault(val, 0l) + 1);
+			map.put(val, map.getOrDefault(val, 0L) + 1);
 		}
 		return map;
 	}
