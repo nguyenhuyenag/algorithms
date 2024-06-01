@@ -7,6 +7,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /*
     https://leetcode.com/problems/score-of-a-string/
+
+    Cho chuỗi s, tính tổng giá trị:
+
+        A = |s0 - s1| + |s1 - s2| + ...
+
+    Trong đó si là giá trị ASCII của vị trị i.
  */
 public class ScoreOfAString {
 

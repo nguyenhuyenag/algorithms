@@ -33,3 +33,4 @@ leetcode/leetcode.iml
 .idea/misc.xml
 .idea/modules.xml
 *.pyc
+.idea/inspectionProfiles/profiles_settings.xml
