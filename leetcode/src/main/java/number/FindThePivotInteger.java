@@ -1,16 +1,15 @@
 package number;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/**
- * https://leetcode.com/problems/find-the-pivot-integer/
- *
- * Số pivot là số chia đoạn [1,n] thành 2 đoạn thỏa mãn sum([1,x]) = sum([x,n])
- *
- * Cho số n, tìm số pivot. Nếu không có trả về -1.
+/*
+    https://leetcode.com/problems/find-the-pivot-integer/
+
+    Số pivot là số chia đoạn [1,n] thành 2 đoạn sao cho sum([1,x]) = sum([x,n])
+
+    Cho số n, tìm số pivot. Nếu không có thì trả về -1.
  */
 public class FindThePivotInteger {
 

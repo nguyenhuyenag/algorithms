@@ -7,10 +7,10 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * https://leetcode.com/problems/count-primes/
- * <p>
- * Đếm các số nguyên tố nhỏ hơn n
+/*
+    https://leetcode.com/problems/count-primes/
+
+    Đếm các số nguyên tố nhỏ hơn n.
  */
 public class CountPrime {
 
