@@ -17,11 +17,12 @@ class Solution(unittest.TestCase):
 
     def singleNumber_OK(self, nums: List[int]) -> int:
         counter = Counter(nums)
-        for k, v in counter.items():
-            if v == 1: return k
+        for key, value in counter.items():
+            if value == 1: return key
 
         return -1
 
+    # Cách này chỉ đúng nếu các số khác xuất hiện đúng 2 lần, số cần tìm xuất hiện 1 lần.
     def singleNumber(self, nums: List[int]) -> int:
         result = nums[0]
         for i in range(1, len(nums)):

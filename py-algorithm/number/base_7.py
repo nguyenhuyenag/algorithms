@@ -4,7 +4,7 @@ import numpy as np
 """
     https://leetcode.com/problems/base-7/
 
-    Biểu diễn số n dưới dạng cơ số 7
+    Biểu diễn số n dưới dạng cơ số 7.
 """
 class Solution(unittest.TestCase):
 

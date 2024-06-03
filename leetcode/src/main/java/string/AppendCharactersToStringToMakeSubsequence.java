@@ -13,7 +13,9 @@ import static org.junit.jupiter.api.Assertions.*;
     Cho 2 chuỗi s1 và s2. Trả về số ký tự tối thiểu cần được thêm vào cuối của s1 để
     s2 trở thành một dãy con của s1.
 
-    Chuỗi s2 là con của s1 nếu ta có một vài ký tự trong s1 (không thay đổi thứ tự) sẽ thu được s2.
+    Chuỗi s2 là con của s1 nếu ta xóa một vài ký tự trong s1 (không thay đổi thứ tự) sẽ thu được s2.
+
+    Xem thêm: leetcode > IsSubsequence.java
  */
 public class AppendCharactersToStringToMakeSubsequence {
 

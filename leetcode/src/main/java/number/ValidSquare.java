@@ -9,13 +9,9 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.*;
 
 /*
-    https://leetcode.com/problems/valid-square/solutions/
+    https://leetcode.com/problems/valid-square/
 
     Cho tọa độ của 4 điểm, kiểm xem chúng có tạo được hình vuông hay không?
-
-            A (p1)      B (p2)
-
-            D (p4)      C (p3)
  */
 public class ValidSquare {
 
