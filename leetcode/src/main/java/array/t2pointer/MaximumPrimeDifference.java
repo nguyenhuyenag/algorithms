@@ -1,22 +1,21 @@
 package array.t2pointer;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/**
- * https://leetcode.com/problems/maximum-prime-difference/
- *
- * Cho mảng số nguyên. Giả sử arr[i], arr[j] là 2 số nguyên tố. Tìm giá trị lớn nhất của |arr[i] - arr[j]|.
- *
- * Ví dụ: nums = [4,2,9,5,3] -> Kết quả là 3
- *
- * Vì nums[1], nums[3], và nums[4] là số nguyên tố. Nên |4 - 1| = 3 là GTLN.
+/*
+    https://leetcode.com/problems/maximum-prime-difference/
+
+    Cho mảng số nguyên A. Giả sử Ai, Aj là thứ tự của 2 số nguyên tố. Tìm giá trị lớn nhất của |Ai - Aj|.
+
+    Ví dụ: nums = [4, 2, 9, 5, 3] -> Kết quả là 3.
+
+        => Vì A1, A3, và A4 là số nguyên tố. Nên kết quả là |4 - 1| = 3 là giá trị lớn nhất cần tìm.
  */
 public class MaximumPrimeDifference {
 
-    public boolean primeCheck(int n) {
+    public boolean isPrime(int n) {
         if (n < 2) return false;
         for (int i = 2; i * i <= n; ++i) {
             if (n % i == 0) return false;
@@ -28,9 +27,9 @@ public class MaximumPrimeDifference {
         int n = nums.length;
         int l = 0, r = n - 1;
         while (l <= r) {
-            boolean leftCheck = primeCheck(nums[l]);
+            boolean leftCheck = isPrime(nums[l]);
             // Tìm được cả 2 vị trí cùng là SNT
-            if (leftCheck && primeCheck(nums[r])) {
+            if (leftCheck && isPrime(nums[r])) {
                 return r - l;
             } else if (!leftCheck) { // Số bên trái không phải SNT -> tăng l
                 l++;
