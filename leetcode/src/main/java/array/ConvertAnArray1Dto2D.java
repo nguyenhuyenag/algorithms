@@ -4,13 +4,13 @@ import java.util.*;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * https://leetcode.com/problems/convert-an-array-into-a-2d-array-with-conditions/
- *
- * Chia một mảng thành các mảng con sao cho các phần tử trong các mảng con không
- * trùng nhau [1,3,4,1,2,3,1] -> [[1,3,4,2],[1,3],[1]]
- *
- * Note: Số lượng mảng con tối đa = max frquency
+/*
+    https://leetcode.com/problems/convert-an-array-into-a-2d-array-with-conditions/
+
+    Chia một mảng thành các mảng con sao cho các phần tử trong các mảng con không
+    trùng nhau [1,3,4,1,2,3,1] -> [[1,3,4,2],[1,3],[1]]
+
+    Note: Số lượng mảng con tối đa = max_frequency
  */
 public class ConvertAnArray1Dto2D {
 
@@ -23,7 +23,7 @@ public class ConvertAnArray1Dto2D {
             counter.put(num, counter.getOrDefault(num, 0) + 1);
         }
 
-        // Số lượng mảng con tối đa = max frquency
+        // Số lượng mảng con tối đa = max_frequency
         int max_frequency = Collections.max(counter.values());
 
         for (int i = 0; i < max_frequency; i++) {

@@ -8,10 +8,10 @@ import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * https://leetcode.com/problems/find-all-duplicates-in-an-array/
- *
- * Tìm các phần tử xuất hiện 2 lần trong mảng
+/*
+    https://leetcode.com/problems/find-all-duplicates-in-an-array/
+
+    Tìm các phần tử xuất hiện 2 lần trong mảng.
  */
 public class FindAllDuptilcatesInArray {
 

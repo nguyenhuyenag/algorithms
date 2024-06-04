@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-/**
- * https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
- *
- * Tìm 2 số i <= j sao cho arr[j] - arr[i] lớn nhất. Trả về giá trị lớn nhất đó
+/*
+    https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+
+    Tìm 2 số i <= j sao cho Aj - Ai lớn nhất. Trả về giá trị lớn nhất đó.
  */
 public class BestTimeToBuyAndSaleStock {
 
