@@ -1,6 +1,5 @@
 package array;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collection;
@@ -8,12 +7,14 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/**
- * https://leetcode.com/problems/count-elements-with-maximum-frequency/
- *
- * Tính tổng số lần xuất hiện nhiều nhất của phần tử trong mảng
+/*
+    https://leetcode.com/problems/count-elements-with-maximum-frequency/
+
+    Cho mảng số nguyên, tính tổng số lần xuất hiện nhiều nhất của phần tử.
+
+    Ví dụ: arr = [1, 2, 2, 3, 1, 4] -> Phần tử xuất hiện nhiều nhất là {1=2, 2=2} -> 2 + 2 = 4
  */
 public class CountElementsWithMaximumFrequency {
 
@@ -30,18 +31,7 @@ public class CountElementsWithMaximumFrequency {
                 .sum();
     }
 
-    public int maxFrequencyElements_2(int[] nums) {
-        HashMap<Integer, Integer> counter = new HashMap<>();
-        for (int num : nums) {
-            counter.put(num, counter.getOrDefault(num, 0) + 1);
-        }
-        Collection<Integer> values = counter.values();
-        int maxFrequency = Collections.max(values);
-        int countFrequency = Collections.frequency(values, maxFrequency);
-        return maxFrequency * countFrequency;
-    }
-
-    public int maxFrequencyElements(int[] nums) {
+    public int maxFrequencyElements_best(int[] nums) {
         int maxFrequency = 0;
         Map<Integer, Integer> counter = new HashMap<>();
         for (int num : nums) {
@@ -51,6 +41,21 @@ public class CountElementsWithMaximumFrequency {
         }
         Collection<Integer> values = counter.values();
         int countFrequency = Collections.frequency(values, maxFrequency);
+        return maxFrequency * countFrequency;
+    }
+
+    public int maxFrequencyElements(int[] nums) {
+        HashMap<Integer, Integer> counter = new HashMap<>();
+        for (int num : nums) {
+            counter.put(num, counter.getOrDefault(num, 0) + 1);
+        }
+        Collection<Integer> values = counter.values();
+        // Tìm giá trị lớn nhất của số lần xuất hiện
+        int maxFrequency = Collections.max(values);
+
+        // Đếm số lần xuất hiện của maxFrequency
+        int countFrequency = Collections.frequency(values, maxFrequency);
+
         return maxFrequency * countFrequency;
     }
 
