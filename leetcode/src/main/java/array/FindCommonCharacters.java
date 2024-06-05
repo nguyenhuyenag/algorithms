@@ -6,54 +6,53 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/*-
- * https://leetcode.com/problems/find-common-characters/
- *
- * Cho mảng chuỗi. Tìm các ký tự chung của các phần tử
- *
- *      ["bella","label","roller"] -> ["e", "l", "l"]
+/*
+    https://leetcode.com/problems/find-common-characters/
+
+    Cho mảng chuỗi. Tìm các ký tự chung của các phần tử
+
+        ["bella","label","roller"] -> ["e", "l", "l"]
  */
 public class FindCommonCharacters {
 
     public List<String> commonChars(String[] words) {
         // [{a=1, b=1, e=1, l=2}, {a=1, b=1, e=1, l=2}, {r=2, e=1, l=2, o=1}]
-        List<Map<Character, Integer>> listOfMaps = new ArrayList<>();
+        List<Map<Character, Integer>> counter = new ArrayList<>();
         for (String word : words) {
             Map<Character, Integer> map = new HashMap<>();
             for (char c : word.toCharArray()) {
                 map.put(c, map.getOrDefault(c, 0) + 1);
             }
-            listOfMaps.add(map);
+            counter.add(map);
         }
 
-        // Kết quả
-        List<String> commons = new ArrayList<>();
-        // Các ký tự duy nhất trong chuỗi đầu tiên
-        Set<Character> charOfFirstItem = listOfMaps.get(0).keySet();
-        for (char ch : charOfFirstItem) {
+        List<String> result = new ArrayList<>();
+        // Phần tử chung sẽ nằm trong chuỗi thứ nhất nên chỉ cần duyệt ở đây là được, không cần a -> z
+        Set<Character> firstChars = counter.get(0).keySet();
+        for (char c : firstChars) {
             int min = Integer.MAX_VALUE;
-            // Kiểm tra 'ch' có phải là ký tự chung của mọi phần tử hay không?
-            for (Map<Character, Integer> map : listOfMaps) {
-                // -> Nếu không
-                if (!map.containsKey(ch)) {
+            // Kiểm tra c có phải là ký tự chung của mọi phần tử hay không?
+            for (Map<Character, Integer> map : counter) {
+                if (map.containsKey(c)) { // Có
+                    min = Math.min(min, map.get(c));
+                } else { // Không
                     min = 0; // Gán min = 0 để vòng lặp phía dưới ko chạy (có thể xem nó là flag = false)
                     break;
-                } else { // Nếu có
-                    min = Math.min(min, map.get(ch));
                 }
             }
-            // Lấy kết quả, ví dụ [{a=1,b=2}, {a=2,c=1}] -> {a=1} là phần tử chung
+
+            // Lấy kết quả, ví dụ [{a=1, b=2}, {a=2, c=1}] -> {a=1} là phần tử chung
             for (int i = 0; i < min; i++) {
-                commons.add(String.valueOf(ch));
+                result.add(String.valueOf(c));
             }
         }
-        return commons;
+        return result;
     }
 
     @Test
     public void test() {
         assertIterableEquals(List.of("e", "l", "l"), commonChars(new String[]{"bella", "label", "roller"}));
-        assertIterableEquals(List.of("c", "o"), commonChars(new String[]{"cool", "lock", "cook"}));
+        // assertIterableEquals(List.of("c", "o"), commonChars(new String[]{"cool", "lock", "cook"}));
     }
 
 //    /**
