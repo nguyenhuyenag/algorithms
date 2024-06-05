@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 
 /*
-    https://leetcode.com/problems/beautiful-arrangement-ii/
-
-    Cho hai số nguyên n, k. Tạo một mảng các số nguyên dương khác nhau [a0, a1,...,an] sao cho
-    [|a0 - a1|, |a1 - a2|,...,|a(n-1) - an|] chứa đúng k số nguyên khác nhau.
+    https://leetcode.com/problems/maximum-swap/
  */
 public class MainLeet {
 
