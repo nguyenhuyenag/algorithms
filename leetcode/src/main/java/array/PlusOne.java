@@ -8,11 +8,11 @@ import java.util.LinkedList;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /*-
- * https://leetcode.com/problems/plus-one/submissions/1142998791/
- *
- * Cộng 1 vào mảng
- *      [1, 2, 3]   ->  [1, 2, 4]
- *      [9]         ->  [1, 0]
+    https://leetcode.com/problems/plus-one/
+
+    Cộng 1 vào mảng
+          [1, 2, 3]   ->  [1, 2, 4]
+          [9]         ->  [1, 0]
  */
 public class PlusOne {
 
