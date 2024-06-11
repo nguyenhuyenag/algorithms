@@ -6,18 +6,21 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/*-
- * https://leetcode.com/problems/custom-sort-string/
- *
- * Cho 2 chuỗi s1 (các ký tự là duy nhất), s2. Sắp xếp lại s2 theo thứ tự các ký tự trong s1
- *
- *      s1 = "cba",   s2 = "abcd"  ->  "cbad"
- *
- *      s1 = "bcafg", s2 = "abcd"  ->  "bcad"
+/*
+    https://leetcode.com/problems/custom-sort-string/
+
+    Cho hai chuỗi s1 (các ký tự là duy nhất) và s2. Sắp xếp lại s2 theo thứ tự các ký tự trong s1
+
+        s1 = "cba",   s2 = "abcd"  ->  "cbad"
+
+        s1 = "bcafg", s2 = "abcd"  ->  "bcad"
+
+    Xem thêm: leetcode > RelativeSortArray.java
  */
 public class CustomSortString {
 
     public String customSortString(String order, String s) {
+        //
         Map<Character, Integer> iMap = new HashMap<>();
         for (int i = 0; i < order.length(); i++) {
             iMap.put(order.charAt(i), i);
