@@ -11,7 +11,8 @@ import java.util.*;
  */
 public class LietKeHoanVi {
 
-    private static void permute(List<List<Integer>> result, List<Integer> currentList, int start, int end) {
+    private static void permute(List<List<Integer>> result,
+                                List<Integer> currentList, int start, int end) {
         if (start == end) {
             result.add(currentList);
         } else {
@@ -24,10 +25,13 @@ public class LietKeHoanVi {
     }
 
     public static void permuteOfList() {
+        List<Integer> input = Arrays.asList(1, 2, 3, 4);
+
         List<List<Integer>> result = new ArrayList<>();
-        List<Integer> input = Arrays.asList(1, 2, 3, 4 ,5);
         permute(result, input, 0, input.size() - 1);
-        System.out.println("Check: " + result.size() + " & " + CombinatoricsUtils.factorial(input.size()));
+
+        System.out.println("Check: " + result.size() + " & "
+                + CombinatoricsUtils.factorial(input.size()));
         System.out.println("result = " + result);
     }
 

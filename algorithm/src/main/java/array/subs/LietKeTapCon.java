@@ -27,7 +27,7 @@ public class LietKeTapCon {
     }
 
     // Function to generate all subsets of an array with a specified size using bitwise operations
-    public static void generateSubsets_2(int[] arr, int k) {
+    public static void generateSubsets_3(int[] arr, int k) {
         int n = arr.length;
         int totalSubsets = 1 << n; // Total number of subsets is 2^n
         for (int i = 0; i < totalSubsets; i++) {
@@ -60,17 +60,16 @@ public class LietKeTapCon {
         }
     }
 
-    public static void generateSubsets_3() {
-        int[] arr = {1, 2, 3};
+    public static void generateSubsets_2(int[] arr) {
         backtrack(arr, 0, 0);
     }
 
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4};
+        int[] arr = {1, 2, 3};
 
-        generateSubsets_1(arr); // Show all
-        // generateSubsets_2(arr, 3); // Chỉ lấy tập con có 3 phần tử
-        // generateSubsets_3(); // Chỉ lấy tập con có 3 phần tử
+        // generateSubsets_1(arr); // Show all
+        generateSubsets_2(arr); // Chỉ lấy tập con có 3 phần tử
+        // generateSubsets_3(arr, 3); // Chỉ lấy tập con có 3 phần tử
     }
 
 }
