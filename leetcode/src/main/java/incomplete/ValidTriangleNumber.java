@@ -9,10 +9,10 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * https://leetcode.com/problems/valid-triangle-number/
- *
- * Đếm số lượng các số bộ 3 cạnh của tam giác trong mảng
+/*
+    https://leetcode.com/problems/valid-triangle-number/
+
+    Đếm số lượng các số bộ 3 cạnh của tam giác trong mảng.
  */
 public class ValidTriangleNumber {
 
@@ -22,24 +22,22 @@ public class ValidTriangleNumber {
 
     public int triangleNumber(int[] arr) {
         int count = 0;
-        List<Integer> triangle = new ArrayList<>();
-        int len = arr.length;
-        int totalSubsets = 1 << len;
+        int n = arr.length;
+        int totalSubsets = 1 << n; // 2^n
         for (int i = 0; i < totalSubsets; i++) {
             int bitCount = Integer.bitCount(i);
+            List<Integer> triangle = new ArrayList<>();
             if (bitCount == 3) {
                 // int pointer = 0;
-                for (int j = 0; j < len; j++) {
+                for (int j = 0; j < n; j++) {
                     if ((i & (1 << j)) != 0) {
                         triangle.add(arr[j]);
                     }
                 }
                 if (isTriangle(triangle.get(0), triangle.get(1), triangle.get(2))) {
                     count++;
-                    // System.out.println(Arrays.toString(triangle));
                 }
             }
-            triangle.clear();
         }
         return count;
     }
