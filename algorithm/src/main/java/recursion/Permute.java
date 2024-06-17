@@ -14,14 +14,14 @@ public class Permute {
 				.forEach(System.out::println);
 	}
 
-	private static void permute(List<?> list, int left, int right) {
+	private static void permute(List<?> currentList, int left, int right) {
 		if (left == right) {
-			System.out.println(Arrays.toString(list.toArray()));
+			System.out.println(Arrays.toString(currentList.toArray()));
 		} else {
 			for (int i = left; i <= right; i++) {
-				Collections.swap(list, left, i);
-				permute(list, left + 1, right);
-				Collections.swap(list, left, i); // backtrack
+				Collections.swap(currentList, left, i);
+				permute(currentList, left + 1, right);
+				Collections.swap(currentList, left, i); // backtrack
 			}
 		}
 	}
