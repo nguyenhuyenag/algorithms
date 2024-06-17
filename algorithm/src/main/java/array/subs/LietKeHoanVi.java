@@ -25,7 +25,7 @@ public class LietKeHoanVi {
 
     public static void permuteOfList() {
         List<List<Integer>> result = new ArrayList<>();
-        List<Integer> input = Arrays.asList(1, 2, 3);
+        List<Integer> input = Arrays.asList(1, 2, 3, 4 ,5);
         permute(result, input, 0, input.size() - 1);
         System.out.println("Check: " + result.size() + " & " + CombinatoricsUtils.factorial(input.size()));
         System.out.println("result = " + result);
