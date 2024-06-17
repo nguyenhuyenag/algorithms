@@ -1,4 +1,5 @@
-arr = [i for i in range(1,26)]
-print(arr)
+import itertools
 
-print(sum(arr))
+l = itertools.permutations('123', r=3)
+
+print(list(l))
