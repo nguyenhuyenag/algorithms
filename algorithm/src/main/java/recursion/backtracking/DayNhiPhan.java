@@ -20,7 +20,7 @@ public class DayNhiPhan {
 		for (int var : arr) {
 			builder.append(var);
 		}
-		System.out.println(builder.toString());
+		System.out.println(builder);
 	}
 
 	public static void backtrack(int i) {

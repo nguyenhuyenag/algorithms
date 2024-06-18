@@ -36,7 +36,7 @@ public class ChiaNhoSo {
 		int[] T = new int[n + 1];
 		X[0] = 1;
 		T[0] = 0;
-		find(n, X, T, 1); // mảng nghiệm tính từ i = 1
+		find(n, X, T, 1); // Mảng nghiệm tính từ i = 1
 	}
 
 }

@@ -1,14 +1,14 @@
 package recursion.backtracking;
 
-/**
- * Cho chuỗi S, liệt kê tất cả các hoán vị của S
+/*
+	Cho chuỗi S, liệt kê tất cả các hoán vị của S.
  */
 public class HoanViChuoi {
 
 	public static void swap(char[] arr, int i, int j) {
-		char c = arr[i];
+		char tmp = arr[i];
 		arr[i] = arr[j];
-		arr[j] = c;
+		arr[j] = tmp;
 	}
 
 	public static void permute(char[] arr, int left, int right) {
