@@ -1,6 +1,6 @@
 package recursion;
 
-public class Recursions {
+public class Recursion {
 
 	public static int sumDigit(int n) {
 		if (n == 0) {
@@ -34,7 +34,7 @@ public class Recursions {
 	private static long count = 0;
 
 	public static int collatzConjecture(int n) {
-		boolean even = n % 2 == 0;
+		boolean even = (n % 2 == 0);
 		System.out.print(n + " ");
 		if (n == 1) {
 			return n;

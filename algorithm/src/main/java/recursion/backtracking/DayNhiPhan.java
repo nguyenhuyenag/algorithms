@@ -10,10 +10,12 @@ package recursion.backtracking;
  * @see Integer#toBinaryString
  * 
  * @see https://i.imgur.com/nQOPC1I.png
+ *
+ * @see QuayLui.java
  */
 public class DayNhiPhan {
 
-	static void output() {
+	public static void output() {
 		StringBuilder builder = new StringBuilder();
 		for (int var : arr) {
 			builder.append(var);
@@ -21,7 +23,7 @@ public class DayNhiPhan {
 		System.out.println(builder.toString());
 	}
 
-	static void backtrack(int i) {
+	public static void backtrack(int i) {
 		for (int j = 0; j <= 1; j++) {	// j = {0, 1}
 			arr[i] = j;
 			if (i == (n - 1)) { 		// Nếu i nằm ở cuối mảng => in ra cấu hình tìm được
@@ -32,11 +34,11 @@ public class DayNhiPhan {
 		}
 	}
 
-	static int n;
-	static int[] arr;
+	public static int n;
+	public static int[] arr;
 
 	public static void main(String[] args) {
-		n = 2;
+		n = 3;
 		arr = new int[n];
 		backtrack(0);
 	}

@@ -44,27 +44,6 @@ public class LietKeTapCon {
         }
     }
 
-    // Function to generate all subsets of an array with a specified size using bitwise operations
-    public static void generateSubsets_3(int[] arr, int k) {
-        int n = arr.length;
-        int totalSubsets = 1 << n; // Total number of subsets is 2^n
-        for (int i = 0; i < totalSubsets; i++) {
-            // Count the number of set bits in the current subset bitmask
-            int count = Integer.bitCount(i);
-            if (count == k) {
-                // Include elements in the subset
-                var subset = new ArrayList<>();
-                for (int j = 0; j < n; j++) {
-                    if ((i & (1 << j)) != 0) {
-                        subset.add(arr[j]);
-                    }
-                }
-                // System.out.print("Subset thứ " + (i + 1) + ": {");
-                System.out.println("subset = " + subset);
-            }
-        }
-    }
-
     // Find all subset using recursive (backtrack)
     public static void backtrack(int[] arr, int start, int end) {
         if (end == arr.length) {
@@ -82,12 +61,33 @@ public class LietKeTapCon {
         backtrack(arr, 0, 0);
     }
 
+    // Function to generate all subsets of an array with a specified size using bitwise operations
+    public static void generateSubsets_3(int[] arr, int k) {
+        int n = arr.length;
+        int totalSubsets = 1 << n; // Total number of subsets is 2^n
+        for (int i = 0; i < totalSubsets; i++) {
+            // Count the number of set bits in the current subset bitmask
+            int bitCount = Integer.bitCount(i);
+            if (bitCount == k) {
+                // Include elements in the subset
+                var subset = new ArrayList<>();
+                for (int j = 0; j < n; j++) {
+                    if ((i & (1 << j)) != 0) {
+                        subset.add(arr[j]);
+                    }
+                }
+                // System.out.print("Subset thứ " + (i + 1) + ": {");
+                System.out.println("subset thứ = " + (i + 1) + ": " + subset);
+            }
+        }
+    }
+
     public static void main(String[] args) {
         int[] arr = {1, 2, 3};
 
-        // generateSubsets_1(arr); // Show all
-        generateSubsets_2(arr); // Chỉ lấy tập con có 3 phần tử
-        // generateSubsets_3(arr, 3); // Chỉ lấy tập con có 3 phần tử
+        generateSubsets_1(arr); // Show all
+        // generateSubsets_2(arr); // Chỉ lấy tập con có 3 phần tử
+        // generateSubsets_3(arr, 3); // Chỉ lấy tập con có k phần tử
     }
 
 }
