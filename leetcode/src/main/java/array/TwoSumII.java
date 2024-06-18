@@ -13,18 +13,19 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
  *
  * https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
  *
- * Tìm 2 phần tử (i != j) có tổng bằng k trong mảng
+ * Tìm 2 phần tử (i != j) có tổng bằng k trong mảng.
  */
 public class TwoSumII {
 
-    public int[] twoSum0(int[] nums, int target) {
+    public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             int n2 = target - nums[i];
             // Nếu n2 có trong map -> lấy ra chỉ số
             if (map.containsKey(n2)) {
                 int j = map.get(n2);
-                return nums[i] >= nums[j] ? new int[]{j + 1, i + 1} : new int[]{i + 1, j + 1};
+                // return nums[i] >= nums[j] ? new int[]{j + 1, i + 1} : new int[]{i + 1, j + 1};
+                return new int[]{Math.min(i, j) + 1, Math.max(i, j) + 1};
             }
             if (!map.containsKey(nums[i])) {
                 map.put(nums[i], i);
@@ -33,7 +34,7 @@ public class TwoSumII {
         return new int[]{0, 0};
     }
 
-    public int[] twoSum(int[] nums, int target) {
+    public int[] twoSum0(int[] nums, int target) {
         int l = 0, r = nums.length - 1;
         while (l < r) {
             int sum = nums[l] + nums[r];

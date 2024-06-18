@@ -9,7 +9,7 @@ import java.util.*;
  *
  * https://leetcode.com/problems/3sum/
  *
- * Tìm ba số có tổng bằng 0
+ * Tìm ba số có tổng bằng 0.
  */
 public class ThreeSum {
 
