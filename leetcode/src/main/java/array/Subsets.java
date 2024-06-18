@@ -7,11 +7,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * https://leetcode.com/problems/subsets/
- * <p>
- * Cho mảng chứa các số nguyên không trùng nhau. In ra các tập con của mảng (tập con cũng không chứa
- * các phần tử trùng) bao gồm cả tập rỗng.
+import static org.junit.jupiter.api.Assertions.*;
+
+/*
+    https://leetcode.com/problems/subsets/
+
+    Cho mảng chứa các số nguyên không trùng nhau. In ra các tập con của mảng
+    (tập con cũng không chứa các phần tử trùng) bao gồm cả tập rỗng.
  */
 public class Subsets {
 
@@ -48,7 +50,7 @@ public class Subsets {
         );
         // @formatter:on
         // subsets.forEach(set -> System.out.println("set = " + Arrays.toString(set.toArray())));
-        Assertions.assertIterableEquals(results, subsets);
+        assertIterableEquals(results, subsets);
     }
 
 }
