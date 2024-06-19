@@ -25,13 +25,12 @@ public class TwoSum {
         // <num, index>
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            int n1 = nums[i];
-            int n2 = k - n1;
-            int j = map.getOrDefault(n2, -1);
+            int n2 = k - nums[i];
+            int j = map.getOrDefault(n2, -1); // Index of n2
             if (j != -1) {
                 return new int[]{i, j};
             }
-            map.put(n1, i);
+            map.put(nums[i], i);
         }
         return new int[]{-1, -1};
     }
@@ -48,28 +47,5 @@ public class TwoSum {
         doTest(new int[]{1, 2}, twoSum(new int[]{3, 2, 4}, 6));
         doTest(new int[]{1, 0}, twoSum(new int[]{2, 7, 11, 15}, 9));
     }
-
-    //    public int[] twoSum(int[] nums, int n) {
-//        int len = nums.length;
-//        int[] arr = new int[2];
-//        for (int i = 0; i < len; i++) {
-//            for (int j = i + 1; j < len; j++) {
-//                if (nums[i] + nums[j] == n) {
-//                    return new int[]{i, j};
-//                }
-//            }
-//        }
-//        return arr;
-//    }
-
-//    public void twoSum(int[] arr, int sum) {
-//        Set<Integer> s = new HashSet<>();
-//        for (int i = 0; i < arr.length; i++) {
-//            int tmp = sum - arr[i];
-//            if (s.contains(tmp) && tmp > 0)
-//                System.out.println("Cap gia tri thoa: (" + arr[i] + ", " + tmp + ")");
-//            s.add(arr[i]);
-//        }
-//    }
 
 }

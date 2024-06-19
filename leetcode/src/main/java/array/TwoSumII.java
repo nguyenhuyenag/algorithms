@@ -8,12 +8,10 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 
-/**
- * Chủ đề: Two pointer
- *
- * https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
- *
- * Tìm 2 phần tử (i != j) có tổng bằng k trong mảng.
+/*
+    Chủ đề: Two pointer
+    https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+    Tìm 2 phần tử (i != j) có tổng bằng k trong mảng.
  */
 public class TwoSumII {
 
@@ -24,8 +22,8 @@ public class TwoSumII {
             // Nếu n2 có trong map -> lấy ra chỉ số
             if (map.containsKey(n2)) {
                 int j = map.get(n2);
-                // return nums[i] >= nums[j] ? new int[]{j + 1, i + 1} : new int[]{i + 1, j + 1};
-                return new int[]{Math.min(i, j) + 1, Math.max(i, j) + 1};
+                // return new int[]{Math.min(i, j) + 1, Math.max(i, j) + 1};
+                return nums[i] >= nums[j] ? new int[]{j + 1, i + 1} : new int[]{i + 1, j + 1};
             }
             if (!map.containsKey(nums[i])) {
                 map.put(nums[i], i);

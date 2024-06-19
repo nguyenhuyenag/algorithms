@@ -5,7 +5,7 @@ import java.util.*;
 public class SplitArray {
 
     /**
-     * Chia 1 mảng thành n mảng con
+     * Chia mảng thành n mảng con
      */
     public static <T> List<List<T>> splitList(List<T> list, int n) {
         List<List<T>> result = new ArrayList<>();
