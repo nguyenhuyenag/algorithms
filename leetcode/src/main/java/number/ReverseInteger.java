@@ -9,18 +9,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class ReverseInteger {
 
-    public long helper(long n) {
-        StringBuilder numStr = new StringBuilder(String.valueOf(n));
-        return Long.parseLong(numStr.reverse().toString());
-    }
-
-    public int reverse_OK(int n) {
-        long result = n > 0 ? helper(n) : -helper(-n);
-        if (result < Integer.MIN_VALUE || result > Integer.MAX_VALUE) {
-            return 0;
-        }
-        return (int) result;
-    }
+//    public long helper(long n) {
+//        StringBuilder numStr = new StringBuilder(String.valueOf(n));
+//        return Long.parseLong(numStr.reverse().toString());
+//    }
+//
+//    public int reverse_OK(int n) {
+//        long result = n > 0 ? helper(n) : -helper(-n);
+//        if (result < Integer.MIN_VALUE || result > Integer.MAX_VALUE) {
+//            return 0;
+//        }
+//        return (int) result;
+//    }
 
 //    public int reverse(int n) {
 //        long result = 0;
@@ -41,21 +41,16 @@ public class ReverseInteger {
         long result = 0;
         int sign = n < 0 ? -1 : 1;
         n = Math.abs(n);
-
         while (n > 0) {
             result = 10 * result + n % 10;
             n /= 10;
         }
-
         result *= sign;
-
         if (result < Integer.MIN_VALUE || result > Integer.MAX_VALUE) {
             return 0;
         }
-
         return (int) result;
     }
-
 
     @Test
     public void test() {

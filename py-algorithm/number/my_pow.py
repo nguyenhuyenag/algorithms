@@ -1,8 +1,9 @@
 import unittest
 
-from typing import List
-
-
+"""
+    https://leetcode.com/problems/powx-n/
+    Viết hàm tính a^n
+"""
 class Solution(unittest.TestCase):
 
     def myPow(self, x: float, n: int) -> float:
