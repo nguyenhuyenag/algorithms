@@ -22,7 +22,7 @@ public class MonotoneIncreasingDigits {
         // Duyệt từ phải qua trái để tìm vị trí không tăng
         for (int i = size - 1; i > 0; i--) {
             // Điểm không tăng
-            if (digits[i - 1] > digits[i]) {
+            if (digits[i] < digits[i - 1]) {
                 indexToModify = i;
                 // Giảm số phía sau xuống 1 đơn vị
                 digits[i - 1]--;

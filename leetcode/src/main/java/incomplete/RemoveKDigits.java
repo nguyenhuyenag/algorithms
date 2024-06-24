@@ -1,6 +1,5 @@
 package incomplete;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Stack;
@@ -10,8 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /*-
     https://leetcode.com/problems/remove-k-digits/
 
-    Cho số nguyên n và số nguyên k. Xóa k chữ số trong n sao cho
-    kết quả cuối cùng là nhỏ nhất
+    Cho số nguyên n và số nguyên k. Xóa k chữ số trong n sao cho kết quả cuối cùng là nhỏ nhất.
  */
 public class RemoveKDigits {
 
@@ -22,6 +20,30 @@ public class RemoveKDigits {
             i++;
         }
         return i == len ? "0" : num.substring(i);
+    }
+
+    public String removeKdigits(String num, int k) {
+        Stack<Character> stack = new Stack<>();
+        for (char c : num.toCharArray()) {
+            while (!stack.isEmpty() && k > 0 && stack.peek() > c) {
+                stack.pop();
+                k--;
+            }
+            stack.push(c);
+        }
+        while (k > 0) {
+            stack.pop();
+            k--;
+        }
+        StringBuilder result = new StringBuilder();
+        stack.forEach(result::append);
+        return removeLeadingZeros(result);
+    }
+
+    @Test
+    public void test() {
+        assertEquals("1219", removeKdigits("1432219", 3));
+        // assertEquals("200", removeKdigits("10200", 1));
     }
 
     public String removeKdigits_TLE(String num, int k) {
@@ -40,25 +62,7 @@ public class RemoveKDigits {
         return removeLeadingZeros(sb);
     }
 
-    public String removeKdigits_OK(String num, int k) {
-        Stack<Character> stack = new Stack<>();
-        for (char digit : num.toCharArray()) {
-            while (k > 0 && !stack.isEmpty() && stack.peek() > digit) {
-                stack.pop();
-                k--;
-            }
-            stack.push(digit);
-        }
-        while (k > 0) {
-            stack.pop();
-            k--;
-        }
-        StringBuilder result = new StringBuilder();
-        stack.forEach(result::append);
-        return removeLeadingZeros(result);
-    }
-
-    public String removeKdigits(String num, int k) {
+    public String removeKdigits_1(String num, int k) {
         int n = num.length();
         if (k >= n) return "0";
         char[] result = new char[n - k];
@@ -81,12 +85,6 @@ public class RemoveKDigits {
             i++;
         }
         return i == len ? "0" : new String(result, i, len - i);
-    }
-
-    @Test
-    public void test() {
-        assertEquals("1219", removeKdigits_TLE("1432219", 3));
-        assertEquals("200", removeKdigits("10200", 1));
     }
 
 }
