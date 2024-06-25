@@ -19,11 +19,13 @@ public class PrimeNumber {
     public static void sieveOfEratosthenes(int n) {
         boolean[] prime = new boolean[n + 1];
         Arrays.fill(prime, true);
+
         // Đánh dấu các số không phải số nguyên tố
         prime[0] = prime[1] = false;
-        // [2 -> sqrt(n)]
+
+        // Duyệt trong khoảng: [2, sqrt(n)]
         for (int p = 2; p * p <= n; p++) { // p = sqrt(n)
-            // Nếu vị trí p vẫn chưa bị đánh dấu, tức p chưa bị đánh đấu là hợp số
+            // Nếu vị trí p vẫn chưa bị đánh dấu (p chưa bị đánh đấu là hợp số)
             if (prime[p]) {
                 // Đánh dấu tất cả các bội số của p (sqrt(n) -> n) là hợp số
                 for (int i = p * p; i <= n; i += p) {
@@ -31,6 +33,7 @@ public class PrimeNumber {
                 }
             }
         }
+
         // Print all prime numbers
         for (int i = 2; i <= n; i++) {
             if (prime[i]) {
@@ -41,7 +44,7 @@ public class PrimeNumber {
 
     // Phân tích một số ra thừa số nguyên tố
     public static void primeFactorization(int n) {
-        Set<Integer> result = new HashSet<>();
+        ArrayList<Integer> result = new ArrayList<>();
         for (int i = 2; i * i <= n; ++i) {
             while (n % i == 0) {
                 result.add(i);
@@ -57,7 +60,7 @@ public class PrimeNumber {
     public static void main(String[] args) {
         // primeCheck(19);
         // sieveOfEratosthenes(10);
-        primeFactorization(34);
+        primeFactorization(11223344);
     }
 
 }
