@@ -2,8 +2,6 @@ package array;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
 public class FillArray {
 
 //    public void fill2D(int[][] matrix, int value) {

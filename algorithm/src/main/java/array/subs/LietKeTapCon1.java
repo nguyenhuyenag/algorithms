@@ -25,15 +25,15 @@ import java.util.Arrays;
         6 = 110 = {2, 3}
         7 = 111 = {1, 2, 3}
  */
-public class LietKeTapCon {
+public class LietKeTapCon1 {
 
     // Print all subsets of given array
     public static void generateSubsets_1(int[] arr) {
-        int n = arr.length;
-        int allMasks = 1 << n; // 2^n subsets
+        int size = arr.length;
+        int allMasks = 1 << size; // 2^size subsets
         for (int bit = 0; bit < allMasks; bit++) {
             var subset = new ArrayList<>();
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; j < size; j++) {
                 // (1 << j) is a number with j-th bit 1 so when we 'and' them with the subset
                 // number we get which numbers are present in the subset and which are not
                 if ((bit & (1 << j)) > 0) {
@@ -83,11 +83,12 @@ public class LietKeTapCon {
     }
 
     public static void main(String[] args) {
+        // @formatter:off
         int[] arr = {1, 2, 3};
-
-        generateSubsets_1(arr); // Show all
-        // generateSubsets_2(arr); // Chỉ lấy tập con có 3 phần tử
-        // generateSubsets_3(arr, 3); // Chỉ lấy tập con có k phần tử
+        generateSubsets_1(arr);         // Show all
+        // generateSubsets_2(arr);      // Chỉ lấy tập con có 3 phần tử
+        // generateSubsets_3(arr, 3);   // Chỉ lấy tập con có k phần tử
+        // @formatter:on
     }
 
 }
