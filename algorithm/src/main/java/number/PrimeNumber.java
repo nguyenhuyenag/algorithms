@@ -44,7 +44,7 @@ public class PrimeNumber {
 
     // Phân tích một số ra thừa số nguyên tố
     public static void primeFactorization(int n) {
-        ArrayList<Integer> result = new ArrayList<>();
+        var result = new ArrayList<>();
         for (int i = 2; i * i <= n; ++i) {
             while (n % i == 0) {
                 result.add(i);
@@ -59,12 +59,8 @@ public class PrimeNumber {
 
     public static void main(String[] args) {
         // primeCheck(19);
-        // sieveOfEratosthenes(10);
-        primeFactorization(11223344);
+        sieveOfEratosthenes(100);
+        // primeFactorization(11223344);
     }
 
 }
-
-
-
-

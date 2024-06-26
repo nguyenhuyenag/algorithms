@@ -25,7 +25,7 @@ public class LietKeHoanVi {
     }
 
     public static void permuteOfList() {
-        List<Integer> input = Arrays.asList(1, 2, 3, 4);
+        List<Integer> input = Arrays.asList(1, 2, 3);
 
         List<List<Integer>> result = new ArrayList<>();
         permute(result, input, 0, input.size() - 1);

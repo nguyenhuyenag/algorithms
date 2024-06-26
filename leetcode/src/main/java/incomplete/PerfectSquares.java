@@ -14,21 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class PerfectSquares {
 
-    public static int numSquares_0(int n) {
-        if (n <= 0) return 0;
-        int[] dp = new int[n + 1];
-        Arrays.fill(dp, Integer.MAX_VALUE);
-        dp[0] = 0;
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j * j <= i; j++) {
-                dp[i] = Math.min(dp[i], dp[i - j * j] + 1);
-                System.out.println(Arrays.toString(dp));
-            }
-        }
-        return dp[n];
-    }
-
-    public static int numSquares_1(int n) {
+    public int numSquares_1(int n) {
         if (n <= 0) return 0;
         int count = 0;
         LinkedList<Integer> queue = new LinkedList<>();
@@ -51,7 +37,7 @@ public class PerfectSquares {
         return -1;
     }
 
-    public static int numSquares(int n) {
+    public int numSquares(int n) {
         Stack<Integer> stack = new Stack<>();
         stack.push(n);
         while (!stack.isEmpty()) {
@@ -72,6 +58,20 @@ public class PerfectSquares {
         assertEquals(3, numSquares(12));
         // assertEquals(2, numSquares(13));
         // assertEquals(2, numSquares(2));
+    }
+
+    public static int numSquares_0(int n) {
+        if (n <= 0) return 0;
+        int[] dp = new int[n + 1];
+        Arrays.fill(dp, Integer.MAX_VALUE);
+        dp[0] = 0;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j * j <= i; j++) {
+                dp[i] = Math.min(dp[i], dp[i - j * j] + 1);
+                System.out.println(Arrays.toString(dp));
+            }
+        }
+        return dp[n];
     }
 
 }

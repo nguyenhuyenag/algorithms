@@ -77,8 +77,4 @@ public class PowerOfX {
         return n == 1;
     }
 
-    public static void main(String[] args) {
-
-    }
-
 }

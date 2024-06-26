@@ -9,14 +9,14 @@ import java.util.stream.Collectors;
 import static org.junit.jupiter.api.Assertions.*;
 
 /*-
- * https://leetcode.com/problems/append-k-integers-with-minimal-sum/
- *
- * Chèn k số nguyên dương (không trùng nhau, không có sẵn trong mảng) vào mảng
- * sao cho tổng các phần tử của mảng nhỏ nhất. Trả về tổng của k số đó.
- *
- * Input: nums = [1, 4, 25, 10, 25], k = 2. Output: 5
- *
- * => Hai số cần chèn là 2, 3.
+    https://leetcode.com/problems/append-k-integers-with-minimal-sum/
+
+    Chèn k số nguyên dương (không trùng nhau, không có sẵn trong mảng) vào mảng
+    sao cho tổng các phần tử của mảng nhỏ nhất. Trả về tổng của k số đó.
+
+    Input: nums = [1, 4, 25, 10, 25], k = 2. Output: 5
+
+    => Hai số cần chèn là 2, 3.
  */
 public class AppendKIntegersWithMinimalSum {
 
@@ -34,7 +34,7 @@ public class AppendKIntegersWithMinimalSum {
         long sum = 0;
         while (k > 0) {
             // num không phải là số ở đỉnh -> nó không có trong mảng
-            if (!pq.isEmpty() && num == pq.peek()) {
+            if (!pq.isEmpty() && pq.peek() == num) {
                 pq.poll();
             } else {
                 sum += num;
@@ -48,8 +48,8 @@ public class AppendKIntegersWithMinimalSum {
     @Test
     public void test() {
         // assertEquals(25, minimalKSum(new int[]{5, 6}, 6));
-        assertEquals(5, minimalKSum(new int[]{1, 4, 25, 10, 25}, 2));
-        // assertEquals(5, minimalKSum(new int[]{44}, 91834962)); // TLE
+        // assertEquals(5, minimalKSum(new int[]{1, 4, 25, 10, 25}, 2));
+        assertEquals(5, minimalKSum(new int[]{44}, 91834962)); // TLE
     }
 
 //        public long minimalKSum_OK(int[] nums, int k) {

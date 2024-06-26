@@ -39,16 +39,16 @@ public class DailyTemperatures {
     public int[] dailyTemperatures_0(int[] nums) {
         int n = nums.length;
         int[] result = new int[n];
-        Stack<Integer> indexs = new Stack<>();
+        Stack<Integer> idx = new Stack<>();
         for (int i = n - 1; i >= 0; i--) {
             // Nếu
-            while (indexs.size() > 0 && nums[i] >= nums[indexs.peek()]) {
-                indexs.pop();
+            while (!idx.isEmpty() && nums[i] >= nums[idx.peek()]) {
+                idx.pop();
             }
-            if (indexs.size() > 0) {
-                result[i] = indexs.peek() - i;
+            if (!idx.isEmpty()) {
+                result[i] = idx.peek() - i;
             }
-            indexs.push(i);
+            idx.push(i);
         }
         return result;
     }

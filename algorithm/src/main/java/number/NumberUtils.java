@@ -4,9 +4,7 @@ import java.util.Arrays;
 
 public class NumberUtils {
 
-    /**
-     * Thập phân => nhị phân
-     */
+    // Thập phân => nhị phân
     public static String toBinary(int n) {
         String s = "";
         while (n != 0) {

@@ -24,6 +24,11 @@ import java.util.Arrays;
         5 = 101 = {1, 3}
         6 = 110 = {2, 3}
         7 = 111 = {1, 2, 3}
+
+    // Lưu ý: Bỏ qua bit 0 và allMasks - 1 để tránh mảng rỗng
+    for (int bit = 1; bit < allMasks - 1; bit++) {
+
+    }
  */
 public class LietKeTapCon1 {
 
