@@ -11,8 +11,7 @@ import java.util.*;
  */
 public class LietKeHoanVi {
 
-    private static void permute(List<List<Integer>> result,
-                                List<Integer> currentList, int start, int end) {
+    private static void permute(List<List<Integer>> result, List<Integer> currentList, int start, int end) {
         if (start == end) {
             result.add(currentList);
         } else {

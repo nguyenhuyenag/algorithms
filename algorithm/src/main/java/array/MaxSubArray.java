@@ -1,4 +1,4 @@
-package array.subset;
+package array;
 
 // Tìm tổng lớn nhất của một chuỗi con liên tiếp trong mảng một chiều.
 public class MaxSubArray {
