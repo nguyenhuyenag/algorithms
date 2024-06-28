@@ -1,10 +1,7 @@
 package number;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Stack;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -68,15 +68,15 @@ public class LietKeTapCon1 {
 
     // Function to generate all subsets of an array with a specified size using bitwise operations
     public static void generateSubsets_3(int[] arr, int k) {
-        int n = arr.length;
-        int totalSubsets = 1 << n; // Total number of subsets is 2^n
+        int size = arr.length;
+        int totalSubsets = 1 << size; // Total number of subsets is 2^size
         for (int i = 0; i < totalSubsets; i++) {
             // Count the number of set bits in the current subset bitmask
             int bitCount = Integer.bitCount(i);
             if (bitCount == k) {
                 // Include elements in the subset
                 var subset = new ArrayList<>();
-                for (int j = 0; j < n; j++) {
+                for (int j = 0; j < size; j++) {
                     if ((i & (1 << j)) != 0) {
                         subset.add(arr[j]);
                     }
