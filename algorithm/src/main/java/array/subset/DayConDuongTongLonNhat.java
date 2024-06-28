@@ -1,4 +1,4 @@
-package array.subs;
+package array.subset;
 
 /**
  * https://leetcode.com/problems/maximum-subarray/

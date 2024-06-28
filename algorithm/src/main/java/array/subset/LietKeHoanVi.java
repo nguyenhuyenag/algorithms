@@ -1,4 +1,4 @@
-package array.subs;
+package array.subset;
 
 import org.apache.commons.math3.util.CombinatoricsUtils;
 

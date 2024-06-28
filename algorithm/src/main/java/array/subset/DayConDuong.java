@@ -1,4 +1,4 @@
-package array.subs;
+package array.subset;
 
 import util.RandomUtils;
 
