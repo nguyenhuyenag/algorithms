@@ -30,14 +30,17 @@ public class RotateArray {
         int[] result = new int[n];
         k = k % n; // Đảm bảo k không lớn hơn độ dài của mảng
         int p = 0;
+
         // Copy k phần tử cuối cùng vào mảng tạm
         for (int i = n - k; i < n; i++) {
             result[p++] = nums[i]; // [5, 6, 7]
         }
+
         // Copy n - k phần tử còn lại vào mảng tạm
         for (int i = 0; i < n - k; i++) {
             result[p++] = nums[i]; // [1, 2, 3, 4]
         }
+
         // Gán kết quả vào nums
         System.arraycopy(result, 0, nums, 0, n);
         return nums;

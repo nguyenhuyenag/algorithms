@@ -7,16 +7,16 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-/**
- * https://leetcode.com/problems/minimum-number-of-steps-to-make-two-strings-anagram/
- *
- * Chủ đề: Mảng đánh dấu
- *
- * Hai chuỗi gọi là anagram nếu chúng có tất cả các phần tử bằng nhau (không tính thứ tự)
- *
- * Cho 2 chuỗi s, t. Thay thế lần lượt các ký tự trong t sao cho nó thành một anagram của s
- *
- * Trả về số bước nhỏ nhất cần thực hiện
+/*
+    Chủ đề: Mảng đánh dấu
+
+    https://leetcode.com/problems/minimum-number-of-steps-to-make-two-strings-anagram/
+
+    Hai chuỗi gọi là anagram nếu chúng có tất cả các phần tử bằng nhau (không tính thứ tự).
+
+    Cho 2 chuỗi s, t. Thay thế lần lượt các ký tự trong t sao cho nó thành một anagram của s.
+
+    Trả về số bước nhỏ nhất cần thực hiện.
  */
 public class MinimumNumberOfStepsToMake2StringsAnagram {
 
