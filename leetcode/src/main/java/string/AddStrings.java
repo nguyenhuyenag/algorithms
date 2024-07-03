@@ -15,8 +15,8 @@ public class AddStrings {
 
     // Xóa số 0 ở đầu số dạng chuỗi
     public static String removeLeadingZeros(StringBuilder num) {
-        int i = 0;
         int len = num.length();
+        int i = 0;
         while (i < len && num.charAt(i) == '0') {
             i++;
         }

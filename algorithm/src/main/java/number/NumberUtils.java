@@ -27,6 +27,24 @@ public class NumberUtils {
         return binary.toString();
     }
 
+    // Convert với hệ số âm
+    public String baseNeg2(int n) {
+        if (n == 0) return "0";
+        int base = -2;
+        StringBuilder builder = new StringBuilder();
+        while (n != 0) {
+            int rem = n % base;
+            n /= base;
+            if (rem < 0) {
+                rem -= base;
+                n++;
+            }
+            builder.append(rem);
+        }
+        // removeLeadingZeros
+        return builder.reverse().toString();
+    }
+
     /**
      * Nhị phân => thập phân
      */
