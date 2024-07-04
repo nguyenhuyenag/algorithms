@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 /*-
  * Ý tưởng của thuật toán là tìm:
- *    Phần tử nhỏ nhất -> gán vào vị trí 0
- *    Phần tử nhỏ nhì -> gán vào vị trí 1
+ *    Phần tử nhỏ nhất  -> gán vào vị trí 0
+ *    Phần tử nhỏ nhì   -> gán vào vị trí 1
  */
 public class SelectionSort {
 

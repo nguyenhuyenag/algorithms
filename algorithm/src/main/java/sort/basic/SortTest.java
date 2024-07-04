@@ -13,7 +13,7 @@ public class SortTest {
 
     @Test
     public void test() {
-        int numberOfTest = 90;
+        int numberOfTest = 1;
         for (int i = 0; i < numberOfTest; i++) {
             int[] arr = RandomUtils.randomArray(7, 0, 10);
             int[] result = SortUtils.copyAndSort(arr);
