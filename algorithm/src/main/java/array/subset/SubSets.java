@@ -30,7 +30,8 @@ public class SubSets {
 //    }
 
     // Contains duplicates
-    private void backtrack_contains_duplicates(List<List<Integer>> list, List<Integer> tempList, int [] nums, int start){
+    private void backtrack_contains_duplicates(List<List<Integer>> list,
+                                               List<Integer> tempList, int [] nums, int start){
         list.add(new ArrayList<>(tempList));
         for(int i = start; i < nums.length; i++){
             if(i > start && nums[i] == nums[i-1]) continue; // skip duplicates
