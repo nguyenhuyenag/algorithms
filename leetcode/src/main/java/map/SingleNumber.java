@@ -7,11 +7,11 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/**
- * https://leetcode.com/problems/single-number/
- *
- * Cho mảng số nguyên chứa các số xuất hiện 2 lần và một số nguyên xuất hiện 1 lần.
- * Tìm số xuất hiện 1 lần đó.
+/*
+    https://leetcode.com/problems/single-number/
+
+    Cho mảng số nguyên chứa các số xuất hiện 2 lần và một số nguyên xuất hiện 1 lần.
+    Tìm số xuất hiện 1 lần đó.
  */
 public class SingleNumber {
 
