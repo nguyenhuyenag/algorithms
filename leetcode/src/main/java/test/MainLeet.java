@@ -3,6 +3,8 @@ package test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Stack;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /*
@@ -14,8 +16,32 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class MainLeet {
 
-    public boolean checkInclusion(String s1, String s2) {
-        return true;
+//    public boolean checkInclusion(String s1, String s2) {
+//        return true;
+//    }
+
+    public String reverseParentheses(String s) {
+        Stack<Character> stack = new Stack<>();
+        for (char c : s.toCharArray()) {
+            if (c == ')') {
+                StringBuilder builder = new StringBuilder();
+                while (stack.peek() != '(') {
+                    builder.append(stack.pop());
+                }
+                stack.pop();
+                int i = 0;
+                while (i < builder.length()) {
+                    stack.push(builder.charAt(i++));
+                }
+            } else {
+                stack.push(c);
+            }
+        }
+        StringBuilder result = new StringBuilder();
+        while (!stack.empty()) {
+            result.append(stack.pop());
+        }
+        return result.reverse().toString();
     }
 
     @Test
