@@ -32,9 +32,22 @@ public class Fibonacci {
 
     public int fibo_memory(int n) {
         if (n <= 1) return n;
-        if (mem[n] != - 1) return mem[n];
+        if (mem[n] != -1) return mem[n];
         mem[n] = fibo_memory(n - 1) + fibo_memory(n - 2);
         return mem[n];
+    }
+
+    public int fib(int n) {
+        if (n < 2) {
+            return n;
+        }
+        int a = 0, b = 1, c = 0;
+        for (int i = 2; i <= n; i++) {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+        return c;
     }
 
     @Test
@@ -42,6 +55,7 @@ public class Fibonacci {
         int n = 5;
         System.out.println("f(n) = " + fibo(n));
         System.out.println("f(n) = " + fibo_dynamic(n));
+        System.out.println("f(n) = " + fib(n));
         Arrays.fill(mem, -1);
         System.out.println("f(n) = " + fibo_memory(n));
     }
