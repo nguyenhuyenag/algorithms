@@ -1,8 +1,9 @@
 package incomplete;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 import java.math.BigInteger;
-import java.util.HashMap;
-import java.util.Map;
 
 /*
  	https://www.codewars.com/kata/53d40c1e2f13e331fc000c26/
@@ -11,17 +12,35 @@ import java.util.Map;
  */
 public class TheMillionthFibonacci {
 
-    public static BigInteger fib(BigInteger n) {
+    public static BigInteger helper(int n) {
         BigInteger a = BigInteger.ZERO, b = BigInteger.ONE, c = BigInteger.ZERO;
-        if (n.intValue() < 2) {
+        if (n < 2) {
             return new BigInteger(String.valueOf(n));
         }
-        for (int i = 2; i <= n.intValue(); i++) {
+        for (int i = 2; i <= n; i++) {
             c = a.add(b);
             a = b;
             b = c;
         }
         return c;
+    }
+
+    public static BigInteger fib(BigInteger num) {
+        int n = num.intValue();
+        if (n <= 0) {
+            if (n % 2 == 0) {
+                return new BigInteger("-1").multiply(helper(n));
+            }
+        }
+        return helper(n);
+    }
+
+    @Test
+    public void test() {
+        // Assertions.assertEquals(1,1);
+        BigInteger num = new BigInteger("-2");
+        // System.out.println(num.intValue() % 2);
+        System.out.println(fib(num));
     }
 
 }
