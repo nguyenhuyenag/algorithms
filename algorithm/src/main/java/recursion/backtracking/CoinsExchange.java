@@ -1,11 +1,7 @@
-package incomplete;
-
-import org.junit.jupiter.api.Test;
+package recursion.backtracking;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*
     https://www.codewars.com/kata/5a43126f8f27f2d77500006d/
@@ -23,16 +19,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
         5 = 1 + 1 + 1 + 2
  */
 public class CoinsExchange {
-
-//    public long exchange(int[] type, int n) {
-//        return 0;
-//    }
-//
-//    @Test
-//    public void testExchange() {
-//        assertEquals(5, exchange(new int[]{1, 2, 3}, 5));
-//        assertEquals(4, exchange(new int[]{1, 5, 10, 50, 100}, 11));
-//    }
 
     public static void main(String[] args) {
         // int n = 5;

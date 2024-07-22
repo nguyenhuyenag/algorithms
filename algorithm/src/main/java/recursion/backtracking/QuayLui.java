@@ -74,7 +74,7 @@ public class QuayLui {
      * Bài toán đổi tiền. Đổi tờ mệnh giá X ra các tờ nhỏ hơn (có nhiều cách đổ)
      */
     public static List<Integer> menhGia = List.of(10, 20, 50);
-    public static Set<List<Integer>> visited = new HashSet<>();
+    // public static Set<List<Integer>> visited = new HashSet<>();
     public static void doiTien_OK(LinkedList<Integer> combination, int n, int pos) {
         // Đã đổi đủ số tiền
         if (n == 0) {
