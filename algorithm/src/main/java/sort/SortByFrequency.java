@@ -18,6 +18,7 @@ public class SortByFrequency {
                 .boxed()
                 .sorted(Comparator.comparingInt(numCount::get))
                 .toList();
+
         // Sort 2
         List<Integer> result2 = Arrays.stream(arr)
                 .boxed()
@@ -27,6 +28,7 @@ public class SortByFrequency {
                 })
                 // .sorted(Comparator.comparingInt((Integer u) -> numCount.get(u)).thenComparingInt(u -> u))
                 .toList();
+
         System.out.println("numCount = " + numCount);
         System.out.println("result1 = " + Arrays.toString(result1.toArray()));
         System.out.println("result2 = " + Arrays.toString(result2.toArray()));
