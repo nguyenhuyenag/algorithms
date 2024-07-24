@@ -29,10 +29,17 @@ public class MainWar {
         return result;
     }
 
+    public static void staircase(int n) {
+        for (int i = 0; i <= n; i++) {
+            System.out.println(" ".repeat(n - i) + "*".repeat(i));
+        }
+    }
+
     @Test
     public void sampleTests() {
-        System.out.println(check(89));
-        System.out.println(check(135));
+        // System.out.println(check(89));
+        // List<Integer> list = List.of(-4, 3, -9, 0, 4, 1);
+        staircase(5);
     }
 
 }

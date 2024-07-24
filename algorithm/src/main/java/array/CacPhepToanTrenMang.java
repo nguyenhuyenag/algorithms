@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
 public class CacPhepToanTrenMang {
 
     /**
