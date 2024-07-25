@@ -1,45 +1,38 @@
 package test;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
-/*
+import static org.junit.jupiter.api.Assertions.*;
 
+/*
+    https://www.codewars.com/kata/51e056fe544cf36c410000fb/
  */
 public class MainWar {
 
-    public static boolean check(long n) {
-        long sum = 0;
-        char[] digits = Long.toString(n).toCharArray();
-        for (int i = 0; i < digits.length; i++) {
-            int digit = Character.getNumericValue(digits[i]);
-            sum += (long) Math.pow(digit, i + 1);
+    public static List<String> top3(String s) {
+        Map<String, Integer> counter = new HashMap<>();
+        for (String w : s.split(" ")) {
+            counter.put(w, counter.getOrDefault(w, 0) + 1);
         }
-        return n == sum;
-    }
 
-    public static List<Long> sumDigPow(long a, long b) {
-        List<Long> result = new ArrayList<>();
-        for (long i = a; i <= b; i++) {
-            if (check(i)) {
-                result.add(i);
-            }
+        List<Map.Entry<String, Integer>> list = new ArrayList<>(counter.entrySet());
+        list.sort(Map.Entry.comparingByValue());
+        Collections.reverse(list);
+
+        List<String> result = new ArrayList<>();
+        for (int i = 0; i < Math.min(3, list.size()); i++) {
+            result.add(list.get(i).getKey());
         }
         return result;
     }
 
-    public static void staircase(int n) {
-        for (int i = 0; i <= n; i++) {
-            System.out.println(" ".repeat(n - i) + "*".repeat(i));
-        }
-    }
-
     @Test
     public void sampleTests() {
-        // System.out.println(check(89));
-        // List<Integer> list = List.of(-4, 3, -9, 0, 4, 1);
-        staircase(5);
+        assertIterableEquals(List.of("e", "ddd", "aa"), //
+                top3("e e e e DDD ddd DdD: ddd ddd aa aA Aa, bb cc cC e e e"));
     }
 
 }

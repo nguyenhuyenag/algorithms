@@ -8,7 +8,7 @@ public class MergeSort {
     // Right subarray is arr[mid+1..right]
     public static void merge(int[] arr, int left, int mid, int right) {
         // Chia mảng làm 2 đoạn arr[left...mid] và arr[mid+1...right]
-        int[] leftArray = Arrays.copyOfRange(arr, left, mid + 1); //  = arr[left...mid]
+        int[] leftArray = Arrays.copyOfRange(arr, left, mid + 1);       // = arr[left...mid]
         int[] rightArray = Arrays.copyOfRange(arr, mid + 1, right + 1); // arr.length = right + 1
 
         // Merge the temp arrays
