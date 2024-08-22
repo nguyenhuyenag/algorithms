@@ -5,13 +5,25 @@ import java.util.Arrays;
 public class NumberUtils {
 
     // Thập phân => nhị phân
+//    public static String toBinary(int n) {
+//        String s = "";
+//        while (n != 0) {
+//            s = n % 2 + s;
+//            n = n / 2;
+//        }
+//        return s; // return Integer.toBinaryString(n);
+//    }
     public static String toBinary(int n) {
-        String s = "";
-        while (n != 0) {
-            s = n % 2 + s;
-            n = n / 2;
+        if (n == 0) {
+            return "0";
         }
-        return s; // return Integer.toBinaryString(n);
+        StringBuilder binary = new StringBuilder();
+        while (n > 0) {
+            binary.append(n % 2);
+            n /= 2;
+        }
+        // Reverse the StringBuilder to get the correct binary representation
+        return binary.reverse().toString();
     }
 
     public static String toBinary0(int sum) {
