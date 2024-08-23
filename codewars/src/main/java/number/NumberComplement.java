@@ -38,7 +38,6 @@ public class NumberComplement {
         return Integer.parseInt(complement.reverse().toString(), 2);
     }
 
-
     @Test
     public void test() {
         Assertions.assertEquals(2, findComplement(5));
