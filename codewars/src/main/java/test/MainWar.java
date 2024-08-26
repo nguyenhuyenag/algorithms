@@ -12,27 +12,22 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class MainWar {
 
-    public static List<String> top3(String s) {
-        Map<String, Integer> counter = new HashMap<>();
-        for (String w : s.split(" ")) {
-            counter.put(w, counter.getOrDefault(w, 0) + 1);
-        }
+    public static String stringMerge(String s1, String s2, char letter) {
+        // Find the index of the given letter in both words
+        int index1 = s1.indexOf(letter);
+        int index2 = s2.indexOf(letter);
 
-        List<Map.Entry<String, Integer>> list = new ArrayList<>(counter.entrySet());
-        list.sort(Map.Entry.comparingByValue());
-        Collections.reverse(list);
-
-        List<String> result = new ArrayList<>();
-        for (int i = 0; i < Math.min(3, list.size()); i++) {
-            result.add(list.get(i).getKey());
-        }
-        return result;
+        // Merge the words based on the position of the letter
+        return s1.substring(0, index1 + 1) + s2.substring(index2 + 1);
     }
 
     @Test
-    public void sampleTests() {
-        assertIterableEquals(List.of("e", "ddd", "aa"), //
-                top3("e e e e DDD ddd DdD: ddd ddd aa aA Aa, bb cc cC e e e"));
+    public void test() {
+        assertEquals("held", stringMerge("hello", "world", 'l'));
+        assertEquals("codinywhere", stringMerge("coding", "anywhere", 'n'));
+        assertEquals("jasamson", stringMerge("jason", "samson", 's'));
+        assertEquals("wondeople", stringMerge("wonderful", "people", 'e'));
     }
+
 
 }
