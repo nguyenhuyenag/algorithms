@@ -3,8 +3,6 @@ package test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 /*
@@ -12,22 +10,27 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class MainWar {
 
-    public static String stringMerge(String s1, String s2, char letter) {
-        // Find the index of the given letter in both words
-        int index1 = s1.indexOf(letter);
-        int index2 = s2.indexOf(letter);
+    public static boolean isPowerOfTwo1(long n) {
+        while (n != 0 && n % 2 == 0) {
+            n /= 2;
+        }
+        return n == 1;
+    }
 
-        // Merge the words based on the position of the letter
-        return s1.substring(0, index1 + 1) + s2.substring(index2 + 1);
+    public static boolean isPowerOfTwo(long n) {
+        return Long.bitCount(n) == 1;
     }
 
     @Test
-    public void test() {
-        assertEquals("held", stringMerge("hello", "world", 'l'));
-        assertEquals("codinywhere", stringMerge("coding", "anywhere", 'n'));
-        assertEquals("jasamson", stringMerge("jason", "samson", 's'));
-        assertEquals("wondeople", stringMerge("wonderful", "people", 'e'));
+    void testPowerOfTwo() {
+        assertEquals(true, isPowerOfTwo(2));
+        assertEquals(true, isPowerOfTwo(4096));
     }
 
+    @Test
+    void testNotPowersOfTwo() {
+        assertEquals(false, isPowerOfTwo(333));
+        assertEquals(false, isPowerOfTwo(0));
+    }
 
 }
