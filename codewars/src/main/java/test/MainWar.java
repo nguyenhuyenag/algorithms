@@ -10,27 +10,18 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class MainWar {
 
-    public static boolean isPowerOfTwo1(long n) {
-        while (n != 0 && n % 2 == 0) {
-            n /= 2;
-        }
-        return n == 1;
-    }
-
-    public static boolean isPowerOfTwo(long n) {
-        return Long.bitCount(n) == 1;
-    }
-
-    @Test
-    void testPowerOfTwo() {
-        assertEquals(true, isPowerOfTwo(2));
-        assertEquals(true, isPowerOfTwo(4096));
+    public static int arithmetic(int a, int b, String operator) {
+        return switch (operator) {
+            case "add" -> a + b;
+            case "subtract" -> a - b;
+            case "multiply" -> a * b;
+            case "divide" -> a / b;
+            default -> throw new IllegalStateException("Unexpected value: " + operator);
+        };
     }
 
     @Test
     void testNotPowersOfTwo() {
-        assertEquals(false, isPowerOfTwo(333));
-        assertEquals(false, isPowerOfTwo(0));
     }
 
 }
