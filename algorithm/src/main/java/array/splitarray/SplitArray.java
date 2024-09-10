@@ -1,4 +1,4 @@
-package array;
+package array.splitarray;
 
 import java.util.*;
 

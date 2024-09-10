@@ -1,9 +1,9 @@
-package array;
+package array.splitarray;
 
 import java.util.Arrays;
 
 /* -----------------------------------------------------------------------------------
- *  + System.arraycopy(int[] src, srcPos, int[] dest, destPos, numberOfEle)
+ *  - System.arraycopy(int[] src, srcPos, int[] dest, destPos, numberOfEle)
  *
  *      src        Mảng nguồn
  *      srcPos     Vị trí bắt đầu sao chép trong mảng nguồn
@@ -16,7 +16,7 @@ import java.util.Arrays;
  *  + Arrays.copyOf(arr, k) = Arrays.copyOfRange(arr, 0, k) = arr[0...k-1]
  *
  * -----------------------------------------------------------------------------------
- *  + Chia một mảng thành 2 phần
+ *  - Chia một mảng thành 2 phần
  *
  *          int[] left  = Arrays.copyOfRange(arr, 0, k)          = arr[0...k-1]
  *          int[] right = Arrays.copyOfRange(arr, k, arr.length) = arr[k...n]

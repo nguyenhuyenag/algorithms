@@ -1,6 +1,8 @@
-package array;
+package array.daycon;
 
-// Tìm tổng lớn nhất của một chuỗi con liên tiếp trong mảng một chiều.
+/*
+    Tìm tổng lớn nhất của một chuỗi con liên tiếp trong mảng một chiều.
+ */
 public class MaxSubArray {
 
     public static void main(String[] args) {
@@ -8,7 +10,7 @@ public class MaxSubArray {
         System.out.println("Maximum contiguous sum is " + maxSubArraySum(a));
     }
 
-    static int maxSubArraySum(int a[]) {
+    static int maxSubArraySum(int[] a) {
         int size = a.length;
         int currentMax = 0, max = Integer.MIN_VALUE;
         for (int i = 0; i < size; i++) {

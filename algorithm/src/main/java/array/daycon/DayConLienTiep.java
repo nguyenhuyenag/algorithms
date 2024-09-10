@@ -1,4 +1,4 @@
-package array;
+package array.daycon;
 
 import java.util.function.Predicate;
 

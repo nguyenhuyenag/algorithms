@@ -1,4 +1,4 @@
-package array;
+package array.daycon;
 
 
 import org.junit.jupiter.api.Test;

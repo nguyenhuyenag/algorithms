@@ -106,8 +106,8 @@ public class CacPhepToanTrenMang {
     public List<List<Integer>> findDifference(int[] nums1, int[] nums2) {
         List<List<Integer>> result = new ArrayList<>();
 
-        Set<Integer> set1 = new HashSet<>(Arrays.stream(nums1).boxed().collect(Collectors.toList()));
-        Set<Integer> set2 = new HashSet<>(Arrays.stream(nums2).boxed().collect(Collectors.toList()));
+        Set<Integer> set1 = Arrays.stream(nums1).boxed().collect(Collectors.toSet());
+        Set<Integer> set2 = Arrays.stream(nums2).boxed().collect(Collectors.toSet());
 
         // Tìm hiệu nums1 - nums2
         Set<Integer> diff1 = new HashSet<>(set1);

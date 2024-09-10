@@ -1,4 +1,4 @@
-package array;
+package array.rotate;
 
 import java.util.Arrays;
 import java.util.Collections;

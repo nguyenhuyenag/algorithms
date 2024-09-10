@@ -77,7 +77,7 @@ public class LietKeTapCon1 {
                 // Include elements in the subset
                 var subset = new ArrayList<>();
                 for (int j = 0; j < size; j++) {
-                    if ((i & (1 << j)) != 0) {
+                    if ((i & 1 << j) != 0) {
                         subset.add(arr[j]);
                     }
                 }

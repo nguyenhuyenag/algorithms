@@ -1,7 +1,9 @@
-package array;
+package array.daycon;
 
 /**
  * https://leetcode.com/problems/maximum-subarray/
+ *
+ * Tìm dãy con dương có tổng lớn nhất
  */
 public class DayConDuongTongLonNhat {
 

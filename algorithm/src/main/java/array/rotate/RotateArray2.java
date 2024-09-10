@@ -1,10 +1,8 @@
-package array;
+package array.rotate;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Chuyển k phần tử đầu tiên về cuối mảng
