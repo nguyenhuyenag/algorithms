@@ -16,20 +16,20 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CountTheNumberOfConsistentStrings {
 
     public int countConsistentStrings(String allowed, String[] words) {
-        int count = 0;
+        int count = words.length;
+
         boolean[] mark = new boolean[26];
         for (char c : allowed.toCharArray()) {
             mark[c - 'a'] = true;
         }
+
         for (String word : words) {
-            boolean valid = true;
             for (char c : word.toCharArray()) {
                 if (!mark[c - 'a']) {
-                    valid = false;
+                    count--;
                     break;
                 }
             }
-            count += valid ? 1 : 0;
         }
         return count;
     }
