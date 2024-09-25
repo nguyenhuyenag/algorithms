@@ -1,6 +1,5 @@
-package incomplete;
+package number;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -29,13 +28,13 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class PowerfulIntegers {
 
-    public List<Integer> powerfulIntegers(int x, int y, int m) {
+    public List<Integer> powerfulIntegers_OK(int x, int y, int m) {
         Set<Integer> result = new HashSet<>();
         for (int i = 0; Math.pow(x, i) <= m; i++) {
             for (int j = 0; Math.pow(y, j) <= m; j++) {
-                int a = (int) Math.pow(x, i) + (int) Math.pow(y, j);
-                if (a <= m) {
-                    result.add(a);
+                int num = (int) (Math.pow(x, i) + Math.pow(y, j));
+                if (num <= m) {
+                    result.add(num);
                 }
                 if (y == 1) {
                     break;
@@ -44,6 +43,22 @@ public class PowerfulIntegers {
             if (x == 1) {
                 break;
             }
+        }
+        return new ArrayList<>(result);
+    }
+
+    public List<Integer> powerfulIntegers(int x, int y, int m) {
+        Set<Integer> result = new HashSet<>();
+        int px = 1;
+        while (px <= m) {
+            int py = 1;
+            while (px + py <= m) {
+                result.add(px + py);
+                if (y == 1) break; // Stop if y is 1, further powers won't change
+                py *= y; // Compute next power of y
+            }
+            if (x == 1) break; // Stop if x is 1, further powers won't change
+            px *= x; // Compute next power of x
         }
         return new ArrayList<>(result);
     }
