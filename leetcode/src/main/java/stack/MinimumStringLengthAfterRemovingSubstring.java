@@ -1,16 +1,20 @@
-package test;
+package stack;
 
 import org.junit.jupiter.api.Test;
 
 import java.util.Stack;
-import java.util.stream.IntStream;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*
+    https://leetcode.com/problems/minimum-string-length-after-removing-substrings/
+
+    Cho chuỗi s chỉ chứa các chữ cái in hoa. Xóa 'AB' hoặc 'CD' trong s. Trả về
+    đội dài nhỏ nhất của s.
+
+    Xem thêm: ValidParentheses.java
  */
-public class MainLeet {
+public class MinimumStringLengthAfterRemovingSubstring {
 
     public int minLength_OK(String s) {
         int i;
@@ -42,7 +46,7 @@ public class MainLeet {
     @Test
     public void test() {
         assertEquals(2, minLength("ABFCACDB"));
-        // assertEquals(5, minLength("ACBBD"));
+        assertEquals(5, minLength("ACBBD"));
     }
 
 }

@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
  *
  * Xem thêm: Codewar > ValidBraces.java
  */
-public class ValiParentheses {
+public class ValidParentheses {
 
     // s1, s2 tạo thành 1 cặp ngoặ đúng
     public boolean pair(char s1, char s2) {
@@ -24,7 +24,7 @@ public class ValiParentheses {
         Stack<Character> stack = new Stack<>();
         for (char c : s.toCharArray()) {
             // Nếu đỉnh stack và c tạo thành 1 cặp thì gỡ nó khỏi stack
-            if (stack.size() > 0 && pair(stack.peek(), c)) {
+            if (!stack.isEmpty() && pair(stack.peek(), c)) {
                 stack.pop();
             } else {
                 stack.push(c);
