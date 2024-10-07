@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
     Xem thêm: ValidParentheses.java
  */
-public class MinimumStringLengthAfterRemovingSubstring {
+public class MinimumStringLengthAfterRemovingSubstrings {
 
     public int minLength_OK(String s) {
         int i;

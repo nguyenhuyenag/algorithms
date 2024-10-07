@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
  */
 public class ValidParentheses {
 
-    // s1, s2 tạo thành 1 cặp ngoặ đúng
+    // s1, s2 tạo thành 1 cặp ngoặc đúng
     public boolean pair(char s1, char s2) {
         return (s1 == '(' && s2 == ')') ||
                 (s1 == '{' && s2 == '}') ||
