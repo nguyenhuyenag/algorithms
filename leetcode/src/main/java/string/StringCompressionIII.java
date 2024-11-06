@@ -1,6 +1,5 @@
-package incomplete;
+package string;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
@@ -9,10 +8,19 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /*
     https://leetcode.com/problems/string-compression-iii/
+
+    > Cho chuỗi s, thu gọn chuỗi theo quy tắc
+        + {Số lần xuất hiện}{ký tự}
+        + Nếu số lần xuất hiện > 9 -> {9}{ký tự}{phần còn lại}{ký tự}
+
+    Ví dụ:
+                    "abcde"  ->  "1a1b1c1d1e"
+                     "mrm"   ->  "1m1r1m"
+        "aaaaaaaaaaaaaabb"   ->  "9a5a2b"
  */
 public class StringCompressionIII {
 
-    public String compressedString_OK(String word) {
+    public String compressedString_OK_1(String word) {
         StringBuilder comp = new StringBuilder();
         int count = 1;
         for (int i = 1; i <= word.length(); i++) {
@@ -91,9 +99,9 @@ public class StringCompressionIII {
 
     @Test
     public void test() {
-        // assertEquals("1a1b1c1d1e", compressedString("abcde")); // Pass
-        // assertEquals("9a5a2b", compressedString("aaaaaaaaaaaaaabb")); // Pass
-        assertEquals("1m1r1m", compressedString("mrm")); // Fail
+        assertEquals("1a1b1c1d1e", compressedString("abcde")); // Pass
+        assertEquals("9a5a2b", compressedString("aaaaaaaaaaaaaabb")); // Pass
+        assertEquals("1m1r1m", compressedString("mrm"));
     }
 
 }
