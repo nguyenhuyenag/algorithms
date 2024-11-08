@@ -4,15 +4,15 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*
     https://leetcode.com/problems/count-the-number-of-vowel-strings-in-range/
 
-    Cho chuỗi words là hai số nguyên l, r. Một chuỗi gọi là vowel-string nếu ký
+    Cho chuỗi words là hai số nguyên l, r. Một chuỗi gọi là `vowel-string` nếu ký
     tự đầu và cuối của nó đều là nguyên âm.
 
-    Return the number of vowel strings words[i] where i belongs to the inclusive range [left, right].
+    Đếm `vowel-string` thuộc đoạn [l, r].
  */
 public class CountTheNumberOfVowelStringsInRange {
 

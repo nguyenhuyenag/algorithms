@@ -12,11 +12,11 @@ import itertools
 """
 class Solution(unittest.TestCase):
 
-    def doTest(self, nums: List[int]) -> bool:
+    def my_method(self, nums: List[int]) -> bool:
         pass
 
     def test(self):
-        self.assertEqual(True, self.doTest([]))
+        self.assertEqual(True, self.my_method([]))
 
 
 if __name__ == '__main__':
