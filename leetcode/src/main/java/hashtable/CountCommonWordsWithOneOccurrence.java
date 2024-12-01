@@ -1,4 +1,4 @@
-package map;
+package hashtable;
 
 import org.junit.jupiter.api.Test;
 
