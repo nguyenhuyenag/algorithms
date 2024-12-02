@@ -9,6 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /*
     https://leetcode.com/problems/check-if-n-and-its-double-exist/
+
+    - Kiểm tra xem số x và 2x có cùng tồn tại trong mảng không
  */
 public class CheckIfNAndItsDoubleExist {
 
