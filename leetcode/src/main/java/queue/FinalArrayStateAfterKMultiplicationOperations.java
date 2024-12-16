@@ -24,7 +24,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
  */
 public class FinalArrayStateAfterKMultiplicationOperations {
 
-    public int[] getFinalState_2(int[] nums, int k, int multiplier) {
+    public int[] getFinalState_1(int[] nums, int k, int multiplier) {
         Comparator<Map.Entry<Integer, Integer>> comparator =
                 Comparator.comparingInt((Map.Entry<Integer, Integer> e) -> e.getValue())
                         .thenComparingInt(Map.Entry::getKey);
@@ -44,6 +44,24 @@ public class FinalArrayStateAfterKMultiplicationOperations {
         }
         return nums;
     }
+
+//    public int[] getFinalState_2(int[] nums, int k, int multiplier) {
+//        PriorityQueue<Map.Entry<Integer, Integer>> pq = new PriorityQueue<>((a, b) -> a.getValue() == b.getValue() ? a.getKey() - b.getKey() : a.getValue() - b.getValue());
+//        for (int i = 0; i < nums.length; i++) {
+//            pq.offer(Map.entry(i, nums[i]));
+//        }
+//        for (int i = 0; i < k; i++) {
+//            if (!pq.isEmpty()) {
+//                Map.Entry<Integer, Integer> e = pq.poll();
+//                pq.offer(Map.entry(e.getKey(), e.getValue() * multiplier));
+//            }
+//        }
+//        while (!pq.isEmpty()) {
+//            Map.Entry<Integer, Integer> e = pq.poll();
+//            nums[e.getKey()] = e.getValue();
+//        }
+//        return nums;
+//    }
 
     public int[] getFinalState(int[] nums, int k, int multiplier) {
         // PriorityQueue lưu chỉ số, so sánh dựa trên giá trị trong nums
