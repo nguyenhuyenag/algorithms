@@ -1,15 +1,15 @@
 package string;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * https://leetcode.com/problems/repeated-substring-pattern/
  *
  * Kiểm tra chuỗi s có phải là chuỗi lặp của một chuỗi nào đó không
  *
- *      "ababab"    =    ab x 3   -> true
+ * "ababab"    =    ab x 3   -> true
  */
 public class RepeatedSubstringPattern {
 

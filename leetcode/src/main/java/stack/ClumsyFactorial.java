@@ -1,13 +1,10 @@
 package stack;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Collections;
-import java.util.LinkedList;
 import java.util.Stack;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * https://leetcode.com/problems/clumsy-factorial/
@@ -30,7 +27,7 @@ public class ClumsyFactorial {
     }
 
     public int calculate(String s) {
-        if (s == null || s.length() == 0) return 0;
+        if (s == null || s.isEmpty()) return 0;
         int num = 0;
         Stack<Integer> stack = new Stack<>();
         char op = '+'; // '+' is start operaters

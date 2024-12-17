@@ -1,10 +1,10 @@
 package string;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 import java.util.Stack;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * https://leetcode.com/problems/backspace-string-compare/
@@ -23,7 +23,7 @@ public class BackspaceStringCompare {
         for (char c : inputStr.toCharArray()) {
             // Nếu là khoảng trắng
             if (c == '#') {
-                if (result.length() > 0) {
+                if (!result.isEmpty()) {
                     // Thì xóa phần tử trước đó
                     result.deleteCharAt(result.length() - 1);
                 }
