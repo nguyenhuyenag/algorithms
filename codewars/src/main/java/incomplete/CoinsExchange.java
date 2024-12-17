@@ -35,11 +35,11 @@ public class CoinsExchange {
 //    }
 
     public static void main(String[] args) {
-        // int n = 5;
-        // int[] coins = {1, 2, 3};
+        int n = 5;
+        int[] coins = {1, 2, 3};
 
-        int n = 11;
-        int[] coins = {1, 5, 10, 50, 100};
+        // int n = 11;
+        // int[] coins = {1, 5, 10, 50, 100};
 
         List<List<Integer>> ways = countWaysToMakeChange(n, coins);
 

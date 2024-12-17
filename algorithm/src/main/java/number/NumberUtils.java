@@ -1,7 +1,5 @@
 package number;
 
-import java.util.Arrays;
-
 public class NumberUtils {
 
     // Thập phân => nhị phân
@@ -13,6 +11,7 @@ public class NumberUtils {
 //        }
 //        return s; // return Integer.toBinaryString(n);
 //    }
+
     public static String toBinary(int n) {
         if (n == 0) {
             return "0";
@@ -37,6 +36,14 @@ public class NumberUtils {
             sum /= 2;
         }
         return binary.toString();
+    }
+
+    public static String removeLeadingZeros(StringBuilder num) {
+        int i = 0;
+        while (i < num.length() && num.charAt(i) == '0') {
+            i++;
+        }
+        return i == num.length() ? "0" : num.substring(i);
     }
 
     // Convert với hệ số âm
@@ -203,12 +210,8 @@ public class NumberUtils {
     }
 
     public static void main(String[] args) {
-        int n = 19;
-        int a = 4, b = 3;
-        System.out.println("n = " + n);
-        int[] arr = splitNumberAll(n, a, b);
-        System.out.println(Arrays.toString(arr));
-        System.out.println("Test: " + (n == a * arr[0] + b * arr[1] + arr[2]));
+        StringBuilder n = new StringBuilder("000012356090");
+        System.out.println("n = " + removeLeadingZeros(n));
     }
 
 }
