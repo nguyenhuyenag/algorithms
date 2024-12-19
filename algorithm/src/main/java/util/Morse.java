@@ -1,4 +1,4 @@
-package zother;
+package util;
 
 import org.junit.jupiter.api.Test;
 
@@ -71,7 +71,7 @@ public class Morse {
         return morseCode.toString().trim();
     }
 
-    public static String endcode(String input) {
+    public static String encode(String input) {
         StringJoiner morseCode = new StringJoiner(" ");
         for (char c : input.toUpperCase().toCharArray()) {
             if (morseEncodeMap.containsKey(c)) {
@@ -89,8 +89,8 @@ public class Morse {
     @Test
     public void test() {
         String input = "ABC";
-        // String morse = endcode(input);
-        assertEquals(endcode(input), encodeToMorseCode(input));
+        // String morse = encode(input);
+        assertEquals(encode(input), encodeToMorseCode(input));
     }
 
 }

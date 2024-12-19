@@ -2,7 +2,7 @@ package util;
 
 import org.junit.jupiter.api.Test;
 
-public class Benmark {
+public class Benchmark {
 
     public void measureExecutionTime(Runnable method) {
         long startTime = System.currentTimeMillis();
@@ -20,7 +20,7 @@ public class Benmark {
             while (!builder.isEmpty() && builder.charAt(0) == '0') {
                 builder.deleteCharAt(0);
             }
-            System.out.println(builder.toString());
+            System.out.println(builder);
         });
     }
 

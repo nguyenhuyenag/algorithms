@@ -1,4 +1,4 @@
-package zother;
+package util;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -11,14 +11,14 @@ public class ATM {
 		int i, menhgia, soto;
 		Map<Integer, Integer> map = new LinkedHashMap<>();
 		Set<Entry<Integer, Integer>> set = coins.entrySet();
-		for (Entry<Integer, Integer> loaitien : set) {
-			soto = loaitien.getValue();
+		for (Entry<Integer, Integer> loaiTien : set) {
+			soto = loaiTien.getValue();
 			if (soto > 0) {
-				menhgia = loaitien.getKey();
+				menhgia = loaiTien.getKey();
 				for (i = soto; i > 0; i--) {
 					if (n >= i * menhgia) {
 						map.put(menhgia, i); // đổi được i tờ menhgia
-						loaitien.setValue(menhgia - i);
+						loaiTien.setValue(menhgia - i);
 						n -= i * menhgia; // còn dư
 						break;
 					}
