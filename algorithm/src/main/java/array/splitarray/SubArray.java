@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 /* -----------------------------------------------------------------------------------
  *  - System.arraycopy(int[] src, srcPos, int[] dest, destPos, numberOfEle)
- *
  *      src        Mảng nguồn
  *      srcPos     Vị trí bắt đầu sao chép trong mảng nguồn
  *      dest       Mảng đích
