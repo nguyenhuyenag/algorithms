@@ -19,8 +19,12 @@ public class RemoveAllOccurrencesOfAString {
     }
 
     @Test
-    public void test() {
+    public void test1() {
         assertEquals("dab", removeOccurrences("daabcbaabcbc", "abc"));
+    }
+
+    @Test
+    public void test2() {
         assertEquals("ab", removeOccurrences("axxxxyyyyb", "xy"));
     }
 
