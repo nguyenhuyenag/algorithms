@@ -1,4 +1,4 @@
-package test;
+package stack;
 
 import org.junit.jupiter.api.Test;
 
@@ -7,15 +7,15 @@ import java.util.Stack;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*
-    https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/
-
     https://leetcode.com/problems/clear-digits/description/
 
     Cho chuỗi s. Thực hiện hành động dau
-    - Xóa ký tự số đầu tiên và chữ cái bên phải nó.
+
+        - Xóa ký tự số đầu tiên và chữ cái bên phải nó.
+
     Trả về chuỗi s cuối cùng.
  */
-public class MainLeet {
+public class ClearDigits {
 
     public String clearDigits(String s) {
         Stack<Character> stack = new Stack<>();
