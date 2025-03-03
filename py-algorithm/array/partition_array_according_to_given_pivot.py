@@ -14,25 +14,34 @@ import itertools
 
 class Solution(unittest.TestCase):
 
-    def pivotArray(self, nums: List[int], pivot: int) -> List[int]:
+    def pivotArray_OK(self, nums: List[int], pivot: int) -> List[int]:
         result = []
-
         # num < pivot
         for num in nums:
             if num < pivot:
                 result.append(num)
-
         # num == pivot
         for num in nums:
             if num == pivot:
                 result.append(num)
-
         # num > pivot
         for num in nums:
             if num > pivot:
                 result.append(num)
-
         return result
+
+    def pivotArray(self, nums: List[int], pivot: int) -> List[int]:
+        smaller = []
+        is_pivot = []
+        bigger = []
+        for num in nums:
+            if num < pivot:
+                smaller.append(num)
+            if num == pivot:
+                is_pivot.append(num)
+            if num > pivot:
+                bigger.append(num)
+        return [*smaller, *is_pivot, *bigger]
 
     def test1(self):
         self.assertEqual([-3, 2, 4, 3], self.pivotArray([-3, 4, 3, 2], 2))
