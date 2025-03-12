@@ -1,5 +1,6 @@
 package test;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.Stack;
@@ -15,43 +16,26 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class MainLeet {
 
-    public int[] pivotArray(int[] nums, int pivot) {
-        int p = 0;
-        int len = nums.length;
-        int[] result = new int[len];
-        boolean[] mark = new boolean[len];
-        // Handle nums[i] < pivot
-        for (int i = 0; i < len; i++) {
-            if (!mark[i] && nums[i] < pivot) {
-                mark[i] = true;
-                result[p++] = nums[i];
+    public int maximumCount(int[] nums) {
+        int pos = 0, neg = 0;
+        for (int num : nums) {
+            if (num > 0) {
+                pos++;
+            } else if (num < 0) {
+                neg++;
             }
         }
-        // Handle nums[i] = pivot
-        for (int i = 0; i < len; i++) {
-            if (!mark[i] && nums[i] == pivot) {
-                mark[i] = true;
-                result[p++] = nums[i];
-            }
-        }
-        // Handle nums[i] > pivot
-        for (int i = 0; i < len; i++) {
-            if (!mark[i]) {
-                // mark[i] = true;
-                result[p++] = nums[i];
-            }
-        }
-        return result;
+        return Math.max(pos, neg);
     }
 
     @Test
     public void test1() {
-        assertArrayEquals(new int[]{9, 5, 3, 10, 10, 12, 14}, pivotArray(new int[]{9, 12, 5, 10, 14, 3, 10}, 10));
+        assertEquals(3, maximumCount(new int[]{-2, -1, -1, 1, 2, 3}));
     }
 
     @Test
     public void test2() {
-        assertArrayEquals(new int[]{-3, 2, 4, 3}, pivotArray(new int[]{-3, 4, 3, 2}, 2));
+        assertEquals(3, maximumCount(new int[]{-3, -2, -1, 0, 0, 1, 2}));
     }
 
 }
