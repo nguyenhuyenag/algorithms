@@ -25,8 +25,8 @@ public class DivideArrayIntoEqualPairs {
         for (int num : nums) {
             counter.put(num, counter.getOrDefault(num, 0) + 1);
         }
-        for (int num : counter.keySet()) {
-            if (counter.get(num) % 2 != 0) {
+        for (int num : counter.values()) {
+            if (num % 2 != 0) {
                 return false;
             }
         }
@@ -38,8 +38,8 @@ public class DivideArrayIntoEqualPairs {
         for (int num : nums) {
             counter.merge(num, 1, Integer::sum);
         }
-        for (Map.Entry<Integer, Integer> entry : counter.entrySet()) {
-            if (entry.getValue() % 2 != 0) {
+        for (int count : counter.values()) {
+            if (count % 2 != 0) {
                 return false;
             }
         }
