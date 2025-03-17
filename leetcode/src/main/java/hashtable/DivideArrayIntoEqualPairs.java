@@ -1,16 +1,16 @@
-package test;
+package hashtable;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Stack;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*
+    https://leetcode.com/problems/divide-array-into-equal-pairs/
+
     Cho một mảng số nguyên nums gồm 2 * n phần tử. Chia nums thành n cặp sao cho:
 
         - Mỗi phần tử thuộc chính xác một cặp.
@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
     Trả về true nếu có thể chia nums thành n cặp thỏa mãn điều kiện trên, ngược lại trả về false.
  */
-public class MainLeet {
+public class DivideArrayIntoEqualPairs {
 
     public boolean divideArray_OK(int[] nums) {
         Map<Integer, Integer> counter = new HashMap<>();
@@ -39,7 +39,7 @@ public class MainLeet {
             counter.merge(num, 1, Integer::sum);
         }
         for (Map.Entry<Integer, Integer> entry : counter.entrySet()) {
-            if ((entry.getValue() & 1) != 0) { // Kiểm tra số lẻ bằng toán tử bitwise
+            if (entry.getValue() % 2 != 0) {
                 return false;
             }
         }
@@ -51,7 +51,7 @@ public class MainLeet {
         assertEquals(true, divideArray(new int[]{3, 2, 3, 2, 2, 2}));
     }
 
-    @Disabled
+    // @Disabled
     @Test
     public void test2() {
         assertEquals(false, divideArray(new int[]{1, 2, 3, 4}));
