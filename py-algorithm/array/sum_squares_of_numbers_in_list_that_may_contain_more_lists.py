@@ -20,8 +20,6 @@ class Solution(unittest.TestCase):
     def sumsquares(self, arr) -> int:
         return sum([i ** 2 if isinstance(i, int) else self.sumsquares(i) for i in arr])
 
-        return result
-
     def test_case(self):
         self.assertEqual(14, self.sumsquares([1, 2, 3]))
         self.assertEqual(14, self.sumsquares([[1, 2], 3]))
