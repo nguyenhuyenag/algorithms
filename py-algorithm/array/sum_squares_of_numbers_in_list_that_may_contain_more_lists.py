@@ -7,13 +7,18 @@ import unittest
 
 class Solution(unittest.TestCase):
 
-    def sumsquares(self, arr) -> int:
+    def sumsquares_ok(self, arr) -> int:
         result = 0
         for value in arr:
             if isinstance(value, int):
                 result += value ** 2
             elif isinstance(value, list):
                 result += self.sumsquares(value)
+
+        return result
+
+    def sumsquares(self, arr) -> int:
+        return sum([i ** 2 if isinstance(i, int) else self.sumsquares(i) for i in arr])
 
         return result
 
