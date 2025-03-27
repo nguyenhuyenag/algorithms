@@ -1,12 +1,5 @@
+import re
 import unittest
-
-from math import gcd
-from fractions import Fraction
-from tkinter.constants import DISABLED
-from typing import List
-from queue import PriorityQueue
-from collections import Counter
-import itertools
 
 """
     https://www.codewars.com/kata/56a921fa8c5167d8e7000053/
@@ -22,7 +15,7 @@ import itertools
 
 class Solution(unittest.TestCase):
 
-    def password(self, pwd: str) -> bool:
+    def password_1(self, pwd: str) -> bool:
         if len(pwd) < 8:
             return False
 
@@ -43,6 +36,25 @@ class Solution(unittest.TestCase):
                 break
 
         return has_number and has_lowercase and has_uppercase
+
+    def password_2(self, s: str) -> bool:
+        CRITERIA = (str.islower, str.isupper, str.isdigit)
+        return len(s) > 7 and all(any(map(f, s)) for f in CRITERIA)
+
+    def password_3(self, s: str):
+        if not len(s) >= 8:
+            return False
+        if not any(char.islower() for char in s):
+            return False
+        if not any(char.isupper() for char in s):
+            return False
+        if not any(char.isdigit() for char in s):
+            return False
+        return True
+
+    def password(self, s: str):
+        patterns = (r'[A-Z]', r'[a-z]', r'[0-9]', r'.{8,}')
+        return all([re.search(pattern, s) for pattern in patterns])
 
     def test(self):
         self.assertEqual(True, self.password("Abcd1234"))
