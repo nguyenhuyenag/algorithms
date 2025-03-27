@@ -15,7 +15,11 @@ class Solution(unittest.TestCase):
     def my_method(self, nums: List[int]) -> bool:
         pass
 
-    def test(self):
+    def test_1(self):
+        self.assertEqual(True, self.my_method([]))
+
+    @unittest.skip("Temporarily disabling this test")  # <-- Add this decorator
+    def test_2(self):
         self.assertEqual(True, self.my_method([]))
 
 
