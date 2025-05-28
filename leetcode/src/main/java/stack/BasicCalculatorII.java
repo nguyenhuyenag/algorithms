@@ -26,7 +26,7 @@ public class BasicCalculatorII {
         if (s == null || s.length() == 0) return 0;
         int num = 0;
         Stack<Integer> stack = new Stack<>();
-        char op = '+'; // '+' is start operaters
+        char op = '+'; // '+' is start operates
         for (char c : s.toCharArray()) {
             if (Character.isDigit(c)) {
                 num = 10 * num + Character.getNumericValue(c);
