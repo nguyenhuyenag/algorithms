@@ -6,6 +6,8 @@ https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 
 Cho mảng số nguyên nums, tìm hai vị trí i < j sao cho nums[i] - nums[j] lớn nhất 
 """
+
+
 class Solution(unittest.TestCase):
 
     def maxProfit(self, nums: List[int]) -> int:
@@ -19,9 +21,9 @@ class Solution(unittest.TestCase):
         return max_different
 
     def test(self):
-        self.assertEqual(5, self.maxProfit([7, 1, 5, 3, 6, 4]));
-        self.assertEqual(0, self.maxProfit([7, 6, 4, 3, 1]));
-        self.assertEqual(3, self.maxProfit([2, 1, 4]));
+        self.assertEqual(5, self.maxProfit([7, 1, 5, 3, 6, 4]))
+        self.assertEqual(0, self.maxProfit([7, 6, 4, 3, 1]))
+        self.assertEqual(3, self.maxProfit([2, 1, 4]))
 
 
 if __name__ == '__main__':

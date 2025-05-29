@@ -27,19 +27,33 @@ def magic_sum(arr):
     return result
 
 
-def generator(_from, _to, _step):
-    result = []
+def generator_1(_from, _to, _step):
     if _step <= 0:
-        return result
+        return []
 
+    result = []
     current = _from
-    while current <= _to:
-        result.append(current)
-        if current >= _to:
-            break
-        current += _step
+
+    if _from <= _to:
+        while current <= _to:
+            result.append(current)
+            current += _step
+    else:
+        while current >= _to:
+            result.append(current)
+            current -= _step
 
     return result
+
+
+def generator(_from, _to, _step):
+    if _step == 0:
+        return []
+
+    if _from <= _to:
+        return list(range(_from, _to + 1, _step))
+    else:
+        return list(range(_from, _to - 1, -_step))
 
 
 # r = make_sentences(['hello', 'world'])
@@ -52,4 +66,5 @@ def generator(_from, _to, _step):
 # r = generator(10, 20, 1)
 r = generator(10, 20, 5)
 
-print(r)
+# print(r)
+console = r
