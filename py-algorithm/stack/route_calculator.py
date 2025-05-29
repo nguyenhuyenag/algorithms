@@ -24,8 +24,8 @@ import unittest
 def validate_expression(expr):
     """Kiểm tra xem biểu thức chỉ chứa các ký tự hợp lệ"""
     allowed_chars = ".0123456789+-*$"
-
-    return True
+    allowed_set = set(allowed_chars)
+    return all(c in allowed_set for c in expr)
 
 
 def infix_to_rpn(expr):
