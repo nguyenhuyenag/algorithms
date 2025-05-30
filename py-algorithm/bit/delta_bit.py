@@ -26,7 +26,7 @@ def convert_bits(a, b):
 
 class Solution(unittest.TestCase):
 
-    def test_somthing(self):
+    def test_something(self):
         self.assertEqual(2, convert_bits(31, 14))
         self.assertEqual(3, convert_bits(7, 17))
         self.assertEqual(5, convert_bits(31, 0))
