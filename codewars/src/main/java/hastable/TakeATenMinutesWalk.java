@@ -30,24 +30,21 @@ public class TakeATenMinutesWalk {
     }
 
     public static boolean isValid(char[] walk) {
-        int nsCount = 0, ewCount = 0;
-        for (char direction : walk) {
-            switch (direction) {
-                case 'n':
-                    nsCount++;
-                    break;
-                case 's':
-                    nsCount--;
-                    break;
-                case 'e':
-                    ewCount++;
-                    break;
-                case 'w':
-                    ewCount--;
-                    break;
+        if (walk.length != 10) return false;
+
+        // @formatter:off
+        int x = 0, y = 0;
+        for (char c: walk) {
+            switch (c) {
+                case 'n': y++; break;
+                case 's': y--; break;
+                case 'w': x++; break;
+                case 'e': x--; break;
             }
         }
-        return walk.length == 10 && nsCount == 0 && ewCount == 0;
+        // @formatter:on
+        
+        return x == 0 && y == 0;
     }
 
     private static void doTest(char[] input, boolean expected) {
