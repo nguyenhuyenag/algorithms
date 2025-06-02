@@ -1,19 +1,17 @@
-lst1 = [
-    {'firstName': 'Noah', 'lastName': 'M.', 'country': 'Switzerland', 'continent': 'Europe', 'age': 19,
-     'language': 'JavaScript'},
-    {'firstName': 'Maia', 'lastName': 'S.', 'country': 'Tahiti', 'continent': 'Oceania', 'age': 28,
-     'language': 'JavaScript'},
-    {'firstName': 'Shufen', 'lastName': 'L.', 'country': 'Taiwan', 'continent': 'Asia', 'age': 35, 'language': 'HTML'},
-    {'firstName': 'Sumayah', 'lastName': 'M.', 'country': 'Tajikistan', 'continent': 'Asia', 'age': 30,
-     'language': 'CSS'}
-]
+import unittest
 
 
-def count_developers(lst):
-    # count = 0
-    # for x in lst:
-    #     if x['language'] == 'JavaScript' and x['continent'] == 'Europe':
-    #         count += 1
-    #
-    # return count
-    return sum(1 for x in lst if x['language'] == 'JavaScript' and x['continent'] == 'Europe')
+def prime_factors(n):
+    pass
+
+
+class Solution(unittest.TestCase):
+
+    def test_1(self):
+        self.assertEqual("(2**5)(5)(7**2)(11)", prime_factors(86240))
+        self.assertEqual("(2**2)(3**3)(5)(7)(11**2)(17)", prime_factors(7775460))
+        self.assertEqual("(7919)", prime_factors(7919))
+
+
+if __name__ == '__main__':
+    unittest.main()

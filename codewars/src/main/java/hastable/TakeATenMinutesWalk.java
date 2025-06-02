@@ -1,5 +1,5 @@
 package hastable;
-
+import java.awt.Point;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -43,7 +43,7 @@ public class TakeATenMinutesWalk {
             }
         }
         // @formatter:on
-        
+
         return x == 0 && y == 0;
     }
 

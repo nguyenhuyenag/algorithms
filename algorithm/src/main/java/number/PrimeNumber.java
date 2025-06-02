@@ -59,8 +59,8 @@ public class PrimeNumber {
 
     public static void main(String[] args) {
         // primeCheck(19);
-        sieveOfEratosthenes(100);
-        // primeFactorization(11223344);
+        // sieveOfEratosthenes(100);
+        primeFactorization(11223344);
     }
 
 }
