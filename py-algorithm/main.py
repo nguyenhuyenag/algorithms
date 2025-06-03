@@ -6,7 +6,22 @@ import unittest
 
 
 def prime_factors(n):
-    pass
+    result = []
+    i = 2
+    while i * i <= n:
+        count = 0
+        while n % i == 0:
+            count += 1
+            n = n // i
+
+        if count > 0:
+            result.append(f"({i}**{count})" if count > 1 else f"({i})")
+        i += 1
+
+    if n > 1:
+        result.append(f"({n})")
+
+    return ''.join(result)
 
 
 class Solution(unittest.TestCase):

@@ -57,6 +57,29 @@ public class PrimeNumber {
         System.out.println(result);
     }
 
+    // Phân tích một số ra thừa số nguyên tố theo định dạng (p1**k1)(p2**k2)...(pn**kn)
+    public static String factors(int n) {
+        StringBuilder result = new StringBuilder();
+        Map<Integer, Integer> primeFactors = new LinkedHashMap<>();
+        for (int i = 2; i * i <= n; ++i) {
+            while (n % i == 0) {
+                primeFactors.put(i, primeFactors.getOrDefault(i, 0) + 1);
+                n /= i;
+            }
+        }
+        if (n > 1) {
+            primeFactors.put(n, primeFactors.getOrDefault(n, 0) + 1);
+        }
+        primeFactors.forEach((prime, count) -> {
+            if (count > 1) {
+                result.append("(").append(prime).append("**").append(count).append(")");
+            } else {
+                result.append("(").append(prime).append(")");
+            }
+        });
+        return result.toString();
+    }
+
     public static void main(String[] args) {
         // primeCheck(19);
         // sieveOfEratosthenes(100);
