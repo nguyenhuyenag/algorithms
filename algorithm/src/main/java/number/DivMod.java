@@ -7,7 +7,7 @@ package number;
         + 5 % 5 = 0 (chia hết)
         + 2 % 5 = 2 (nhỏ hơn nên giữ nguyên)
 
-    Ứng Dụng Đếm Vòng Tròn
+    Ứng Dụng Đếm Vòng Tròn: Cho số n, tìm vị trí của nó trong mảng, nếu vượt quá số phần tử thì quay về đầu:
 
         + index = n % số_phần_tử luôn cho kết quả nằm trong khoảng [0, số_phần_tử - 1]
         + Nếu vượt quá số phần tử, nó tự động quay về đầu

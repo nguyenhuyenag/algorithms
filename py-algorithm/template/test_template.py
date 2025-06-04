@@ -7,20 +7,30 @@ from queue import PriorityQueue
 from collections import Counter
 import itertools
 
+from parameterized import parameterized
+
 """
     
 """
+
+
+def my_method(value):
+    return value
+
+
 class Solution(unittest.TestCase):
 
-    def my_method(self, nums: List[int]) -> bool:
-        pass
+    @parameterized.expand([
+        (True, True),
+        (False, False),
+        (1, 1)
+    ])
+    def test_is_cleanly_nested(self, test_input, expected):
+        self.assertEqual(my_method(test_input), expected)
 
-    def test_1(self):
-        self.assertEqual(True, self.my_method([]))
-
-    @unittest.skip("Temporarily disabling this test")  # <-- Add this decorator
+    @unittest.skip("Temporarily disabling this test")
     def test_2(self):
-        self.assertEqual(True, self.my_method([]))
+        self.assertEqual(True, True)
 
 
 if __name__ == '__main__':
