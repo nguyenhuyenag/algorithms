@@ -30,7 +30,7 @@ class Solution(unittest.TestCase):
 
     @unittest.skip("Temporarily disabling this test")
     def test_2(self):
-        self.assertEqual(True, True)
+        self.assertEqual(my_method(True), True)
 
 
 if __name__ == '__main__':
