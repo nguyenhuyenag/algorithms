@@ -3,7 +3,11 @@ package number;
 import java.util.*;
 
 /**
+ * https://blog.28tech.com.vn/sang-so-nguyen-to
  * https://vnoi.info/wiki/algo/algebra/primality_check.md
+ * https://upload.wikimedia.org/wikipedia/commons/b/b9/Sieve_of_Eratosthenes_animation.gif
+ *
+ * Nếu tất cả các số nguyên trong đoạn [2, sqrt(n)] đều không phải là ước của n thì n là số nguyên tố.
  */
 public class PrimeNumber {
 
@@ -15,7 +19,7 @@ public class PrimeNumber {
         return true;
     }
 
-    // Tìm số nguyên tố trong đoạn (a, b)
+    // Tìm số nguyên tố trong đoạn (2, n)
     public static void sieveOfEratosthenes(int n) {
         boolean[] prime = new boolean[n + 1];
         Arrays.fill(prime, true);
@@ -25,7 +29,7 @@ public class PrimeNumber {
 
         // Duyệt trong khoảng: [2, sqrt(n)]
         for (int p = 2; p * p <= n; p++) { // p = sqrt(n)
-            // Nếu vị trí p vẫn chưa bị đánh dấu (p chưa bị đánh đấu là hợp số)
+            // Nếu vị trí p vẫn chưa bị đánh dấu (p chưa bị đánh dấu là hợp số)
             if (prime[p]) {
                 // Đánh dấu tất cả các bội số của p (sqrt(n) -> n) là hợp số
                 for (int i = p * p; i <= n; i += p) {
