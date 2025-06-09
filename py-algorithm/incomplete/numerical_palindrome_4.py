@@ -17,7 +17,7 @@ def is_palindrome(num: int) -> bool:
     return num > 10 and str(num) == str(num)[::-1]
 
 
-def palindrome(num):
+def palindrome_1(num):
     if not isinstance(num, int) or num < 0:
         return "Not valid"
 
@@ -47,6 +47,19 @@ def palindrome(num):
         return right
 
     return max(left, right)
+
+
+def palindrome(num):
+    if not isinstance(num, int) or num < 0:
+        return "Not valid"
+
+    i = 0
+    while True:
+        if is_palindrome(num + i):
+            return num + i
+        elif is_palindrome(num - i):
+            return num - i
+        i += 1
 
 
 class TestSolution(unittest.TestCase):
