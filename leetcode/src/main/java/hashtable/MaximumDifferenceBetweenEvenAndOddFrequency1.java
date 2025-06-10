@@ -20,7 +20,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class MaximumDifferenceBetweenEvenAndOddFrequency1 {
 
-    public int maxDifference(String s) {
+    // Dùng HashMap
+    public int maxDifference_OK(String s) {
         Map<Character, Integer> counter = new HashMap<>();
         for (char c : s.toCharArray()) {
             counter.put(c, counter.getOrDefault(c, 0) + 1);
@@ -32,6 +33,28 @@ public class MaximumDifferenceBetweenEvenAndOddFrequency1 {
                 maxOdd = Math.max(maxOdd, x);
             } else { // Tìm số chẵn nhỏ nhất
                 minEven = Math.min(minEven, x);
+            }
+        }
+        return maxOdd - minEven;
+    }
+
+    // Dùng mảng đánh dấu
+    public int maxDifference(String s) {
+        int maxOdd = 0;
+        int minEven = Integer.MAX_VALUE;
+
+        int[] counter = new int[26];
+        for (char c : s.toCharArray()) {
+            counter[c - 'a']++;
+        }
+
+        for (int count : counter) {
+            if (count > 0) {
+                if (count % 2 == 1) {
+                    maxOdd = Math.max(maxOdd, count);
+                } else {
+                    minEven = Math.min(minEven, count);
+                }
             }
         }
         return maxOdd - minEven;
