@@ -50,11 +50,11 @@ public class MaximumDifferenceBetweenEvenAndOddFrequency1 {
 
         for (int count : counter) {
             if (count > 0) {
-                if (count % 2 == 1) {
-                    maxOdd = Math.max(maxOdd, count);
-                } else {
-                    minEven = Math.min(minEven, count);
-                }
+            if (count % 2 == 1) {
+                maxOdd = Math.max(maxOdd, count);
+            } else {
+                minEven = Math.min(minEven, count);
+            }
             }
         }
         return maxOdd - minEven;
