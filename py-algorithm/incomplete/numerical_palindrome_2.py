@@ -49,8 +49,10 @@ def is_palindrome_segment(s: str, i: int, j: int) -> bool:
 def check_recursive(s: str, i: int, j: int) -> bool:
     if i >= j:
         return False
+
     if is_palindrome_segment(s, i, j):
         return True
+
     return (
             check_recursive(s, i + 1, j) or
             check_recursive(s, i, j - 1) or
@@ -61,6 +63,7 @@ def check_recursive(s: str, i: int, j: int) -> bool:
 def palindrome(n):
     if not isinstance(n, int) or n < 0:
         return "Not valid"
+
     s = str(n)
     return check_recursive(s, 0, len(s) - 1)
 
