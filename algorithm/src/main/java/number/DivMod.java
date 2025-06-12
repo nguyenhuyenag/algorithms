@@ -14,12 +14,33 @@ package number;
  */
 public class DivMod {
 
-    public static void main(String[] args) {
+    // Tìm vị trí của số n trong mảng numbers với n > length
+    public static void findIndexOutOfRange() {
         int[] numbers = {7, 5, 2, 10, 15};
         int n = 5;
         int index = 5 % numbers.length;
         System.out.println("index: " + index);
         System.out.println("value: " + numbers[index]);
+    }
+
+    // Hiển thị mảng theo kiểu vòng tròn
+    public static void showCircular() {
+        int i = 0;
+        int[] numbers = {44, 12, 65, 84, 23, 90};
+        while (true) {
+            int index = (i++) % numbers.length;
+            System.out.println("i = " + index + ", value = " + numbers[index]);
+            try {
+                Thread.sleep(1000); // Dừng 1 giây để dễ quan sát
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        // findIndexOutOfRange();
+        showCircular();
     }
 
 }
