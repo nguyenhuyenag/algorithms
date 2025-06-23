@@ -1,10 +1,8 @@
-package test;
+package array;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*-
     https://leetcode.com/problems/maximum-difference-between-increasing-elements/
@@ -12,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
     Cho mảng số nguyên dương arr, tìm giá trị lớn nhất của arr[j] - arr[i] với i < j.
     Nếu không có giá trị nào thỏa mãn thì trả về -1.
  */
-public class MainLeet {
+public class MaximumDifferenceBetweenIncreasingElements {
 
     // Bad solution: O(n^2)
     public int maximumDifference_OK(int[] nums) {
