@@ -5,7 +5,7 @@ package linked;
  */
 public class FastSlowPointer {
 
-    public static void findMidleNode(ListNode head) {
+    public static void findMiddleNode(ListNode head) {
         if (head == null || head.next == null) return;
         ListNode fast = head;
         ListNode slow = head;
@@ -18,7 +18,7 @@ public class FastSlowPointer {
 
     public static void main(String[] args) {
         ListNode head = ListNode.of(1, 2, 3, 4, 5);
-        findMidleNode(head);
+        findMiddleNode(head);
     }
 
 }
