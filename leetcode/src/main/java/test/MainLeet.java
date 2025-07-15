@@ -3,40 +3,53 @@ package test;
 import linked.ListNode;
 import org.junit.jupiter.api.Test;
 
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*-
-    https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/
+    https://leetcode.com/problems/valid-word/
+
+    A word is considered valid if:
+        It contains a minimum of 3 characters.
+        It contains only digits (0-9), and English letters (uppercase and lowercase).
+        It includes at least one vowel.
+        It includes at least one consonant.
  */
 public class MainLeet {
 
-    public int getDecimalValue_OK(ListNode head) {
-        StringBuilder builder = new StringBuilder();
-        for (ListNode p = head; p != null; p = p.next) {
-            builder.append(p.val);
-        }
-        return Integer.parseInt(builder.toString(), 2);
-    }
+    public boolean isValid(String word) {
+        if (word.length() < 3) return false;
+        Set<Character> vowels = Set.of('a', 'e', 'i', 'o', 'u');
 
-    public int getDecimalValue(ListNode head) {
-        StringBuilder builder = new StringBuilder();
-        while (head != null) {
-            builder.append(head.val);
-            head = head.next;
+        boolean hasVowel = false;
+        boolean hasConsonant = false;
+
+        for (char c : word.toCharArray()) {
+            if (Character.isLetterOrDigit(c)) {
+                if (Character.isLetter(c)) {
+                    char lowerC = Character.toLowerCase(c);
+                    if (vowels.contains(lowerC)) {
+                        hasVowel = true;
+                    } else {
+                        hasConsonant = true;
+                    }
+                }
+            } else {
+                return false;
+            }
         }
-        return Integer.parseInt(builder.toString(), 2);
+        return hasVowel && hasConsonant;
     }
 
     @Test
-    public void test1() {
-        ListNode l = ListNode.of(1, 0, 1);
-        assertEquals(5, getDecimalValue(l));
-    }
-
-    @Test
-    public void test2() {
-        ListNode l = ListNode.of(0);
-        assertEquals(0, getDecimalValue(l));
+    public void test() {
+        // assertEquals(true, isValid("234Adas"));
+        // assertEquals(false, isValid("b3"));
+        // assertEquals(true, isValid("aya"));
+        assertEquals(false, isValid("Ya$"));
     }
 
 }
