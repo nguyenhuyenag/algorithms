@@ -11,12 +11,19 @@ from linked.list_node import ListNode
 
 class Solution(unittest.TestCase):
 
-    def getDecimalValue(self, head: Optional[ListNode]) -> int:
+    def getDecimalValue_OK(self, head: Optional[ListNode]) -> int:
         result = 0
         while head:
             result = (result << 1) | head.val
             head = head.next
         return result
+
+    def getDecimalValue(self, head: Optional[ListNode]) -> int:
+        binary_str = ""
+        while head:
+            binary_str += str(head.val)
+            head = head.next
+        return int(binary_str, 2)
 
     def test_1(self):
         head = linked.list_node.ListNode.build_linked_list([1, 0, 1])
