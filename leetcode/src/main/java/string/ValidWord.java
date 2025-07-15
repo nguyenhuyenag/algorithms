@@ -1,4 +1,4 @@
-package test;
+package string;
 
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
         It includes at least one vowel.
         It includes at least one consonant.
  */
-public class MainLeet {
+public class ValidWord {
 
     public boolean isValid(String word) {
         if (word.length() < 3) return false;
