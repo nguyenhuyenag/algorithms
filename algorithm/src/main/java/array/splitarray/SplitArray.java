@@ -14,14 +14,16 @@ public class SplitArray {
         int remaining       = list.size() % n;    // Phần dư
         int currentIndex = 0;
         for (int i = 0; i < n; i++) {
-            int subListSize = partitionSize;    // Kích thước 1 list con thực tế
+            int subSize = partitionSize;    // Kích thước 1 list con thực tế
             if (remaining > 0) {
                 remaining--;
-                subListSize++;
+                subSize++;
             }
-            // int subListSize = partitionSize + (remaining-- > 0 ? 1 : 0);
-            result.add(list.subList(currentIndex, currentIndex + subListSize));
-            currentIndex += subListSize;
+            // int subSize = partitionSize + (remaining-- > 0 ? 1 : 0);
+            // result.add(list.subList(currentIndex, currentIndex + subSize));
+            // Dùng new để tránh lỗi UnsupportedOperationException khi sử dụng subList
+            result.add(new ArrayList<>(list.subList(currentIndex, currentIndex + subSize)));
+            currentIndex += subSize;
         }
         return result;
         // @formatter:on
