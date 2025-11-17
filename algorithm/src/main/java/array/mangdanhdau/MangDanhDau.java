@@ -1,7 +1,7 @@
 package array.mangdanhdau;
 
 /**
- * Xem thêm 'SmallPositive.java'
+ * Xem thêm: SmallPositive.java
  *
  *      [A, B,..., Z]   =   [65, 66,..., 90]
  *
@@ -10,11 +10,11 @@ package array.mangdanhdau;
 public class MangDanhDau {
 
     /*-
-     * Mảng ký tự thường a-z
-     *   'a' - 'a' = 0
-     *   'b' - 'a' = 1
-     *   'c' - 'a' = 2
-     * => c - 'a' là chỉ số của 'a'
+     * Mảng ký tự thường [a - z]
+     *    'a' - 'a' = 0
+     *    'b' - 'a' = 1
+     *    'c' - 'a' = 2
+     * => char - 'a' là chỉ số của 'a'
      */
     public static void lowercase() {
         String s = "abcxyz";
