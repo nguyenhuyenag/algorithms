@@ -4,7 +4,7 @@
         i - increments the value (initially 0)
         d - decrements the value
         s - squares the value
-        o - outputs the value into the return array
+        o - outputs the value into the return arrays
 """
 import unittest
 
