@@ -31,7 +31,6 @@ public class SingleElementInASortedArray {
         return nums[0] == nums[1] ? nums[n - 1] : nums[0];
     }
 
-
     @Test
     public void test() {
         assertEquals(2, singleNonDuplicate(new int[]{1, 1, 2, 3, 3, 4, 4, 8, 8}));
