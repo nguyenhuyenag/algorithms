@@ -1,6 +1,5 @@
 package util;
 
-import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomUtils {
@@ -21,7 +20,7 @@ public class RandomUtils {
     }
 
     public static int[] randomArray() {
-        int n = randomIntInRange(4,9);
+        int n = randomIntInRange(4, 9);
         int[] array = new int[n];
         for (int i = 0; i < n; i++) {
             array[i] = randomIntInRange(-20, 20);
@@ -29,16 +28,6 @@ public class RandomUtils {
         // System.out.println("Array: " + Arrays.toString(array));
         return array;
     }
-
-//    public static int[] randomArrays() {
-//        int n = randomIntInRange(4, 9);
-//        int[] array = new int[n];
-//        for (int i = 0; i < n; i++) {
-//            array[i] = randomIntInRange(-1, 9);
-//        }
-//        // System.out.println("Array: " + Arrays.toString(array));
-//        return array;
-//    }
 
 //    public static void main(String[] args) {
 //        randomArrays(5);
