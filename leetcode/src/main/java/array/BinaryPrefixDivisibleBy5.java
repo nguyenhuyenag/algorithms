@@ -7,18 +7,19 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/**
- * https://leetcode.com/problems/binary-prefix-divisible-by-5/
- *
- * Cho mảng nums và x[i] là số nguyên có dạng biểu diễn nhị phân được tạo bởi đoạn con nums[0..i].
- * Trả về mảng boolean xem x[i] có chia hết cho 5 hay không.
- *
- * Ý tưởng là tính giá trị thập phân của từng x[i]:
- *      x₀ = nums[0]
- *      x₁ = nums[0..1] = nums[0]*2 + nums[1]
- *      x₂ = nums[0..2] = ((nums[0]*2 + nums[1])*2 + nums[2])
- * Tuy nhiên cách này sẽ bị tràn số.
- * Cải tiến: Vì bài toán yêu cầu xem x[i] có chia hết cho 5 hay không, cho nên ta chỉ cần lưu phần dư của x[i] khi chia cho 5.
+/*-
+    https://leetcode.com/problems/binary-prefix-divisible-by-5/
+
+    Cho mảng nums và x[i] là số nguyên có dạng biểu diễn nhị phân được tạo bởi đoạn con nums[0..i].
+    Trả về mảng boolean xem x[i] có chia hết cho 5 hay không.
+
+    Ý tưởng là tính giá trị thập phân của từng x[i]:
+       x₀ = nums[0]
+       x₁ = nums[0..1] = nums[0]2 + nums[1]
+       x₂ = nums[0..2] = ((nums[0]2 + nums[1])2 + nums[2])
+    Tuy nhiên cách này sẽ bị tràn số.
+    Cải tiến: Vì bài toán yêu cầu xem x[i] có chia hết cho 5 hay không, cho nên ta chỉ cần lưu
+    phần dư của x[i] khi chia cho 5.
  */
 public class BinaryPrefixDivisibleBy5 {
 
