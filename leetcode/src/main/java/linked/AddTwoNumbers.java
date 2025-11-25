@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import util.LinkedListTestUtils;
 
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
+import static util.LinkedListTestUtils.*;
 
 /*
     https://leetcode.com/problems/add-two-numbers/
@@ -52,14 +53,14 @@ public class AddTwoNumbers {
     public void test1() {
         ListNode l1 = ListNode.of(2, 4, 3);
         ListNode l2 = ListNode.of(5, 6, 4);
-        LinkedListTestUtils.assertLinkedListEquals(ListNode.of(7, 0, 8), addTwoNumbers(l1, l2));
+        assertLinkedListEquals(ListNode.of(7, 0, 8), addTwoNumbers(l1, l2));
     }
 
     @Test
     public void test2() {
         ListNode l1 = ListNode.of(0);
         ListNode l2 = ListNode.of(0);
-        LinkedListTestUtils.assertLinkedListEquals(ListNode.of(0), addTwoNumbers(l1, l2));
+        assertLinkedListEquals(ListNode.of(0), addTwoNumbers(l1, l2));
     }
 
     /**
