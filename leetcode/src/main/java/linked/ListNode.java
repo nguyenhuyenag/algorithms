@@ -72,7 +72,7 @@ public class ListNode {
             joiner.add(String.valueOf(current.val));
             current = current.next;
         }
-        System.out.println(joiner.toString());
+        System.out.println(joiner);
     }
 
     public boolean equals(ListNode l2) {
