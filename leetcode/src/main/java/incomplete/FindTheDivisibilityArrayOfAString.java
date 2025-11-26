@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
     Trả về mảng divisibility của chuỗi word.
 
-    Xem thêm: BinaryPrefixDivisibleBy5 
+    Xem thêm: BinaryPrefixDivisibleBy5
  */
 public class FindTheDivisibilityArrayOfAString {
 

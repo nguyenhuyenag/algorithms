@@ -5,7 +5,7 @@ from typing import List
     https://leetcode.com/problems/find-the-difference-of-two-arrays/
     
     Tìm phần tử khác nhau của 2 mảng:
-        [1,2,3], [2,4,6] -> [[1,3],[4,6]]
+        [1,2,3], [2,4,6] -> [[1,3], [4,6]]
 """
 class Solution(unittest.TestCase):
 
