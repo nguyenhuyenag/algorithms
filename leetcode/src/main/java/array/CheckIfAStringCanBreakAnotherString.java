@@ -23,8 +23,8 @@ public class CheckIfAStringCanBreakAnotherString {
         boolean aBreak = true; // Biến kiểm tra nếu a trội
         boolean bBreak = true; // Biến kiểm tra nếu b trội
         for (int i = 0; i < a.length; i++) {
-            if (a[i] < b[i]) aBreak = false;
-            if (b[i] < a[i]) bBreak = false;
+            if (a[i] < b[i]) aBreak = false; // a không trội
+            if (b[i] < a[i]) bBreak = false; // b không trội
             // Nếu cả 2 đều false thì dừng, không cần duyệt tiếp
             if (!aBreak && !bBreak) return false;
         }
