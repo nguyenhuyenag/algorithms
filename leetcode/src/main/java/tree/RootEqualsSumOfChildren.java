@@ -9,8 +9,8 @@ import static tree.TreeNode.init;
 /*-
     https://leetcode.com/problems/root-equals-sum-of-children/
 
-    Cho một cây nhị phân, kiểm tra xem giá trị của nút gốc có bằng tổng giá
-    trị của các con nó hay không.
+    Cho một cây nhị phân có 3 3 node (gốc, trái, phải). Kiểm tra xem giá trị
+    của nút gốc có bằng tổng giá trị của các con nó hay không.
  */
 public class RootEqualsSumOfChildren {
 
