@@ -1,12 +1,5 @@
 import unittest
 
-from math import gcd
-from fractions import Fraction
-from typing import List
-from queue import PriorityQueue
-from collections import Counter
-import itertools
-
 """
     https://leetcode.com/problems/check-if-a-string-can-break-another-string/
     
@@ -35,7 +28,7 @@ class Solution(unittest.TestCase):
 
     def test_1(self):
         self.assertEqual(True, self.checkIfCanBreak("abc", "xya"))
-        self.assertEqual(True, self.checkIfCanBreak(s1 = "leetcodee", s2 = "interview"))
+        self.assertEqual(True, self.checkIfCanBreak(s1="leetcodee", s2="interview"))
 
 
 if __name__ == '__main__':
