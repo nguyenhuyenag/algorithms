@@ -7,7 +7,7 @@ def convert_bits(a, b):
     bit_a = bin(a)[2:]
     bit_b = bin(b)[2:]
 
-    # Pad the shorter string with leading zeros
+    # Pad the shorter strings with leading zeros
     max_len = max(len(bit_a), len(bit_b))
     bit_a = bit_a.zfill(max_len)
     bit_b = bit_b.zfill(max_len)

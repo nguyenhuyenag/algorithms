@@ -11,11 +11,11 @@ from typing import List
         2. It contains at least one uppercase letter.
         3. It contains at least one digit.
         4. It contains at least one special character. The special characters are the
-           characters in the following string: "!@#$%^&*()-+".
+           characters in the following strings: "!@#$%^&*()-+".
         5. It does not contain 2 of the same character in adjacent positions (i.e., "aab"
            violates this condition, but "aba" does not).
  
-  Given a string password, return true if it is a strong password. Otherwise, return false
+  Given a strings password, return true if it is a strong password. Otherwise, return false
 """
 class Solution(unittest.TestCase):
 

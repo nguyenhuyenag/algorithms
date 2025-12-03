@@ -4,7 +4,7 @@ import unittest
 """
     https://www.codewars.com/kata/581bc0629ad9ff9873000316/train/python
     
-    You will be passed a string of any length containing numbers and operators:
+    You will be passed a strings of any length containing numbers and operators:
         '+' = add
         '-' = subtract
         '*' = multiply
