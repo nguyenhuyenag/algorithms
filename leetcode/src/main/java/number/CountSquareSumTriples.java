@@ -45,22 +45,18 @@ public class CountSquareSumTriples {
     }
 
     public int countTriples(int n) {
-        int maxSquare = 2 * n * n;
-        boolean[] isPerfect = new boolean[maxSquare + 1];
-        int limit = (int) Math.sqrt(maxSquare);
-
-        // Precompute perfect squares
-        for (int x = 1; x <= limit; x++) {
-            isPerfect[x * x] = true;
+        int maxC2 = 2 * n * n; // Max c^2 = a^2 + b^2 <= n^2 + n^2 = 2n^2
+        boolean[] isPerfect = new boolean[maxC2 + 1];
+        int limit = (int) Math.sqrt(maxC2);
+        for (int c = 1; c <= limit; c++) {
+            isPerfect[c * c] = true;
         }
 
         int count = 0;
-
         for (int a = 1; a <= n; a++) {
             for (int b = 1; b <= n; b++) {
-                int cSquare = a * a + b * b;
-                // Check if c^2 is perfect and c <= n (i.e., c^2 <= n^2)
-                if (cSquare <= n * n && isPerfect[cSquare]) {
+                int c2 = a * a + b * b;
+                if (c2 <= n * n && isPerfect[c2]) {
                     count++;
                 }
             }
