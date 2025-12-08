@@ -9,7 +9,9 @@ import org.junit.jupiter.api.Test;
  *
  * https://leetcode.com/problems/sum-of-square-numbers/
  * 
- * Cho số nguyên c, kiểm tra số xem c = a^2 + b^2
+ * Cho số nguyên c, kiểm tra số xem c = a^2 + b^2.
+ *
+ * Xem thêm: CountSquareSumTriples
  */
 public class SumOfSquareNumbers {
 
