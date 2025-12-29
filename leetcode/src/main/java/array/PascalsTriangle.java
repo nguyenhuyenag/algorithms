@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class PascalsTriangle {
 
-    public static List<List<Integer>> generate(int numRows) {
+    public static List<List<Integer>> generate_ok(int numRows) {
         List<List<Integer>> result = new ArrayList<>();
         for (int i = 0; i < numRows; i++) {
             List<Integer> row = new ArrayList<>();
@@ -39,8 +40,35 @@ public class PascalsTriangle {
         return result;
     }
 
+    public static List<List<Integer>> generate(int n) {
+        List<List<Integer>> triangle = new ArrayList<>();
+        // Tam giác Pascal có n hàng
+        for (int i = 0; i < n; i++) {
+            // Khởi tạo tất cả phần tử là 1
+            List<Integer> row = new ArrayList<>(Collections.nCopies(i + 1, 1));
+            Collections.fill(row, 1);
+            // Cập nhật các phần tử ở giữa
+            for (int j = 1; j < i; j++) {
+                List<Integer> prevRow = triangle.get(i - 1);
+                row.set(j, prevRow.get(j - 1) + prevRow.get(j));
+            }
+            triangle.add(row);
+        }
+        return triangle;
+    }
+
     @Test
     public void test1() {
+        // @formatter:off
+        List<List<Integer>> result = List.of(
+            List.of(1)
+        );
+        assertIterableEquals(result, generate(1));
+        // @formatter:on
+    }
+
+    @Test
+    public void test2() {
         // @formatter:off
         List<List<Integer>> result = List.of(
             List.of(1),

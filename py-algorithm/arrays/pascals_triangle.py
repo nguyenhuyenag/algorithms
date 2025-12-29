@@ -35,7 +35,7 @@ class Solution(unittest.TestCase):
 
         return result
 
-    @unittest.skip
+    # @unittest.skip
     def test_1(self):
         self.assertEqual([[1]], self.generate(1))
 
