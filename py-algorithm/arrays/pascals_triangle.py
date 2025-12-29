@@ -41,7 +41,8 @@ class Solution(unittest.TestCase):
         pascal = [[1]]
         for i in range(1, n):
             row = [1] * (i + 1)
-            prev = pascal[i - 1]
+            # prev = pascal[i - 1]
+            prev = pascal[-1]
             for j in range(1, i):
                 row[j] = prev[j - 1] + prev[j]
 
