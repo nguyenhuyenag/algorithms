@@ -20,22 +20,35 @@ from typing import List
 
 class Solution(unittest.TestCase):
 
-    def generate(self, n: int) -> List[List[int]]:
-        result = []
+    def generate_OK1(self, n: int) -> List[List[int]]:
+        pascal = []
         # Tam giác có n dòng
         for i in range(n):
-            # khởi tạo dòng toàn 1
+            # Khởi tạo dòng toàn 1
             row = [1] * (i + 1)
             # Cập nhật các giá trị ở giữa (trừ 2 đầu mút)
-            prev = result[i - 1] if i > 0 else None
+            prev = pascal[i - 1] if i > 0 else None
             for j in range(1, i):
                 row[j] = prev[j - 1] + prev[j]
 
-            result.append(row)
+            pascal.append(row)
 
-        return result
+        return pascal
 
-    # @unittest.skip
+    def generate(self, n: int) -> List[List[int]]:
+        if n == 0: return []
+        # Khởi tạo
+        pascal = [[1]]
+        for i in range(1, n):
+            row = [1] * (i + 1)
+            prev = pascal[i - 1]
+            for j in range(1, i):
+                row[j] = prev[j - 1] + prev[j]
+
+            pascal.append(row)
+
+        return pascal
+
     def test_1(self):
         self.assertEqual([[1]], self.generate(1))
 

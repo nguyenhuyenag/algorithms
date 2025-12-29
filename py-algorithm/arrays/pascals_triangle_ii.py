@@ -19,22 +19,7 @@ from typing import List
 
 class Solution(unittest.TestCase):
 
-    # def generate(self, n: int) -> List[List[int]]:
-    #     result = []
-    #     # Tam giác có n dòng
-    #     for i in range(n):
-    #         # khởi tạo dòng toàn 1
-    #         row = [1] * (i + 1)
-    #         # Cập nhật các giá trị ở giữa (trừ 2 đầu mút)
-    #         for j in range(1, i):
-    #             previous_row = result[i - 1]
-    #             row[j] = previous_row[j - 1] + previous_row[j]
-    #
-    #         result.append(row)  # append sau khi hoàn thiện row
-    #
-    #     return result
-
-    def getRow(self, rowIndex: int) -> List[int]:
+    def getRow_OK1(self, rowIndex: int) -> List[int]:
         pascal = []
         for i in range(rowIndex + 1):
             row = [1] * (i + 1)
@@ -63,7 +48,6 @@ class Solution(unittest.TestCase):
 
         return row
 
-    # @unittest.skip
     def test_1(self):
         self.assertEqual([1], self.getRow(0))
 
