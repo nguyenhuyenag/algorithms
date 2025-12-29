@@ -34,17 +34,15 @@ class Solution(unittest.TestCase):
     #
     #     return result
 
-    def getRow_OK1(self, rowIndex: int) -> List[int]:
+    def getRow(self, rowIndex: int) -> List[int]:
         pascal = []
-        i = 0
-        while len(pascal) <= rowIndex:
+        for i in range(rowIndex + 1):
             row = [1] * (i + 1)
+            prev = pascal[i - 1] if i > 0 else None
             for j in range(1, i):
-                previous_row = pascal[i - 1]
-                row[j] = previous_row[j - 1] + previous_row[j]
+                row[j] = prev[j - 1] + prev[j]
 
             pascal.append(row)
-            i = i + 1
 
         return pascal[rowIndex]
 

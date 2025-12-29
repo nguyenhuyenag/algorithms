@@ -27,11 +27,11 @@ class Solution(unittest.TestCase):
             # khởi tạo dòng toàn 1
             row = [1] * (i + 1)
             # Cập nhật các giá trị ở giữa (trừ 2 đầu mút)
+            prev = result[i - 1] if i > 0 else None
             for j in range(1, i):
-                previous_row = result[i - 1]
-                row[j] = previous_row[j - 1] + previous_row[j]
+                row[j] = prev[j - 1] + prev[j]
 
-            result.append(row)  # append sau khi hoàn thiện row
+            result.append(row)
 
         return result
 
