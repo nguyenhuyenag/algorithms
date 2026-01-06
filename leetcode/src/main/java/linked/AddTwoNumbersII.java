@@ -1,12 +1,10 @@
 package linked;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import util.LinkedListTestUtils;
 
 import java.util.Stack;
 
-import static util.LinkedListTestUtils.*;
+import static util.LinkedListTestUtils.assertLinkedListEquals;
 
 /*
     https://leetcode.com/problems/add-two-numbers-ii/

@@ -6,6 +6,8 @@ import util.LinkedListTestUtils;
 import java.util.ArrayList;
 import java.util.List;
 
+import static util.LinkedListTestUtils.*;
+
 /**
  * https://leetcode.com/problems/reverse-linked-list-ii/
  *
@@ -38,7 +40,7 @@ public class ReverseLinkedListII {
     @Test
     public void test1() {
         ListNode head = ListNode.of(1, 2, 3, 4, 5);
-        LinkedListTestUtils.assertLinkedListEquals(ListNode.of(1, 4, 3, 2, 5), reverseBetween(head, 2, 4));
+        assertLinkedListEquals(ListNode.of(1, 4, 3, 2, 5), reverseBetween(head, 2, 4));
     }
 
 }
