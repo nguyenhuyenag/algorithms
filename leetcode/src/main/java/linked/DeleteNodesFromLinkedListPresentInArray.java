@@ -1,16 +1,11 @@
-package incomplete;
+package linked;
 
-import linked.ListNode;
-import org.apache.commons.lang3.ArrayUtils;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import util.LinkedListTestUtils;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import static util.LinkedListTestUtils.*;
+import static util.LinkedListTestUtils.assertLinkedListEquals;
 
 /*-
     https://leetcode.com/problems/delete-nodes-from-linked-list-present-in-array/
