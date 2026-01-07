@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static util.LinkedListTestUtils.*;
+
 public class SwapNodesInPairs {
 
     public ListNode swapPairs_OK(ListNode listNode) {
@@ -49,7 +51,7 @@ public class SwapNodesInPairs {
     @Test
     public void test() {
         ListNode list = ListNode.of(1, 2, 3, 4);
-        LinkedListTestUtils.assertLinkedListEquals(ListNode.of(2, 1, 4, 3), swapPairs(list));
+        assertLinkedListEquals(ListNode.of(2, 1, 4, 3), swapPairs(list));
     }
 
 }

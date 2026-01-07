@@ -28,7 +28,7 @@ public class ListNode {
      * Tạo Linked List có giá trị khởi đầu
      */
     public static ListNode of(Integer... vals) {
-        ListNode head = new ListNode(0);
+        ListNode head = new ListNode(Integer.MIN_VALUE);
         ListNode current = head;
         for (int val : vals) {
             current.next = new ListNode(val);

@@ -3,6 +3,8 @@ package linked;
 import util.LinkedListTestUtils;
 import org.junit.jupiter.api.Test;
 
+import static util.LinkedListTestUtils.*;
+
 /**
  * https://leetcode.com/problems/partition-list/
  *
@@ -32,12 +34,12 @@ public class PartitionList {
     @Test
     public void test1() {
         ListNode head = ListNode.of(1, 4, 3, 2, 5, 2);
-        LinkedListTestUtils.assertLinkedListEquals(ListNode.of(1, 2, 2, 4, 3, 5), partition(head, 3));
+        assertLinkedListEquals(ListNode.of(1, 2, 2, 4, 3, 5), partition(head, 3));
     }
 
     @Test
     public void test2() {
         ListNode head = ListNode.of(2, 1);
-        LinkedListTestUtils.assertLinkedListEquals(ListNode.of(1, 2), partition(head, 2));
+        assertLinkedListEquals(ListNode.of(1, 2), partition(head, 2));
     }
 }
