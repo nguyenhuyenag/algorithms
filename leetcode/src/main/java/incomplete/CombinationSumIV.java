@@ -10,6 +10,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*
     https://leetcode.com/problems/combination-sum-iv/
+
+    Cho một mảng các số nguyên phân biệt nums và một số nguyên mục tiêu target,
+    hãy trả về số lượng các tổ hợp có thể sao cho tổng của chúng bằng target.
+
+    Các bộ test được tạo ra sao cho kết quả có thể vừa trong một số nguyên 32-bit.
  */
 public class CombinationSumIV {
 
