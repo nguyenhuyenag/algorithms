@@ -1,4 +1,4 @@
-package number;
+package number.bit;
 
 import org.junit.jupiter.api.Test;
 
