@@ -39,9 +39,8 @@ class Solution(unittest.TestCase):
     def test_1(self):
         self.assertEqual(13, self.sumIndicesWithKSetBits([5, 10, 1, 5, 2], 1))
 
-    @unittest.skip("Temporarily disabling this test")
     def test_2(self):
-        self.assertEqual(1, self.sumIndicesWithKSetBits([1, 2, 3, 4, 5], 2))
+        self.assertEqual(1, self.sumIndicesWithKSetBits([4, 3, 2, 1], 2))
 
 
 if __name__ == '__main__':
