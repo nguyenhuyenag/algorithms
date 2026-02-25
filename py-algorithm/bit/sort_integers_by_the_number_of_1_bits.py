@@ -18,9 +18,11 @@ import itertools
 class Solution(unittest.TestCase):
 
     def sortByBits_1(self, arr: List[int]) -> List[int]:
+        # Convert to a binary-string then count string '1' -> slow
         return sorted(arr, key=lambda x: (bin(x).count('1'), x))
 
     def sortByBits(self, arr: List[int]) -> List[int]:
+        # bit_count() is implemented in C -> fast
         arr.sort(key=lambda x: (x.bit_count(), x))
         return arr
 
