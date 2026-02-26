@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /*-
  * https://leetcode.com/problems/add-binary/
  *
- * Nguyên tắc cơ bản để cộng hai số nhị phân như sau:
+ * > Nguyên tắc cơ bản để cộng hai số nhị phân như sau:
  *
  *      0 + 0 = 0
  *      1 + 0 = 1

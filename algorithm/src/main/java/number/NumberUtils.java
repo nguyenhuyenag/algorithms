@@ -2,16 +2,6 @@ package number;
 
 public class NumberUtils {
 
-    // Thập phân => nhị phân
-//    public static String toBinary(int n) {
-//        String s = "";
-//        while (n != 0) {
-//            s = n % 2 + s;
-//            n = n / 2;
-//        }
-//        return s; // return Integer.toBinaryString(n);
-//    }
-
     public static String removeLeadingZeros(StringBuilder num) {
         int i = 0;
         while (i < num.length() && num.charAt(i) == '0') {
@@ -60,6 +50,10 @@ public class NumberUtils {
         return n;
     }
 
+    public static int lastDigit(int n) {
+        return n % 10;
+    }
+
     /**
      * Đảo ngược số
      */
@@ -67,7 +61,7 @@ public class NumberUtils {
         int result = 0;
         /**
          * n = ab = 10 * a + b
-         * n % 10 => Lấy chữ số ra thêm vào hàng đơn vị
+         * n % 10 => Lấy chữ số ra thêm vào hàng đơn vị.
          */
         while (n > 0) {
             result = 10 * result + n % 10;
@@ -177,8 +171,9 @@ public class NumberUtils {
     }
 
     public static void main(String[] args) {
-        StringBuilder n = new StringBuilder("000012356090");
-        System.out.println("n = " + removeLeadingZeros(n));
+        int n = 123456;
+        System.out.println("firstDigit: " + firstDigit(n));
+        System.out.println("lastDigit: " + lastDigit(n));
     }
 
 }
