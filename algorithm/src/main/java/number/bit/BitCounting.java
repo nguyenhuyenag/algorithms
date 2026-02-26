@@ -1,6 +1,8 @@
-package bit;
+package number.bit;
 
-// Đếm số bit 1 trong chuỗi nhị phân được tạo bởi số nguyên n
+/*
+    Đếm số bit 1 trong chuỗi nhị phân được tạo bởi số nguyên n.
+ */
 public class BitCounting {
 
 	public static int countBits(int n) {

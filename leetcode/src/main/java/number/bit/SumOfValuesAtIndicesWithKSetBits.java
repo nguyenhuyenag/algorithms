@@ -1,11 +1,10 @@
 package number.bit;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*
     https://leetcode.com/problems/sum-of-values-at-indices-with-k-set-bits/
@@ -14,12 +13,12 @@ import static org.junit.jupiter.api.Assertions.*;
     trong biểu diễn nhị phân của chỉ số bằng k.
 
     Ví dụ: arr = [5, 10, 1, 5, 2], k = 1
-    index = 0 -> bitCount(0) = 0
-            1 -> bitCount(1) = 1    -> arr[1] = 10  -> ok
-            2 -> bitCount(2) = 1    -> arr[2] = 1   -> ok
-            3 -> bitCount(3) = 2
-            4 -> bitCount(4) = 1    -> arr[4] = 2   -> ok
-    => sum = 10 + 1 + 2 = 13
+        index = 0 -> bitCount(0) = 0
+                1 -> bitCount(1) = 1    -> arr[1] = 10  -> ok
+                2 -> bitCount(2) = 1    -> arr[2] = 1   -> ok
+                3 -> bitCount(3) = 2
+                4 -> bitCount(4) = 1    -> arr[4] = 2   -> ok
+        => sum = 10 + 1 + 2 = 13
  */
 public class SumOfValuesAtIndicesWithKSetBits {
 

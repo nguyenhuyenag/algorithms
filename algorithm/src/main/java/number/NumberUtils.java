@@ -12,32 +12,6 @@ public class NumberUtils {
 //        return s; // return Integer.toBinaryString(n);
 //    }
 
-    public static String toBinary(int n) {
-        if (n == 0) {
-            return "0";
-        }
-        StringBuilder binary = new StringBuilder();
-        while (n > 0) {
-            binary.append(n % 2);
-            n /= 2;
-        }
-        // Reverse the StringBuilder to get the correct binary representation
-        return binary.reverse().toString();
-    }
-
-    public static String toBinary0(int sum) {
-        StringBuilder binary = new StringBuilder();
-        if (sum == 0) {
-            return "0";
-        }
-        while (sum > 0) {
-            int remainder = sum % 2;
-            binary.insert(0, remainder);
-            sum /= 2;
-        }
-        return binary.toString();
-    }
-
     public static String removeLeadingZeros(StringBuilder num) {
         int i = 0;
         while (i < num.length() && num.charAt(i) == '0') {
@@ -62,13 +36,6 @@ public class NumberUtils {
         }
         // removeLeadingZeros
         return builder.reverse().toString();
-    }
-
-    /**
-     * Nhị phân => thập phân
-     */
-    public static int binaryToDecimal(String binary) {
-        return Integer.parseInt(binary, 2);
     }
 
     /**
