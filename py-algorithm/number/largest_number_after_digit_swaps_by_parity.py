@@ -1,17 +1,10 @@
 import unittest
 
-from math import gcd
-from fractions import Fraction
-from typing import List
-from queue import PriorityQueue
-from collections import Counter
-import itertools
-
 """
     https://leetcode.com/problems/largest-number-after-digit-swaps-by-parity/
     
     Cho số nguyên dương n. Ta có thể hoán đổi vị trí 2 chữ số nếu chúng có cùng
-    tính chẵn - lẻ
+    tính chẵn - lẻ.
 
     Hãy trả về giá trị lớn nhất.
 
