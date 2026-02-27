@@ -32,11 +32,11 @@ class Solution(unittest.TestCase):
         even = []
         odd = []
 
-        for digit in digits:
-            if digit % 2 == 0:
-                even.append(digit)
+        for d in digits:
+            if d % 2 == 0:
+                even.append(d)
             else:
-                odd.append(digit)
+                odd.append(d)
 
         even.sort(reverse=True)
         odd.sort(reverse=True)
