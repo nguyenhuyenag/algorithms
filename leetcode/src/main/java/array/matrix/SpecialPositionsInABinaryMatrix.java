@@ -57,11 +57,4 @@ public class SpecialPositionsInABinaryMatrix {
         assertEquals(3, numSpecial(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}));
     }
 
-    @Test
-    public void test() {
-        Assertions.assertEquals();
-        Assertions.assertArrayEquals();
-        Assertions.assertIterableEquals();
-    }
-
 }
