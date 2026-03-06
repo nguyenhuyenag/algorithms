@@ -10,9 +10,9 @@ const (
 
 func AssertEquals[T comparable](name string, expected, actual T) {
 	if expected == actual {
-		fmt.Printf(Green+"PASS: %s"+Reset+"\n", name)
+		fmt.Printf(Green+"✔ PASS: "+Reset+" %-10s\n", name)
 	} else {
-		fmt.Printf(Red+"FAIL: %-10s | expected: %-5v | got: %-5v"+Reset+"\n",
+		fmt.Printf(Red+"❌ FAIL: "+Reset+" %-10s (expected=%v, got=%v)\n",
 			name, expected, actual)
 	}
 }
