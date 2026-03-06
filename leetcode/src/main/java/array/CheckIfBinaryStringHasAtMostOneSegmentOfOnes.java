@@ -22,36 +22,6 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class CheckIfBinaryStringHasAtMostOneSegmentOfOnes {
 
-    public boolean checkOnesSegment_Error(String s) {
-        if (s.length() <= 2) return true;
-        int count = 0;
-        // Duyệt từ 0 -> n - 1 và kiểm tra s[i], s[i+1]
-        for (int i = 0; i < s.length() - 1; i++) {
-            if (s.charAt(i) == '1' && s.charAt(i + 1) == '1') {
-                count++;
-            }
-            if (count > 1) return false;
-        }
-        return count == 1;
-    }
-
-    public boolean checkOnesSegment_Error2(String s) {
-        // Vì chuỗi luôn bắt đầu là '1' nên luôn tồn tại 1 đoạn liên tiếp.
-        int count = 1;
-        Stack<Character> stack = new Stack<>();
-        stack.push('1'); // Do chuỗi luôn bắt đầu từ '1'
-        // Duyệt từ 1 -> n.
-        for (int i = 1; i < s.length(); i++) {
-            char c = s.charAt(i);
-            if (c == '0') {
-                count++;
-            } else {
-
-            }
-        }
-        return count == 1;
-    }
-
     /*
         - Chỉ cần kiểm tra chuỗi có chứa "01" hay không. Vì
 
@@ -63,7 +33,7 @@ public class CheckIfBinaryStringHasAtMostOneSegmentOfOnes {
         return !s.contains("01");
     }
 
-    public boolean checkOnesSegment(String s) {
+    public boolean checkOnesSegment_OK2(String s) {
         int count = 0;
 
         for (int i = 0; i < s.length() - 1; i++) {
@@ -80,6 +50,18 @@ public class CheckIfBinaryStringHasAtMostOneSegmentOfOnes {
             }
         }
 
+        return true;
+    }
+
+    /*
+        - Tương tự contains()
+     */
+    public boolean checkOnesSegment(String s) {
+        for (int i = 0; i < s.length() - 1; i++) {
+            if (s.charAt(i) == '0' && s.charAt(i + 1) == '1') {
+                return false;
+            }
+        }
         return true;
     }
 
