@@ -1,6 +1,8 @@
 package test_util
 
-import "fmt"
+import (
+	"fmt"
+)
 
 const (
 	Red   = "\033[31m"
@@ -36,3 +38,22 @@ func AssertInt(expected int, actual int) {
 			width, actual, expected, actual)
 	}
 }
+
+//func Assert[T comparable](expected T, fn any, params ...any) {
+//	f := reflect.ValueOf(fn)
+//
+//	args := make([]reflect.Value, len(params))
+//	for i, p := range params {
+//		args[i] = reflect.ValueOf(p)
+//	}
+//
+//	results := f.Call(args)
+//	actual := results[0].Interface().(T)
+//
+//	if actual == expected {
+//		fmt.Printf(Green+"✔ PASS: "+Reset+" %-*v\n", width, params)
+//	} else {
+//		fmt.Printf(Red+"❌ FAIL:"+Reset+" %-*v (expected=%v, got=%v)\n",
+//			width, params, expected, actual)
+//	}
+//}

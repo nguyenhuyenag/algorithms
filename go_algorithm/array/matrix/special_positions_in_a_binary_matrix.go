@@ -1,17 +1,15 @@
 package main
 
-import (
-	"go_algorithm/test_util"
-)
+import "go_algorithm/test_util"
 
 /*
-	https://leetcode.com/problems/special-positions-in-a-binary-matrix/
+https://leetcode.com/problems/special-positions-in-a-binary-matrix/
 
-	Cho ma trận M: m x n. Một vị trí (i,j) là đặc biệt nếu:
-	  - M[i][j] = 1.
-	  - Các vị trị khác theo hàng và cột đều là 0.
+Cho ma trận M: m x n. Một vị trí (i,j) là đặc biệt nếu:
+  - M[i][j] = 1.
+  - Các vị trị khác theo hàng và cột đều là 0.
 
-	Đếm sô điểm đặc biệt trong M.
+Đếm sô điểm đặc biệt trong M.
 */
 func numSpecial(mat [][]int) int {
 	count := 0
@@ -46,5 +44,4 @@ func main() {
 		{1, 0, 0},
 	})
 	test_util.AssertInt(1, result)
-	test_util.AssertInt(20000, result)
 }

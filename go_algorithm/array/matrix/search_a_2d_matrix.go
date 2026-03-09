@@ -5,16 +5,16 @@ import (
 )
 
 /*
-	https://leetcode.com/problems/search-a-2d-matrix/
+https://leetcode.com/problems/search-a-2d-matrix/
 
-	Cho một ma trận số nguyên kích thước m × n, có hai tính chất sau:
+Cho một ma trận số nguyên kích thước m × n, có hai tính chất sau:
 
-	  - Mỗi hàng được sắp xếp theo thứ tự không giảm (non-decreasing).
-	  - Phần tử đầu tiên của mỗi hàng lớn hơn phần tử cuối cùng của hàng trước đó.
+  - Mỗi hàng được sắp xếp theo thứ tự không giảm (non-decreasing).
+  - Phần tử đầu tiên của mỗi hàng lớn hơn phần tử cuối cùng của hàng trước đó.
 
-	Cho một số nguyên target. Hãy trả về true nếu target tồn tại trong ma trận, ngược lại trả về false.
+Cho một số nguyên target. Hãy trả về true nếu target tồn tại trong ma trận, ngược lại trả về false.
 
-	Ý tưởng: Nếu làm phẳng ma trận thì sẽ được một mảng tăng dần -> binarySearch
+Ý tưởng: Nếu làm phẳng ma trận thì sẽ được một mảng tăng dần -> binarySearch.
 */
 func searchMatrix(matrix [][]int, target int) bool {
 	m := len(matrix)

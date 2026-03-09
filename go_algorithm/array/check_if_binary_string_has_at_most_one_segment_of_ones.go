@@ -33,7 +33,7 @@ func main() {
 		"1000":   false,
 	}
 	for input, expected := range testCases {
-		test_util.AssertEquals(input, checkOnesSegment(input), expected)
+		test_util.AssertBool(expected, checkOnesSegment(input))
 	}
 
 }
