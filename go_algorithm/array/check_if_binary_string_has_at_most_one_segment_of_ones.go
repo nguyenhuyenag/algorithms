@@ -1,14 +1,9 @@
 package main
 
 import (
-	"go_algorithm/testutil"
+	"go_algorithm/test_util"
 	"strings"
 )
-
-type TestCase struct {
-	input    string
-	expected bool
-}
 
 func checkOnesSegment_OK(s string) bool {
 	return !strings.Contains(s, "01")
@@ -28,18 +23,17 @@ func checkOnesSegment(s string) bool {
 }
 
 func main() {
-	testCases := []TestCase{
-		{"110011", false},
-		{"110", true},
-		{"1001", false},
-		{"1", true},
-		{"10", true},
-		{"111", true},
-		{"1000", true},
+	testCases := map[string]bool{ //
+		"110011": false,
+		"110":    true,
+		"1001":   false,
+		"1":      true,
+		"10":     true,
+		"111":    true,
+		"1000":   false,
 	}
-	for _, v := range testCases {
-		result := checkOnesSegment(v.input)
-		testutil.AssertEquals(v.input, v.expected, result)
+	for input, expected := range testCases {
+		test_util.AssertEquals(input, checkOnesSegment(input), expected)
 	}
 
 }
