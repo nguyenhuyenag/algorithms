@@ -13,7 +13,7 @@ const (
 
 const width = 10
 
-func AssertBool(expected bool, actual bool) {
+func AssertBool(expected, actual bool) {
 	if expected == actual {
 		fmt.Printf(Green+"✔ PASS: "+Reset+" %-*v\n", width, actual)
 	} else {
@@ -22,7 +22,7 @@ func AssertBool(expected bool, actual bool) {
 	}
 }
 
-func AssertInt(expected int, actual int) {
+func AssertInt(expected, actual int) {
 	if expected == actual {
 		fmt.Printf(Green+"✔ PASS: "+Reset+" %-*d\n", width, actual)
 	} else {

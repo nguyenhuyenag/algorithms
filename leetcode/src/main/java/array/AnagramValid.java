@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /*
     https://leetcode.com/problems/valid-anagram/
 
-    Anagrams là 2 chuỗi s1, s2 có cùng những ký tự (bằng nhau sau khi sắp xếp)
+    Anagrams là 2 chuỗi s1, s2 có cùng những ký tự (bằng nhau sau khi sắp xếp).
 
     Xem thêm GroupAnagrams.java
  */
