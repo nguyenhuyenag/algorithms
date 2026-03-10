@@ -2,7 +2,7 @@ package test_util
 
 import (
 	"fmt"
-	"reflect"
+	"slices"
 )
 
 const (
@@ -13,20 +13,11 @@ const (
 
 const width = 10
 
-//func AssertEquals[I any, T comparable](input I, actual T, expected T) {
-//	if expected == actual {
-//		fmt.Printf(Green+"✔ PASS: "+Reset+" %-*v\n", width, input)
-//	} else {
-//		fmt.Printf(Red+"❌ FAIL:"+Reset+" %-*v (expected=%v, got=%v)\n",
-//			width, input, expected, actual)
-//	}
-//}
-
 func AssertBool(expected bool, actual bool) {
 	if expected == actual {
 		fmt.Printf(Green+"✔ PASS: "+Reset+" %-*v\n", width, actual)
 	} else {
-		fmt.Printf(Red+"❌ FAIL:"+Reset+" %-*v (expected=%v, got=%v)\n",
+		fmt.Printf(Red+"❌ FAIL:"+Reset+" %-*v expected=%v, got=%v\n",
 			width, actual, expected, actual)
 	}
 }
@@ -40,11 +31,10 @@ func AssertInt(expected int, actual int) {
 	}
 }
 
-func AssertList(expected []int, actual []int) {
-	if reflect.DeepEqual(expected, actual) {
+func AssertSlice[T comparable](expected, actual []T) {
+	if slices.Equal(expected, actual) {
 		fmt.Printf(Green+"✔ PASS: "+Reset+" %v\n", actual)
 	} else {
-		fmt.Printf(Red+"❌ FAIL: "+Reset+" got=%v expected=%v\n",
-			actual, expected)
+		fmt.Printf(Red+"❌ FAIL: "+Reset+" got=%v, expected=%v\n", actual, expected)
 	}
 }
