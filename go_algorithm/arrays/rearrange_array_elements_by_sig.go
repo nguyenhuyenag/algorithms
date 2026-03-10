@@ -12,9 +12,6 @@ và âm không thay đổi.
 Ví dụ: [3,1,-2,-5,2,-4] = [3,1,2], [-2,-5,-4] -> [3,-2,1,-5,2,-4]
 */
 func rearrangeArray_OK(nums []int) []int {
-	// var pos []int
-	// var neg []int
-
 	n := len(nums)
 
 	pos := make([]int, 0, n/2)
