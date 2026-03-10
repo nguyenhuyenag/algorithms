@@ -10,15 +10,15 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-/**
- * https://leetcode.com/problems/rearrange-array-elements-by-sign/
- *
- * Cho mảng số nguyên, sắp xếp lại theo thứ tự dương, âm xen kẽ
- *
- * Ví dụ: [3,1,-2,-5,2,-4] -> [3,1,2], [-2,-5,-4] -> [3,-2,1,-5,2,-4]
- *
- * Số âm và số dương đều có số lượng bằng nhau
- */
+/*
+    https://leetcode.com/problems/rearrange-array-elements-by-sign/
+
+    Cho mảng số nguyên, sắp xếp lại theo thứ tự dương, âm xen kẽ
+
+    Ví dụ: [3,1,-2,-5,2,-4] -> [3,1,2], [-2,-5,-4] -> [3,-2,1,-5,2,-4]
+
+    Số âm và số dương đều có số lượng bằng nhau.
+*/
 public class RearrangeArrayElementsBySign {
 
     public int[] rearrangeArray_OK1(int[] nums) {
@@ -58,7 +58,7 @@ public class RearrangeArrayElementsBySign {
         return result;
     }
 
-    public int[] rearrangeArray(int[] arr) {
+    public int[] rearrangeArray_OK3(int[] arr) {
         int len = arr.length;
         int[] result = new int[len];
         int i = 0, posIndex = 0, negIndex = 0;
@@ -75,6 +75,21 @@ public class RearrangeArrayElementsBySign {
             // Đẩy kết quả vào result
             result[i++] = arr[posIndex++];
             result[i++] = arr[negIndex++];
+        }
+        return result;
+    }
+
+    public int[] rearrangeArray(int[] arr) {
+        int[] result = new int[arr.length];
+        int pos = 0, neg = 1;
+        for (int num : arr) {
+            if (num > 0) {
+                result[pos] = num;
+                pos += 2;
+            } else {
+                result[neg] = num;
+                neg += 2;
+            }
         }
         return result;
     }

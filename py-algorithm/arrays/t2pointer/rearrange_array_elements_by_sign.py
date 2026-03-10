@@ -16,8 +16,7 @@ from collections import Counter
 
 class Solution(unittest.TestCase):
 
-    @staticmethod
-    def rearrangeArray(arr: List[int]) -> List[int]:
+    def rearrangeArray_OK1(self, arr: List[int]) -> List[int]:
         result = []
         pos_index, neg_index = 0, 0
         size = len(arr)
@@ -36,8 +35,26 @@ class Solution(unittest.TestCase):
 
         return result
 
+    def rearrangeArray(self, nums: List[int]) -> List[int]:
+        res = len(nums) * [0]
+        pos, neg = 0, 1  # Index của số âm dương
+        for num in nums:
+            if num > 0:
+                res[pos] = num
+                pos += 2  # Mỗi số dương sẽ cách nhau 2
+            else:
+                res[neg] = num
+                neg += 2  # Mỗi số âm cũng sẽ cách nhau 2
+
+        return res
+
     def test(self):
-        self.assertEqual([3, -2, 1, -5, 2, -4], self.rearrangeArray([3, 1, -2, -5, 2, -4]))
+        test_cases = [
+            ([3, -2, 1, -5, 2, -4], [3, -2, 1, -5, 2, -4]),
+            ([2, -2], [2, -2])
+        ]
+        for arr, expected in test_cases:
+            self.assertEqual(expected, self.rearrangeArray(arr))
 
 
 if __name__ == '__main__':
