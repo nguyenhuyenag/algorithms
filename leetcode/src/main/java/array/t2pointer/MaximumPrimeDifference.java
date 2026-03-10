@@ -31,11 +31,12 @@ public class MaximumPrimeDifference {
             // Tìm được cả 2 vị trí cùng là SNT
             if (leftCheck && isPrime(nums[r])) {
                 return r - l;
-            } else if (!leftCheck) {    // Số bên trái không phải SNT -> tăng l
-                l++;
-            } else {                    // Số bên phải không phải STN -> giảm r
-                r--;
-            }
+            } else                  // Nếu không tìm được cả 2 vị trí cùng là SNT thì sẽ tăng l hoặc giảm r
+                if (!leftCheck) {   // Số bên trái không phải SNT -> tăng l
+                    l++;
+                } else {            // Số bên phải không phải STN -> giảm r
+                    r--;
+                }
         }
         return 0;
     }

@@ -74,7 +74,7 @@ func maximumPrimeDifference(nums []int) int {
 	for l <= r {
 		leftCheck := isPrime(nums[l])
 		rightCheck := isPrime(nums[r])
-		// Cả 2 đầu là SNT -> Tính hiệu và trả về kết quả
+		// Cả 2 vị trí là SNT -> Dừng và trả về kết quả
 		if leftCheck && rightCheck {
 			return r - l
 		} else 				// Nếu có một trong hai không phải là SNT
