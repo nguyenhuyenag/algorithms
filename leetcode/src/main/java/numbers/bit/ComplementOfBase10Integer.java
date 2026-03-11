@@ -1,9 +1,8 @@
-package numbers;
+package numbers.bit;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*
     https://leetcode.com/problems/complement-of-base-10-integer/
@@ -26,6 +25,23 @@ public class ComplementOfBase10Integer {
         return Integer.parseInt(result.toString(), 2);
     }
 
+    public int bitwiseComplement_OK2(int n) {
+        if (n == 0) return 1;
+
+        int result = 0;
+        int base = 1;   // Giá trị bit hiện tại: 2^0, sau mỗi vòng lặp sẽ thành 2^1, 2^2, ...
+
+        while (n > 0) {
+            // Chia nhị phân đồng thời đổi bit
+            int b = n % 2 == 0 ? 1 : 0;
+            result += b * base;
+            base *= 2;
+            n /= 2;
+        }
+
+        return result;
+    }
+
     public int bitwiseComplement(int n) {
         if (n == 0) return 1;
 
@@ -33,8 +49,10 @@ public class ComplementOfBase10Integer {
         int base = 1;   // Giá trị bit hiện tại: 2^0, sau mỗi vòng lặp sẽ thành 2^1, 2^2, ...
 
         while (n > 0) {
+            // Chia nhị phân đồng thời đổi bit
             int b = n % 2;
-            result += (b == 0 ? 1 : 0) * base;
+            // Flip bit có thể viết gọn: 1 - b
+            result += (1 - b) * base;
             base *= 2;
             n /= 2;
         }
