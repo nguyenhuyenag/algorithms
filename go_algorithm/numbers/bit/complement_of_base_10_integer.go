@@ -34,7 +34,7 @@ func bitwiseComplement_OK1(n int) int {
 	return res
 }
 
-func bitwiseComplement(n int) int {
+func bitwiseComplement_OK2(n int) int {
 	if n == 0 {
 		return 1
 	}
@@ -50,6 +50,22 @@ func bitwiseComplement(n int) int {
 	}
 
 	return res
+}
+
+func bitwiseComplement(n int) int {
+	res := ""
+	binary := strconv.FormatInt(int64(n), 2)
+
+	for i := range binary {
+		if binary[i] == '0' {
+			res += "1"
+		} else {
+			res += "0"
+		}
+	}
+
+	ans, _ := strconv.ParseInt(res, 2, 64)
+	return int(ans)
 }
 
 func main() {
