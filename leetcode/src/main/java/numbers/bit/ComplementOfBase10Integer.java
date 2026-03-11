@@ -46,10 +46,9 @@ public class ComplementOfBase10Integer {
         if (n == 0) return 1;
 
         int result = 0;
-        int base = 1;   // Giá trị bit hiện tại: 2^0, sau mỗi vòng lặp sẽ thành 2^1, 2^2, ...
+        int base = 1;
 
         while (n > 0) {
-            // Chia nhị phân đồng thời đổi bit
             int b = n % 2;
             // Flip bit có thể viết gọn: 1 - b
             result += (1 - b) * base;
