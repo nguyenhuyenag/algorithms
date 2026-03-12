@@ -58,8 +58,8 @@ public class AnagramValid {
 
     @Test
     public void test() {
-        assertEquals(true, isAnagram("anagram", "nagaram"));
         assertEquals(false, isAnagram("rat", "car"));
+        assertEquals(true, isAnagram("anagram", "nagaram"));
     }
 
 }
