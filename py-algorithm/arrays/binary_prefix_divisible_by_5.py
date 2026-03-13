@@ -27,12 +27,13 @@ import itertools
 class Solution(unittest.TestCase):
 
     def prefixesDivBy5(self, nums: List[int]) -> List[bool]:
-        results = []
+        res = []
         x_new = 0
-        for x in nums:
-            x_new = (x_new * 2 + x) % 5
-            results.append(x_new == 0)
-        return results
+        for b in nums:
+            x_new = (x_new * 2 + b) % 5
+            res.append(x_new == 0)
+
+        return res
 
     def test_1(self):
         self.assertEqual([True, False, False], self.prefixesDivBy5([0, 1, 1]))
