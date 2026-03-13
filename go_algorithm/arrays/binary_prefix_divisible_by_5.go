@@ -33,7 +33,7 @@ func prefixesDivBy5(nums []int) []bool {
 	xNew := 0
 	res := make([]bool, len(nums))
 	for i := range nums {
-		crurrent := xNew * 2 + nums[i]
+		crurrent := xNew * 2 + nums[i] // Tính (phần dư) giá trị hiện tại
 		xNew = crurrent % 5
 		res[i] = xNew == 0
 	}
