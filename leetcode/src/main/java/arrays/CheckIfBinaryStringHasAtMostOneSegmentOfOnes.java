@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /*
     https://leetcode.com/problems/check-if-binary-string-has-at-most-one-segment-of-ones/
 
-    Cho một chuỗi nh phân không có số 0 ở đầu. Trả về TRUE nếu có nhiều nhất một đoạn liên
+    Cho một chuỗi nhị phân không có số 0 ở đầu. Trả về TRUE nếu có nhiều nhất một đoạn liên
     tiếp các số 1, ngược lại trả về FALSE.
 
     Ví dụ:

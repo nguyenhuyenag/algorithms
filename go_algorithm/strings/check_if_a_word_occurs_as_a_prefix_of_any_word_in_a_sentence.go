@@ -13,8 +13,8 @@ import (
 */
 func isPrefixOfWord(s string, searchWord string) int {
 	arr := strings.Split(s, " ")
-	for i, v := range arr {
-		if strings.HasPrefix(v, searchWord) {
+	for i := range arr {
+		if strings.HasPrefix(arr[i], searchWord) {
 			return i + 1
 		}
 	}

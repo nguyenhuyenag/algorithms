@@ -30,8 +30,22 @@ public class CheckIfItIsAStraightLine {
 
     @Test
     public void test() {
-        assertEquals(true, checkStraightLine(new int[][]{{1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}}));
-        assertEquals(false, checkStraightLine(new int[][]{{1, 2}, {2, 5}, {3, 4}, {4, 5}, {5, 6}, {6, 7}}));
+        assertEquals(true, checkStraightLine(new int[][]{
+            {1, 2}, 
+            {2, 3}, 
+            {3, 4}, 
+            {4, 5}, 
+            {5, 6}, 
+            {6, 7}
+        }));
+        assertEquals(false, checkStraightLine(new int[][]{
+            {1, 2}, 
+            {2, 5}, 
+            {3, 4}, 
+            {4, 5}, 
+            {5, 6}, 
+            {6, 7}
+        }));
     }
 
 }
