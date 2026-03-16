@@ -10,8 +10,6 @@ from typing import List
 
     Nếu trong nums không có số chẵn nào, hãy trả về 0.
 """
-
-
 class Solution(unittest.TestCase):
 
     def evenNumberBitwiseORs(self, nums: List[int]) -> int:
