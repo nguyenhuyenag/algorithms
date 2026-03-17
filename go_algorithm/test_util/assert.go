@@ -35,6 +35,6 @@ func AssertSlice[T comparable](expected, actual []T) {
 	if slices.Equal(expected, actual) {
 		fmt.Printf(Green + "✔ PASS: " + Reset + " %v\n", actual)
 	} else {
-		fmt.Printf(Red + "❌ FAIL: " + Reset + " got=%v, expected=%v\n", actual, expected)
+		fmt.Printf(Red + "❌ FAIL: " + Reset + " expected=%v, got=%v\n", actual, expected)
 	}
 }

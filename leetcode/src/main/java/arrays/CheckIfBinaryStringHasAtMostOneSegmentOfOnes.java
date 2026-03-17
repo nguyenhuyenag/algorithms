@@ -22,9 +22,7 @@ public class CheckIfBinaryStringHasAtMostOneSegmentOfOnes {
 
     /*
         - Chỉ cần kiểm tra chuỗi có chứa "01" hay không. Vì
-
             + "01" nghĩa là kết thúc đoạn 1.
-
             + Nếu sau đó lại có 1 → sẽ có đoạn 1 thứ hai
      */
     public boolean checkOnesSegment_OK(String s) {
