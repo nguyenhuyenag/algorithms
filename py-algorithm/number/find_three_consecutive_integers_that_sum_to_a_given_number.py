@@ -21,8 +21,6 @@ import itertools
 
 		=> Tức là num phải chia hết cho 3.
 """
-
-
 class Solution(unittest.TestCase):
 
     def sumOfThree(self, num: int) -> List[int]:

@@ -1,4 +1,4 @@
-package dynamic;
+package dp;
 
 import org.junit.jupiter.api.Test;
 
