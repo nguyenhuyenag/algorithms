@@ -2,18 +2,20 @@ package arrays;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*
     https://leetcode.com/problems/adding-spaces-to-a-string/
 
     Cho chuỗi s và mảng số nguyên spaces chứa vị trị sẽ thêm khoảng trắng vào chuỗi s.
-
     Trả về chuỗi s sao khi thêm vào khoảng trắng.
  */
 public class AddingSpacesToAString {
 
-    public String addSpaces(String s, int[] spaces) {
+    public String addSpaces_OK1(String s, int[] spaces) {
         int j = 0;
         int lengthSpaces = spaces.length;
         StringBuilder builder = new StringBuilder();
@@ -25,6 +27,17 @@ public class AddingSpacesToAString {
             builder.append(s.charAt(i));
         }
         return builder.toString();
+    }
+
+    public String addSpaces(String s, int[] spaces) {
+        List<String> res = new ArrayList<>();
+        int start = 0;
+        for (int space : spaces) {
+            res.add(s.substring(start, space));
+            start = space;
+        }
+        res.add(s.substring(start));
+        return String.join(" ", res);
     }
 
     @Test

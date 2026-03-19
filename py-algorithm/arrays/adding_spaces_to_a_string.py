@@ -1,20 +1,18 @@
 import unittest
 
-from math import gcd
-from fractions import Fraction
 from typing import List
-from queue import PriorityQueue
-from collections import Counter
-import itertools
 
 """
     https://leetcode.com/problems/adding-spaces-to-a-string/
+    
+    Cho một chuỗi s và một mảng chỉ số spaces. Thêm một khoảng trắng
+	vào chuỗi s tại mỗi vị trí được chỉ định trong mảng spaces.
 """
 
 
 class Solution(unittest.TestCase):
 
-    def addSpaces(self, s: str, spaces: List[int]) -> str:
+    def addSpaces_OK1(self, s: str, spaces: List[int]) -> str:
         j = 0
         result = []
         for i, c in enumerate(s):
@@ -22,10 +20,24 @@ class Solution(unittest.TestCase):
                 result.append(" ")
                 j += 1
             result.append(s[i])
+
         return "".join(result)
 
+    def addSpaces(self, s: str, spaces: List[int]) -> str:
+        res = []
+        start = 0
+        for i in spaces:
+            res.append(s[start:i])
+            start = i
+
+        res.append(s[start:])
+        return " ".join(res)
+
     def test(self):
-        self.assertEqual("Leetcode Helps Me Learn", self.addSpaces("LeetcodeHelpsMeLearn", [8, 13, 15]))
+        self.assertEqual(
+            "Leetcode Helps Me Learn",
+            self.addSpaces("LeetcodeHelpsMeLearn", [8, 13, 15])
+        )
 
 
 if __name__ == '__main__':
