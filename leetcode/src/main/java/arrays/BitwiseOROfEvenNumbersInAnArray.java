@@ -14,16 +14,6 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class BitwiseOROfEvenNumbersInAnArray {
 
-//    public int evenNumberBitwiseORs(int[] nums) {
-//        int result = 0;
-//        for (int num : nums) {
-//            if ((num & 1) == 0) {
-//                result |= num;
-//            }
-//        }
-//        return result;
-//    }
-
     public int evenNumberBitwiseORs(int[] nums) {
         int result = 0;
         for (int num : nums) {
@@ -43,5 +33,15 @@ public class BitwiseOROfEvenNumbersInAnArray {
     public void test2() {
         assertEquals(0, evenNumberBitwiseORs(new int[]{7, 9, 11}));
     }
+
+//    public int evenNumberBitwiseORs(int[] nums) {
+//        int result = 0;
+//        for (int num : nums) {
+//            if ((num & 1) == 0) {
+//                result |= num;
+//            }
+//        }
+//        return result;
+//    }
 
 }

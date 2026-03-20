@@ -6,12 +6,43 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * https://leetcode.com/problems/binary-subarrays-with-sum/
- *
- * Cho mảng nhị phân và số thực k. Tìm mảng con có tổng bằng k
+/*
+    https://leetcode.com/problems/binary-subarrays-with-sum/
+
+    Cho mảng nhị phân và số thực k. Đếm số mảng con có tổng bằng k.
  */
 public class BinarySubArraysWithSum {
+
+    public int numSubarraysWithSum(int[] nums, int k) {
+        List<int[]> result = new ArrayList<>();
+        int left = 0, right = 0;
+        int sum = 0;
+
+        while (right < nums.length) {
+            sum += nums[right];
+
+            while (left <= right && sum > k) {
+                sum -= nums[left];
+                left++;
+            }
+
+            if (sum == k) {
+                // Add the subarray and move the left pointer to avoid counting overlapping subarrays
+                result.add(new int[]{left, right});
+                sum -= nums[left];  // Adjust sum
+                left++;             // Move left pointer
+            }
+
+            right++;
+        }
+        return result.size();
+    }
+
+    @Test
+    public void test() {
+        assertEquals(4, numSubarraysWithSum(new int[]{1, 0, 1, 0, 1}, 2));
+        assertEquals(15, numSubarraysWithSum(new int[]{0, 0, 0, 0, 0}, 0));
+    }
 
 //    public int numSubarraysWithSum(int[] nums, int s) {
 //        // List<int[]> result = new ArrayList<>();
@@ -36,33 +67,4 @@ public class BinarySubArraysWithSum {
 //        return result.size();
 //    }
 
-    public int numSubarraysWithSum(int[] nums, int s) {
-        List<int[]> result = new ArrayList<>();
-        int left = 0, right = 0, sum = 0;
-
-        while (right < nums.length) {
-            sum += nums[right];
-
-            while (left <= right && sum > s) {
-                sum -= nums[left];
-                left++;
-            }
-
-            if (sum == s) {
-                // Add the subarray and move the left pointer to avoid counting overlapping subarrays
-                result.add(new int[]{left, right});
-                sum -= nums[left]; // Adjust sum
-                left++; // Move left pointer
-            }
-
-            right++;
-        }
-        return result.size();
-    }
-
-    @Test
-    public void test() {
-        assertEquals(4, numSubarraysWithSum(new int[]{1, 0, 1, 0, 1}, 2));
-        assertEquals(15, numSubarraysWithSum(new int[]{0, 0, 0, 0, 0}, 0));
-    }
 }

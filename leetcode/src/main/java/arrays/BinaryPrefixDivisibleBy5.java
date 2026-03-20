@@ -17,7 +17,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
        x₀ = nums[0]
        x₁ = nums[0..1] = nums[0]2 + nums[1]
        x₂ = nums[0..2] = ((nums[0]2 + nums[1])2 + nums[2])
+
     Tuy nhiên cách này sẽ bị tràn số.
+
     Cải tiến: Vì bài toán yêu cầu xem x[i] có chia hết cho 5 hay không, cho nên ta chỉ cần lưu
     phần dư của x[i] khi chia cho 5.
  */
