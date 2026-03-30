@@ -21,7 +21,7 @@ import unittest
 
 class Solution(unittest.TestCase):
 
-    def checkStrings(self, s1: str, s2: str) -> bool:
+    def checkStrings_OK(self, s1: str, s2: str) -> bool:
         if len(s1) != len(s2):
             return False
 
@@ -38,6 +38,22 @@ class Solution(unittest.TestCase):
 
         for i in range(26):
             if even[i] != 0 or odd[i] != 0:
+                return False
+
+        return True
+
+    def checkStrings(self, s1: str, s2: str) -> bool:
+        if len(s1) != len(s2):
+            return False
+
+        mark = [[0] * 26 for _ in range(2)]
+
+        for i, (c1, c2) in enumerate(zip(s1, s2)):
+            mark[i % 2][ord(c1) - 97] += 1
+            mark[i % 2][ord(c2) - 97] -= 1
+
+        for i in range(26):
+            if mark[0][i] != 0 or mark[1][i] != 0:
                 return False
 
         return True
