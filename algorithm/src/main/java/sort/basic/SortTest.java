@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /*
     https://leetcode.com/problems/sort-colors/
-
     https://leetcode.com/problems/sort-an-array/
  */
 public class SortTest {
