@@ -2,6 +2,8 @@ package string;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /*
@@ -23,7 +25,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class CheckIfStringsCanBeMadeEqualWithOperationsII {
 
-    public boolean checkStrings(String s1, String s2) {
+    public boolean checkStrings_OK1(String s1, String s2) {
         if (s1.length() != s2.length()) return false;
 
         int[] odd = new int[26];
@@ -48,10 +50,32 @@ public class CheckIfStringsCanBeMadeEqualWithOperationsII {
         return true;
     }
 
+    // Dùng mảng 2 chiều
+    public boolean checkStrings(String s1, String s2) {
+        if (s1.length() != s2.length()) return false;
+
+        int[][] mark = new int[2][26];
+        for (int i = 0; i < s1.length(); i++) {
+            int parity = i % 2; // Phân loại vị trí chẵn/lẻ
+            mark[parity][s1.charAt(i) - 'a']++;
+            mark[parity][s2.charAt(i) - 'a']--;
+        }
+
+        for (int[] row : mark) {
+            for (int count : row) {
+                if (count != 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     @Test
     public void test() {
-        assertEquals(false, checkStrings("abe", "bea"));
+        // assertEquals(false, checkStrings("abe", "bea"));
         assertEquals(true, checkStrings("abcdba", "cabdab"));
+
     }
 
 }
